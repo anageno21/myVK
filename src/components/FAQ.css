@@ -1,0 +1,95 @@
+/* src/components/FAQ.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.faq-section {
+  width: 100%;
+  min-height: 400px;
+  background-color: #EDEBE8; /* Αλλαγή φόντου σε ίδιο με AboutAnageno */
+  display: block;
+  padding: 40px 0;
+  position: static;
+  overflow: visible;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: static;
+  display: block;
+  box-sizing: border-box;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header .sub-title {
+  display: block;
+  color: #FF6F61;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+}
+
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #173A37;
+  line-height: 1.0;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.section-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  font-family: 'Playfair Display', serif;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #173A37;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.faq-question .toggle-icon {
+  font-size: 24px;
+  color: #173A37;
+}
+
+.faq-answer {
+  margin-top: 10px;
+}
+
+.faq-answer p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  font-family: 'Playfair Display', serif;
+}

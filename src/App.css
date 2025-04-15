@@ -1,0 +1,23 @@
+/* src/App.css */
+.home-page {
+  width: 100%;
+  overflow: auto;
+  display: block;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Εξασφαλίζω ότι δεν υπάρχει κάποιο στυλ που επικαλύπτει το footer */
+#footer,
+.footer-section {
+  background-color: #8EB5BA !important; /* Προσθήκη για επιβεβαίωση */
+}

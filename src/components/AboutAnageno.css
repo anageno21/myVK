@@ -1,0 +1,138 @@
+/* src/components/AboutAnageno.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.about-anageno {
+  width: 100%;
+  height: 650px;
+  background-color: #EDEBE8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+}
+
+.container {
+  max-width: 1202px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.about-content {
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.image-frame {
+  width: 100%;
+  min-height: 400px;
+  background-color: #F9E2DC;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+}
+
+.image-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #173A37;
+  text-align: left;
+  z-index: 1;
+}
+
+.image-content h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #173A37;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.image-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #173A37;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.image-content .read-more {
+  display: inline-block;
+  color: #173A37;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Playfair Display', serif;
+  padding: 5px 15px;
+  border: 1px solid #173A37;
+  border-radius: 15px;
+}
+
+.image-content .read-more:hover {
+  background-color: #FF6F61;
+  border-color: #FF6F61;
+  color: white;
+}
+
+.therapy-frame {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #F0CFBC;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.frame-content {
+  flex: 1;
+  z-index: 2;
+}
+
+.frame-content .sub-title {
+  display: block;
+  color: #FF6F61;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase; /* Προσθήκη κεφαλαίων */
+}
+
+.frame-content h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #173A37;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.0;
+}
+
+.frame-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #173A37;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}

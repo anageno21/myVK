@@ -1,0 +1,139 @@
+/* src/components/ConnectWithUs.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.connect-with-us-section {
+  width: 100%;
+  min-height: 500px;
+  background-color: #EDEBE8;
+  display: block;
+  padding: 40px 0;
+  position: static;
+  overflow: visible;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: static;
+  display: block;
+  box-sizing: border-box;
+}
+
+.split-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100%;
+}
+
+.left-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #173A37;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.section-header h2 .highlight {
+  text-transform: uppercase;
+}
+
+.section-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item .icon {
+  font-size: 20px;
+}
+
+.contact-item p {
+  font-size: 16px;
+  color: #173A37;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+
+/* Αφαίρεσα το στυλ για .map-link αφού δεν χρησιμοποιείται πλέον */
+
+.right-section {
+  width: 50%;
+  background-color: #8EB5BA; /* Αλλαγή φόντου σε ίδιο με το footer */
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.consultation-form h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #173A37;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  box-sizing: border-box;
+}
+
+.consultation-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.consultation-form button {
+  background-color: #FF6F61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+}
+
+.consultation-form button:hover {
+  background-color: #E65A50;
+}

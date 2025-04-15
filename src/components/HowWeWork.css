@@ -1,0 +1,129 @@
+/* src/components/HowWeWork.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.how-we-work-section {
+  width: 100%;
+  min-height: 1000px;
+  background-color: transparent;
+  display: block;
+  padding: 0; /* Αφαιρώ το padding για να καταλαμβάνει όλο το ύψος */
+  position: static;
+  overflow: visible;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0; /* Αφαιρώ το padding για να καταλαμβάνει όλο το πλάτος */
+  position: static;
+  display: block;
+}
+
+.split-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0; /* Αφαιρώ το gap για να μην υπάρχει κενό ανάμεσα στα τμήματα */
+  width: 100%;
+  height: 100%; /* Εξασφαλίζω ότι καταλαμβάνει όλο το ύψος της ενότητας */
+}
+
+.left-section {
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  background-color: #B08744;
+  padding: 20px;
+  border-radius: 0; /* Αφαιρώ το border-radius για να κολλήσουν τα τμήματα */
+  min-height: 1000px; /* Εξασφαλίζω ότι καταλαμβάνει όλο το ύψος */
+}
+
+.right-section {
+  width: 60%;
+  display: flex;
+  align-items: flex-start;
+  background-color: #8EB5BA;
+  padding: 20px;
+  border-radius: 0; /* Αφαιρώ το border-radius για να κολλήσουν τα τμήματα */
+  min-height: 1000px; /* Εξασφαλίζω ότι καταλαμβάνει όλο το ύψος */
+}
+
+.section-header {
+  text-align: left;
+  max-width: 100%;
+}
+
+.section-header .sub-title {
+  display: block;
+  color: #FF6F61;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #173A37;
+  line-height: 1.0;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.steps-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.step {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  margin: 15px 0;
+  background-color: #F9E2DC;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  background-color: #FF6F61;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.step h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #173A37;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.step p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #173A37;
+  font-family: 'Playfair Display', serif;
+}
+
+.step-arrow {
+  font-size: 20px;
+  color: #FF6F61;
+  text-align: center;
+  margin: 8px 0;
+}

@@ -1,0 +1,246 @@
+/* src/components/NewFooter.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.new-footer-section {
+  width: 100%;
+  background-color: #8EB5BA; /* Φόντο όπως ζήτησες */
+  padding: 40px 0;
+  position: static;
+  overflow: visible;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.new-tf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: static;
+  display: block;
+  box-sizing: border-box;
+}
+
+.new-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-col-12 {
+  width: 100%;
+}
+
+.new-footer-main {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.new-footer-left {
+  flex: 1;
+}
+
+.new-footer-logo img {
+  max-width: 150px;
+}
+
+.new-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #173A37;
+  font-family: 'Playfair Display', serif;
+  margin: 20px 0;
+}
+
+.new-footer-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.new-footer-info li {
+  font-size: 16px;
+  color: #173A37;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.new-footer-info li a {
+  color: #173A37;
+  text-decoration: none;
+}
+
+.new-footer-info li a:hover {
+  color: #FF6F61;
+}
+
+.new-tf-social {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  gap: 15px;
+}
+
+.new-tf-social li {
+  display: inline-block;
+}
+
+.new-tf-social li a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.new-tf-social li a svg {
+  width: 20px;
+  height: 20px;
+}
+
+.new-footer-right {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.new-wrap-footer-menu-list {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.new-footer-menu-list {
+  flex: 1;
+}
+
+.new-footer-menu-list h6 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #173A37;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.new-footer-menu-list .title-mobile {
+  display: none;
+}
+
+.new-footer-menu-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.new-footer-menu-list ul li {
+  margin-bottom: 10px;
+}
+
+.new-footer-menu-list ul li a {
+  font-size: 16px;
+  color: #173A37;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+}
+
+.new-footer-menu-list ul li a:hover {
+  color: #FF6F61;
+}
+
+.new-wrap-form {
+  flex: 1;
+}
+
+.new-wrap-form h6 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #173A37;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.new-form-send-email {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.new-form-send-email fieldset {
+  flex: 1;
+}
+
+.new-form-send-email input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #173A37;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  box-sizing: border-box;
+}
+
+.new-button-submit button {
+  background-color: #FF6F61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+}
+
+.new-button-submit button:hover {
+  background-color: #E65A50;
+}
+
+.new-wrap-form p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #173A37;
+  font-family: 'Playfair Display', serif;
+}
+
+.new-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #173A37;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.new-footer-bottom p {
+  font-size: 14px;
+  color: #173A37;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+
+.new-footer-bottom p a {
+  color: #FF6F61;
+  text-decoration: none;
+}
+
+.new-footer-bottom p a:hover {
+  text-decoration: underline;
+}
+
+.new-content-right {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.new-content-right li a {
+  font-size: 14px;
+  color: #173A37;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+}
+
+.new-content-right li a:hover {
+  color: #FF6F61;
+}

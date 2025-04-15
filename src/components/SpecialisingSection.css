@@ -1,0 +1,129 @@
+/* src/components/SpecialisingSection.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.specialising-section {
+  width: 100%;
+  min-height: 1150px;
+  background-color: #E1DCD4;
+  display: block;
+  padding: 40px 0;
+  position: static;
+  overflow: visible;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: static;
+  display: block;
+  box-sizing: border-box;
+}
+
+.section-header {
+  text-align: left;
+  max-width: 600px;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header .sub-title {
+  display: block;
+  color: #FF6F61;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase; /* Προσθήκη κεφαλαίων */
+}
+
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #173A37;
+  line-height: 1.0;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.section-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #173A37;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.specialising-content {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.specialising-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.specialising-card {
+  background-color: #F9E2DC;
+  border-radius: 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  min-height: 365px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.specialising-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.18);
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.specialising-card h3 {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.0;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  padding: 40px 40px 0;
+  z-index: 2;
+  position: relative;
+}
+
+.specialising-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  padding: 0 40px 40px;
+  z-index: 2;
+  position: relative;
+}
