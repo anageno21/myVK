@@ -117,7 +117,7 @@
   font-size: 14px;
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
-  text-transform: uppercase; /* Προσθήκη κεφαλαίων */
+  text-transform: uppercase;
 }
 
 .frame-content h2 {
@@ -135,4 +135,138 @@
   color: #173A37;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
+}
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .about-anageno {
+    height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    padding: 40px 0; /* Προσθέτουμε padding για καλύτερη εμφάνιση */
+  }
+
+  .container {
+    padding: 0 10px; /* Μείωση padding για μικρότερες οθόνες */
+  }
+
+  .about-content {
+    flex-direction: column; /* Στήλη αντί για σειρά */
+    gap: 20px;
+  }
+
+  .about-text {
+    flex: none; /* Αφαίρεση flex για να προσαρμοστεί */
+    width: 100%; /* Καταλαμβάνει όλο το πλάτος */
+  }
+
+  .therapy-frame {
+    min-height: 350px; /* Μείωση ύψους */
+    padding: 20px;
+    width: 100%; /* Εξασφαλίζουμε ότι δεν υπερκαλύπτει */
+    box-sizing: border-box; /* Περιλαμβάνουμε padding στο πλάτος */
+  }
+
+  .frame-content .sub-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .frame-content h2 {
+    font-size: 36px; /* Μείωση μεγέθους τίτλου */
+    margin-bottom: 15px;
+  }
+
+  .frame-content p {
+    font-size: 14px; /* Μείωση μεγέθους κειμένου */
+    margin-bottom: 15px;
+  }
+
+  .image-frame {
+    min-height: 300px; /* Μείωση ύψους της εικόνας */
+    padding: 20px;
+    width: 100%; /* Εξασφαλίζουμε ότι δεν υπερκαλύπτει */
+    box-sizing: border-box; /* Περιλαμβάνουμε padding στο πλάτος */
+  }
+
+  .image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Εξασφαλίζουμε ότι η εικόνα καλύπτει το πλαίσιο */
+  }
+
+  .image-content {
+    bottom: 20px;
+    left: 20px;
+    max-width: 90%; /* Περιορίζουμε το πλάτος για να μην ξεχειλίζει */
+  }
+
+  .image-content h3 {
+    font-size: 22px; /* Μείωση μεγέθους τίτλου */
+    margin-bottom: 8px;
+  }
+
+  .image-content p {
+    font-size: 14px; /* Μείωση μεγέθους κειμένου */
+    margin-bottom: 15px;
+  }
+
+  .image-content .read-more {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-anageno {
+    padding: 20px 0;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+
+  .therapy-frame {
+    min-height: 300px;
+    padding: 15px;
+  }
+
+  .frame-content .sub-title {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .frame-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .frame-content p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .image-frame {
+    min-height: 250px;
+    padding: 15px;
+  }
+
+  .image-content {
+    bottom: 15px;
+    left: 15px;
+    max-width: 85%;
+  }
+
+  .image-content h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .image-content p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .image-content .read-more {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
 }

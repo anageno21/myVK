@@ -224,3 +224,157 @@
 .dot.active {
   opacity: 1;
 }
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 450px; /* Μείωση ύψους για tablets */
+  }
+
+  .header-container {
+    padding: 0 20px; /* Μείωση padding για μικρότερες οθόνες */
+    flex-wrap: wrap; /* Επιτρέπει στα στοιχεία να τυλίγονται αν δεν χωράνε */
+    gap: 10px;
+  }
+
+  .header-logo img {
+    height: 35px; /* Μικρότερο λογότυπο */
+  }
+
+  .navigation li {
+    margin: 0 10px; /* Μείωση απόστασης μεταξύ των navigation links */
+  }
+
+  .navigation li a {
+    font-size: 14px; /* Μείωση μεγέθους κειμένου */
+  }
+
+  .custom-select {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+
+  .language-options li {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .login-link {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .slide-content {
+    left: 20px; /* Μείωση απόστασης από το αριστερό άκρο */
+    max-width: 90%; /* Χρησιμοποιούμε το μέγιστο πλάτος */
+  }
+
+  .slide-content h2 {
+    font-size: 36px; /* Μείωση μεγέθους τίτλου */
+    margin-bottom: 15px;
+  }
+
+  .slide-content p {
+    font-size: 14px; /* Μείωση μεγέθους κειμένου */
+    margin-bottom: 15px;
+  }
+
+  .read-more {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .pagination {
+    bottom: 15px;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider {
+    height: 350px; /* Ακόμα μικρότερο ύψος για κινητά */
+  }
+
+  .header-container {
+    padding: 0 10px;
+    flex-direction: column; /* Στήλη για πολύ μικρές οθόνες */
+    align-items: flex-start;
+  }
+
+  .header-logo img {
+    height: 30px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .navigation li {
+    margin: 5px 0;
+  }
+
+  .navigation li a {
+    font-size: 12px;
+  }
+
+  .header-language {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  .custom-select {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  .language-options li {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .header-login {
+    margin-top: 10px;
+  }
+
+  .login-link {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .slide-content {
+    left: 15px;
+    max-width: 85%;
+  }
+
+  .slide-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .slide-content p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .read-more {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .pagination {
+    bottom: 10px;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
