@@ -156,6 +156,7 @@
   .about-text {
     flex: none; /* Αφαίρεση flex για να προσαρμοστεί */
     width: 100%; /* Καταλαμβάνει όλο το πλάτος */
+    order: 2; /* Η .about-text (therapy-frame) εμφανίζεται δεύτερη */
   }
 
   .therapy-frame {
@@ -163,6 +164,7 @@
     padding: 20px;
     width: 100%; /* Εξασφαλίζουμε ότι δεν υπερκαλύπτει */
     box-sizing: border-box; /* Περιλαμβάνουμε padding στο πλάτος */
+    margin: 0; /* Αφαίρεση περιθωρίων για να μην υπερκαλύπτει */
   }
 
   .frame-content .sub-title {
@@ -178,6 +180,7 @@
   .frame-content p {
     font-size: 14px; /* Μείωση μεγέθους κειμένου */
     margin-bottom: 15px;
+    max-width: 100%; /* Εξασφαλίζουμε ότι δεν ξεχειλίζει */
   }
 
   .image-frame {
@@ -185,6 +188,8 @@
     padding: 20px;
     width: 100%; /* Εξασφαλίζουμε ότι δεν υπερκαλύπτει */
     box-sizing: border-box; /* Περιλαμβάνουμε padding στο πλάτος */
+    order: 1; /* Η .image-frame εμφανίζεται πρώτη */
+    margin: 0; /* Αφαίρεση περιθωρίων για να μην υπερκαλύπτει */
   }
 
   .image-frame img {
@@ -215,7 +220,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .about-anageno {
     padding: 20px 0;
   }
@@ -268,5 +273,54 @@
   .image-content .read-more {
     font-size: 10px;
     padding: 3px 10px;
+  }
+}
+
+/* Επιπλέον Media Query για πολύ μικρά κινητά (π.χ. iPhone SE) */
+@media (max-width: 375px) {
+  .therapy-frame {
+    min-height: 280px;
+    padding: 10px;
+  }
+
+  .frame-content .sub-title {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .frame-content h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .frame-content p {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .image-frame {
+    min-height: 220px;
+    padding: 10px;
+  }
+
+  .image-content {
+    bottom: 10px;
+    left: 10px;
+    max-width: 80%;
+  }
+
+  .image-content h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .image-content p {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .image-content .read-more {
+    font-size: 9px;
+    padding: 2px 8px;
   }
 }

@@ -7,6 +7,7 @@ const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedLanguage, setSelectedLanguage] = useState('English');
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State για το burger menu
 
   const languages = [
     { value: 'English', label: 'English' },
@@ -22,6 +23,10 @@ const HeroSlider = () => {
     setSelectedLanguage(language);
     setIsLanguageOpen(false);
     console.log("Selected language:", language);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const slides = [
@@ -44,14 +49,14 @@ const HeroSlider = () => {
       text: "We focus on renewing your strength and resilience. Our tailored therapy sessions offer the support and strategies you need to overcome challenges & thrive.",
     },
     {
-      type: 'image', // Επαναφορά σε εικόνα
-      src: '/images/section/hero 4.png', // Επαναφορά της εικόνας
+      type: 'image',
+      src: '/images/section/hero 4.png',
       title: "Discover Inner Peace and Balance",
       text: "Our expert therapists provide personalized sessions to help you find inner peace and emotional balance in your daily life.",
     },
     {
-      type: 'image', // Επαναφορά σε εικόνα
-      src: '/images/section/hero 5.png', // Επαναφορά της εικόνας
+      type: 'image',
+      src: '/images/section/hero 5.png',
       title: "Empower Your Mind and Spirit",
       text: "Join our therapy programs to empower your mind and spirit, unlocking your full potential with professional guidance.",
     },
@@ -60,7 +65,7 @@ const HeroSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); // Επαναφορά σε σταθερό χρόνο 5 δευτερολέπτων
+    }, 5000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -72,7 +77,10 @@ const HeroSlider = () => {
             <img src="/images/logo/logo-white.png" alt="Anageno" />
           </Link>
         </div>
-        <nav className="header-menu">
+        <div className="burger-menu" onClick={toggleMenu}>
+          <span>☰</span>
+        </div>
+        <nav className={`header-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul className="navigation">
             <li><Link to="/about">About</Link></li>
             <li><Link to="/our-service">Services</Link></li>
@@ -81,28 +89,28 @@ const HeroSlider = () => {
             <li><Link to="/blog-grid">Blog</Link></li>
             <li><Link to="/contact-us">Contact</Link></li>
           </ul>
-        </nav>
-        <div className="header-language">
-          <div className="custom-select" onClick={handleLanguageToggle}>
-            <span className="selected-language">{selectedLanguage}</span>
+          <div className="header-language">
+            <div className="custom-select" onClick={handleLanguageToggle}>
+              <span className="selected-language">{selectedLanguage}</span>
+            </div>
+            {isLanguageOpen && (
+              <ul className="language-options">
+                {languages.map((lang) => (
+                  <li
+                    key={lang.value}
+                    onClick={() => handleLanguageSelect(lang.label)}
+                    className={lang.label === selectedLanguage ? 'active' : ''}
+                  >
+                    {lang.label}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-          {isLanguageOpen && (
-            <ul className="language-options">
-              {languages.map((lang) => (
-                <li
-                  key={lang.value}
-                  onClick={() => handleLanguageSelect(lang.label)}
-                  className={lang.label === selectedLanguage ? 'active' : ''}
-                >
-                  {lang.label}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-        <div className="header-login">
-          <Link to="/login" className="login-link">Log In</Link>
-        </div>
+          <div className="header-login">
+            <Link to="/login" className="login-link">Log In</Link>
+          </div>
+        </nav>
       </div>
       {slides.map((slide, index) => (
         <div
