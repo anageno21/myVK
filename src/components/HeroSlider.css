@@ -325,7 +325,7 @@
     top: 50%; /* Κρατάμε το κείμενο στη μέση */
     left: 20px;
     max-width: 90%;
-    padding-top: 80px; /* Προσθέτουμε padding για να αποφύγουμε την αλληλοκάλυψη */
+    padding-top: 120px; /* Αυξάνουμε το padding για να αποφύγουμε την αλληλοκάλυψη */
   }
 
   .slide-content h2 {
@@ -394,7 +394,7 @@
   .slide-content {
     left: 15px;
     max-width: 85%;
-    padding-top: 70px;
+    padding-top: 100px; /* Αυξάνουμε το padding για μικρότερες οθόνες */
   }
 
   .slide-content h2 {
@@ -463,7 +463,7 @@
   .slide-content {
     left: 10px;
     max-width: 80%;
-    padding-top: 60px;
+    padding-top: 90px; /* Αυξάνουμε το padding για πολύ μικρές οθόνες */
   }
 
   .slide-content h2 {

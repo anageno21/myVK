@@ -31,9 +31,9 @@
   overflow: visible;
 }
 
-.section-header .sub-title { /* Επιστρέφω στην αρχική κλάση .sub-title */
+.section-header .sub-title {
   display: block;
-  color: #FF6F61; /* Αλλαγή χρώματος σε πορτοκαλί */
+  color: #FF6F61;
   font-size: 14px;
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
@@ -89,7 +89,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: #FF6F61; /* Αλλαγή χρώματος σε πορτοκαλί */
+  background-color: #FF6F61;
   color: white;
   font-size: 12px;
   padding: 5px 10px;
@@ -106,7 +106,7 @@
 
 .card-content .category {
   display: block;
-  color: #FF6F61; /* Αλλαγή χρώματος σε πορτοκαλί */
+  color: #FF6F61;
   font-size: 14px;
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
@@ -146,5 +146,220 @@
 }
 
 .card-content .read-more:hover {
-  color: #FF6F61; /* Αλλαγή χρώματος σε πορτοκαλί */
+  color: #FF6F61;
+}
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .favourite-topics-section {
+    min-height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    padding: 20px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .section-header .sub-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(1, 1fr); /* Στήλη αντί για σειρά */
+    gap: 20px;
+  }
+
+  .topic-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card-image {
+    height: 180px; /* Μείωση ύψους εικόνας */
+  }
+
+  .card-image .date {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .card-content .category {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card-content p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .card-content .read-more {
+    font-size: 12px;
+  }
+
+  .card-content .read-more .arrow {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .favourite-topics-section {
+    padding: 15px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .section-header {
+    margin-bottom: 15px;
+  }
+
+  .section-header .sub-title {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .topics-grid {
+    gap: 15px;
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .card-image .date {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-content .category {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .card-content h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .card-content p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .card-content .read-more {
+    font-size: 11px;
+  }
+
+  .card-content .read-more .arrow {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .favourite-topics-section {
+    padding: 10px 0;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+
+  .section-header {
+    margin-bottom: 10px;
+  }
+
+  .section-header .sub-title {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .section-header p {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .topics-grid {
+    gap: 10px;
+  }
+
+  .card-image {
+    height: 140px;
+  }
+
+  .card-image .date {
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+
+  .card-content {
+    padding: 8px;
+  }
+
+  .card-content .category {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .card-content h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .card-content p {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .card-content .read-more {
+    font-size: 10px;
+  }
+
+  .card-content .read-more .arrow {
+    font-size: 11px;
+  }
 }

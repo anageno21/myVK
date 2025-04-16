@@ -83,11 +83,9 @@
   margin: 0;
 }
 
-/* Αφαίρεσα το στυλ για .map-link αφού δεν χρησιμοποιείται πλέον */
-
 .right-section {
   width: 50%;
-  background-color: #8EB5BA; /* Αλλαγή φόντου σε ίδιο με το footer */
+  background-color: #8EB5BA;
   padding: 40px;
   border-radius: 20px;
 }
@@ -136,4 +134,208 @@
 
 .consultation-form button:hover {
   background-color: #E65A50;
+}
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .connect-with-us-section {
+    min-height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    padding: 20px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .split-container {
+    flex-direction: column; /* Στήλη αντί για σειρά */
+    gap: 20px;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%; /* Καταλαμβάνουν όλο το πλάτος */
+    box-sizing: border-box;
+  }
+
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .contact-info {
+    gap: 10px;
+  }
+
+  .contact-item .icon {
+    font-size: 18px;
+  }
+
+  .contact-item p {
+    font-size: 14px;
+  }
+
+  .right-section {
+    padding: 20px;
+  }
+
+  .consultation-form h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .consultation-form input,
+  .consultation-form select,
+  .consultation-form textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .consultation-form textarea {
+    height: 80px;
+  }
+
+  .consultation-form button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .connect-with-us-section {
+    padding: 15px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .split-container {
+    gap: 15px;
+  }
+
+  .section-header {
+    margin-bottom: 15px;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    gap: 8px;
+  }
+
+  .contact-item .icon {
+    font-size: 16px;
+  }
+
+  .contact-item p {
+    font-size: 12px;
+  }
+
+  .right-section {
+    padding: 15px;
+  }
+
+  .consultation-form h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .consultation-form input,
+  .consultation-form select,
+  .consultation-form textarea {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .consultation-form textarea {
+    height: 60px;
+  }
+
+  .consultation-form button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .connect-with-us-section {
+    padding: 10px 0;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+
+  .split-container {
+    gap: 10px;
+  }
+
+  .section-header {
+    margin-bottom: 10px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .section-header p {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .contact-info {
+    gap: 6px;
+  }
+
+  .contact-item .icon {
+    font-size: 14px;
+  }
+
+  .contact-item p {
+    font-size: 11px;
+  }
+
+  .right-section {
+    padding: 10px;
+  }
+
+  .consultation-form h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .consultation-form input,
+  .consultation-form select,
+  .consultation-form textarea {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .consultation-form textarea {
+    height: 50px;
+  }
+
+  .consultation-form button {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
 }

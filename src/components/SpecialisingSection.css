@@ -127,3 +127,148 @@
   z-index: 2;
   position: relative;
 }
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .specialising-section {
+    min-height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    padding: 20px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-header {
+    margin-top: 20px;
+    max-width: 100%; /* Εξασφαλίζουμε ότι δεν ξεχειλίζει */
+  }
+
+  .section-header .sub-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .specialising-content {
+    margin-bottom: 15px;
+  }
+
+  .specialising-grid {
+    grid-template-columns: repeat(1, 1fr); /* Στήλη αντί για σειρά */
+    grid-template-rows: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    gap: 20px;
+  }
+
+  .specialising-card {
+    min-height: 300px; /* Μείωση ύψους καρτών */
+  }
+
+  .specialising-card h3 {
+    font-size: 36px;
+    padding: 20px 20px 0;
+    margin-bottom: 15px;
+  }
+
+  .specialising-card p {
+    font-size: 14px;
+    padding: 0 20px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .specialising-section {
+    padding: 15px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .section-header .sub-title {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .specialising-grid {
+    gap: 15px;
+  }
+
+  .specialising-card {
+    min-height: 250px;
+  }
+
+  .specialising-card h3 {
+    font-size: 28px;
+    padding: 15px 15px 0;
+    margin-bottom: 10px;
+  }
+
+  .specialising-card p {
+    font-size: 12px;
+    padding: 0 15px 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .specialising-section {
+    padding: 10px 0;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+
+  .section-header .sub-title {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .section-header p {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .specialising-grid {
+    gap: 10px;
+  }
+
+  .specialising-card {
+    min-height: 220px;
+  }
+
+  .specialising-card h3 {
+    font-size: 24px;
+    padding: 10px 10px 0;
+    margin-bottom: 8px;
+  }
+
+  .specialising-card p {
+    font-size: 11px;
+    padding: 0 10px 10px;
+  }
+}
