@@ -1,0 +1,116 @@
+/* src/components/VideoHighlightSection.css */
+.video-highlight-section {
+  width: 100%;
+  padding: 80px 0 40px 0;
+  background-color: #EDEBE8;
+}
+
+.video-container { /* Μετονομασία από .container σε .video-container */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.highlight-video {
+  max-width: 600px;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.video-controls {
+  display: flex;
+  gap: 20px;
+}
+
+.control-button {
+  padding: 6px 10px;
+  background-color: transparent;
+  color: #FF6F61;
+  border: 1px solid #FF6F61;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-button:hover {
+  background-color: #FF6F61;
+  color: white;
+}
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .video-highlight-section {
+    padding: 50px 0 20px 0;
+  }
+
+  .video-container { /* Ενημέρωση της class */
+    padding: 0 20px;
+  }
+
+  .highlight-video {
+    max-width: 100%;
+  }
+
+  .video-wrapper {
+    gap: 10px;
+  }
+
+  .video-controls {
+    gap: 15px;
+  }
+
+  .control-button {
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-highlight-section {
+    padding: 30px 0 15px 0;
+  }
+
+  .video-container { /* Ενημέρωση της class */
+    padding: 0 10px;
+  }
+
+  .video-controls {
+    gap: 12px;
+  }
+
+  .control-button {
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 375px) {
+  .video-highlight-section {
+    padding: 20px 0 10px 0;
+  }
+
+  .video-container { /* Ενημέρωση της class */
+    padding: 0 5px;
+  }
+
+  .video-controls {
+    gap: 10px;
+  }
+
+  .control-button {
+    padding: 3px 5px;
+  }
+}

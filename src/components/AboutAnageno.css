@@ -13,7 +13,7 @@
 }
 
 .container {
-  max-width: 1202px;
+  max-width: 1200px; /* Αλλαγή από 1202px σε 1200px για συνέπεια */
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -140,31 +140,31 @@
 /* Media Queries για Κινητά */
 @media (max-width: 768px) {
   .about-anageno {
-    height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
-    padding: 40px 0; /* Προσθέτουμε padding για καλύτερη εμφάνιση */
+    height: auto;
+    padding: 40px 0;
   }
 
   .container {
-    padding: 0 10px; /* Μείωση padding για μικρότερες οθόνες */
+    padding: 0 10px;
   }
 
   .about-content {
-    flex-direction: column; /* Στήλη αντί για σειρά */
+    flex-direction: column;
     gap: 20px;
   }
 
   .about-text {
-    flex: none; /* Αφαίρεση flex για να προσαρμοστεί */
-    width: 100%; /* Καταλαμβάνει όλο το πλάτος */
-    order: 2; /* Η .about-text (therapy-frame) εμφανίζεται δεύτερη */
+    flex: none;
+    width: 100%;
+    order: 2;
   }
 
   .therapy-frame {
-    min-height: 350px; /* Μείωση ύψους */
+    min-height: 350px;
     padding: 20px;
-    width: 100%; /* Εξασφαλίζουμε ότι δεν υπερκαλύπτει */
-    box-sizing: border-box; /* Περιλαμβάνουμε padding στο πλάτος */
-    margin: 0; /* Αφαίρεση περιθωρίων για να μην υπερκαλύπτει */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
   }
 
   .frame-content .sub-title {
@@ -173,44 +173,44 @@
   }
 
   .frame-content h2 {
-    font-size: 36px; /* Μείωση μεγέθους τίτλου */
+    font-size: 36px;
     margin-bottom: 15px;
   }
 
   .frame-content p {
-    font-size: 14px; /* Μείωση μεγέθους κειμένου */
+    font-size: 14px;
     margin-bottom: 15px;
-    max-width: 100%; /* Εξασφαλίζουμε ότι δεν ξεχειλίζει */
+    max-width: 100%;
   }
 
   .image-frame {
-    min-height: 300px; /* Μείωση ύψους της εικόνας */
+    min-height: 300px;
     padding: 20px;
-    width: 100%; /* Εξασφαλίζουμε ότι δεν υπερκαλύπτει */
-    box-sizing: border-box; /* Περιλαμβάνουμε padding στο πλάτος */
-    order: 1; /* Η .image-frame εμφανίζεται πρώτη */
-    margin: 0; /* Αφαίρεση περιθωρίων για να μην υπερκαλύπτει */
+    width: 100%;
+    box-sizing: border-box;
+    order: 1;
+    margin: 0;
   }
 
   .image-frame img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Εξασφαλίζουμε ότι η εικόνα καλύπτει το πλαίσιο */
+    object-fit: cover;
   }
 
   .image-content {
     bottom: 20px;
     left: 20px;
-    max-width: 90%; /* Περιορίζουμε το πλάτος για να μην ξεχειλίζει */
+    max-width: 90%;
   }
 
   .image-content h3 {
-    font-size: 22px; /* Μείωση μεγέθους τίτλου */
+    font-size: 22px;
     margin-bottom: 8px;
   }
 
   .image-content p {
-    font-size: 14px; /* Μείωση μεγέθους κειμένου */
+    font-size: 14px;
     margin-bottom: 15px;
   }
 
@@ -276,7 +276,6 @@
   }
 }
 
-/* Επιπλέον Media Query για πολύ μικρά κινητά (π.χ. iPhone SE) */
 @media (max-width: 375px) {
   .therapy-frame {
     min-height: 280px;

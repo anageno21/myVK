@@ -23,9 +23,9 @@
 }
 
 .section-header {
-  text-align: left;
+  text-align: center; /* Αλλαγή από left σε center για κεντράρισμα */
   max-width: 600px;
-  margin-top: 40px;
+  margin: 40px auto 0 auto; /* Κεντράρισμα με margin auto */
   position: relative;
   overflow: hidden;
 }
@@ -36,7 +36,7 @@
   font-size: 14px;
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
-  text-transform: uppercase; /* Προσθήκη κεφαλαίων */
+  text-transform: uppercase;
 }
 
 .section-header h2 {
@@ -131,7 +131,7 @@
 /* Media Queries για Κινητά */
 @media (max-width: 768px) {
   .specialising-section {
-    min-height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    min-height: auto;
     padding: 20px 0;
   }
 
@@ -141,7 +141,7 @@
 
   .section-header {
     margin-top: 20px;
-    max-width: 100%; /* Εξασφαλίζουμε ότι δεν ξεχειλίζει */
+    max-width: 100%;
   }
 
   .section-header .sub-title {
@@ -164,13 +164,13 @@
   }
 
   .specialising-grid {
-    grid-template-columns: repeat(1, 1fr); /* Στήλη αντί για σειρά */
-    grid-template-rows: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
     gap: 20px;
   }
 
   .specialising-card {
-    min-height: 300px; /* Μείωση ύψους καρτών */
+    min-height: 300px;
   }
 
   .specialising-card h3 {

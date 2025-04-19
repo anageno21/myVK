@@ -1,0 +1,431 @@
+/* src/components/ProfileHeader.css */
+.profile-header-wrapper {
+  background-color: #EDEBE8; /* Εφαρμόζουμε το ίδιο background */
+  position: relative; /* Εξασφαλίζουμε ότι το wrapper καλύπτει την περιοχή */
+  min-height: 80px; /* Δίνουμε ύψος για να καλύψει το μενού */
+  z-index: 2; /* Εξασφαλίζουμε ότι το wrapper είναι κάτω από το μενού */
+}
+
+.profile-header-wrapper .header-container {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 3; /* Το μενού παραμένει πάνω από το wrapper */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.profile-header-wrapper .header-logo img {
+  height: 40px;
+}
+
+.profile-header-wrapper .header-menu {
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profile-header-wrapper .burger-menu {
+  display: none;
+  font-size: 24px;
+  color: #0B2B33 !important;
+  cursor: pointer;
+}
+
+.profile-header-wrapper .navigation {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-header-wrapper .navigation li {
+  margin: 0 15px;
+}
+
+.profile-header-wrapper .navigation li a {
+  color: #0B2B33 !important;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Playfair Display', serif;
+}
+
+.profile-header-wrapper .navigation li a:hover {
+  color: #FF6F61 !important;
+}
+
+/* Στυλ για το dropdown menu (υπηρεσίες) */
+.profile-header-wrapper .navigation .dropdown {
+  position: relative;
+}
+
+.profile-header-wrapper .navigation .dropdown > span {
+  color: #0B2B33 !important;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  border: none;
+}
+
+.profile-header-wrapper .navigation .dropdown > span:hover {
+  background-color: #FF6F61;
+  color: white;
+  border-radius: 15px;
+  padding: 3px 8px;
+}
+
+.profile-header-wrapper .navigation .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: transparent;
+  border: none;
+  border-radius: 15px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 5px 0 0 0;
+  z-index: 10;
+}
+
+/* Κάνω το dropdown να παραμένει ορατό όταν ο κέρσορας είναι πάνω στο .dropdown ή στο .dropdown-menu */
+.profile-header-wrapper .navigation .dropdown:hover .dropdown-menu,
+.profile-header-wrapper .navigation .dropdown-menu:hover {
+  display: block;
+}
+
+.profile-header-wrapper .navigation .dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.profile-header-wrapper .navigation .dropdown-menu li {
+  margin: 0;
+  padding: 5px 15px;
+  color: #0B2B33 !important;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+}
+
+.profile-header-wrapper .navigation .dropdown-menu li a {
+  display: block;
+  padding: 0;
+  font-size: 14px;
+  color: #0B2B33 !important;
+  text-decoration: none;
+}
+
+.profile-header-wrapper .navigation .dropdown-menu li:hover {
+  background-color: #FF6F61;
+  border-radius: 10px;
+}
+
+.profile-header-wrapper .header-language {
+  flex-shrink: 0;
+  margin-right: 20px;
+  position: relative;
+}
+
+.profile-header-wrapper .custom-select {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid #0B2B33 !important;
+  color: #0B2B33 !important;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Playfair Display', serif;
+  padding: 3px 8px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.profile-header-wrapper .custom-select:hover {
+  background-color: #FF6F61;
+  color: white;
+}
+
+.profile-header-wrapper .selected-language {
+  /* Δεν χρειάζεται margin-right αφού δεν υπάρχει βελάκι */
+}
+
+.profile-header-wrapper .language-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: transparent;
+  border: none;
+  border-radius: 15px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 5px 0 0 0;
+  z-index: 10;
+}
+
+.profile-header-wrapper .header-language.open .language-options {
+  display: block !important;
+}
+
+.profile-header-wrapper .language-options li {
+  padding: 5px 15px;
+  color: #0B2B33 !important;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+}
+
+.profile-header-wrapper .language-options li:hover,
+.profile-header-wrapper .language-options li.active {
+  background-color: #FF6F61;
+  border-radius: 10px;
+}
+
+.profile-header-wrapper .header-login {
+  flex-shrink: 0;
+}
+
+.profile-header-wrapper .login-link {
+  color: #0B2B33 !important;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Playfair Display', serif;
+  padding: 10px 20px;
+  border: 1px solid #0B2B33 !important;
+  border-radius: 20px;
+}
+
+.profile-header-wrapper .login-link:hover {
+  background-color: #FF6F61;
+  border-color: #FF6F61;
+  color: white;
+}
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .profile-header-wrapper .header-container {
+    padding: 0 20px;
+    align-items: flex-start;
+  }
+
+  .profile-header-wrapper .burger-menu {
+    display: block;
+  }
+
+  .profile-header-wrapper .header-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  .profile-header-wrapper .header-menu.open {
+    display: flex;
+  }
+
+  .profile-header-wrapper .navigation {
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .profile-header-wrapper .navigation li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .profile-header-wrapper .navigation li a {
+    font-size: 16px;
+    display: block;
+    padding: 10px 0;
+    color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .navigation .dropdown {
+    position: static;
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > span {
+    font-size: 14px;
+    padding: 10px 0;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > span:hover {
+    background-color: #FF6F61;
+    color: white;
+  }
+
+  .profile-header-wrapper .navigation .dropdown-menu {
+    display: none;
+    position: static;
+    background: transparent;
+    padding: 0;
+    margin: 5px 0;
+  }
+
+  .profile-header-wrapper .navigation .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .profile-header-wrapper .navigation .dropdown-menu li {
+    font-size: 14px;
+    padding: 5px 15px;
+    text-align: center;
+    color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .header-language {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-header-wrapper .custom-select {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 0 auto;
+    display: inline-block;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .language-options {
+    display: none;
+    position: static;
+    margin: 5px 0;
+    background: transparent;
+  }
+
+  .profile-header-wrapper .header-language.open .language-options {
+    display: block !important;
+  }
+
+  .profile-header-wrapper .language-options li {
+    font-size: 14px;
+    padding: 5px 15px;
+    text-align: center;
+    color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .header-login {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-header-wrapper .login-link {
+    font-size: 16px;
+    padding: 10px 20px;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-header-wrapper .header-container {
+    padding: 0 15px;
+  }
+
+  .profile-header-wrapper .burger-menu {
+    font-size: 22px;
+  }
+
+  .profile-header-wrapper .header-menu {
+    top: 50px;
+    padding: 15px;
+  }
+
+  .profile-header-wrapper .navigation li a {
+    font-size: 14px;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > span {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .profile-header-wrapper .navigation .dropdown-menu li {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .profile-header-wrapper .custom-select {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .profile-header-wrapper .language-options li {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .profile-header-wrapper .login-link {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .profile-header-wrapper .header-container {
+    padding: 0 10px;
+  }
+
+  .profile-header-wrapper .burger-menu {
+    font-size: 20px;
+  }
+
+  .profile-header-wrapper .header-menu {
+    top: 45px;
+    padding: 10px;
+  }
+
+  .profile-header-wrapper .navigation li a {
+    font-size: 12px;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > span {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .profile-header-wrapper .navigation .dropdown-menu li {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .profile-header-wrapper .custom-select {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .profile-header-wrapper .language-options li {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .profile-header-wrapper .login-link {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

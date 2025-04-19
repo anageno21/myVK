@@ -14,7 +14,7 @@ const AboutAnageno = () => {
               <div className="image-content">
                 <h3>Viktoria Kotenko</h3>
                 <p>Psychologist Counsellor</p>
-                <Link to="/learn-more" className="read-more">Learn More</Link>
+                <Link to="/victoria-kotenko" className="read-more">Learn More</Link>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import NewFooter from './components/NewFooter';
+import VictoriaKotenkoProfilePage from './components/VictoriaKotenkoProfilePage'; // Εξασφάλιση εισαγωγής
 
 // Placeholder components for missing pages
 const AboutSection = () => <div>About Section Placeholder</div>;
@@ -196,6 +197,7 @@ function App() {
               <Route path="/therapists-details" element={<TherapistsDetailsPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/learn-more" element={<LearnMorePage />} />
+              <Route path="/victoria-kotenko" element={<VictoriaKotenkoProfilePage />} />
             </Routes>
             <NewFooter />
           </>
