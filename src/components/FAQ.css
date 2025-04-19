@@ -53,38 +53,42 @@
 }
 
 .faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 40px;
+  align-items: stretch;
 }
 
 .faq-item {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
 }
 
 .faq-question {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Διατήρηση της διάταξης σε στήλη */
   align-items: center;
   cursor: pointer;
 }
 
 .faq-question h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
+  line-height: 1.0;
   color: #173A37;
   margin: 0;
   font-family: 'Playfair Display', serif;
+  text-align: center;
 }
 
-.faq-question .toggle-icon {
-  font-size: 24px;
-  color: #173A37;
-}
-
+/* Αφαίρεση του .toggle-icon από το CSS, αφού δεν χρησιμοποιείται πλέον */
 .faq-answer {
   margin-top: 10px;
+  flex-grow: 1;
 }
 
 .faq-answer p {
@@ -97,7 +101,7 @@
 /* Media Queries για Κινητά */
 @media (max-width: 768px) {
   .faq-section {
-    min-height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    min-height: auto;
     padding: 20px 0;
   }
 
@@ -125,19 +129,19 @@
   }
 
   .faq-list {
-    gap: 15px;
+    grid-template-columns: 1fr !important;
+    column-gap: 0;
+    row-gap: 15px;
   }
 
   .faq-item {
     padding-bottom: 8px;
+    min-height: auto;
   }
 
   .faq-question h3 {
-    font-size: 18px;
-  }
-
-  .faq-question .toggle-icon {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1.0;
   }
 
   .faq-answer {
@@ -178,7 +182,7 @@
   }
 
   .faq-list {
-    gap: 10px;
+    row-gap: 10px;
   }
 
   .faq-item {
@@ -186,11 +190,8 @@
   }
 
   .faq-question h3 {
-    font-size: 16px;
-  }
-
-  .faq-question .toggle-icon {
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 1.0;
   }
 
   .faq-answer {
@@ -231,7 +232,7 @@
   }
 
   .faq-list {
-    gap: 8px;
+    row-gap: 8px;
   }
 
   .faq-item {
@@ -239,11 +240,8 @@
   }
 
   .faq-question h3 {
-    font-size: 14px;
-  }
-
-  .faq-question .toggle-icon {
-    font-size: 16px;
+    font-size: 12px;
+    line-height: 1.0;
   }
 
   .faq-answer {
