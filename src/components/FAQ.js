@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './FAQ.css';
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(1); // Η δεύτερη ερώτηση είναι ανοιχτή αρχικά
+  const [activeIndex, setActiveIndex] = useState(null); // Αλλαγή από 1 σε null
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -21,7 +21,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(0)}>
               <h3>Чем уникальна эта платформа и почему ей можно доверять?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 0 && (
               <div className="faq-answer">
@@ -32,7 +31,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(1)}>
               <h3>Как понять, подойдут ли мне терапевтические пакеты?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 1 && (
               <div className="faq-answer">
@@ -43,7 +41,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(2)}>
               <h3>Что входит в базовую подписку?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 2 && (
               <div className="faq-answer">
@@ -54,7 +51,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(3)}>
               <h3>Как проходят ваши сессии?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 3 && (
               <div className="faq-answer">
@@ -65,7 +61,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(4)}>
               <h3>Сколько сессий нужно, чтобы почувствовать результат?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 4 && (
               <div className="faq-answer">
@@ -76,7 +71,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(5)}>
               <h3>Можно ли отменить подписку?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 5 && (
               <div className="faq-answer">
@@ -87,7 +81,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(6)}>
               <h3>Что, если я не смогу прийти на сессию?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 6 && (
               <div className="faq-answer">
@@ -98,7 +91,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(7)}>
               <h3>Могу ли я изменить тему подписки, если уже начал работать с одним блоком?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 7 && (
               <div className="faq-answer">
@@ -109,7 +101,6 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(8)}>
               <h3>А если у меня нет опыта в терапии — подойдёт ли мне эта платформа?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 8 && (
               <div className="faq-answer">
@@ -120,11 +111,10 @@ const FAQ = () => {
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(9)}>
               <h3>Можно ли с вами поработать индивидуально?</h3>
-              {/* Αφαίρεση του toggle-icon */}
             </div>
             {activeIndex === 9 && (
               <div className="faq-answer">
-                <p>Да, конечно. Если вы почувствуете, что вам нужна более глубокая личная поддержка — выいつも можете записаться на индивидуальную консультацию. Это можно сделать как в рамках подписки через премиум пакет, так и отдельно. Мы обсудим ваш запрос, выберем удобное время и начнём путь, в котором вы получите профессиональное сопровождение.</p>
+                <p>Да, конечно. Если вы почувствуете, что вам нужна более глубокая личная поддержка — вы всегда можете записаться на индивидуальную консультацию. Это можно сделать как в рамках подписки через премиум пакет, так и отдельно. Мы обсудим ваш запрос, выберем удобное время и начнём путь, в котором вы получите профессиональное сопровождение.</p>
               </div>
             )}
           </div>
