@@ -7,7 +7,7 @@ const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedLanguage, setSelectedLanguage] = useState('English');
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State για το burger menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const languages = [
     { value: 'English', label: 'English' },
@@ -39,26 +39,30 @@ const HeroSlider = () => {
     {
       type: 'image',
       src: '/images/section/hero 2.png',
-      title: "Strengthen Your Emotional Core",
-      text: "Our therapy sessions focus on empowering you to regain emotional balance and resilience. Let us guide you through life’s obstacles with care and proven strategies.",
+      title: "Межличностные отношения", // Αντικατάσταση τίτλου
+      text: "Научитесь слышать и не предавать себя в любых отношениях", // Αντικατάσταση κειμένου
+      description: "Здесь мы разбираемся, почему повторяются болезненные сценарии, учимся говорить о своих чувствах и строить контакт — честно, спокойно и с уважением к себе.", // Προσθήκη επιπλέον περιγραφής
     },
     {
       type: 'image',
       src: '/images/section/hero 3.png',
-      title: "Renew Your Strength and Resilience",
-      text: "We focus on renewing your strength and resilience. Our tailored therapy sessions offer the support and strategies you need to overcome challenges & thrive.",
+      title: "Самооценка и уверенность в себе", // Αντικατάσταση τίτλου
+      text: "Строим уверенность, повышаем самооценку — шаг за шагом", // Αντικατάσταση κειμένου
+      description: "Здесь вы разберётесь, откуда берётся внутренний критик, научитесь замечать свои сильные стороны и поддерживать себя в трудные моменты. Вы получите реальные инструменты, чтобы опираться на себя, а не на чужую оценку.", // Προσθήκη επιπλέον περιγραφής
     },
     {
       type: 'image',
       src: '/images/section/hero 4.png',
-      title: "Discover Inner Peace and Balance",
-      text: "Our expert therapists provide personalized sessions to help you find inner peace and emotional balance in your daily life.",
+      title: "Адаптация", // Αντικατάσταση τίτλου
+      text: "Как не потерять себя в новой реальности", // Αντικατάσταση κειμένου
+      description: "Разберётесь, как сохранить психическое равновесие в условиях перемен. Научитесь гибкости мышления, приёму «маленьких шагов» и эмоциональной устойчивости.", // Προσθήκη επιπλέον περιγραφής
     },
     {
       type: 'image',
       src: '/images/section/hero 5.png',
-      title: "Empower Your Mind and Spirit",
-      text: "Join our therapy programs to empower your mind and spirit, unlocking your full potential with professional guidance.",
+      title: "Стресс и тревожность", // Αντικατάσταση τίτλου
+      text: "Когда всё внутри слишком долго было в напряжении", // Αντικατάσταση κειμένου
+      description: "Здесь вы разберётесь, как стресс и тревожность накапливаются, влияют на тело и поведение. Вы научитесь восстанавливаться, регулировать напряжение и возвращать себе энергию — шаг за шагом.", // Προσθήκη επιπλέον περιγραφής
     },
   ];
 
@@ -135,7 +139,8 @@ const HeroSlider = () => {
           <div className="slide-content">
             <h2>{slide.title}</h2>
             <p>{slide.text}</p>
-            <Link to="/learn-more" className="read-more">Read More</Link>
+            {slide.description && <p>{slide.description}</p>} {/* Προσθήκη επιπλέον περιγραφής */}
+            <Link to="/learn-more" className="read-more">Читать больше</Link> {/* Αντικατάσταση Read More */}
           </div>
         </div>
       ))}
