@@ -4,16 +4,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-// Αφαίρεση των εισαγωγών που προκαλούν σφάλματα
-// import './styles/animate.min.css';
-// import './styles/swiper-bundle.min.css';
-// import './styles/styles.css';
+import { BrowserRouter } from 'react-router-dom'; // Εισαγωγή του BrowserRouter
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter> {/* Προσθήκη του BrowserRouter */}
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
