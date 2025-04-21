@@ -1,14 +1,13 @@
+// src/pages/ContactPage.js
 import React from 'react';
-import PageTitleContact from '../components/PageTitleContact';
-import ContactSection from '../components/ContactSection';
 
-function ContactPage() {
+const ContactPage = () => {
   return (
-    <>
-      <PageTitleContact />
-      <ContactSection />
-    </>
+    <div>
+      <h2>Contact Us</h2>
+      <p>This is a placeholder for the Contact page.</p>
+    </div>
   );
-}
+};
 
 export default ContactPage;

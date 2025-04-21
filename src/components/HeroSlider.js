@@ -6,8 +6,9 @@ import './HeroSlider.css';
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedLanguage, setSelectedLanguage] = useState('English');
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Νέο state για το dropdown του Services
+  const [isCouncillorsDropdownOpen, setIsCouncillorsDropdownOpen] = useState(false); // Νέο state για το dropdown του Councillors
 
   const languages = [
     { value: 'English', label: 'English' },
@@ -15,18 +16,23 @@ const HeroSlider = () => {
     { value: 'Russian', label: 'Русский' },
   ];
 
-  const handleLanguageToggle = () => {
-    setIsLanguageOpen(!isLanguageOpen);
-  };
-
   const handleLanguageSelect = (language) => {
     setSelectedLanguage(language);
-    setIsLanguageOpen(false);
     console.log("Selected language:", language);
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (isDropdownOpen) setIsDropdownOpen(false);
+    if (isCouncillorsDropdownOpen) setIsCouncillorsDropdownOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const toggleCouncillorsDropdown = () => {
+    setIsCouncillorsDropdownOpen(!isCouncillorsDropdownOpen);
   };
 
   const slides = [
@@ -39,30 +45,30 @@ const HeroSlider = () => {
     {
       type: 'image',
       src: '/images/section/hero 2.png',
-      title: "Межличностные отношения", // Αντικατάσταση τίτλου
-      text: "Научитесь слышать и не предавать себя в любых отношениях", // Αντικατάσταση κειμένου
-      description: "Здесь мы разбираемся, почему повторяются болезненные сценарии, учимся говорить о своих чувствах и строить контакт — честно, спокойно и с уважением к себе.", // Προσθήκη επιπλέον περιγραφής
+      title: "Межличностные отношения",
+      text: "Научитесь слышать и не предавать себя в любых отношениях",
+      description: "Здесь мы разбираемся, почему повторяются болезненные сценарии, учимся говорить о своих чувствах и строить контакт — честно, спокойно и с уважением к себе.",
     },
     {
       type: 'image',
       src: '/images/section/hero 3.png',
-      title: "Самооценка и уверенность в себе", // Αντικατάσταση τίτλου
-      text: "Строим уверенность, повышаем самооценку — шаг за шагом", // Αντικατάσταση κειμένου
-      description: "Здесь вы разберётесь, откуда берётся внутренний критик, научитесь замечать свои сильные стороны и поддерживать себя в трудные моменты. Вы получите реальные инструменты, чтобы опираться на себя, а не на чужую оценку.", // Προσθήκη επιπλέον περιγραφής
+      title: "Самооценка и уверенность в себе",
+      text: "Строим уверенность, повышаем самооценку — шаг за шагом",
+      description: "Здесь вы разберётесь, откуда берётся внутренний критик, научитесь замечать свои сильные стороны и поддерживать себя в трудные моменты. Вы получите реальные инструменты, чтобы опираться на себя, а не на чужую оценку.",
     },
     {
       type: 'image',
       src: '/images/section/hero 4.png',
-      title: "Адаптация", // Αντικατάσταση τίτλου
-      text: "Как не потерять себя в новой реальности", // Αντικατάσταση κειμένου
-      description: "Разберётесь, как сохранить психическое равновесие в условиях перемен. Научитесь гибкости мышления, приёму «маленьких шагов» и эмоциональной устойчивости.", // Προσθήκη επιπλέον περιγραφής
+      title: "Адаптация",
+      text: "Как не потерять себя в новой реальности",
+      description: "Разберётесь, как сохранить психическое равновесие в условиях перемен. Научитесь гибкости мышления, приёму «маленьких шагов» и эмоциональной устойчивости.",
     },
     {
       type: 'image',
       src: '/images/section/hero 5.png',
-      title: "Стресс и тревожность", // Αντικατάσταση τίτλου
-      text: "Когда всё внутри слишком долго было в напряжении", // Αντικατάσταση κειμένου
-      description: "Здесь вы разберётесь, как стресс и тревожность накапливаются, влияют на тело и поведение. Вы научитесь восстанавливаться, регулировать напряжение и возвращать себе энергию — шаг за шагом.", // Προσθήκη επιπλέον περιγραφής
+      title: "Стресс и тревожность",
+      text: "Когда всё внутри слишком долго было в напряжении",
+      description: "Здесь вы разберётесь, как стресс и тревожность накапливаются, влияют на тело и поведение. Вы научитесь восстанавливаться, регулировать напряжение и возвращать себе энергию — шаг за шагом.",
     },
   ];
 
@@ -87,29 +93,40 @@ const HeroSlider = () => {
         <nav className={`header-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul className="navigation">
             <li><Link to="/about">About</Link></li>
-            <li><Link to="/our-service">Services</Link></li>
-            <li><Link to="/our-therapists">Councillors</Link></li>
+            <li className="dropdown">
+              <span onClick={toggleDropdown}>Services</span>
+              <ul className={`dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
+                <li><Link to="/relationship-service">Relationship</Link></li>
+                <li><Link to="/stress-anxiety">Stress / Anxiety</Link></li>
+                <li><Link to="/self-confidence">Self-Confidence / Self-Esteem</Link></li>
+                <li><Link to="/adaptation">Adaptation</Link></li>
+              </ul>
+            </li>
+            <li className="dropdown">
+              <span onClick={toggleCouncillorsDropdown}>Councillors</span>
+              <ul className={`dropdown-menu ${isCouncillorsDropdownOpen ? 'open' : ''}`}>
+                <li><Link to="/victoria-kotenko">Victoria Kotenko</Link></li>
+              </ul>
+            </li>
             <li><Link to="/our-product">Shop</Link></li>
             <li><Link to="/blog-grid">Blog</Link></li>
             <li><Link to="/contact-us">Contact</Link></li>
           </ul>
           <div className="header-language">
-            <div className="custom-select" onClick={handleLanguageToggle}>
+            <div className="custom-select">
               <span className="selected-language">{selectedLanguage}</span>
             </div>
-            {isLanguageOpen && (
-              <ul className="language-options">
-                {languages.map((lang) => (
-                  <li
-                    key={lang.value}
-                    onClick={() => handleLanguageSelect(lang.label)}
-                    className={lang.label === selectedLanguage ? 'active' : ''}
-                  >
-                    {lang.label}
-                  </li>
-                ))}
-              </ul>
-            )}
+            <ul className="language-options">
+              {languages.map((lang) => (
+                <li
+                  key={lang.value}
+                  onClick={() => handleLanguageSelect(lang.label)}
+                  className={lang.label === selectedLanguage ? 'active' : ''}
+                >
+                  {lang.label}
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="header-login">
             <Link to="/login" className="login-link">Log In</Link>
@@ -139,8 +156,8 @@ const HeroSlider = () => {
           <div className="slide-content">
             <h2>{slide.title}</h2>
             <p>{slide.text}</p>
-            {slide.description && <p>{slide.description}</p>} {/* Προσθήκη επιπλέον περιγραφής */}
-            <Link to="/learn-more" className="read-more">Читать больше</Link> {/* Αντικατάσταση Read More */}
+            {slide.description && <p>{slide.description}</p>}
+            <Link to="/learn-more" className="read-more">Читать больше</Link>
           </div>
         </div>
       ))}

@@ -1,0 +1,238 @@
+/* src/components/ServicesSection.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.services-section {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-header .sub-title {
+  display: block;
+  color: #ff6f61;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+}
+
+.services-header h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.services-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.service-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-item h5 {
+  font-size: 20px;
+  margin: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.service-item h5 a {
+  text-decoration: none;
+  color: #333;
+}
+
+.service-item h5 a:hover {
+  color: #ff6f61;
+}
+
+.service-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 20px 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.service-item .read-more {
+  display: inline-block;
+  margin: 0 20px 20px;
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+}
+
+.service-item .read-more:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .services-header {
+    margin-bottom: 30px;
+  }
+
+  .services-header .sub-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .services-header h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .services-header p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .services-grid {
+    gap: 15px;
+  }
+
+  .service-item img {
+    height: 180px;
+  }
+
+  .service-item h5 {
+    font-size: 18px;
+    margin: 15px;
+  }
+
+  .service-item p {
+    font-size: 13px;
+    margin: 0 15px 15px;
+  }
+
+  .service-item .read-more {
+    margin: 0 15px 15px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-section {
+    padding: 30px 0;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+
+  .services-header {
+    margin-bottom: 20px;
+  }
+
+  .services-header .sub-title {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .services-header h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .services-header p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .services-grid {
+    gap: 10px;
+  }
+
+  .service-item img {
+    height: 160px;
+  }
+
+  .service-item h5 {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  .service-item p {
+    font-size: 12px;
+    margin: 0 10px 10px;
+  }
+
+  .service-item .read-more {
+    margin: 0 10px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .services-section {
+    padding: 20px 0;
+  }
+
+  .services-header .sub-title {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .services-header h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .services-header p {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .service-item img {
+    height: 140px;
+  }
+
+  .service-item h5 {
+    font-size: 14px;
+    margin: 8px;
+  }
+
+  .service-item p {
+    font-size: 11px;
+    margin: 0 8px 8px;
+  }
+
+  .service-item .read-more {
+    margin: 0 8px 8px;
+    font-size: 11px;
+  }
+}

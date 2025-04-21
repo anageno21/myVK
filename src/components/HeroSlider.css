@@ -90,7 +90,81 @@
 }
 
 .navigation li a:hover {
-  color: #FF6F61;
+  color: white !important; /* Λευκά γράμματα στο hover */
+  background-color: #FF6F61; /* Φόντο για το "πλαίσιο" */
+  padding: 3px 8px; /* Padding για το πλαίσιο */
+  border-radius: 15px; /* Στρογγυλεμένες γωνίες */
+}
+
+/* Στυλ για το dropdown menu (υπηρεσίες και councillors) */
+.navigation .dropdown {
+  position: relative;
+}
+
+.navigation .dropdown > span {
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  border: none;
+}
+
+.navigation .dropdown > span:hover {
+  color: white !important; /* Λευκά γράμματα στο hover */
+  background-color: #FF6F61;
+  padding: 3px 8px;
+  border-radius: 15px;
+}
+
+.navigation .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: transparent;
+  border: none;
+  border-radius: 15px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 5px 0 0 0;
+  z-index: 10;
+}
+
+/* Κάνω το dropdown να παραμένει ορατό όταν ο κέρσορας είναι πάνω στο .dropdown ή στο .dropdown-menu */
+.navigation .dropdown:hover .dropdown-menu,
+.navigation .dropdown-menu:hover {
+  display: block;
+}
+
+.navigation .dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.navigation .dropdown-menu li {
+  margin: 0;
+  padding: 5px 15px;
+  color: white !important;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+}
+
+.navigation .dropdown-menu li a {
+  display: block;
+  padding: 0;
+  font-size: 14px;
+  color: white !important;
+  text-decoration: none;
+}
+
+.navigation .dropdown-menu li:hover {
+  background-color: #FF6F61;
+  border-radius: 10px;
+}
+
+.navigation .dropdown-menu li:hover a {
+  color: white !important; /* Λευκά γράμματα στο hover του dropdown */
 }
 
 .header-language {
@@ -105,12 +179,23 @@
   background: transparent;
   border: 1px solid white;
   color: white;
-  font-size: 14px;
+  font-size: 16px; /* Ίδιο μέγεθος γραμματοσειράς με το μενού */
   font-weight: normal;
   font-family: 'Playfair Display', serif;
-  padding: 3px 8px;
+  padding: 3px 8px; /* Ίδιο padding με το μενού */
   border-radius: 15px;
   cursor: pointer;
+}
+
+.custom-select:hover {
+  background-color: #FF6F61;
+  color: white !important;
+  border-color: transparent !important; /* Αφαίρεση του περιγράμματος στο hover */
+}
+
+/* Εμφάνιση του dropdown της γλώσσας στο hover */
+.header-language:hover .language-options {
+  display: block;
 }
 
 .selected-language {
@@ -118,6 +203,7 @@
 }
 
 .language-options {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -142,6 +228,7 @@
 .language-options li.active {
   background-color: #FF6F61;
   border-radius: 10px;
+  color: white !important; /* Λευκά γράμματα στο hover */
 }
 
 .header-login {
@@ -161,8 +248,8 @@
 
 .login-link:hover {
   background-color: #FF6F61;
-  border-color: #FF6F61;
-  color: white;
+  border-color: transparent !important; /* Αφαίρεση του περιγράμματος στο hover */
+  color: white !important;
 }
 
 /* Στυλ για τον τίτλο και το κείμενο πάνω στις εικόνες */
@@ -283,6 +370,66 @@
     font-size: 16px; /* Κρατάμε το μέγεθος ευανάγνωστο */
     display: block;
     padding: 10px 0;
+    color: #FFFFFF !important;
+  }
+
+  .navigation li a:hover {
+    color: white !important; /* Λευκά γράμματα στο hover */
+    background-color: #FF6F61;
+    padding: 10px 0; /* Κρατάμε το padding ίδιο με το mobile */
+    border-radius: 15px;
+  }
+
+  .navigation .dropdown {
+    position: static;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navigation .dropdown > span {
+    font-size: 16px; /* Ίδιο μέγεθος γραμματοσειράς με το μενού */
+    padding: 10px 0;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    color: #FFFFFF !important;
+  }
+
+  .navigation .dropdown > span:hover {
+    background-color: #FF6F61;
+    color: white !important;
+  }
+
+  .navigation .dropdown-menu {
+    display: none;
+    position: static;
+    background: transparent;
+    padding: 0;
+    margin: 5px 0;
+  }
+
+  .navigation .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .navigation .dropdown-menu li {
+    font-size: 14px;
+    padding: 5px 15px;
+    text-align: center;
+    color: #FFFFFF !important;
+  }
+
+  .navigation .dropdown-menu li a {
+    color: #FFFFFF !important;
+  }
+
+  .navigation .dropdown-menu li:hover {
+    background-color: #FF6F61;
+    border-radius: 10px;
+  }
+
+  .navigation .dropdown-menu li:hover a {
+    color: white !important; /* Λευκά γράμματα στο hover του dropdown */
   }
 
   .header-language {
@@ -292,13 +439,22 @@
   }
 
   .custom-select {
-    font-size: 14px;
-    padding: 5px 10px;
+    font-size: 16px; /* Ίδιο μέγεθος γραμματοσειράς με το μενού */
+    padding: 5px 10px; /* Προσαρμογή padding για mobile */
     margin: 0 auto;
     display: inline-block;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+  }
+
+  .custom-select:hover {
+    background-color: #FF6F61;
+    color: white !important;
+    border-color: transparent !important; /* Αφαίρεση του περιγράμματος στο hover */
   }
 
   .language-options {
+    display: none;
     position: static;
     margin: 5px 0;
     background: transparent;
@@ -308,6 +464,14 @@
     font-size: 14px;
     padding: 5px 15px;
     text-align: center;
+    color: #FFFFFF !important;
+  }
+
+  .language-options li:hover,
+  .language-options li.active {
+    background-color: #FF6F61;
+    border-radius: 10px;
+    color: white !important; /* Λευκά γράμματα στο hover */
   }
 
   .header-login {
@@ -319,6 +483,14 @@
   .login-link {
     font-size: 16px;
     padding: 10px 20px;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+  }
+
+  .login-link:hover {
+    background-color: #FF6F61;
+    border-color: transparent !important; /* Αφαίρεση του περιγράμματος στο hover */
+    color: white !important;
   }
 
   .slide-content {
@@ -376,8 +548,18 @@
     font-size: 14px;
   }
 
-  .custom-select {
+  .navigation .dropdown > span {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .navigation .dropdown-menu li {
     font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .custom-select {
+    font-size: 14px; /* Προσαρμογή για μικρότερες οθόνες */
     padding: 4px 8px;
   }
 
@@ -445,8 +627,18 @@
     font-size: 12px;
   }
 
-  .custom-select {
+  .navigation .dropdown > span {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .navigation .dropdown-menu li {
     font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .custom-select {
+    font-size: 12px; /* Προσαρμογή για πολύ μικρές οθόνες */
     padding: 3px 6px;
   }
 

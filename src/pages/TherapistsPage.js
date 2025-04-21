@@ -1,14 +1,13 @@
+// src/pages/TherapistsPage.js
 import React from 'react';
-import PageTitleTherapists from '../components/PageTitleTherapists';
-import TherapistSection from '../components/TherapistSection';
 
-function TherapistsPage() {
+const TherapistsPage = () => {
   return (
-    <>
-      <PageTitleTherapists />
-      <TherapistSection />
-    </>
+    <div>
+      <h2>Our Therapists</h2>
+      <p>This is a placeholder for the Therapists page.</p>
+    </div>
   );
-}
+};
 
 export default TherapistsPage;
