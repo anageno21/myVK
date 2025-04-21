@@ -1,37 +1,67 @@
 /* src/components/VideoHighlightSection.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 .video-highlight-section {
   width: 100%;
   padding: 80px 0 40px 0;
   background-color: #EDEBE8;
 }
 
-.video-container { /* Μετονομασία από .container σε .video-container */
-  max-width: 1400px;
+.video-container {
+  max-width: 1200px; /* Ίδιο max-width με το TwoColumnSection */
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 40px; /* Αρχικό padding */
   box-sizing: border-box;
   display: flex;
   justify-content: center;
 }
 
 .video-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0; /* Αφαίρεση περιθωρίων */
+  padding: 0 30px 0 70px; /* Ίδιο padding με το TwoColumnSection */
+}
+
+.video-content {
+  width: 100%;
+  margin: 0; /* Αφαίρεση περιθωρίων */
+  padding: 0; /* Αφαίρεση padding */
+  box-sizing: border-box;
+}
+
+.right-column {
+  padding: 0; /* Αφαίρεση padding */
+  margin: 0; /* Αφαίρεση περιθωρίων */
+}
+
+.video-frame {
+  position: relative;
+  width: 424px; /* Ίδιο πλάτος με την εικόνα στην αριστερή στήλη του TwoColumnSection */
+  aspect-ratio: 9 / 16; /* Διατήρηση της αναλογίας του βίντεο */
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0; /* Αφαίρεση περιθωρίων */
+  margin-left: 345px; /* Μετακίνηση επιπλέον 150px προς τα δεξιά (150px + 150px) */
+  margin-top: -50px; /* Μετακίνηση 50px πιο πάνω */
 }
 
 .highlight-video {
-  max-width: 600px;
   width: 100%;
-  aspect-ratio: 9 / 16;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .video-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Ημιδιάφανο φόντο για τα χειριστήρια */
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .control-button {
@@ -58,20 +88,32 @@
     padding: 50px 0 20px 0;
   }
 
-  .video-container { /* Ενημέρωση της class */
+  .video-container {
     padding: 0 20px;
   }
 
-  .highlight-video {
-    max-width: 100%;
+  .video-wrapper {
+    padding: 0 30px; /* Ίδιο padding με το TwoColumnSection σε κινητά */
   }
 
-  .video-wrapper {
-    gap: 10px;
+  .video-content {
+    padding: 0; /* Αφαίρεση padding σε κινητά */
+  }
+
+  .right-column {
+    padding: 0; /* Αφαίρεση padding σε κινητά */
+    margin: 0; /* Αφαίρεση περιθωρίων σε κινητά */
+  }
+
+  .video-frame {
+    width: 100%; /* Πλήρες πλάτος σε mobile */
+    margin-left: 0; /* Αφαίρεση της μετατόπισης σε κινητά */
   }
 
   .video-controls {
     gap: 15px;
+    bottom: 15px;
+    padding: 8px;
   }
 
   .control-button {
@@ -84,12 +126,18 @@
     padding: 30px 0 15px 0;
   }
 
-  .video-container { /* Ενημέρωση της class */
+  .video-container {
     padding: 0 10px;
+  }
+
+  .video-wrapper {
+    padding: 0 20px; /* Ίδιο padding με το TwoColumnSection σε κινητά */
   }
 
   .video-controls {
     gap: 12px;
+    bottom: 10px;
+    padding: 6px;
   }
 
   .control-button {
@@ -102,12 +150,18 @@
     padding: 20px 0 10px 0;
   }
 
-  .video-container { /* Ενημέρωση της class */
+  .video-container {
     padding: 0 5px;
+  }
+
+  .video-wrapper {
+    padding: 0 15px; /* Ίδιο padding με το TwoColumnSection σε κινητά */
   }
 
   .video-controls {
     gap: 10px;
+    bottom: 8px;
+    padding: 5px;
   }
 
   .control-button {
