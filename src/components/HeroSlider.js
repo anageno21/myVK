@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './HeroSlider.css';
 
-const HeroSlider = () => {
+const HeroSlider = ({ showOnlyVideo = false, videoSrc = '/videos/hero-video-1.mp4' }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedLanguage, setSelectedLanguage] = useState('English');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Νέο state για το dropdown του Services
-  const [isCouncillorsDropdownOpen, setIsCouncillorsDropdownOpen] = useState(false); // Νέο state για το dropdown του Councillors
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isCouncillorsDropdownOpen, setIsCouncillorsDropdownOpen] = useState(false);
 
   const languages = [
     { value: 'English', label: 'English' },
@@ -38,7 +38,7 @@ const HeroSlider = () => {
   const slides = [
     {
       type: 'video',
-      src: '/videos/hero-video-1.mp4',
+      src: videoSrc,
       title: "выбрать формат сессий с терапевтом, если нужна личная поддержка",
       text: "At Anageno, our specialized therapy for children offers a safe and nurturing environment where your child can express their feelings, develop emotional resilience, and navigate life’s challenges with confidence.",
     },
@@ -72,12 +72,16 @@ const HeroSlider = () => {
     },
   ];
 
+  const displayedSlides = showOnlyVideo ? [slides[0]] : slides;
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [slides.length]);
+    if (displayedSlides.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % displayedSlides.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [displayedSlides.length]);
 
   return (
     <div className="hero-slider">
@@ -94,7 +98,13 @@ const HeroSlider = () => {
           <ul className="navigation">
             <li><Link to="/about">About</Link></li>
             <li className="dropdown">
-              <span onClick={toggleDropdown}>Services</span>
+              {/* Separate the Link for navigation and span for toggling dropdown */}
+              <div className="dropdown-header">
+                <Link to="/our-service">Services</Link>
+                <span onClick={toggleDropdown} className="dropdown-toggle">
+                  <i className={`las ${isDropdownOpen ? 'la-angle-up' : 'la-angle-down'}`}></i>
+                </span>
+              </div>
               <ul className={`dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
                 <li><Link to="/relationship-service">Relationship</Link></li>
                 <li><Link to="/stress-anxiety">Stress / Anxiety</Link></li>
@@ -133,7 +143,7 @@ const HeroSlider = () => {
           </div>
         </nav>
       </div>
-      {slides.map((slide, index) => (
+      {displayedSlides.map((slide, index) => (
         <div
           key={index}
           className={`slide ${index === currentSlide ? 'active' : ''}`}
@@ -161,15 +171,17 @@ const HeroSlider = () => {
           </div>
         </div>
       ))}
-      <div className="pagination">
-        {slides.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => setCurrentSlide(index)}
-          ></span>
-        ))}
-      </div>
+      {displayedSlides.length > 1 && (
+        <div className="pagination">
+          {displayedSlides.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            ></span>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

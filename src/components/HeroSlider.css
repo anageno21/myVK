@@ -64,10 +64,11 @@
 }
 
 .burger-menu {
-  display: none; /* Κρύβουμε το burger menu σε desktop */
+  display: none;
   font-size: 24px;
   color: white;
   cursor: pointer;
+  z-index: 1001; /* Ensure burger menu is clickable */
 }
 
 .navigation {
@@ -90,10 +91,10 @@
 }
 
 .navigation li a:hover {
-  color: white !important; /* Λευκά γράμματα στο hover */
-  background-color: #FF6F61; /* Φόντο για το "πλαίσιο" */
-  padding: 3px 8px; /* Padding για το πλαίσιο */
-  border-radius: 15px; /* Στρογγυλεμένες γωνίες */
+  color: white !important;
+  background-color: #FF6F61;
+  padding: 3px 8px;
+  border-radius: 15px;
 }
 
 /* Στυλ για το dropdown menu (υπηρεσίες και councillors) */
@@ -101,20 +102,35 @@
   position: relative;
 }
 
-.navigation .dropdown > span {
+.navigation .dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navigation .dropdown > .dropdown-header > a {
   color: white;
   font-size: 16px;
   font-weight: normal;
   font-family: 'Playfair Display', serif;
-  cursor: pointer;
-  border: none;
+  text-decoration: none;
 }
 
-.navigation .dropdown > span:hover {
-  color: white !important; /* Λευκά γράμματα στο hover */
+.navigation .dropdown > .dropdown-header > a:hover {
+  color: white !important;
   background-color: #FF6F61;
   padding: 3px 8px;
   border-radius: 15px;
+}
+
+.navigation .dropdown > .dropdown-header > span {
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.navigation .dropdown > .dropdown-header > span:hover {
+  color: #FF6F61;
 }
 
 .navigation .dropdown-menu {
@@ -128,7 +144,7 @@
   list-style: none;
   padding: 5px 0;
   margin: 5px 0 0 0;
-  z-index: 10;
+  z-index: 1002; /* Ensure dropdown is above other elements */
 }
 
 /* Κάνω το dropdown να παραμένει ορατό όταν ο κέρσορας είναι πάνω στο .dropdown ή στο .dropdown-menu */
@@ -164,7 +180,7 @@
 }
 
 .navigation .dropdown-menu li:hover a {
-  color: white !important; /* Λευκά γράμματα στο hover του dropdown */
+  color: white !important;
 }
 
 .header-language {
@@ -179,10 +195,10 @@
   background: transparent;
   border: 1px solid white;
   color: white;
-  font-size: 16px; /* Ίδιο μέγεθος γραμματοσειράς με το μενού */
+  font-size: 16px;
   font-weight: normal;
   font-family: 'Playfair Display', serif;
-  padding: 3px 8px; /* Ίδιο padding με το μενού */
+  padding: 3px 8px;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -190,7 +206,7 @@
 .custom-select:hover {
   background-color: #FF6F61;
   color: white !important;
-  border-color: transparent !important; /* Αφαίρεση του περιγράμματος στο hover */
+  border-color: transparent !important;
 }
 
 /* Εμφάνιση του dropdown της γλώσσας στο hover */
@@ -213,7 +229,7 @@
   list-style: none;
   padding: 5px 0;
   margin: 5px 0 0 0;
-  z-index: 10;
+  z-index: 1002;
 }
 
 .language-options li {
@@ -228,7 +244,7 @@
 .language-options li.active {
   background-color: #FF6F61;
   border-radius: 10px;
-  color: white !important; /* Λευκά γράμματα στο hover */
+  color: white !important;
 }
 
 .header-login {
@@ -248,7 +264,7 @@
 
 .login-link:hover {
   background-color: #FF6F61;
-  border-color: transparent !important; /* Αφαίρεση του περιγράμματος στο hover */
+  border-color: transparent !important;
   color: white !important;
 }
 
@@ -324,33 +340,33 @@
 /* Media Queries για Κινητά */
 @media (max-width: 768px) {
   .hero-slider {
-    height: 450px; /* Μείωση ύψους για tablets */
+    height: 450px;
   }
 
   .header-container {
-    padding: 0 20px; /* Μείωση padding για μικρότερες οθόνες */
-    align-items: flex-start; /* Ευθυγράμμιση στην κορυφή */
+    padding: 0 20px;
+    align-items: flex-start;
   }
 
   .burger-menu {
-    display: block; /* Εμφάνιση του burger menu */
+    display: block;
   }
 
   .header-menu {
-    display: none; /* Κρύβουμε το μενού πλοήγησης */
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Τοποθετούμε το μενού κάτω από το header */
+    top: 60px;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Ημιδιάφανο φόντο */
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 1000;
   }
 
   .header-menu.open {
-    display: flex; /* Εμφάνιση του μενού όταν είναι ανοιχτό */
+    display: flex;
   }
 
   .navigation {
@@ -367,16 +383,18 @@
   }
 
   .navigation li a {
-    font-size: 16px; /* Κρατάμε το μέγεθος ευανάγνωστο */
+    font-size: 16px;
     display: block;
     padding: 10px 0;
     color: #FFFFFF !important;
+    touch-action: manipulation; /* Improve touch interaction */
+    z-index: 1001; /* Ensure links are clickable */
   }
 
   .navigation li a:hover {
-    color: white !important; /* Λευκά γράμματα στο hover */
+    color: white !important;
     background-color: #FF6F61;
-    padding: 10px 0; /* Κρατάμε το padding ίδιο με το mobile */
+    padding: 10px 0;
     border-radius: 15px;
   }
 
@@ -386,18 +404,38 @@
     text-align: center;
   }
 
-  .navigation .dropdown > span {
-    font-size: 16px; /* Ίδιο μέγεθος γραμματοσειράς με το μενού */
-    padding: 10px 0;
-    margin: 0 auto;
-    display: block;
-    border: none;
-    color: #FFFFFF !important;
+  .navigation .dropdown-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
   }
 
-  .navigation .dropdown > span:hover {
+  .navigation .dropdown > .dropdown-header > a {
+    font-size: 16px;
+    padding: 10px 0;
+    margin: 0;
+    color: #FFFFFF !important;
+    z-index: 1001;
+    touch-action: manipulation; /* Ensure touch interaction */
+  }
+
+  .navigation .dropdown > .dropdown-header > a:hover {
     background-color: #FF6F61;
     color: white !important;
+  }
+
+  .navigation .dropdown > .dropdown-header > span {
+    font-size: 16px;
+    padding: 10px 0;
+    color: #FFFFFF !important;
+    cursor: pointer;
+    z-index: 1001;
+    touch-action: manipulation;
+  }
+
+  .navigation .dropdown > .dropdown-header > span:hover {
+    color: #FF6F61 !important;
   }
 
   .navigation .dropdown-menu {
@@ -406,6 +444,7 @@
     background: transparent;
     padding: 0;
     margin: 5px 0;
+    z-index: 1002;
   }
 
   .navigation .dropdown.open .dropdown-menu {
@@ -417,10 +456,13 @@
     padding: 5px 15px;
     text-align: center;
     color: #FFFFFF !important;
+    z-index: 1002;
   }
 
   .navigation .dropdown-menu li a {
     color: #FFFFFF !important;
+    touch-action: manipulation;
+    z-index: 1002;
   }
 
   .navigation .dropdown-menu li:hover {
@@ -429,7 +471,7 @@
   }
 
   .navigation .dropdown-menu li:hover a {
-    color: white !important; /* Λευκά γράμματα στο hover του dropdown */
+    color: white !important;
   }
 
   .header-language {
@@ -439,8 +481,8 @@
   }
 
   .custom-select {
-    font-size: 16px; /* Ίδιο μέγεθος γραμματοσειράς με το μενού */
-    padding: 5px 10px; /* Προσαρμογή padding για mobile */
+    font-size: 16px;
+    padding: 5px 10px;
     margin: 0 auto;
     display: inline-block;
     color: #FFFFFF !important;
@@ -450,7 +492,7 @@
   .custom-select:hover {
     background-color: #FF6F61;
     color: white !important;
-    border-color: transparent !important; /* Αφαίρεση του περιγράμματος στο hover */
+    border-color: transparent !important;
   }
 
   .language-options {
@@ -471,7 +513,7 @@
   .language-options li.active {
     background-color: #FF6F61;
     border-radius: 10px;
-    color: white !important; /* Λευκά γράμματα στο hover */
+    color: white !important;
   }
 
   .header-login {
@@ -489,15 +531,15 @@
 
   .login-link:hover {
     background-color: #FF6F61;
-    border-color: transparent !important; /* Αφαίρεση του περιγράμματος στο hover */
+    border-color: transparent !important;
     color: white !important;
   }
 
   .slide-content {
-    top: 50%; /* Κρατάμε το κείμενο στη μέση */
+    top: 50%;
     left: 20px;
     max-width: 90%;
-    padding-top: 120px; /* Αυξάνουμε το padding για να αποφύγουμε την αλληλοκάλυψη */
+    padding-top: 120px;
   }
 
   .slide-content h2 {
@@ -548,7 +590,12 @@
     font-size: 14px;
   }
 
-  .navigation .dropdown > span {
+  .navigation .dropdown > .dropdown-header > a {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .navigation .dropdown > .dropdown-header > span {
     font-size: 14px;
     padding: 10px 0;
   }
@@ -559,7 +606,7 @@
   }
 
   .custom-select {
-    font-size: 14px; /* Προσαρμογή για μικρότερες οθόνες */
+    font-size: 14px;
     padding: 4px 8px;
   }
 
@@ -576,7 +623,7 @@
   .slide-content {
     left: 15px;
     max-width: 85%;
-    padding-top: 100px; /* Αυξάνουμε το padding για μικρότερες οθόνες */
+    padding-top: 100px;
   }
 
   .slide-content h2 {
@@ -627,7 +674,12 @@
     font-size: 12px;
   }
 
-  .navigation .dropdown > span {
+  .navigation .dropdown > .dropdown-header > a {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .navigation .dropdown > .dropdown-header > span {
     font-size: 12px;
     padding: 10px 0;
   }
@@ -638,7 +690,7 @@
   }
 
   .custom-select {
-    font-size: 12px; /* Προσαρμογή για πολύ μικρές οθόνες */
+    font-size: 12px;
     padding: 3px 6px;
   }
 
@@ -655,7 +707,7 @@
   .slide-content {
     left: 10px;
     max-width: 80%;
-    padding-top: 90px; /* Αυξάνουμε το padding για πολύ μικρές οθόνες */
+    padding-top: 90px;
   }
 
   .slide-content h2 {
