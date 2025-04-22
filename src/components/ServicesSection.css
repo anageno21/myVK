@@ -3,6 +3,7 @@
 
 .services-section {
   padding: 60px 0;
+  background-color: #EDEBE8;
 }
 
 .container {
@@ -39,9 +40,10 @@
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 20px;
+  flex-wrap: nowrap;
 }
 
 .service-item {
@@ -49,6 +51,234 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 0 0 275px;
+}
+
+/* Στυλ για την εικόνα στην ενότητα "Our Packages" */
+.packages-section .package-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Αλλαγή του background color για τα πλαίσια στην ενότητα "Our Packages" */
+.packages-section .service-item {
+  background: #E1DCD4;
+  flex: 0 0 373px;
+}
+
+/* Στυλ για τον τίτλο του πακέτου */
+.packages-section .package-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  margin: 20px;
+  text-align: left;
+}
+
+/* Στυλ για την τιμή του πακέτου */
+.packages-section .package-price {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff6f61;
+  font-family: 'Playfair Display', serif;
+  margin: 0 20px 20px;
+  text-align: left;
+}
+
+/* Στυλ για το marketing κείμενο */
+.packages-section .marketing-text {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #333;
+  margin: 0 20px 10px;
+}
+
+/* Στυλ για τη λίστα χαρακτηριστικών */
+.packages-section .features-text {
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+  color: #555;
+  margin: 0 20px 20px;
+}
+
+/* Στυλ για κάθε χαρακτηριστικό στη λίστα */
+.packages-section .feature-item {
+  margin-bottom: 10px;
+}
+
+.packages-section .feature-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect για το feature-title */
+.packages-section .feature-title:hover {
+  color: #ff6f61;
+  background-color: rgba(255, 111, 97, 0.1); /* Ελαφρύ background για το hover */
+}
+
+/* Στυλ για τα εικονίδια */
+.packages-section .feature-title i {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #ff6f61;
+  line-height: 1.6;
+}
+
+/* Στυλ για την επεξήγηση του χαρακτηριστικού (dropdown) */
+.packages-section .feature-description {
+  padding: 10px 0 10px 28px; /* Padding για να ευθυγραμμιστεί με το εικονίδιο */
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Στυλ για το grid με κύκλους στην ενότητα "Our Method" */
+.method-section .services-grid {
+  display: block; /* Αφαιρούμε το flex για να μην εφαρμόζεται το flex-wrap */
+}
+
+.method-section .progress-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.method-section .progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.method-section .progress-circle {
+  width: 180px; /* Μεγέθυνση 50% από 120px */
+  height: 180px; /* Μεγέθυνση 50% από 120px */
+  background: transparent; /* Διάφανο εσωτερικό */
+  border: 3px solid #ff6f61; /* Πορτοκαλί περίγραμμα, ίδιο με τα buttons */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: #ff6f61; /* Πορτοκαλί χρώμα για τον αριθμό, ίδιο με τα buttons */
+  font-size: 48px; /* Μεγαλύτερο μέγεθος γραμματοσειράς για τον αριθμό */
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+}
+
+.method-section .progress-step h6 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.method-section .progress-step p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #555;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0;
+}
+
+.method-section .progress-step p i {
+  color: #ff6f61;
+  margin-right: 5px;
+}
+
+/* Στυλ για την περιγραφή της μεθοδολογίας */
+.method-section .method-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+/* Στυλ για την ενότητα FAQ */
+.faq-section {
+  margin-top: 40px;
+  padding: 40px 0;
+  background-color: #EDEBE8;
+}
+
+.faq-section .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-section .section-header .sub-title {
+  display: block;
+  color: #ff6f61;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+}
+
+.faq-section .section-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.faq-section .section-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+}
+
+.faq-section .faq-list {
+  margin: 0 auto;
+}
+
+.faq-section .faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-section .faq-question {
+  cursor: pointer;
+  padding: 15px 0;
+}
+
+.faq-section .faq-question h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+
+.faq-section .faq-answer {
+  padding: 10px 0 20px;
+}
+
+.faq-section .faq-answer p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Αφαίρεση του πλάτους για την ενότητα "Our Method" */
+.method-section .combined-item {
+  flex: 0 0 865px; /* Δεν χρειάζεται πλέον */
 }
 
 .service-item img {
@@ -125,6 +355,95 @@
     gap: 15px;
   }
 
+  .service-item {
+    flex: 0 0 260px;
+  }
+
+  .method-section .progress-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 στήλες για μικρότερες οθόνες */
+    gap: 15px;
+  }
+
+  .method-section .progress-circle {
+    width: 150px; /* Προσαρμογή για μικρότερες οθόνες */
+    height: 150px;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .method-section .progress-step h6 {
+    font-size: 14px;
+  }
+
+  .method-section .progress-step p {
+    font-size: 12px;
+  }
+
+  .method-section .method-description {
+    font-size: 14px;
+  }
+
+  .packages-section .service-item {
+    flex: 0 0 350px;
+  }
+
+  .packages-section .package-image {
+    height: 180px;
+  }
+
+  .packages-section .package-title {
+    font-size: 32px;
+    margin: 15px;
+  }
+
+  .packages-section .package-price {
+    font-size: 32px;
+    margin: 0 15px 15px;
+  }
+
+  .packages-section .marketing-text {
+    font-size: 14px;
+    margin: 0 15px 10px;
+  }
+
+  .packages-section .features-text {
+    font-size: 13px;
+    margin: 0 15px 15px;
+  }
+
+  .packages-section .feature-title i {
+    font-size: 16px;
+  }
+
+  .packages-section .feature-description {
+    font-size: 13px;
+    padding: 10px 0 10px 26px;
+  }
+
+  .faq-section {
+    padding: 30px 0;
+  }
+
+  .faq-section .section-header h2 {
+    font-size: 28px;
+  }
+
+  .faq-section .section-header .sub-title {
+    font-size: 12px;
+  }
+
+  .faq-section .section-header p {
+    font-size: 14px;
+  }
+
+  .faq-section .faq-question h3 {
+    font-size: 16px;
+  }
+
+  .faq-section .faq-answer p {
+    font-size: 13px;
+  }
+
   .service-item img {
     height: 180px;
   }
@@ -177,6 +496,95 @@
     gap: 10px;
   }
 
+  .service-item {
+    flex: 0 0 240px;
+  }
+
+  .method-section .progress-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 στήλες για πολύ μικρές οθόνες */
+    gap: 10px;
+  }
+
+  .method-section .progress-circle {
+    width: 135px; /* Προσαρμογή για πολύ μικρές οθόνες */
+    height: 135px;
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .method-section .progress-step h6 {
+    font-size: 13px;
+  }
+
+  .method-section .progress-step p {
+    font-size: 11px;
+  }
+
+  .method-section .method-description {
+    font-size: 13px;
+  }
+
+  .packages-section .service-item {
+    flex: 0 0 320px;
+  }
+
+  .packages-section .package-image {
+    height: 160px;
+  }
+
+  .packages-section .package-title {
+    font-size: 28px;
+    margin: 10px;
+  }
+
+  .packages-section .package-price {
+    font-size: 28px;
+    margin: 0 10px 10px;
+  }
+
+  .packages-section .marketing-text {
+    font-size: 13px;
+    margin: 0 10px 10px;
+  }
+
+  .packages-section .features-text {
+    font-size: 12px;
+    margin: 0 10px 10px;
+  }
+
+  .packages-section .feature-title i {
+    font-size: 14px;
+  }
+
+  .packages-section .feature-description {
+    font-size: 12px;
+    padding: 10px 0 10px 24px;
+  }
+
+  .faq-section {
+    padding: 20px 0;
+  }
+
+  .faq-section .section-header h2 {
+    font-size: 24px;
+  }
+
+  .faq-section .section-header .sub-title {
+    font-size: 10px;
+  }
+
+  .faq-section .section-header p {
+    font-size: 12px;
+  }
+
+  .faq-section .faq-question h3 {
+    font-size: 14px;
+  }
+
+  .faq-section .faq-answer p {
+    font-size: 12px;
+  }
+
   .service-item img {
     height: 160px;
   }
@@ -215,6 +623,95 @@
   .services-header p {
     font-size: 11px;
     margin-bottom: 8px;
+  }
+
+  .service-item {
+    flex: 0 0 220px;
+  }
+
+  .method-section .progress-grid {
+    grid-template-columns: 1fr; /* 1 στήλη για πολύ μικρές οθόνες */
+    gap: 8px;
+  }
+
+  .method-section .progress-circle {
+    width: 120px; /* Προσαρμογή για πολύ μικρές οθόνες */
+    height: 120px;
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+
+  .method-section .progress-step h6 {
+    font-size: 12px;
+  }
+
+  .method-section .progress-step p {
+    font-size: 10px;
+  }
+
+  .method-section .method-description {
+    font-size: 12px;
+  }
+
+  .packages-section .service-item {
+    flex: 0 0 300px;
+  }
+
+  .packages-section .package-image {
+    height: 140px;
+  }
+
+  .packages-section .package-title {
+    font-size: 24px;
+    margin: 8px;
+  }
+
+  .packages-section .package-price {
+    font-size: 24px;
+    margin: 0 8px 8px;
+  }
+
+  .packages-section .marketing-text {
+    font-size: 12px;
+    margin: 0 8px 8px;
+  }
+
+  .packages-section .features-text {
+    font-size: 11px;
+    margin: 0 8px 8px;
+  }
+
+  .packages-section .feature-title i {
+    font-size: 12px;
+  }
+
+  .packages-section .feature-description {
+    font-size: 11px;
+    padding: 10px 0 10px 22px;
+  }
+
+  .faq-section {
+    padding: 15px 0;
+  }
+
+  .faq-section .section-header h2 {
+    font-size: 20px;
+  }
+
+  .faq-section .section-header .sub-title {
+    font-size: 9px;
+  }
+
+  .faq-section .section-header p {
+    font-size: 11px;
+  }
+
+  .faq-section .faq-question h3 {
+    font-size: 13px;
+  }
+
+  .faq-section .faq-answer p {
+    font-size: 11px;
   }
 
   .service-item img {
