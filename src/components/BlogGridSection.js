@@ -1,3 +1,4 @@
+// src/components/BlogGridSection.js
 import React from 'react';
 
 function BlogGridSection() {
@@ -17,7 +18,7 @@ function BlogGridSection() {
             <div className="wrap-blog-grid">
               <div className="blog-item wow fadeInUp" data-wow-duration="1000" data-wow-delay="0s">
                 <div className="image-wrap">
-                  <img src="/images/blog/blog-grid-1.jpg" alt="Blog Post" />
+                  <img src="/images/blog/blog-grid-1.jpg" alt="Cognitive Behavioral Therapy Article" />
                 </div>
                 <div className="content">
                   <ul className="meta">
@@ -38,7 +39,7 @@ function BlogGridSection() {
               </div>
               <div className="blog-item wow fadeInUp" data-wow-duration="1000" data-wow-delay="0s">
                 <div className="image-wrap">
-                  <img src="/images/blog/blog-grid-2.jpg" alt="Blog Post" />
+                  <img src="/images/blog/blog-grid-2.jpg" alt="Managing Anxiety Article" />
                 </div>
                 <div className="content">
                   <ul className="meta">
@@ -59,7 +60,7 @@ function BlogGridSection() {
               </div>
               <div className="blog-item wow fadeInUp" data-wow-duration="1000" data-wow-delay="0s">
                 <div className="image-wrap">
-                  <img src="/images/blog/blog-grid-3.jpg" alt="Blog Post" />
+                  <img src="/images/blog/blog-grid-3.jpg" alt="Relationships Through Therapy Article" />
                 </div>
                 <div className="content">
                   <ul className="meta">
@@ -80,7 +81,7 @@ function BlogGridSection() {
               </div>
               <div className="blog-item wow fadeInUp" data-wow-duration="1000" data-wow-delay="0s">
                 <div className="image-wrap">
-                  <img src="/images/blog/blog-grid-4.jpg" alt="Blog Post" />
+                  <img src="/images/blog/blog-grid-4.jpg" alt="Stress Relief Techniques Article" />
                 </div>
                 <div className="content">
                   <ul className="meta">
@@ -101,7 +102,7 @@ function BlogGridSection() {
               </div>
               <div className="blog-item wow fadeInUp" data-wow-duration="1000" data-wow-delay="0s">
                 <div className="image-wrap">
-                  <img src="/images/blog/blog-grid-5.jpg" alt="Blog Post" />
+                  <img src="/images/blog/blog-grid-5.jpg" alt="Self-Care Importance Article" />
                 </div>
                 <div className="content">
                   <ul className="meta">
@@ -122,7 +123,7 @@ function BlogGridSection() {
               </div>
               <div className="blog-item wow fadeInUp" data-wow-duration="1000" data-wow-delay="0s">
                 <div className="image-wrap">
-                  <img src="/images/blog/blog-grid-6.jpg" alt="Blog Post" />
+                  <img src="/images/blog/blog-grid-6.jpg" alt="Healing from Trauma Article" />
                 </div>
                 <div className="content">
                   <ul className="meta">
@@ -145,18 +146,18 @@ function BlogGridSection() {
             <div className="pagination-wrap">
               <ul className="pagination">
                 <li className="page-item active">
-                  <a href="#" className="page-link">1</a>
+                  <button className="page-link">1</button>
                 </li>
                 <li className="page-item">
-                  <a href="#" className="page-link">2</a>
+                  <button className="page-link">2</button>
                 </li>
                 <li className="page-item">
-                  <a href="#" className="page-link">3</a>
+                  <button className="page-link">3</button>
                 </li>
                 <li className="page-item">
-                  <a href="#" className="page-link">
+                  <button className="page-link">
                     <i className="icon-ArrowRight"></i>
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>

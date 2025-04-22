@@ -1,6 +1,23 @@
+// src/components/BlogDetailsSection.js
 import React from 'react';
 
 function BlogDetailsSection() {
+  // Function to handle social sharing (example)
+  const handleShare = (platform) => {
+    // Add logic to share on social media (e.g., open a share window)
+    console.log(`Sharing on ${platform}`);
+    // Example: Open a share window for Twitter
+    if (platform === 'Twitter') {
+      window.open('https://twitter.com/intent/tweet?text=Check out this article on Cognitive Behavioral Therapy!&url=https://vk-anageno.netlify.app/blog-details.html', '_blank');
+    }
+    // Add similar logic for other platforms
+  };
+
+  // Function to handle comment reply (example)
+  const handleReply = (commentId) => {
+    console.log(`Replying to comment ${commentId}`);
+  };
+
   return (
     <section className="section-blog-details page-blog-details">
       <div className="tf-container">
@@ -9,7 +26,7 @@ function BlogDetailsSection() {
             <div className="wrap-blog-details">
               <div className="blog-details-content">
                 <div className="image-wrap">
-                  <img src="/images/blog/blog-details-1.jpg" alt="Blog Post" />
+                  <img src="/images/blog/blog-details-1.jpg" alt="Cognitive Behavioral Therapy Illustration" />
                 </div>
                 <ul className="meta">
                   <li className="text-2">Oct 17, 2024</li>
@@ -34,7 +51,7 @@ function BlogDetailsSection() {
                     Cognitive Behavioral Therapy (CBT) is a widely recognized psychological treatment that helps individuals identify and modify negative thought patterns and behaviors. It’s effective for a range of issues including anxiety, depression, and stress.
                   </p>
                   <div className="image-wrap">
-                    <img src="/images/blog/blog-details-2.jpg" alt="Blog Post Image" />
+                    <img src="/images/blog/blog-details-2.jpg" alt="Cognitive Behavioral Therapy Benefits" />
                   </div>
                   <h3>Benefits of CBT</h3>
                   <ul className="list">
@@ -51,43 +68,51 @@ function BlogDetailsSection() {
                   <div className="tags">
                     <h6>Tags:</h6>
                     <ul>
-                      <li><a href="#">Mental Health</a></li>
-                      <li><a href="#">Therapy</a></li>
-                      <li><a href="#">CBT</a></li>
+                      <li><button className="tag-button">Mental Health</button></li>
+                      <li><button className="tag-button">Therapy</button></li>
+                      <li><button className="tag-button">CBT</button></li>
                     </ul>
                   </div>
                   <div className="share">
                     <h6>Share:</h6>
                     <ul className="tf-social">
                       <li>
-                        <a href="#"><i className="icon-Facebook"></i></a>
+                        <button onClick={() => handleShare('Facebook')} className="share-button">
+                          <i className="icon-Facebook"></i>
+                        </button>
                       </li>
                       <li>
-                        <a href="#"><i className="icon-Twitter"></i></a>
+                        <button onClick={() => handleShare('Twitter')} className="share-button">
+                          <i className="icon-Twitter"></i>
+                        </button>
                       </li>
                       <li>
-                        <a href="#"><i className="icon-Instagram"></i></a>
+                        <button onClick={() => handleShare('Instagram')} className="share-button">
+                          <i className="icon-Instagram"></i>
+                        </button>
                       </li>
                       <li>
-                        <a href="#"><i className="icon-LinkedIn"></i></a>
+                        <button onClick={() => handleShare('LinkedIn')} className="share-button">
+                          <i className="icon-LinkedIn"></i>
+                        </button>
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div className="blog-details-nav">
                   <div className="nav-item prev">
-                    <a href="#" className="btn-nav">
+                    <button className="btn-nav">
                       <i className="icon-ArrowLeft"></i>
                       <span>Previous Post</span>
-                    </a>
-                    <h6><a href="#">Effective Strategies for Managing Anxiety</a></h6>
+                    </button>
+                    <h6><button className="nav-title">Effective Strategies for Managing Anxiety</button></h6>
                   </div>
                   <div className="nav-item next">
-                    <a href="#" className="btn-nav">
+                    <button className="btn-nav">
                       <span>Next Post</span>
                       <i className="icon-ArrowRight"></i>
-                    </a>
-                    <h6><a href="#">Building Stronger Relationships Through Therapy</a></h6>
+                    </button>
+                    <h6><button className="nav-title">Building Stronger Relationships Through Therapy</button></h6>
                   </div>
                 </div>
                 <div className="comments-area">
@@ -96,7 +121,7 @@ function BlogDetailsSection() {
                     <li className="comment-item">
                       <div className="comment-inner">
                         <div className="avatar">
-                          <img src="/images/avatar/avatar-1.jpg" alt="Commenter" />
+                          <img src="/images/avatar/avatar-1.jpg" alt="Sarah M." />
                         </div>
                         <div className="content">
                           <div className="comment-meta">
@@ -106,14 +131,14 @@ function BlogDetailsSection() {
                           <p>
                             Great article! CBT has really helped me manage my stress levels. Thanks for sharing such valuable insights.
                           </p>
-                          <a href="#" className="reply-link">Reply</a>
+                          <button onClick={() => handleReply(1)} className="reply-link">Reply</button>
                         </div>
                       </div>
                     </li>
                     <li className="comment-item">
                       <div className="comment-inner">
                         <div className="avatar">
-                          <img src="/images/avatar/avatar-2.jpg" alt="Commenter" />
+                          <img src="/images/avatar/avatar-2.jpg" alt="John R." />
                         </div>
                         <div className="content">
                           <div className="comment-meta">
@@ -123,14 +148,14 @@ function BlogDetailsSection() {
                           <p>
                             I appreciate the detailed explanation of CBT. It’s encouraging to know there are effective tools out there.
                           </p>
-                          <a href="#" className="reply-link">Reply</a>
+                          <button onClick={() => handleReply(2)} className="reply-link">Reply</button>
                         </div>
                       </div>
                     </li>
                     <li className="comment-item">
                       <div className="comment-inner">
                         <div className="avatar">
-                          <img src="/images/avatar/avatar-3.jpg" alt="Commenter" />
+                          <img src="/images/avatar/avatar-3.jpg" alt="Emily T." />
                         </div>
                         <div className="content">
                           <div className="comment-meta">
@@ -140,7 +165,7 @@ function BlogDetailsSection() {
                           <p>
                             This post was very informative. I’m considering therapy now, thanks to this!
                           </p>
-                          <a href="#" className="reply-link">Reply</a>
+                          <button onClick={() => handleReply(3)} className="reply-link">Reply</button>
                         </div>
                       </div>
                     </li>
@@ -199,12 +224,12 @@ function BlogDetailsSection() {
                 <div className="widget widget-categories">
                   <h6>Categories</h6>
                   <ul>
-                    <li><a href="#">Mental Health</a> (5)</li>
-                    <li><a href="#">Anxiety</a> (3)</li>
-                    <li><a href="#">Relationships</a> (4)</li>
-                    <li><a href="#">Stress Relief</a> (6)</li>
-                    <li><a href="#">Self-Care</a> (2)</li>
-                    <li><a href="#">Trauma</a> (3)</li>
+                    <li><button className="category-button">Mental Health (5)</button></li>
+                    <li><button className="category-button">Anxiety (3)</button></li>
+                    <li><button className="category-button">Relationships (4)</button></li>
+                    <li><button className="category-button">Stress Relief (6)</button></li>
+                    <li><button className="category-button">Self-Care (2)</button></li>
+                    <li><button className="category-button">Trauma (3)</button></li>
                   </ul>
                 </div>
                 <div className="widget widget-recent-posts">
@@ -213,10 +238,10 @@ function BlogDetailsSection() {
                     <li>
                       <div className="post-item">
                         <div className="image-wrap">
-                          <img src="/images/blog/blog-details-list-1.jpg" alt="Recent Post" />
+                          <img src="/images/blog/blog-details-list-1.jpg" alt="Cognitive Behavioral Therapy Article" />
                         </div>
                         <div className="content">
-                          <h6><a href="/blog-details.html">How Cognitive Behavioral Therapy Can Transform</a></h6>
+                          <h6><button className="post-title">How Cognitive Behavioral Therapy Can Transform</button></h6>
                           <span className="text-2">Oct 17, 2024</span>
                         </div>
                       </div>
@@ -224,10 +249,10 @@ function BlogDetailsSection() {
                     <li>
                       <div className="post-item">
                         <div className="image-wrap">
-                          <img src="/images/blog/blog-details-list-2.jpg" alt="Recent Post" />
+                          <img src="/images/blog/blog-details-list-2.jpg" alt="Managing Anxiety Article" />
                         </div>
                         <div className="content">
-                          <h6><a href="/blog-details.html">Effective Strategies for Managing Anxiety</a></h6>
+                          <h6><button className="post-title">Effective Strategies for Managing Anxiety</button></h6>
                           <span className="text-2">Oct 19, 2024</span>
                         </div>
                       </div>
@@ -235,10 +260,10 @@ function BlogDetailsSection() {
                     <li>
                       <div className="post-item">
                         <div className="image-wrap">
-                          <img src="/images/blog/blog-details-list-3.jpg" alt="Recent Post" />
+                          <img src="/images/blog/blog-details-list-3.jpg" alt="Relationships Through Therapy Article" />
                         </div>
                         <div className="content">
-                          <h6><a href="/blog-details.html">Building Stronger Relationships Through Therapy</a></h6>
+                          <h6><button className="post-title">Building Stronger Relationships Through Therapy</button></h6>
                           <span className="text-2">Oct 22, 2024</span>
                         </div>
                       </div>
@@ -248,11 +273,11 @@ function BlogDetailsSection() {
                 <div className="widget widget-tags">
                   <h6>Popular Tags</h6>
                   <ul>
-                    <li><a href="#">Mental Health</a></li>
-                    <li><a href="#">Therapy</a></li>
-                    <li><a href="#">CBT</a></li>
-                    <li><a href="#">Anxiety</a></li>
-                    <li><a href="#">Self-Care</a></li>
+                    <li><button className="tag-button">Mental Health</button></li>
+                    <li><button className="tag-button">Therapy</button></li>
+                    <li><button className="tag-button">CBT</button></li>
+                    <li><button className="tag-button">Anxiety</button></li>
+                    <li><button className="tag-button">Self-Care</button></li>
                   </ul>
                 </div>
               </div>
