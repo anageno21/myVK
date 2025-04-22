@@ -133,6 +133,22 @@
   color: #FF6F61;
 }
 
+.navigation .dropdown > span {
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  border: none;
+}
+
+.navigation .dropdown > span:hover {
+  color: white !important;
+  background-color: #FF6F61;
+  padding: 3px 8px;
+  border-radius: 15px;
+}
+
 .navigation .dropdown-menu {
   display: none;
   position: absolute;
@@ -172,6 +188,7 @@
   font-size: 14px;
   color: white !important;
   text-decoration: none;
+  font-family: 'Playfair Display', serif;
 }
 
 .navigation .dropdown-menu li:hover {
@@ -387,8 +404,8 @@
     display: block;
     padding: 10px 0;
     color: #FFFFFF !important;
-    touch-action: manipulation; /* Improve touch interaction */
-    z-index: 1001; /* Ensure links are clickable */
+    touch-action: manipulation;
+    z-index: 1001;
   }
 
   .navigation li a:hover {
@@ -417,7 +434,7 @@
     margin: 0;
     color: #FFFFFF !important;
     z-index: 1001;
-    touch-action: manipulation; /* Ensure touch interaction */
+    touch-action: manipulation;
   }
 
   .navigation .dropdown > .dropdown-header > a:hover {
@@ -436,6 +453,22 @@
 
   .navigation .dropdown > .dropdown-header > span:hover {
     color: #FF6F61 !important;
+  }
+
+  .navigation .dropdown > span {
+    font-size: 16px;
+    padding: 10px 0;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    color: #FFFFFF !important;
+    touch-action: manipulation;
+    z-index: 1001;
+  }
+
+  .navigation .dropdown > span:hover {
+    background-color: #FF6F61;
+    color: white !important;
   }
 
   .navigation .dropdown-menu {
@@ -600,6 +633,11 @@
     padding: 10px 0;
   }
 
+  .navigation .dropdown > span {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
   .navigation .dropdown-menu li {
     font-size: 12px;
     padding: 4px 12px;
@@ -680,6 +718,11 @@
   }
 
   .navigation .dropdown > .dropdown-header > span {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .navigation .dropdown > span {
     font-size: 12px;
     padding: 10px 0;
   }
