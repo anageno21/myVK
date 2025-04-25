@@ -3,13 +3,13 @@ import React from 'react';
 const EffectiveCommunicationBlog = () => {
   return {
     title: 'Эффективное общение: как говорить, чтобы быть услышанным',
-    date: '15 декабря 2024', // Ορίζω μια ημερομηνία, μπορείς να την αλλάξεις αν χρειάζεται
+    date: '15 декабря 2024',
     category: 'Стресс / Тревога',
     author: 'Viktoriia Kotenko',
-    image: '/images/blog/blg008a.jpg',
+    image: '/images/blog/blg008a.jpg', // Αλλαγή από /public/images/blog/blg008a.jpg
     heroSliderContent: {
       type: 'image',
-      src: '/images/blog/blog008a.jpg',
+      src: '/images/blog/blg008a.jpg', // Αλλαγή από /public/images/blog/blg008a.jpg
     },
     content: (
       <>
@@ -39,7 +39,7 @@ const EffectiveCommunicationBlog = () => {
           Коммуникация — это не то, что мы говорим. Это то, как это принимается.
         </p>
         <img
-          src="/images/blog/blg008b.jpg"
+          src="/images/blog/blg008b.jpg" // Αλλαγή από /public/images/blog/blg008b.jpg
           alt="Иллюстрация общения 1"
           className="section-image"
           style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
@@ -59,7 +59,7 @@ const EffectiveCommunicationBlog = () => {
         </blockquote>
         <div className="image-grid" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="image-frame first-frame" style={{ maxWidth: '920px' }}>
-            <img src="/images/blog/blog008c.jpg" alt="Иллюстрация общения 2" style={{ display: 'block', width: '100%', maxWidth: '920px', borderRadius: '10px' }} />
+            <img src="/images/blog/blg008c.jpg" alt="Иллюстрация общения 2" style={{ display: 'block', width: '100%', maxWidth: '920px', borderRadius: '10px' }} />
           </div>
         </div>
 

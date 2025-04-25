@@ -122,7 +122,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "28 НОЯ",
-      image: "/public/images/blog/blg008a.jpg", // Αλλαγή από effective-communication.jpg σε blg008a.jpg
+      image: "/images/blog/blg008a.jpg", // Αλλαγή από /public/images/blog/blg008a.jpg σε /images/blog/blg008a.jpg
       alt: "Эффективное общение: как говорить, чтобы быть услышанным",
       category: "Отношения",
       title: "Эффективное общение: как говорить, чтобы быть услышанным",
