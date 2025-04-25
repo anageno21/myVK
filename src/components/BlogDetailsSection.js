@@ -59,7 +59,7 @@ const BlogDetailsSection = () => {
   const featuredPosts = [
     {
       date: "05 НОЯ",
-      image: "/images/blog/blg001a.jpg",
+      image: "/public/images/blog/blg001a.jpg",
       alt: "Созависимость: как распознать и выйти из нездоровых отношений",
       category: "Отношения",
       title: "Созависимость: как распознать и выйти из нездоровых отношений",
@@ -68,7 +68,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "07 НОЯ",
-      image: "/images/blog/emotional-intelligence.jpg",
+      image: "/public/images/blog/emotional-intelligence.jpg",
       alt: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
       category: "Уверенность в себе / Самооценка",
       title: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
@@ -77,7 +77,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "15 НОЯ",
-      image: "/images/blog/placeholder.jpg",
+      image: "/public/images/blog/placeholder.jpg",
       alt: "Майндфулнесс: внимание, которое лечит",
       category: "Стресс / Тревога",
       title: "Майндфулнесс: внимание, которое лечит",
@@ -86,7 +86,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "18 НОЯ",
-      image: "/images/blog/rumination.jpg",
+      image: "/public/images/blog/rumination.jpg",
       alt: "Руминация: почему мы застреваем в мыслях и как это остановить",
       category: "Стресс / Тревога",
       title: "Руминация: почему мы застреваем в мыслях и как это остановить",
@@ -95,7 +95,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "20 НОЯ",
-      image: "/images/blog/psychosomatics.jpg",
+      image: "/public/images/blog/psychosomatics.jpg",
       alt: "Психосоматика: как тело говорит о том, что не осознаёт разум",
       category: "Стресс / Тревога",
       title: "Психосоматика: как тело говорит о том, что не осознаёт разум",
@@ -104,7 +104,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "22 НОЯ",
-      image: "/images/blog/sympathy-empathy.jpg",
+      image: "/public/images/blog/sympathy-empathy.jpg",
       alt: "Сочувствие и эмпатия: в чём разница и почему это важно понимать",
       category: "Отношения",
       title: "Сочувствие и эмпатия: в чём разница и почему это важно понимать",
@@ -113,7 +113,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "25 НОЯ",
-      image: "/images/blog/stress.jpg",
+      image: "/public/images/blog/stress.jpg",
       alt: "Стресс: когда он помогает, а когда разрушает",
       category: "Стресс / Тревога",
       title: "Стресс: когда он помогает, а когда разрушает",
@@ -122,7 +122,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "28 НОЯ",
-      image: "/images/blog/effective-communication.jpg",
+      image: "/public/images/blog/blg008a.jpg", // Αλλαγή από effective-communication.jpg σε blg008a.jpg
       alt: "Эффективное общение: как говорить, чтобы быть услышанным",
       category: "Отношения",
       title: "Эффективное общение: как говорить, чтобы быть услышанным",
@@ -131,7 +131,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "30 НОЯ",
-      image: "/images/blog/blg009a.jpg",
+      image: "/public/images/blog/blg009a.jpg",
       alt: "Как нарушение сна влияет на психическое здоровье: научный взгляд",
       category: "Стресс / Тревога",
       title: "Как нарушение сна влияет на психическое здоровье: научный взгляд",
@@ -255,7 +255,7 @@ const BlogDetailsSection = () => {
                       </li>
                       <li className="meta-item">
                         <i className="icon-User"></i>
-                        <p>by <Link to="/victoria-kotenko">Viktoriia Kotenko</Link></p> {/* Στατική αλλαγή */}
+                        <p>by <Link to="/victoria-kotenko">Viktoriia Kotenko</Link></p>
                       </li>
                     </ul>
                   </div>
