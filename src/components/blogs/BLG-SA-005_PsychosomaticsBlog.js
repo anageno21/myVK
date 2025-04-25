@@ -21,12 +21,6 @@ const PsychosomaticsBlog = () => {
         <p className="text-1 lh-30 fw-4">
           В этой статье мы разберём, что такое психосоматические расстройства, как они проявляются, какие исследования подтверждают их связь с психикой — и как можно с этим работать.
         </p>
-        <img
-          src="/images/blog/blg005a.jpg"
-          alt="Иллюстрация психосоматики"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
 
         {/* Что такое психосоматика? */}
         <h4 className="section-heading">Что такое психосоматика?</h4>
