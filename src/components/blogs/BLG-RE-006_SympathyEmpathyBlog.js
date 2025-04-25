@@ -67,7 +67,7 @@ const SympathyEmpathyBlog = () => {
 
         {/* Ключевые различия */}
         <h4 className="section-heading">Ключевые различия</h4>
-        <table className="comparison-table" style={{ width: '100%', borderCollapse: 'collapse', margin: '20px 0' }}>
+        <table className="comparison-table" style={{ width: '100%', maxWidth: '920px', borderCollapse: 'collapse', margin: '20px auto' }}>
           <thead>
             <tr>
               <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}></th>
