@@ -6,7 +6,7 @@ const EffectiveCommunicationBlog = () => {
     date: '15 декабря 2024', // Ορίζω μια ημερομηνία, μπορείς να την αλλάξεις αν χρειάζεται
     category: 'Стресс / Тревога',
     author: 'Viktoriia Kotenko',
-    image: '/images/blog/blog008a.jpg',
+    image: '/images/blog/blg008a.jpg',
     heroSliderContent: {
       type: 'image',
       src: '/images/blog/blog008a.jpg',
@@ -39,7 +39,7 @@ const EffectiveCommunicationBlog = () => {
           Коммуникация — это не то, что мы говорим. Это то, как это принимается.
         </p>
         <img
-          src="/images/blog/blog008b.jpg"
+          src="/images/blog/blg008b.jpg"
           alt="Иллюстрация общения 1"
           className="section-image"
           style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
