@@ -68,7 +68,7 @@ const BlogDetailsSection = () => {
     },
     {
       date: "07 НОЯ",
-      image: "/images/blog/emotional-intelligence.jpg",
+      image: "/images/blog/blg002a.jpg",
       alt: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
       category: "Уверенность в себе / Самооценка",
       title: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
@@ -77,11 +77,11 @@ const BlogDetailsSection = () => {
     },
     {
       date: "15 НОЯ",
-      image: "/images/blog/placeholder.jpg",
+      image: "/images/blog/blg003a.jpg",
       alt: "Майндфулнесс: внимание, которое лечит",
       category: "Стресс / Тревога",
       title: "Майндфулнесс: внимание, которое лечит",
-      description: "Осознанность помогает снизить стресс и улучшить качество жизни. Узнайте, как практиковать mindfulness.",
+      description: "Осознанность помогает снизить стресс и улучшить качество жизни. Узнайте, как практиковать mindfulness в повседневной жизни, чтобы оставаться в настоящем моменте и находить внутренний покой.",
       link: "/blog-details/mindfulness",
     },
     {
