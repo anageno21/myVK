@@ -1,23 +1,18 @@
-// src/pages/HomePage.js
 import React from 'react';
-import HeroSlider from '../components/HeroSlider';
+import MainHeroSlider from '../components/MainHeroSlider';
 import AboutAnageno from '../components/AboutAnageno';
 import SpecialisingSection from '../components/SpecialisingSection';
-// import HowWeWork from '../components/HowWeWork'; // Παραμένει απενεργοποιημένη
 import FavouriteTopics from '../components/FavouriteTopics';
 import ConnectWithUs from '../components/ConnectWithUs';
-import FAQ from '../components/FAQ';
 
 const HomePage = () => {
   return (
     <div className="home-page">
-      <HeroSlider />
+      <MainHeroSlider showOnlyVideo={false} videoSrc="/videos/hero-video-1.mp4" />
       <AboutAnageno />
       <SpecialisingSection />
-      {/* <HowWeWork /> */} {/* Παραμένει απενεργοποιημένη */}
       <FavouriteTopics />
       <ConnectWithUs />
-      <FAQ />
     </div>
   );
 };

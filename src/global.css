@@ -1,0 +1,84 @@
+/* src/global.css */
+:root {
+  --container-max-width: 1200px;
+  --content-max-width: 920px; /* Μέγιστο πλάτος για κείμενο και τίτλους */
+  --container-padding: 15px;
+  --primary-font: 'Playfair Display', serif;
+  --primary-color: #143B64; /* Σκούρο χρώμα γραμματοσειράς */
+  --light-color: #FFFFFF; /* Λευκό χρώμα γραμματοσειράς */
+  --text-color: #2F4C66; /* Χρώμα για δευτερεύον κείμενο */
+  --accent-color: #FF6F61;
+  --background-color: #F2F1F0; /* Απαλό γκρι background */
+}
+
+body {
+  font-family: var(--primary-font) !important;
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container,
+.tf-container {
+  max-width: var(--container-max-width) !important;
+  margin: 0 auto;
+  padding: 0 var(--container-padding) !important;
+  box-sizing: border-box;
+}
+
+/* Στυλ για μπλοκ κειμένου και τίτλους */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  max-width: var(--content-max-width) !important;
+  margin: 0 auto !important;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+body p,
+body ul,
+body ol {
+  max-width: var(--content-max-width) !important;
+  margin: 0 auto !important;
+}
+
+body p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 15px;
+  color: var(--text-color);
+}
+
+body ul,
+body ol {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+body li {
+  margin-bottom: 10px;
+}
+
+body a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+body a:hover {
+  text-decoration: underline;
+}
+
+/* Κλάσεις για δυναμικό χρώμα κειμένου */
+.text-dark {
+  color: var(--primary-color) !important;
+}
+
+.text-light {
+  color: var(--light-color) !important;
+}

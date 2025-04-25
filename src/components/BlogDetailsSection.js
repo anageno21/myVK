@@ -1,292 +1,417 @@
-// src/components/BlogDetailsSection.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import HeroSlider from './HeroSlider';
+import ProfileHeader from './ProfileHeader';
+import { FiInstagram, FiMail, FiMusic, FiMessageCircle, FiTwitter, FiFacebook } from 'react-icons/fi';
+import './BlogDetailsSection.css';
+import './HeroSlider.css';
 
-function BlogDetailsSection() {
-  // Function to handle social sharing (example)
-  const handleShare = (platform) => {
-    // Add logic to share on social media (e.g., open a share window)
-    console.log(`Sharing on ${platform}`);
-    // Example: Open a share window for Twitter
-    if (platform === 'Twitter') {
-      window.open('https://twitter.com/intent/tweet?text=Check out this article on Cognitive Behavioral Therapy!&url=https://vk-anageno.netlify.app/blog-details.html', '_blank');
+// Mapping of slugs to blog module paths
+const blogModules = {
+  codependency: () => import('./blogs/BLG-RE-001_CodependencyBlog'),
+  'emotional-intelligence': () => import('./blogs/BLG-SC-002_EmotionalIntelligenceBlog'),
+  mindfulness: () => import('./blogs/BLG-SA-003_MindfulnessBlog'),
+  rumination: () => import('./blogs/BLG-SA-004_RuminationBlog'),
+  psychosomatics: () => import('./blogs/BLG-SA-005_PsychosomaticsBlog'),
+  'sympathy-empathy': () => import('./blogs/BLG-RE-006_SympathyEmpathyBlog'),
+  stress: () => import('./blogs/BLG-SA-007_StressBlog'),
+  'effective-communication': () => import('./blogs/BLG-RE-008_EffectiveCommunicationBlog'),
+  'sleep-mental-health': () => import('./blogs/BLG-SA-009_SleepMentalHealthBlog'),
+};
+
+const BlogDetailsSection = () => {
+  const { slug } = useParams();
+  const [post, setPost] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadBlogModule = blogModules[slug];
+    if (loadBlogModule) {
+      loadBlogModule()
+        .then((module) => {
+          const blogData = module.default();
+          setPost(blogData);
+          console.log(`Loaded blogData for slug "${slug}":`, blogData);
+          console.log(`HeroSliderContent for slug "${slug}":`, blogData.heroSliderContent);
+        })
+        .catch((err) => {
+          console.error(`Failed to load blog module for slug "${slug}":`, err);
+          setError(`Не удалось загрузить статью: ${err.message}`);
+          setPost({
+            title: 'Статья не найдена',
+            date: '',
+            category: '',
+            image: '',
+            content: <p>Запрашиваемая статья не существует. Ошибка: {err.message}</p>,
+          });
+        });
+    } else {
+      setPost({
+        title: 'Статья не найдена',
+        date: '',
+        category: '',
+        image: '',
+        content: <p>Запрашиваемая статья не существует.</p>,
+      });
     }
-    // Add similar logic for other platforms
+  }, [slug]);
+
+  const featuredPosts = [
+    {
+      date: "05 НОЯ",
+      image: "/images/blog/blg001a.jpg",
+      alt: "Созависимость: как распознать и выйти из нездоровых отношений",
+      category: "Отношения",
+      title: "Созависимость: как распознать и выйти из нездоровых отношений",
+      description: "Когда забота становится жертвой, а любовь — контролем, это не близость, а созависимость. Мы разбираем её признаки, причины и последствия, а главное — путь к исцелению через возвращение к себе.",
+      link: "/blog-details/codependency",
+    },
+    {
+      date: "07 НОЯ",
+      image: "/images/blog/emotional-intelligence.jpg",
+      alt: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
+      category: "Уверенность в себе / Самооценка",
+      title: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
+      description: "Узнайте, что такое эмоциональный интеллект и почему он важен для личного и профессионального роста.",
+      link: "/blog-details/emotional-intelligence",
+    },
+    {
+      date: "15 НОЯ",
+      image: "/images/blog/placeholder.jpg",
+      alt: "Майндфулнесс: внимание, которое лечит",
+      category: "Стресс / Тревога",
+      title: "Майндфулнесс: внимание, которое лечит",
+      description: "Осознанность помогает снизить стресс и улучшить качество жизни. Узнайте, как практиковать mindfulness.",
+      link: "/blog-details/mindfulness",
+    },
+    {
+      date: "18 НОЯ",
+      image: "/images/blog/rumination.jpg",
+      alt: "Руминация: почему мы застреваем в мыслях и как это остановить",
+      category: "Стресс / Тревога",
+      title: "Руминация: почему мы застреваем в мыслях и как это остановить",
+      description: "Руминация — это бесконечный цикл негативных мыслей. Узнайте, как разорвать этот цикл.",
+      link: "/blog-details/rumination",
+    },
+    {
+      date: "20 НОЯ",
+      image: "/images/blog/psychosomatics.jpg",
+      alt: "Психосоматика: как тело говорит о том, что не осознаёт разум",
+      category: "Стресс / Тревога",
+      title: "Психосоматика: как тело говорит о том, что не осознаёт разум",
+      description: "Узнайте, как подавленные чувства могут проявляться через телесные симптомы.",
+      link: "/blog-details/psychosomatics",
+    },
+    {
+      date: "22 НОЯ",
+      image: "/images/blog/sympathy-empathy.jpg",
+      alt: "Сочувствие и эмпатия: в чём разница и почему это важно понимать",
+      category: "Отношения",
+      title: "Сочувствие и эмпатия: в чём разница и почему это важно понимать",
+      description: "Сочувствие и эмпатия — ключ к глубоким связям. Узнайте их различия.",
+      link: "/blog-details/sympathy-empathy",
+    },
+    {
+      date: "25 НОЯ",
+      image: "/images/blog/stress.jpg",
+      alt: "Стресс: когда он помогает, а когда разрушает",
+      category: "Стресс / Тревога",
+      title: "Стресс: когда он помогает, а когда разрушает",
+      description: "Стресс может быть мотиватором и разрушителем. Узнайте, как справляться с ним.",
+      link: "/blog-details/stress",
+    },
+    {
+      date: "28 НОЯ",
+      image: "/images/blog/effective-communication.jpg",
+      alt: "Эффективное общение: как говорить, чтобы быть услышанным",
+      category: "Отношения",
+      title: "Эффективное общение: как говорить, чтобы быть услышанным",
+      description: "Эффективное общение — ключ к успешным отношениям. Узнайте, как быть услышанным.",
+      link: "/blog-details/effective-communication",
+    },
+    {
+      date: "30 НОЯ",
+      image: "/images/blog/blg009a.jpg",
+      alt: "Как нарушение сна влияет на психическое здоровье: научный взгляд",
+      category: "Стресс / Тревога",
+      title: "Как нарушение сна влияет на психическое здоровье: научный взгляд",
+      description: "Нарушение сна усиливает тревогу и депрессию. Узнайте, как улучшить сон.",
+      link: "/blog-details/sleep-mental-health",
+    },
+  ];
+
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState({
+    text: '',
+    name: '',
+    email: '',
+  });
+  const [replyInputs, setReplyInputs] = useState({});
+
+  const handleCommentChange = (e) => {
+    const { name, value } = e.target;
+    setNewComment({ ...newComment, [name]: value });
   };
 
-  // Function to handle comment reply (example)
-  const handleReply = (commentId) => {
-    console.log(`Replying to comment ${commentId}`);
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    if (newComment.text.trim() === '' || newComment.name.trim() === '' || newComment.email.trim() === '') return;
+
+    const comment = {
+      id: Date.now(),
+      text: newComment.text,
+      author: newComment.name,
+      email: newComment.email,
+      timestamp: new Date().toLocaleString(),
+      replies: [],
+    };
+
+    setComments([...comments, comment]);
+    setNewComment({ text: '', name: '', email: '' });
   };
+
+  const handleReplyChange = (commentId, field, value) => {
+    setReplyInputs({
+      ...replyInputs,
+      [commentId]: {
+        ...replyInputs[commentId],
+        [field]: value,
+      },
+    });
+  };
+
+  const handleReplySubmit = (e, commentId) => {
+    e.preventDefault();
+    const replyData = replyInputs[commentId] || { text: '', name: '', email: '' };
+    if (replyData.text?.trim() === '' || replyData.name?.trim() === '' || replyData.email?.trim() === '') return;
+
+    const updatedComments = comments.map((comment) => {
+      if (comment.id === commentId) {
+        return {
+          ...comment,
+          replies: [
+            ...comment.replies,
+            {
+              id: Date.now(),
+              text: replyData.text,
+              author: replyData.name,
+              email: replyData.email,
+              timestamp: new Date().toLocaleString(),
+            },
+          ],
+        };
+      }
+      return comment;
+    });
+
+    setComments(updatedComments);
+    setReplyInputs({ ...replyInputs, [commentId]: { text: '', name: '', email: '' } });
+  };
+
+  if (!post) {
+    return <div>Loading...</div>;
+  }
+
+  const heroContentType = post.heroSliderContent?.type || 'video';
+  const heroContentSrc = post.heroSliderContent?.src || '/videos/blog001.mp4';
+  const heroImages = post.heroSliderContent?.images || [];
+  console.log('HeroSlider Props:', { contentType: heroContentType, src: heroContentSrc, images: heroImages });
+  console.log('Rendering BlogDetailsSection for slug:', slug);
 
   return (
-    <section className="section-blog-details page-blog-details">
-      <div className="tf-container">
-        <div className="row">
-          <div className="col-12">
-            <div className="wrap-blog-details">
-              <div className="blog-details-content">
-                <div className="image-wrap">
-                  <img src="/images/blog/blog-details-1.jpg" alt="Cognitive Behavioral Therapy Illustration" />
-                </div>
-                <ul className="meta">
-                  <li className="text-2">Oct 17, 2024</li>
-                  <li className="text-2">Mental Health</li>
-                  <li className="text-2">By Admin</li>
-                </ul>
-                <h1 className="title">How Cognitive Behavioral Therapy Can Transform Your Life</h1>
-                <div className="content">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <blockquote>
-                    <p>
-                      “The greatest discovery of my generation is that a human being can alter his life by altering his attitudes of mind.” – William James
-                    </p>
-                  </blockquote>
-                  <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </p>
-                  <h3>Understanding Cognitive Behavioral Therapy</h3>
-                  <p>
-                    Cognitive Behavioral Therapy (CBT) is a widely recognized psychological treatment that helps individuals identify and modify negative thought patterns and behaviors. It’s effective for a range of issues including anxiety, depression, and stress.
-                  </p>
-                  <div className="image-wrap">
-                    <img src="/images/blog/blog-details-2.jpg" alt="Cognitive Behavioral Therapy Benefits" />
-                  </div>
-                  <h3>Benefits of CBT</h3>
-                  <ul className="list">
-                    <li>Improves emotional regulation</li>
-                    <li>Reduces symptoms of anxiety and depression</li>
-                    <li>Enhances problem-solving skills</li>
-                    <li>Promotes healthier thought patterns</li>
-                  </ul>
-                  <p>
-                    At Anageno, our therapists are trained to guide you through CBT, tailoring each session to your unique needs to ensure maximum benefit.
-                  </p>
-                </div>
-                <div className="tags-share">
-                  <div className="tags">
-                    <h6>Tags:</h6>
-                    <ul>
-                      <li><button className="tag-button">Mental Health</button></li>
-                      <li><button className="tag-button">Therapy</button></li>
-                      <li><button className="tag-button">CBT</button></li>
-                    </ul>
-                  </div>
-                  <div className="share">
-                    <h6>Share:</h6>
-                    <ul className="tf-social">
-                      <li>
-                        <button onClick={() => handleShare('Facebook')} className="share-button">
-                          <i className="icon-Facebook"></i>
-                        </button>
-                      </li>
-                      <li>
-                        <button onClick={() => handleShare('Twitter')} className="share-button">
-                          <i className="icon-Twitter"></i>
-                        </button>
-                      </li>
-                      <li>
-                        <button onClick={() => handleShare('Instagram')} className="share-button">
-                          <i className="icon-Instagram"></i>
-                        </button>
-                      </li>
-                      <li>
-                        <button onClick={() => handleShare('LinkedIn')} className="share-button">
-                          <i className="icon-LinkedIn"></i>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="blog-details-nav">
-                  <div className="nav-item prev">
-                    <button className="btn-nav">
-                      <i className="icon-ArrowLeft"></i>
-                      <span>Previous Post</span>
-                    </button>
-                    <h6><button className="nav-title">Effective Strategies for Managing Anxiety</button></h6>
-                  </div>
-                  <div className="nav-item next">
-                    <button className="btn-nav">
-                      <span>Next Post</span>
-                      <i className="icon-ArrowRight"></i>
-                    </button>
-                    <h6><button className="nav-title">Building Stronger Relationships Through Therapy</button></h6>
-                  </div>
-                </div>
-                <div className="comments-area">
-                  <h4>Comments (3)</h4>
-                  <ul className="comment-list">
-                    <li className="comment-item">
-                      <div className="comment-inner">
-                        <div className="avatar">
-                          <img src="/images/avatar/avatar-1.jpg" alt="Sarah M." />
-                        </div>
-                        <div className="content">
-                          <div className="comment-meta">
-                            <h6>Sarah M.</h6>
-                            <span className="text-2">Oct 18, 2024</span>
-                          </div>
-                          <p>
-                            Great article! CBT has really helped me manage my stress levels. Thanks for sharing such valuable insights.
-                          </p>
-                          <button onClick={() => handleReply(1)} className="reply-link">Reply</button>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="comment-item">
-                      <div className="comment-inner">
-                        <div className="avatar">
-                          <img src="/images/avatar/avatar-2.jpg" alt="John R." />
-                        </div>
-                        <div className="content">
-                          <div className="comment-meta">
-                            <h6>John R.</h6>
-                            <span className="text-2">Oct 19, 2024</span>
-                          </div>
-                          <p>
-                            I appreciate the detailed explanation of CBT. It’s encouraging to know there are effective tools out there.
-                          </p>
-                          <button onClick={() => handleReply(2)} className="reply-link">Reply</button>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="comment-item">
-                      <div className="comment-inner">
-                        <div className="avatar">
-                          <img src="/images/avatar/avatar-3.jpg" alt="Emily T." />
-                        </div>
-                        <div className="content">
-                          <div className="comment-meta">
-                            <h6>Emily T.</h6>
-                            <span className="text-2">Oct 20, 2024</span>
-                          </div>
-                          <p>
-                            This post was very informative. I’m considering therapy now, thanks to this!
-                          </p>
-                          <button onClick={() => handleReply(3)} className="reply-link">Reply</button>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div className="comment-form">
-                  <h4>Leave a Comment</h4>
-                  <form className="form-comment" method="post" id="commentform" action="./contact/comment-process.php">
-                    <div className="form-group">
-                      <fieldset className="name">
-                        <input
-                          type="text"
-                          name="name"
-                          className="tf-input style-1"
-                          placeholder="Your Name*"
-                          aria-required="true"
-                          required
-                        />
-                      </fieldset>
-                      <fieldset className="email">
-                        <input
-                          type="email"
-                          name="email"
-                          className="tf-input style-1"
-                          placeholder="Your Email*"
-                          aria-required="true"
-                          required
-                        />
-                      </fieldset>
-                    </div>
-                    <fieldset className="message">
-                      <textarea
-                        id="message"
-                        className="tf-input"
-                        name="message"
-                        rows="5"
-                        placeholder="Your Comment*"
-                        aria-required="true"
-                        required
-                      ></textarea>
-                    </fieldset>
-                    <button className="tf-btn style-default btn-color-secondary pd-40 boder-8" type="submit">
-                      <span>Post Comment</span>
-                    </button>
-                  </form>
-                </div>
-              </div>
-              <div className="blog-details-sidebar">
-                <div className="widget widget-search">
-                  <h6>Search</h6>
-                  <form className="search-form" method="get" action="#">
-                    <input type="text" placeholder="Search..." />
-                    <button type="submit"><i className="icon-Search"></i></button>
-                  </form>
-                </div>
-                <div className="widget widget-categories">
-                  <h6>Categories</h6>
-                  <ul>
-                    <li><button className="category-button">Mental Health (5)</button></li>
-                    <li><button className="category-button">Anxiety (3)</button></li>
-                    <li><button className="category-button">Relationships (4)</button></li>
-                    <li><button className="category-button">Stress Relief (6)</button></li>
-                    <li><button className="category-button">Self-Care (2)</button></li>
-                    <li><button className="category-button">Trauma (3)</button></li>
-                  </ul>
-                </div>
-                <div className="widget widget-recent-posts">
-                  <h6>Recent Posts</h6>
-                  <ul>
-                    <li>
-                      <div className="post-item">
-                        <div className="image-wrap">
-                          <img src="/images/blog/blog-details-list-1.jpg" alt="Cognitive Behavioral Therapy Article" />
-                        </div>
-                        <div className="content">
-                          <h6><button className="post-title">How Cognitive Behavioral Therapy Can Transform</button></h6>
-                          <span className="text-2">Oct 17, 2024</span>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="post-item">
-                        <div className="image-wrap">
-                          <img src="/images/blog/blog-details-list-2.jpg" alt="Managing Anxiety Article" />
-                        </div>
-                        <div className="content">
-                          <h6><button className="post-title">Effective Strategies for Managing Anxiety</button></h6>
-                          <span className="text-2">Oct 19, 2024</span>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="post-item">
-                        <div className="image-wrap">
-                          <img src="/images/blog/blog-details-list-3.jpg" alt="Relationships Through Therapy Article" />
-                        </div>
-                        <div className="content">
-                          <h6><button className="post-title">Building Stronger Relationships Through Therapy</button></h6>
-                          <span className="text-2">Oct 22, 2024</span>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div className="widget widget-tags">
-                  <h6>Popular Tags</h6>
-                  <ul>
-                    <li><button className="tag-button">Mental Health</button></li>
-                    <li><button className="tag-button">Therapy</button></li>
-                    <li><button className="tag-button">CBT</button></li>
-                    <li><button className="tag-button">Anxiety</button></li>
-                    <li><button className="tag-button">Self-Care</button></li>
-                  </ul>
-                </div>
-              </div>
+    <div className="blog-details-page">
+      <ProfileHeader />
+      <HeroSlider
+        contentType={heroContentType}
+        src={heroContentSrc}
+        images={heroImages}
+      />
+      <div className="page-title page-details-2">
+        <div className="tf-container">
+          <div className="row">
+            <div className="col-12">
+              <ul className="breadcrumbs">
+                <li><Link to="/">Главная</Link></li>
+                <li><Link to="/blog-library">Блог</Link></li>
+                <li className="line-clamp-1">{post.title}</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <div className="main-content page-blog-details-2">
+        <section className="section-blog-post blog-details-2">
+          <div className="tf-container">
+            <div className="row">
+              <div className="col-12">
+                <div className="content-inner">
+                  <div className="heading-blog">
+                    <span className="tag text-2">{post.category}</span>
+                    <h3 className="title">{post.title}</h3>
+                    <ul className="meta">
+                      <li className="meta-item">
+                        <i className="icon-CalendarBlank"></i>
+                        <p>{post.date}</p>
+                      </li>
+                      <li className="meta-item">
+                        <i className="icon-User"></i>
+                        <p>by <Link to="/victoria-kotenko">Viktoriia Kotenko</Link></p> {/* Στατική αλλαγή */}
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="wrap-paragrahp">
+                    {post.content}
+                  </div>
+                  <div className="wrap-tag">
+                    <div className="tags">
+                      <p>Теги:</p>
+                      <Link to="#">{post.category}</Link>,
+                      <Link to="#">Психическое здоровье</Link>
+                    </div>
+                    <div className="wrap-social">
+                      <p>Поделиться этим постом:</p>
+                      <ul className="tf-social style-1">
+                        <li><Link to="#"><FiInstagram size={18} /></Link></li>
+                        <li><Link to="#"><FiMail size={18} /></Link></li>
+                        <li><Link to="#"><FiMusic size={18} /></Link></li>
+                        <li><Link to="#"><FiMessageCircle size={18} /></Link></li>
+                        <li><Link to="#"><FiTwitter size={18} /></Link></li>
+                        <li><Link to="#"><FiFacebook size={18} /></Link></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="related-articles-section">
+          <div className="container">
+            <div className="section-header">
+              <span className="sub-title">Похожие статьи</span>
+            </div>
+            <div className="related-topics-grid">
+              {featuredPosts.map((post, index) => (
+                <div className="related-topic-card" key={index}>
+                  <div className="related-card-image">
+                    <span className="date">{post.date}</span>
+                    <img src={post.image} alt={post.alt} />
+                  </div>
+                  <div className="related-card-content">
+                    <span className="category">{post.category}</span>
+                    <h3>{post.title}</h3>
+                    <p>{post.description}</p>
+                    <Link to={post.link} className="read-more">Читать больше <span className="arrow">→</span></Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="comments-section">
+          <div className="container">
+            <div className="section-header">
+              <span className="sub-title">Комментарии</span>
+            </div>
+            <div className="comment-form">
+              <form onSubmit={handleCommentSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  value={newComment.name}
+                  onChange={handleCommentChange}
+                  placeholder="Ваше имя"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={newComment.email}
+                  onChange={handleCommentChange}
+                  placeholder="Ваш email"
+                  required
+                />
+                <textarea
+                  name="text"
+                  value={newComment.text}
+                  onChange={handleCommentChange}
+                  placeholder="Оставить комментарий..."
+                  rows="4"
+                  required
+                />
+                <button type="submit">Отправить</button>
+              </form>
+            </div>
+            <div className="comments-list">
+              {comments.length === 0 ? (
+                <p className="no-comments">Пока нет комментариев. Будьте первым!</p>
+              ) : (
+                comments.map((comment) => (
+                  <div key={comment.id} className="comment">
+                    <div className="comment-header">
+                      <span className="comment-author">{comment.author}</span>
+                      <span className="comment-timestamp">{comment.timestamp}</span>
+                    </div>
+                    <p className="comment-text">{comment.text}</p>
+                    <button
+                      className="reply-button"
+                      onClick={() => setReplyInputs({ ...replyInputs, [comment.id]: replyInputs[comment.id] || { text: '', name: '', email: '' } })}
+                    >
+                      Ответить
+                    </button>
+                    {replyInputs[comment.id] && (
+                      <div className="reply-form">
+                        <form onSubmit={(e) => handleReplySubmit(e, comment.id)}>
+                          <input
+                            type="text"
+                            name="name"
+                            value={replyInputs[comment.id].name || ''}
+                            onChange={(e) => handleReplyChange(comment.id, 'name', e.target.value)}
+                            placeholder="Ваше имя"
+                            required
+                          />
+                          <input
+                            type="email"
+                            name="email"
+                            value={replyInputs[comment.id].email || ''}
+                            onChange={(e) => handleReplyChange(comment.id, 'email', e.target.value)}
+                            placeholder="Ваш email"
+                            required
+                          />
+                          <textarea
+                            name="text"
+                            value={replyInputs[comment.id].text || ''}
+                            onChange={(e) => handleReplyChange(comment.id, 'text', e.target.value)}
+                            placeholder="Ваш ответ..."
+                            rows="2"
+                            required
+                          />
+                          <button type="submit">Отправить ответ</button>
+                        </form>
+                      </div>
+                    )}
+                    {comment.replies.length > 0 && (
+                      <div className="replies">
+                        {comment.replies.map((reply) => (
+                          <div key={reply.id} className="reply">
+                            <div className="reply-header">
+                              <span className="reply-author">{reply.author}</span>
+                              <span className="reply-timestamp">{reply.timestamp}</span>
+                            </div>
+                            <p className="reply-text">{reply.text}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   );
-}
+};
 
 export default BlogDetailsSection;

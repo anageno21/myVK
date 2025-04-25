@@ -1,9 +1,9 @@
 /* src/components/ProfileHeader.css */
 .profile-header-wrapper {
-  background-color: #EDEBE8; /* Εφαρμόζουμε το ίδιο background */
-  position: relative; /* Εξασφαλίζουμε ότι το wrapper καλύπτει την περιοχή */
-  min-height: 80px; /* Δίνουμε ύψος για να καλύψει το μενού */
-  z-index: 2; /* Εξασφαλίζουμε ότι το wrapper είναι κάτω από το μενού */
+  background-color: #EDEBE8;
+  position: relative;
+  min-height: 80px;
+  z-index: 2;
 }
 
 .profile-header-wrapper .header-container {
@@ -11,7 +11,7 @@
   top: 20px;
   left: 0;
   width: 100%;
-  z-index: 3; /* Το μενού παραμένει πάνω από το wrapper */
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,28 +56,46 @@
 }
 
 .profile-header-wrapper .navigation li a:hover {
-  color: #FF6F61 !important;
+  color: white !important;
+  background-color: #FF6F61;
+  padding: 3px 8px;
+  border-radius: 15px;
 }
 
-/* Στυλ για το dropdown menu (υπηρεσίες) */
+/* Στυλ για το dropdown menu (υπηρεσίες και councillors) */
 .profile-header-wrapper .navigation .dropdown {
   position: relative;
 }
 
-.profile-header-wrapper .navigation .dropdown > span {
+.profile-header-wrapper .navigation .dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-header-wrapper .navigation .dropdown > .dropdown-header > a {
   color: #0B2B33 !important;
   font-size: 16px;
   font-weight: normal;
   font-family: 'Playfair Display', serif;
-  cursor: pointer;
-  border: none;
+  text-decoration: none;
 }
 
-.profile-header-wrapper .navigation .dropdown > span:hover {
+.profile-header-wrapper .navigation .dropdown > .dropdown-header > a:hover {
+  color: white !important;
   background-color: #FF6F61;
-  color: white;
-  border-radius: 15px;
   padding: 3px 8px;
+  border-radius: 15px;
+}
+
+.profile-header-wrapper .navigation .dropdown > .dropdown-header > span {
+  color: #0B2B33 !important;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.profile-header-wrapper .navigation .dropdown > .dropdown-header > span:hover {
+  color: #FF6F61 !important;
 }
 
 .profile-header-wrapper .navigation .dropdown-menu {
@@ -94,7 +112,6 @@
   z-index: 10;
 }
 
-/* Κάνω το dropdown να παραμένει ορατό όταν ο κέρσορας είναι πάνω στο .dropdown ή στο .dropdown-menu */
 .profile-header-wrapper .navigation .dropdown:hover .dropdown-menu,
 .profile-header-wrapper .navigation .dropdown-menu:hover {
   display: block;
@@ -126,6 +143,10 @@
   border-radius: 10px;
 }
 
+.profile-header-wrapper .navigation .dropdown-menu li:hover a {
+  color: white !important;
+}
+
 .profile-header-wrapper .header-language {
   flex-shrink: 0;
   margin-right: 20px;
@@ -138,7 +159,7 @@
   background: transparent;
   border: 1px solid #0B2B33 !important;
   color: #0B2B33 !important;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   font-family: 'Playfair Display', serif;
   padding: 3px 8px;
@@ -148,7 +169,12 @@
 
 .profile-header-wrapper .custom-select:hover {
   background-color: #FF6F61;
-  color: white;
+  color: white !important;
+  border-color: transparent !important;
+}
+
+.profile-header-wrapper .header-language:hover .language-options {
+  display: block;
 }
 
 .profile-header-wrapper .selected-language {
@@ -169,10 +195,6 @@
   z-index: 10;
 }
 
-.profile-header-wrapper .header-language.open .language-options {
-  display: block !important;
-}
-
 .profile-header-wrapper .language-options li {
   padding: 5px 15px;
   color: #0B2B33 !important;
@@ -185,6 +207,7 @@
 .profile-header-wrapper .language-options li.active {
   background-color: #FF6F61;
   border-radius: 10px;
+  color: white !important;
 }
 
 .profile-header-wrapper .header-login {
@@ -204,8 +227,8 @@
 
 .profile-header-wrapper .login-link:hover {
   background-color: #FF6F61;
-  border-color: #FF6F61;
-  color: white;
+  border-color: transparent !important;
+  color: white !important;
 }
 
 /* Media Queries για Κινητά */
@@ -256,24 +279,51 @@
     color: #FFFFFF !important;
   }
 
+  .profile-header-wrapper .navigation li a:hover {
+    color: white !important;
+    background-color: #FF6F61;
+    padding: 10px 0;
+    border-radius: 15px;
+  }
+
   .profile-header-wrapper .navigation .dropdown {
     position: static;
     width: 100%;
     text-align: center;
   }
 
-  .profile-header-wrapper .navigation .dropdown > span {
-    font-size: 14px;
-    padding: 10px 0;
-    margin: 0 auto;
-    display: block;
-    border: none;
-    color: #FFFFFF !important;
+  .profile-header-wrapper .navigation .dropdown-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
   }
 
-  .profile-header-wrapper .navigation .dropdown > span:hover {
+  .profile-header-wrapper .navigation .dropdown > .dropdown-header > a {
+    font-size: 16px;
+    padding: 10px 0;
+    margin: 0;
+    color: #FFFFFF !important;
+    z-index: 1001;
+    touch-action: manipulation;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > .dropdown-header > a:hover {
     background-color: #FF6F61;
-    color: white;
+    color: white !important;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > .dropdown-header > span {
+    font-size: 16px;
+    padding: 10px 0;
+    color: #FFFFFF !important;
+    cursor: pointer;
+    z-index: 1001;
+    touch-action: manipulation;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > .dropdown-header > span:hover {
+    color: #FF6F61 !important;
   }
 
   .profile-header-wrapper .navigation .dropdown-menu {
@@ -295,6 +345,19 @@
     color: #FFFFFF !important;
   }
 
+  .profile-header-wrapper .navigation .dropdown-menu li a {
+    color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .navigation .dropdown-menu li:hover {
+    background-color: #FF6F61;
+    border-radius: 10px;
+  }
+
+  .profile-header-wrapper .navigation .dropdown-menu li:hover a {
+    color: white !important;
+  }
+
   .profile-header-wrapper .header-language {
     margin: 10px 0;
     width: 100%;
@@ -302,12 +365,18 @@
   }
 
   .profile-header-wrapper .custom-select {
-    font-size: 14px;
+    font-size: 16px;
     padding: 5px 10px;
     margin: 0 auto;
     display: inline-block;
     color: #FFFFFF !important;
     border-color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .custom-select:hover {
+    background-color: #FF6F61;
+    color: white !important;
+    border-color: transparent !important;
   }
 
   .profile-header-wrapper .language-options {
@@ -317,15 +386,18 @@
     background: transparent;
   }
 
-  .profile-header-wrapper .header-language.open .language-options {
-    display: block !important;
-  }
-
   .profile-header-wrapper .language-options li {
     font-size: 14px;
     padding: 5px 15px;
     text-align: center;
     color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .language-options li:hover,
+  .profile-header-wrapper .language-options li.active {
+    background-color: #FF6F61;
+    border-radius: 10px;
+    color: white !important;
   }
 
   .profile-header-wrapper .header-login {
@@ -339,6 +411,12 @@
     padding: 10px 20px;
     color: #FFFFFF !important;
     border-color: #FFFFFF !important;
+  }
+
+  .profile-header-wrapper .login-link:hover {
+    background-color: #FF6F61;
+    border-color: transparent !important;
+    color: white !important;
   }
 }
 
@@ -360,7 +438,12 @@
     font-size: 14px;
   }
 
-  .profile-header-wrapper .navigation .dropdown > span {
+  .profile-header-wrapper .navigation .dropdown > .dropdown-header > a {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > .dropdown-header > span {
     font-size: 14px;
     padding: 10px 0;
   }
@@ -371,7 +454,7 @@
   }
 
   .profile-header-wrapper .custom-select {
-    font-size: 12px;
+    font-size: 14px;
     padding: 4px 8px;
   }
 
@@ -404,7 +487,12 @@
     font-size: 12px;
   }
 
-  .profile-header-wrapper .navigation .dropdown > span {
+  .profile-header-wrapper .navigation .dropdown > .dropdown-header > a {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .profile-header-wrapper .navigation .dropdown > .dropdown-header > span {
     font-size: 12px;
     padding: 10px 0;
   }
@@ -415,7 +503,7 @@
   }
 
   .profile-header-wrapper .custom-select {
-    font-size: 10px;
+    font-size: 12px;
     padding: 3px 6px;
   }
 

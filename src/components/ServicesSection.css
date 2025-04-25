@@ -1,4 +1,3 @@
-/* src/components/ServicesSection.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 .services-section {
@@ -151,36 +150,38 @@
 
 .method-section .progress-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14.96px;
   padding: 20px 0;
   text-align: center;
+  overflow-x: auto;
 }
 
 .method-section .progress-step {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 170px;
 }
 
 .method-section .progress-circle {
-  width: 270px;
-  height: 270px;
+  width: 201.96px;
+  height: 201.96px;
   background: transparent;
-  border: 3px solid #ff6f61;
+  border: 2px solid #ff6f61;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 11.22px;
   color: #ff6f61;
-  font-size: 72px;
+  font-size: 53.856px;
   font-weight: bold;
   font-family: 'Playfair Display', serif;
 }
 
 .method-section .progress-step h6 {
-  font-size: 16px;
+  font-size: 16px; /* Increased from 11.968px by 20% */
   font-weight: 700;
   color: #333;
   font-family: 'Playfair Display', serif;
@@ -188,7 +189,7 @@
 }
 
 .method-section .progress-step p {
-  font-size: 13px;
+  font-size: 13px; /* Increased from 9.724px by 20% */
   line-height: 1.6;
   color: #555;
   font-family: 'Playfair Display', serif;
@@ -367,23 +368,27 @@
   }
 
   .method-section .progress-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(127.5px, 1fr));
+    gap: 11.22px;
+  }
+
+  .method-section .progress-step {
+    min-width: 127.5px;
   }
 
   .method-section .progress-circle {
-    width: 225px;
-    height: 225px;
-    font-size: 60px;
-    margin-bottom: 10px;
+    width: 112.2px;
+    height: 112.2px;
+    font-size: 35.904px;
+    margin-bottom: 7.48px;
   }
 
   .method-section .progress-step h6 {
-    font-size: 14px;
+    font-size: 12.57px; /* Increased from 10.472px by 20% */
   }
 
   .method-section .progress-step p {
-    font-size: 12px;
+    font-size: 10.77px; /* Increased from 8.976px by 20% */
   }
 
   .method-section .method-description {
@@ -512,23 +517,27 @@
   }
 
   .method-section .progress-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(102px, 1fr));
+    gap: 7.48px;
+  }
+
+  .method-section .progress-step {
+    min-width: 102px;
   }
 
   .method-section .progress-circle {
-    width: 202.5px;
-    height: 202.5px;
-    font-size: 54px;
-    margin-bottom: 8px;
+    width: 89.76px;
+    height: 89.76px;
+    font-size: 26.928px;
+    margin-bottom: 5.984px;
   }
 
   .method-section .progress-step h6 {
-    font-size: 13px;
+    font-size: 11.67px; /* Increased from 9.724px by 20% */
   }
 
   .method-section .progress-step p {
-    font-size: 11px;
+    font-size: 9.87px; /* Increased from 8.228px by 20% */
   }
 
   .method-section .method-description {
@@ -650,22 +659,26 @@
 
   .method-section .progress-grid {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 5.984px;
+  }
+
+  .method-section .progress-step {
+    min-width: 85px;
   }
 
   .method-section .progress-circle {
-    width: 180px;
-    height: 180px;
-    font-size: 48px;
-    margin-bottom: 5px;
+    width: 74.8px;
+    height: 74.8px;
+    font-size: 22.44px;
+    margin-bottom: 3.74px;
   }
 
   .method-section .progress-step h6 {
-    font-size: 12px;
+    font-size: 10.77px; /* Increased from 8.976px by 20% */
   }
 
   .method-section .progress-step p {
-    font-size: 10px;
+    font-size: 8.98px; /* Increased from 7.48px by 20% */
   }
 
   .method-section .method-description {

@@ -7,20 +7,21 @@
   background-color: #EDEBE8;
 }
 
-.container {
+.victoria-kotenko-profile-page .two-column-section .two-column-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
   box-sizing: border-box;
 }
 
-.two-column-content {
+/* Εφαρμογή padding στο two-column-content */
+.victoria-kotenko-profile-page .two-column-section .two-column-wrapper .two-column-content {
   display: flex;
   gap: 40px;
   justify-content: center; /* Κεντράρισμα του περιεχομένου */
   width: 100%;
   margin: 0 auto; /* Κεντράρισμα του περιεχομένου */
-  max-width: 1200px; /* Ίδιο πλάτος με το container */
+  padding: 0 70px !important; /* Αλλαγή από 60px σε 70px */
+  box-sizing: border-box;
 }
 
 .left-column {
@@ -63,7 +64,7 @@
 }
 
 .therapist-info {
-  padding: 20px;
+  padding: 0; /* Αφαίρεση padding για να αποφύγουμε διπλή εφαρμογή */
 }
 
 .therapist-info h1 {
@@ -120,6 +121,7 @@
   margin-top: 20px;
   margin-bottom: 15px;
   font-family: 'Playfair Display', serif;
+  color: #9B7338 !important; /* Αλλαγή χρώματος για να ταιριάζει με το κείμενο */
 }
 
 .trust-points {
@@ -187,14 +189,11 @@
     margin-bottom: 0;
   }
 
-  .container {
-    padding: 0 20px;
-  }
-
-  .two-column-content {
+  .victoria-kotenko-profile-page .two-column-section .two-column-wrapper .two-column-content {
     flex-direction: column;
     gap: 20px;
     margin: 0; /* Αφαίρεση περιθωρίων σε κινητά */
+    padding: 0 50px !important; /* Αύξηση από 40px σε 50px */
   }
 
   .left-column,
@@ -283,8 +282,8 @@
     margin-bottom: 0;
   }
 
-  .container {
-    padding: 0 10px;
+  .victoria-kotenko-profile-page .two-column-section .two-column-wrapper .two-column-content {
+    padding: 0 40px !important; /* Αύξηση από 30px σε 40px */
   }
 
   .media-frame {
@@ -366,8 +365,8 @@
     margin-bottom: 0;
   }
 
-  .container {
-    padding: 0 5px;
+  .victoria-kotenko-profile-page .two-column-section .two-column-wrapper .two-column-content {
+    padding: 0 30px !important; /* Αύξηση από 20px σε 30px */
   }
 
   .media-frame {

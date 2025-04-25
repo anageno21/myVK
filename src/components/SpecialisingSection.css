@@ -23,9 +23,9 @@
 }
 
 .section-header {
-  text-align: center; /* Αλλαγή από left σε center για κεντράρισμα */
+  text-align: center;
   max-width: 600px;
-  margin: 40px auto 0 auto; /* Κεντράρισμα με margin auto */
+  margin: 40px auto 0 auto;
   position: relative;
   overflow: hidden;
 }
@@ -69,7 +69,7 @@
 }
 
 .specialising-card {
-  background-color: #F9E2DC;
+  background-color: #BED7E5; /* Αλλαγή χρώματος φόντου σε #7FC7D0 */
   border-radius: 20px;
   padding: 0;
   display: flex;

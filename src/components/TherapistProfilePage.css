@@ -9,7 +9,7 @@
   background-color: #EDEBE8;
 }
 
-.container {
+.therapist-profile-page .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
@@ -116,7 +116,7 @@
     padding: 40px 0;
   }
 
-  .container {
+  .therapist-profile-page .container {
     padding: 0 20px;
   }
 
@@ -172,7 +172,7 @@
     padding: 30px 0;
   }
 
-  .container {
+  .therapist-profile-page .container {
     padding: 0 10px;
   }
 
@@ -226,7 +226,7 @@
     padding: 20px 0;
   }
 
-  .container {
+  .therapist-profile-page .container {
     padding: 0 5px;
   }
 

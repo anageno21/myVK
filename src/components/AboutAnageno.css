@@ -1,19 +1,21 @@
-/* src/components/AboutAnageno.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 .about-anageno {
   width: 100%;
-  height: 650px;
+  height: auto; /* Αφαίρεση σταθερού ύψους για να προσαρμοστεί στο περιεχόμενο */
   background-color: #EDEBE8;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   margin: 0;
+  padding: 50px 0; /* Προσθήκη padding για καλύτερη εμφάνιση */
+  margin-bottom: 50px; /* Απόσταση από την επόμενη ενότητα */
+  z-index: 1; /* Χαμηλότερο z-index από τον HeroSlider */
 }
 
 .container {
-  max-width: 1200px; /* Αλλαγή από 1202px σε 1200px για συνέπεια */
+  max-width: 1202px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -34,7 +36,7 @@
 
 .image-frame {
   width: 100%;
-  min-height: 400px;
+  min-height: 400px; /* Διατήρηση min-height, αλλά με προσαρμογή σε μικρότερες οθόνες */
   background-color: #F9E2DC;
   border-radius: 20px;
   padding: 40px;
@@ -103,7 +105,7 @@
   padding: 40px;
   position: relative;
   overflow: hidden;
-  min-height: 480px;
+  min-height: 480px; /* Διατήρηση min-height, αλλά με προσαρμογή σε μικρότερες οθόνες */
 }
 
 .frame-content {
@@ -140,8 +142,9 @@
 /* Media Queries για Κινητά */
 @media (max-width: 768px) {
   .about-anageno {
-    height: auto;
+    height: auto; /* Διατήρηση της δυναμικής προσαρμογής ύψους */
     padding: 40px 0;
+    margin-bottom: 40px; /* Απόσταση από την επόμενη ενότητα */
   }
 
   .container {
@@ -160,7 +163,7 @@
   }
 
   .therapy-frame {
-    min-height: 350px;
+    min-height: 350px; /* Μείωση ύψους */
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
@@ -184,7 +187,7 @@
   }
 
   .image-frame {
-    min-height: 300px;
+    min-height: 300px; /* Μείωση ύψους της εικόνας */
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
@@ -223,6 +226,7 @@
 @media (max-width: 576px) {
   .about-anageno {
     padding: 20px 0;
+    margin-bottom: 30px;
   }
 
   .container {
@@ -277,6 +281,11 @@
 }
 
 @media (max-width: 375px) {
+  .about-anageno {
+    padding: 15px 0;
+    margin-bottom: 20px;
+  }
+
   .therapy-frame {
     min-height: 280px;
     padding: 10px;

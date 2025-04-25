@@ -5,7 +5,7 @@ import './TwoColumnSection.css';
 const TwoColumnSection = () => {
   return (
     <section className="two-column-section">
-      <div className="container">
+      <div className="two-column-wrapper">
         <div className="two-column-content">
           <div className="left-column">
             <div className="media-frame">
