@@ -28,7 +28,16 @@ const SleepMentalHealthBlog = () => {
           Недостаток сна оказывает глубокое воздействие на работу мозга, влияя на эмоциональное и когнитивное состояние. Согласно данным Национального центра биотехнологической информации (NCBI), недостаток сна влияет на метаболизм глюкозы, иммунную систему, кровяное давление, а также работу сердечно-сосудистой и гормональной систем. Однако наибольшие последствия касаются когнитивных и эмоциональных функций: нарушается способность к концентрации, повышается утомляемость, снижается стрессоустойчивость. Эти изменения закладывают почву для развития тревожных расстройств и депрессии (NCBI, 2019).
         </p>
         <p className="text-1 lh-30 fw-4">
-          Сон играет ключевую роль в регуляции эмоций, восстановлении нервной системы и формировании памяти. При недостатке сна:
+          Сон играет ключевую роль в регуляции эмоций, восстановлении нервной системы и формировании памяти.
+        </p>
+
+        {/* Μετακίνηση της blg009b.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg009b.jpg" alt="Иллюстрация нарушений сна 1" className="section-image" />
+        </figure>
+
+        <p className="text-1 lh-30 fw-4">
+          При недостатке сна:
         </p>
         <ul className="text-1 lh-30 fw-4">
           <li>снижается активность префронтальной коры (отвечает за самоконтроль и принятие решений);</li>
@@ -38,12 +47,6 @@ const SleepMentalHealthBlog = () => {
         <blockquote className="quote">
           «Один из наиболее мощных предикторов депрессии у взрослых — качество сна» — Matthew Walker, профессор нейронауки и автор книги <i>Why We Sleep</i> [1]
         </blockquote>
-        <img
-          src="/images/blog/blg009b.jpg"
-          alt="Иллюстрация нарушений сна 1"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
 
         {/* Связь между сном и тревожностью/депрессией */}
         <h4 className="section-heading">Связь между сном и тревожностью/депрессией</h4>
@@ -55,6 +58,11 @@ const SleepMentalHealthBlog = () => {
           <li>Нарушения сна увеличивают риск генерализованного тревожного расстройства (Alfano et al., 2010);</li>
           <li>Недостаток REM-сна нарушает переработку эмоциональных переживаний (NCBI, 2019).</li>
         </ul>
+
+        {/* Μετακίνηση της blg009c.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg009c.jpg" alt="Иллюстрация нарушений сна 2" className="section-image" />
+        </figure>
 
         {/* Когнитивные и поведенческие последствия */}
         <h4 className="section-heading">Когнитивные и поведенческие последствия</h4>
@@ -70,13 +78,6 @@ const SleepMentalHealthBlog = () => {
         <blockquote className="quote">
           «Даже незначительное сокращение сна ухудшает способность человека адекватно воспринимать эмоции других людей» — NCBI (2019)
         </blockquote>
-
-        {/* Image Grid μόνο με blg009c.jpg */}
-        <div className="image-grid" style={{ display: 'flex', justifyContent: 'center' }}>
-          <div className="image-frame first-frame" style={{ maxWidth: '920px' }}>
-            <img src="/images/blog/blg009c.jpg" alt="Иллюстрация нарушений сна 2" style={{ display: 'block', width: '100%', maxWidth: '920px', borderRadius: '10px' }} />
-          </div>
-        </div>
 
         {/* Сон и психотерапия */}
         <h4 className="section-heading">Сон и психотерапия</h4>
@@ -103,12 +104,11 @@ const SleepMentalHealthBlog = () => {
           <li><strong>Отключение.</strong> Минимум информационной нагрузки за 1–2 часа до сна.</li>
           <li><strong>Поддержка.</strong> Если бессонница хроническая — обратитесь за помощью, это может быть сомнолог, невролог, психиатр, когнитивный психотерапевт.</li>
         </ol>
-        <img
-          src="/images/blog/blg009d.jpg"
-          alt="Связь сна и психического здоровья"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
+
+        {/* Μετακίνηση της blg009d.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg009d.jpg" alt="Связь сна и психического здоровья" className="section-image" />
+        </figure>
 
         {/* Заключение */}
         <h4 className="section-heading">Заключение</h4>

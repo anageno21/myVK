@@ -7,8 +7,8 @@ const CodependencyBlog = () => {
     category: 'Отношения',
     image: '/images/blog/blg001a.jpg',
     heroSliderContent: {
-      type: 'image', // Δείχνουμε μόνο μία εικόνα
-      src: '/images/blog/blg001a.jpg', // Η εικόνα blg001a.jpg
+      type: 'image',
+      src: '/images/blog/blg001a.jpg',
     },
     content: (
       <>
@@ -65,16 +65,10 @@ const CodependencyBlog = () => {
           Клиентка на одной из сессий сказала: «Я не понимаю, чего хочу. Я всегда жила чужими желаниями — сначала мамиными, потом мужа». Это типичная иллюстрация созависимого паттерна.
         </p>
 
-        {/* Grid with Images Before Чем опасна созависимость? */}
-        <div className="image-grid">
-          <div className="image-frame first-frame">
-            <img src="/images/blog/blg001c.jpg" alt="Codependency Illustration 1" />
-            <span className="image-title">Созависимость начинается там, где заканчиваются личные границы</span>
-          </div>
-          <div className="image-frame">
-            <img src="/images/blog/blg001b.jpg" alt="Codependency Illustration 2" />
-          </div>
-        </div>
+        {/* Εικόνα blg001c.jpg πριν την ενότητα "Чем опасна созависимость?" */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg001c.jpg" alt="Codependency Illustration 1" className="section-image" />
+        </figure>
 
         {/* Чем опасна созависимость? */}
         <h4 className="section-heading">Чем опасна созависимость?</h4>
@@ -91,6 +85,11 @@ const CodependencyBlog = () => {
         <blockquote className="quote">
           «Созависимость — это эмоциональное рабство, где ты больше не принадлежишь себе» — Ross Rosenberg, The Human Magnet Syndrome [3]
         </blockquote>
+
+        {/* Εικόνα blg001b.jpg ανάмеσα στο απόσпασма и την ενότητα "Как выйти из созависимости?" */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg001b.jpg" alt="Codependency Illustration 2" className="section-image" />
+        </figure>
 
         {/* Как выйти из созависимости? */}
         <h4 className="section-heading">Как выйти из созависимости?</h4>

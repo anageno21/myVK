@@ -1,14 +1,13 @@
-/* src/global.css */
 :root {
   --container-max-width: 1200px;
-  --content-max-width: 920px; /* Μέγιστο πλάτος για κείμενο και τίτλους */
+  --content-max-width: 920px;
   --container-padding: 15px;
   --primary-font: 'Playfair Display', serif;
-  --primary-color: #143B64; /* Σκούρο χρώμα γραμματοσειράς */
-  --light-color: #FFFFFF; /* Λευκό χρώμα γραμματοσειράς */
-  --text-color: #2F4C66; /* Χρώμα για δευτερεύον κείμενο */
+  --primary-color: #143B64;
+  --light-color: #FFFFFF;
+  --text-color: #2F4C66;
   --accent-color: #FF6F61;
-  --background-color: #F2F1F0; /* Απαλό γκρι background */
+  --background-color: #F2F1F0;
 }
 
 body {
@@ -81,4 +80,21 @@ body a:hover {
 
 .text-light {
   color: var(--light-color) !important;
+}
+
+/* Διαφανές background για τα πλαίσια όλων των εικόνων */
+.section-image-wrapper {
+  background-color: transparent !important;
+}
+
+img {
+  background-color: transparent !important;
+}
+
+/* Επιπλέον κλάσεις για άλλα πιθανά πλαίσια εικόνων */
+.image-frame,
+.hero-image,
+.hero-video,
+.related-card-image {
+  background-color: transparent !important;
 }

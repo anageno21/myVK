@@ -3,10 +3,11 @@
   width: 100%;
   height: 580px;
   overflow: hidden;
+  z-index: 5; /* Χαμηλότερο από το z-index: 100 των dropdown menus */
 }
 
 .hero-image {
-  display: block; /* Εξασφαλίζουμε ότι η εικόνα είναι ορατή */
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;

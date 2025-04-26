@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiInstagram, FiMail, FiMusic, FiMessageCircle, FiTwitter, FiFacebook } from 'react-icons/fi';
 import './ProfileHeader.css';
 
 const ProfileHeader = ({ isDarkBackground = true }) => {
@@ -53,12 +54,12 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
 
   return (
     <div className="profile-header-wrapper">
+      <div className="header-logo">
+        <Link to="/">
+          <img src="/images/logo/Logo.png" alt="Anageno" />
+        </Link>
+      </div>
       <div className="header-container">
-        <div className="header-logo">
-          <Link to="/">
-            <img src="/images/logo/logo-white.png" alt="Anageno" />
-          </Link>
-        </div>
         <div className="burger-menu" onClick={toggleMenu}>
           <span>☰</span>
         </div>

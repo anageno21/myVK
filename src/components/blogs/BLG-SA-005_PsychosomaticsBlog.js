@@ -40,12 +40,11 @@ const PsychosomaticsBlog = () => {
           <li>кожные высыпания, зуд</li>
           <li>бессонница, усталость, учащённое сердцебиение</li>
         </ul>
-        <img
-          src="/images/blog/blg005b.jpg"
-          alt="Иллюстрация психосоматических симптомов"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
+
+        {/* Μετακίνηση της blg005b.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg005b.jpg" alt="Иллюстрация психосоматических симптомов" className="section-image" />
+        </figure>
 
         {/* Как стресс влияет на тело? */}
         <h4 className="section-heading">Как стресс влияет на тело?</h4>
@@ -64,14 +63,13 @@ const PsychosomaticsBlog = () => {
         <ul className="text-1 lh-30 fw-4">
           <li>В исследовании Kroenke & Mangelsdorff (1989) 80% из 1000 пациентов с соматическими жалобами не имели выявленной медицинской причины.</li>
           <li>Исследование Harvard Medical School подтвердило, что люди с высоким уровнем подавленных эмоций чаще сталкиваются с болевыми синдромами и функциональными нарушениями.</li>
-          <li>Согласно публикации в <i>Journal of Psychosomatic Research</i>, тревожные расстройства и депрессия напрямую связаны с повышенной соматизацией.</li>
+          <li>Согласно публикации в <i>Journal of Psychosomatic Research</i>, тревожные расстройства и депрессия напрямую связаны с повышенной соматизацией. [5]</li>
         </ul>
-        <img
-          src="/images/blog/blg005c.jpg"
-          alt="Иллюстрация связи стресса и тела"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
+
+        {/* Μετακίνηση της blg005c.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg005c.jpg" alt="Иллюстрация связи стресса и тела" className="section-image" />
+        </figure>
 
         {/* Как работать с психосоматикой? */}
         <h4 className="section-heading">Как работать с психосоматикой?</h4>
@@ -93,7 +91,7 @@ const PsychosomaticsBlog = () => {
         </p>
 
         {/* Источники */}
-        <h4 className="section-heading">📚 Источники:</h4>
+        <h4 className="section-heading">Источники:</h4>
         <ol className="text-1 lh-30 fw-4">
           <li>
             Maté, G. (2003). <i>When the Body Says No: The Cost of Hidden Stress</i>. Vintage Canada.

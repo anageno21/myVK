@@ -33,12 +33,11 @@ const StressBlog = () => {
         <p className="text-1 lh-30 fw-4">
           Проблема — в длительности.
         </p>
-        <img
-          src="/images/blog/blg007b.jpg"
-          alt="Иллюстрация полезного стресса"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
+
+        {/* Μετακίνηση της blg007b.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg007b.jpg" alt="Иллюстрация полезного стресса" className="section-image" />
+        </figure>
 
         {/* Когда стресс становится разрушительным */}
         <h4 className="section-heading">Когда стресс становится разрушительным</h4>
@@ -54,12 +53,6 @@ const StressBlog = () => {
         <p className="text-1 lh-30 fw-4">
           По данным APA, более 75% людей в США сообщают о физических проявлениях хронического стресса (APA, 2023).
         </p>
-        <img
-          src="/images/blog/blg007c.jpg"
-          alt="Иллюстрация хронического стресса"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
 
         {/* Как понять, что стресс уже вышел из-под контроля? */}
         <h4 className="section-heading">Как понять, что стресс уже вышел из-под контроля?</h4>
@@ -77,6 +70,11 @@ const StressBlog = () => {
         <p className="text-1 lh-30 fw-4">
           Если тебе знакомо хоть что-то из этого — давай дальше разбираться, как можно себе помочь.
         </p>
+
+        {/* Μετακίνηση της blg007c.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg007c.jpg" alt="Иллюстрация хронического стресса" className="section-image" />
+        </figure>
 
         {/* Что помогает, и как мягко себя поддержать */}
         <h4 className="section-heading">Что помогает, и как мягко себя поддержать</h4>
@@ -104,7 +102,7 @@ const StressBlog = () => {
         </p>
 
         {/* Источники */}
-        <h4 className="section-heading">📚 Источники:</h4>
+        <h4 className="section-heading">Источники:</h4>
         <ol className="text-1 lh-30 fw-4">
           <li>
             Dhabhar, F. S. (2014). Effects of stress on immune function. <i>Brain, Behavior, and Immunity</i>, 39, 1–12.{' '}

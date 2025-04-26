@@ -37,9 +37,9 @@
 }
 
 .tag.text-2 {
-  display: block; /* Αλλαγή από inline-block σε block για κεντράρισμα */
-  max-width: 920px; /* Περιορισμός πλάτους */
-  margin: 0 auto; /* Κεντράρισμα */
+  display: block;
+  max-width: 920px;
+  margin: 0 auto;
   font-size: 14px;
   color: #FF6F61;
   margin-bottom: 10px;
@@ -83,7 +83,7 @@
 }
 
 .wrap-paragrahp h4.section-heading {
-  margin-top: 40px !important; /* Αύξηση απόστασης από την προηγούμενη σειρά */
+  margin-top: 40px !important;
   margin-bottom: 15px !important;
 }
 
@@ -103,38 +103,39 @@
   border-left: 4px solid #FF6F61;
   padding-left: 15px;
   margin: 20px 0;
-  max-width: 920px; /* Περιορισμός πλάτους */
-  margin-left: auto; /* Κεντράρισμα */
+  max-width: 920px;
+  margin-left: auto;
   margin-right: auto;
 }
 
 /* Εικόνες */
-.image-grid {
-  display: flex;
-  gap: 20px;
-  margin: 20px 0;
-  max-width: 920px; /* Περιορισμός πλάτους εικόνων */
-  margin-left: auto; /* Κεντράρισμα */
-  margin-right: auto;
+.section-image-wrapper {
+  width: 600px;
+  height: 400px; /* Προεπιλεγμένη διάσταση: 600x400 */
+  margin: 30px auto 20px;
+  background-color: transparent !important;
+  position: relative;
+  overflow: hidden;
 }
 
-.image-frame {
-  flex: 1;
-}
-
-.image-frame img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+.section-image-wrapper--square {
+  height: 600px; /* Διάσταση για τετράγωνο πλαίσιο: 600x600 */
 }
 
 .section-image {
   width: 100%;
-  max-width: 920px; /* Περιορισμός πλάτους εικόνων */
-  margin-left: auto; /* Κεντράρισμα */
-  margin-right: auto;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
+  background-color: transparent !important;
+}
+
+.section-image-wrapper .image-title {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
 }
 
 /* Tags και Social Sharing */
@@ -144,8 +145,8 @@
   margin-top: 30px;
   padding-top: 20px;
   border-top: 1px solid #ddd;
-  max-width: 920px; /* Περιορισμός πλάτους */
-  margin-left: auto; /* Κεντράρισμα */
+  max-width: 920px;
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -196,8 +197,8 @@
 /* Σχετικά Άρθρα */
 .related-articles-section {
   padding: 40px 0;
-  max-width: 920px; /* Περιορισμός πλάτους της ενότητας */
-  margin: 0 auto; /* Κεντράρισμα */
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .section-header {
@@ -212,20 +213,20 @@
 }
 
 .related-topics-grid {
-  display: flex; /* Χρήση flex για οριζόντιο slider */
-  overflow-x: auto; /* Οριζόντιο scroll */
+  display: flex;
+  overflow-x: auto;
   gap: 20px;
-  max-width: 920px; /* Περιορισμός πλάτους στα 920px */
-  margin: 0 auto; /* Κεντράρισμα */
-  padding-bottom: 10px; /* Χώρος για το scrollbar */
-  scroll-snap-type: x mandatory; /* Smooth scrolling behavior */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling σε iOS */
+  max-width: 920px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .related-topic-card {
-  flex: 0 0 220px; /* Μείωση του πλάτους σε 220px για να χωράνε 4 cards εντός 920px */
-  min-width: 220px; /* Εξασφαλίζει ότι το πλάτος δεν μικραίνει κάτω από 220px */
-  scroll-snap-align: start; /* Snap κάθε card στην αρχή κατά το scroll */
+  flex: 0 0 220px;
+  min-width: 220px;
+  scroll-snap-align: start;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -237,8 +238,9 @@
 
 .related-card-image img {
   width: 100%;
-  height: 150px; /* Μείωση ύψους για μικρότερα cards */
+  height: 150px;
   object-fit: cover;
+  background-color: transparent !important;
 }
 
 .related-card-image .date {
@@ -253,30 +255,30 @@
 }
 
 .related-card-content {
-  padding: 15px; /* Μείωση padding για μικρότερα cards */
+  padding: 15px;
 }
 
 .related-card-content .category {
-  font-size: 12px; /* Μείωση μεγέθους γραμματοσειράς */
+  font-size: 12px;
   color: #FF6F61;
   margin-bottom: 8px;
 }
 
 .related-card-content h3 {
-  font-size: 16px; /* Μείωση μεγέθους γραμματοσειράς */
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
 .related-card-content p {
-  font-size: 12px; /* Μείωση μεγέθους γραμματοσειράς */
+  font-size: 12px;
   line-height: 1.5;
   color: #666;
   margin-bottom: 10px;
 }
 
 .related-card-content .read-more {
-  font-size: 12px; /* Μείωση μεγέθους γραμματοσειράς */
+  font-size: 12px;
   color: #FF6F61;
   text-decoration: none;
   font-weight: bold;
@@ -293,8 +295,8 @@
 /* Σχόλια */
 .comments-section {
   padding: 40px 0;
-  max-width: 920px; /* Περιορισμός πλάτους της ενότητας */
-  margin: 0 auto; /* Κεντράρισμα */
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .comment-form form {
@@ -310,8 +312,8 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
-  width: 70%; /* Περιορισμός πλάτους κατά 30% (100% -> 70%) */
-  margin: 0 auto; /* Κεντράρισμα */
+  width: 70%;
+  margin: 0 auto;
 }
 
 .comment-form textarea {
@@ -326,8 +328,8 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 49%; /* Περαιτέρω περιορισμός πλάτους κατά 70% (70% -> 49%) */
-  margin: 0 auto; /* Κεντράρισμα του κουμπιού */
+  width: 49%;
+  margin: 0 auto;
 }
 
 .comment-form button:hover {
@@ -404,8 +406,8 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
-  width: 70%; /* Περιορισμός πλάτους κατά 30% (100% -> 70%) */
-  margin: 0 auto; /* Κεντράρισμα */
+  width: 70%;
+  margin: 0 auto;
 }
 
 .reply-form textarea {
@@ -420,8 +422,8 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 49%; /* Περαιτέρω περιορισμός πλάτους κατά 70% (70% -> 49%) */
-  margin: 0 auto; /* Κεντράρισμα του κουμπιού */
+  width: 49%;
+  margin: 0 auto;
 }
 
 .reply-form button:hover {
@@ -442,8 +444,13 @@
     font-size: 28px;
   }
 
-  .image-grid {
-    flex-direction: column;
+  .section-image-wrapper {
+    width: 100%;
+    height: 300px;
+  }
+
+  .section-image-wrapper--square {
+    height: 450px; /* Τετράγωνο πλαίσιο για μικρότερες οθόνες */
   }
 
   .wrap-tag {
@@ -452,7 +459,7 @@
   }
 
   .related-topic-card {
-    flex: 0 0 250px; /* Μικρότερο πλάτος για μικρότερες οθόνες */
+    flex: 0 0 250px;
     min-width: 250px;
   }
 }
@@ -460,6 +467,14 @@
 @media (max-width: 576px) {
   .heading-blog .title {
     font-size: 24px;
+  }
+
+  .section-image-wrapper {
+    height: 250px;
+  }
+
+  .section-image-wrapper--square {
+    height: 350px; /* Τετράγωνο πλαίσιο για πολύ μικρές οθόνες */
   }
 
   .related-card-image img {
@@ -475,7 +490,7 @@
   }
 
   .related-topic-card {
-    flex: 0 0 200px; /* Ακόμα μικρότερο πλάτος για πολύ μικρές οθόνες */
+    flex: 0 0 200px;
     min-width: 200px;
   }
 }

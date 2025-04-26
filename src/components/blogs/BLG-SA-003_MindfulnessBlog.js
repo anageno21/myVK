@@ -45,24 +45,17 @@ const MindfulnessBlog = () => {
         <p className="text-1 lh-30 fw-4">
           В метаанализе более 200 исследований установлено, что майндфулнесс помогает в лечении депрессии, тревожных расстройств и хронической боли (Khoury et al., 2013).
         </p>
-        <img
-          src="/images/blog/blg003b.jpg"
-          alt="Иллюстрация научных данных о майндфулнесс"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
 
         {/* Почему это работает? */}
         <h4 className="section-heading">Почему это работает?</h4>
         <p className="text-1 lh-30 fw-4">
           Потому что осознанность — это противоположность автоматизму. Мы часто живём в «режиме робота»: еда — фоном к сериалу, прогулка — с телефоном в руках, разговор — с мыслями о «что сказать потом». Майндфулнесс помогает остановиться и вернуть себе момент. А вместе с ним — контакт с собой.
         </p>
-        <img
-          src="/images/blog/blg003c.jpg"
-          alt="Иллюстрация осознанности в повседневной жизни"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
+
+        {/* Μετακίνηση της blg003b.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg003b.jpg" alt="Иллюстрация научных данных о майндфулнесс" className="section-image" />
+        </figure>
 
         {/* С чего начать? */}
         <h4 className="section-heading">С чего начать?</h4>
@@ -77,6 +70,11 @@ const MindfulnessBlog = () => {
           <li><strong>Пауза.</strong> Перед тем как ответить, вдохни. Спроси себя: «Это моя реакция или автоматизм?»</li>
         </ul>
 
+        {/* Μετακίνηση της blg003c.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg003c.jpg" alt="Иллюстрация осознанности в повседневной жизни" className="section-image" />
+        </figure>
+
         {/* Это не про идеальность */}
         <h4 className="section-heading">Это не про идеальность</h4>
         <p className="text-1 lh-30 fw-4">
@@ -85,12 +83,11 @@ const MindfulnessBlog = () => {
         <blockquote className="quote">
           «Осознанность — это не то, что мы делаем идеально. Это то, что мы выбираем снова и снова» — Jon Kabat-Zinn
         </blockquote>
-        <img
-          src="/images/blog/blg003d.jpg"
-          alt="Иллюстрация практики майндфулнесс"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
+
+        {/* Μετακίνηση της blg003d.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg003d.jpg" alt="Иллюстрация практики майндфулнесс" className="section-image" />
+        </figure>
 
         {/* Когда стоит попробовать майндфулнесс */}
         <h4 className="section-heading">Когда стоит попробовать майндфулнесс</h4>

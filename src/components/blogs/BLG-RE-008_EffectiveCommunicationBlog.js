@@ -38,12 +38,11 @@ const EffectiveCommunicationBlog = () => {
         <p className="text-1 lh-30 fw-4">
           Коммуникация — это не то, что мы говорим. Это то, как это принимается.
         </p>
-        <img
-          src="/images/blog/blg008b.jpg"
-          alt="Иллюстрация общения 1"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
+
+        {/* Μετακίνηση της blg008b.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg008b.jpg" alt="Иллюстрация общения 1" className="section-image" />
+        </figure>
 
         {/* Что делает общение настоящим? */}
         <h4 className="section-heading">Что делает общение настоящим?</h4>
@@ -57,11 +56,6 @@ const EffectiveCommunicationBlog = () => {
         <blockquote className="quote">
           «Человеческое общение начинается не с ответа, а с присутствия»
         </blockquote>
-        <div className="image-grid" style={{ display: 'flex', justifyContent: 'center' }}>
-          <div className="image-frame first-frame" style={{ maxWidth: '920px' }}>
-            <img src="/images/blog/blg008c.jpg" alt="Иллюстрация общения 2" style={{ display: 'block', width: '100%', maxWidth: '920px', borderRadius: '10px' }} />
-          </div>
-        </div>
 
         {/* Что говорит наука */}
         <h4 className="section-heading">Что говорит наука</h4>
@@ -70,6 +64,11 @@ const EffectiveCommunicationBlog = () => {
           <li>Эмпатическое слушание снижает физиологические маркеры стресса у обоих участников диалога (Kross et al., 2014).</li>
           <li>Люди, умеющие выражать чувства словами, имеют более высокий уровень эмоциональной регуляции (Lieberman et al., 2007).</li>
         </ul>
+
+        {/* Μετακίνηση της blg008c.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg008c.jpg" alt="Иллюстрация общения 2" className="section-image" />
+        </figure>
 
         {/* Что можно начать делать уже сегодня */}
         <h4 className="section-heading">Что можно начать делать уже сегодня</h4>
@@ -88,7 +87,7 @@ const EffectiveCommunicationBlog = () => {
         </p>
 
         {/* Источники */}
-        <h4 className="section-heading">📚 Источники:</h4>
+        <h4 className="section-heading">Источники:</h4>
         <ol className="text-1 lh-30 fw-4">
           <li>
             Kross, E., et al. (2014). Self-talk as a regulatory mechanism. <i>Journal of Personality and Social Psychology</i>, 106(2), 304–324.{' '}

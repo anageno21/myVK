@@ -68,12 +68,6 @@ const RuminationBlog = () => {
         <p className="text-1 lh-30 fw-4">
           Простой ориентир: размышление приводит к действию или осознанию, а руминация — к утомлению.
         </p>
-        <img
-          src="/images/blog/blg004b.jpg"
-          alt="Иллюстрация различия между руминацией и размышлением"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
 
         {/* Последствия руминации */}
         <h4 className="section-heading">Последствия руминации</h4>
@@ -88,12 +82,11 @@ const RuminationBlog = () => {
         <blockquote className="quote">
           «Когда ум перегружен мыслями, тело начинает болеть» — из практики. У одной из клиенток хронические головные боли ушли, когда она научилась замечать и останавливать руминации.
         </blockquote>
-        <img
-          src="/images/blog/blg004c.jpg"
-          alt="Иллюстрация последствий руминации"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
+
+        {/* Μετακίνηση της blg004b.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg004b.jpg" alt="Иллюстрация различия между руминацией и размышлением" className="section-image" />
+        </figure>
 
         {/* Как остановить руминацию? */}
         <h4 className="section-heading">Как остановить руминацию?</h4>
@@ -110,6 +103,11 @@ const RuminationBlog = () => {
           «Осознанность — это якорь, который возвращает нас в реальность, когда мысли уносят в шторм»
         </blockquote>
 
+        {/* Μετακίνηση της blg004c.jpg εδώ */}
+        <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
+          <img src="/images/blog/blg004c.jpg" alt="Иллюстрация последствий руминации" className="section-image" />
+        </figure>
+
         {/* Заключение */}
         <h4 className="section-heading">Заключение</h4>
         <p className="text-1 lh-30 fw-4">
@@ -117,7 +115,7 @@ const RuminationBlog = () => {
         </p>
 
         {/* Источники */}
-        <h4 className="section-heading">📚 Источники:</h4>
+        <h4 className="section-heading">Источники:</h4>
         <ol className="text-1 lh-30 fw-4">
           <li>
             Nolen-Hoeksema, S. (2000). The role of rumination in depressive disorders and mixed anxiety/depressive symptoms. <i>Journal of Abnormal Psychology</i>, 109(3), 504–511.{' '}

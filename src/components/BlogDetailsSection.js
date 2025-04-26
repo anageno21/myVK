@@ -208,12 +208,16 @@ const BlogDetailsSection = () => {
     setReplyInputs({ ...replyInputs, [commentId]: { text: '', name: '', email: '' } });
   };
 
+  if (error) {
+    return <div className="error-message">{error}</div>;
+  }
+
   if (!post) {
     return <div>Loading...</div>;
   }
 
   const heroContentType = post.heroSliderContent?.type || 'video';
-  const heroContentSrc = post.heroSliderContent?.src || '/videos/blog001.mp4';
+  const heroContentSrc = post.heroSliderContent?.src || 'https://drive.google.com/uc?export=download&id=1qe0NYxEbDz9LFrk7EFLBmelOrKXCrODk'; // blog001.mp4
   const heroImages = post.heroSliderContent?.images || [];
   console.log('HeroSlider Props:', { contentType: heroContentType, src: heroContentSrc, images: heroImages });
   console.log('Rendering BlogDetailsSection for slug:', slug);
