@@ -36,12 +36,6 @@ const RuminationBlog = () => {
         <blockquote className="quote">
           «Руминация похожа на бег по кругу: ты устаёшь, но не приближаешься к решению»
         </blockquote>
-        <img
-          src="/images/blog/blg004a.jpg"
-          alt="Иллюстрация руминации"
-          className="section-image"
-          style={{ display: 'block', width: '100%', maxWidth: '920px', margin: '20px auto', borderRadius: '10px' }}
-        />
 
         {/* Почему мы застреваем в мыслях? */}
         <h4 className="section-heading">Почему мы застреваем в мыслях?</h4>
