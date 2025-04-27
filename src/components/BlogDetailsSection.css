@@ -64,7 +64,7 @@
   align-items: center;
   gap: 5px;
   font-size: 14px;
-  color: #666;
+  color: #999999;
 }
 
 .meta-item i {
@@ -100,7 +100,7 @@
 .wrap-paragrahp blockquote {
   font-style: italic;
   color: #666;
-  border-left: 4px solid #FF6F61;
+  border-left: 4px solid #21aabc;
   padding-left: 15px;
   margin: 20px 0;
   max-width: 920px;
@@ -191,7 +191,7 @@
 }
 
 .tf-social.style-1 a:hover {
-  color: #FF6F61;
+  color: #21aabc;
 }
 
 /* Σχετικά Άρθρα */
@@ -208,7 +208,7 @@
 
 .section-header .sub-title {
   font-size: 14px;
-  color: #FF6F61;
+  color: #21aabc;
   text-transform: uppercase;
 }
 
@@ -247,7 +247,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: #FF6F61;
+  background-color: #21aabc;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -260,7 +260,7 @@
 
 .related-card-content .category {
   font-size: 12px;
-  color: #FF6F61;
+  color: #21aabc;
   margin-bottom: 8px;
 }
 
@@ -279,7 +279,7 @@
 
 .related-card-content .read-more {
   font-size: 12px;
-  color: #FF6F61;
+  color: #21aabc;
   text-decoration: none;
   font-weight: bold;
 }
@@ -323,7 +323,7 @@
 
 .comment-form button {
   padding: 10px 20px;
-  background-color: #FF6F61;
+  background-color: #21aabc;
   color: white;
   border: none;
   border-radius: 5px;
@@ -333,7 +333,7 @@
 }
 
 .comment-form button:hover {
-  background-color: #e65b50;
+  background-color: #f2f1f0;
 }
 
 .comments-list {
@@ -383,7 +383,7 @@
 .reply-button {
   background: none;
   border: none;
-  color: #FF6F61;
+  color: #21aabc;
   cursor: pointer;
   font-size: 14px;
   margin-top: 10px;
@@ -417,7 +417,7 @@
 
 .reply-form button {
   padding: 8px 15px;
-  background-color: #FF6F61;
+  background-color: #21aabc;
   color: white;
   border: none;
   border-radius: 5px;
@@ -427,7 +427,7 @@
 }
 
 .reply-form button:hover {
-  background-color: #e65b50;
+  background-color: #21aabc;
 }
 
 .replies {

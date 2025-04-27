@@ -305,7 +305,9 @@ const BlogDetailsSection = () => {
                     <span className="category">{post.category}</span>
                     <h3>{post.title}</h3>
                     <p>{post.description}</p>
-                    <Link to={post.link} className="read-more">Читать больше <span className="arrow">→</span></Link>
+                    <div className="read-more-wrapper">
+                      <Link to={post.link} className="read-more">Читать больше <span className="arrow">→</span></Link>
+                    </div>
                   </div>
                 </div>
               ))}
