@@ -10,6 +10,12 @@
   --background-color: #F2F1F0;
 }
 
+html, body {
+  height: 100%; /* Εξασφαλίζουμε ότι το ύψος καλύπτει όλη την οθόνη */
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: var(--primary-font) !important;
   color: var(--primary-color);
@@ -17,6 +23,15 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex; /* Χρησιμοποιούμε flexbox για να γεμίσουμε το ύψος */
+  flex-direction: column; /* Το περιεχόμενο και το footer σε στήλη */
+  min-height: 100vh; /* Ελάχιστο ύψος 100% του viewport */
+}
+
+#root {
+  flex: 1; /* Το root element γεμίζει το διαθέσιμο ύψος */
+  display: flex;
+  flex-direction: column;
 }
 
 .container,
@@ -97,4 +112,10 @@ img {
 .hero-video,
 .related-card-image {
   background-color: transparent !important;
+}
+
+/* Στυλ για το footer */
+footer {
+  margin-top: auto; /* Το footer "κολλάει" στο κάτω μέρος */
+  width: 100%;
 }

@@ -1,3 +1,4 @@
+// src/components/VideoHighlightSection.js
 import React, { useState, useRef } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'react-feather';
 import './VideoHighlightSection.css';
@@ -55,7 +56,7 @@ const VideoHighlightSection = () => {
                       playsInline
                       onError={handleError} // Χειρισμός σφάλματος φόρτωσης
                     >
-                      <source src="https://drive.google.com/uc?export=download&id=1X7iWWNG1plTqXqOgviaYD_RNwoHsEOrV" type="video/mp4" /> {/* vkIntro.mp4 */}
+                      <source src="/videos/VK/vkIntro.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                     <div className="video-controls">
