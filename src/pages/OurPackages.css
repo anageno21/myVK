@@ -1,0 +1,466 @@
+.our-packages-section {
+  padding: 60px 0;
+  background-color: var(--background-color);
+}
+
+/* Το .container κληρονομείται από το global.css, οπότε δεν χρειάζεται επαναπροσδιορισμός */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header .sub-title {
+  display: block;
+  color: #21aabc;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+}
+
+.section-header h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  margin-bottom: 15px;
+}
+
+/* Grid πάνω από το packages-grid */
+.header-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1020px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  align-items: end; /* ΜΟΝΟ εδώ - στοιχίζει τα πλαίσια στη βάση τους */
+}
+
+.header-item {
+  border-radius: 30px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.header-item:hover {
+  transform: translateY(-5px);
+}
+
+.header-item .package-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Προσαρμογή χρωμάτων για κάθε πλαίσιο στο header-grid */
+.header-item-1 .package-title {
+  color: white; /* Χρώμα τίτλου για το Бесплатный Вводный Пакет στο header-grid */
+}
+
+.header-item-2 .package-title {
+  color: white; /* Χρώμα τίτλου για το Фундамент στο header-grid */
+}
+
+.header-item-3 .package-title {
+  color: white; /* Χρώμα τίτλου για το Устойчивость στο header-grid */
+}
+
+.header-item-4 .package-title {
+  color: white; /* Χρώμα τίτλου για το Процветание στο header-grid */
+}
+
+/* Διαφορετικό ύψος και χρώμα background για κάθε πλαίσιο */
+.header-item-1 {
+  background-color: #f26f63;
+  height: 170px;
+}
+
+.header-item-2 {
+  background-color: #1eaabc;
+  height: 220px;
+}
+
+.header-item-3 {
+  background-color: #0a7684;
+  height: 270px;
+}
+
+.header-item-4 {
+  background-color: #173E56;
+  height: 320px;
+}
+
+/* Το packages-grid παραμένει χωρίς align-items: end */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.package-item {
+  background: #EAE9E8;
+  border: 0px solid var(--accent-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  max-width: 240px;
+}
+
+.package-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.package-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Χρώματα των τίτλων στο dropdown, ώστε να ταιριάζουν με το background του header-grid */
+.package-dropdown-content .free-package-title {
+  color: #f26f63; /* Χρώμα για το Бесплатный Вводный Пакет, ίδιο με το background του header-item-1 */
+}
+
+.package-dropdown-content .fundament-package-title {
+  color: #1eaabc; /* Χρώμα για το Фундамент, ίδιο με το background του header-item-2 */
+}
+
+.package-dropdown-content .resilience-package-title {
+  color: #0a7684; /* Χρώμα για το Устойчивость, ίδιο με το background του header-item-3 */
+}
+
+.package-dropdown-content .thriving-package-title {
+  color: #173E56; /* Χρώμα για το Процветание, ίδιο με το background του header-item-4 */
+}
+
+/* Χρώματα των τιμών στο dropdown, ώστε να ταιριάζουν με το background του header-grid */
+.package-dropdown-content .free-package-price {
+  color: #f26f63; /* Χρώμα για την τιμή του Бесплатный Вводный Пакет */
+}
+
+.package-dropdown-content .fundament-package-price {
+  color: #1eaabc; /* Χρώμα για την τιμή του Фундамент */
+}
+
+.package-dropdown-content .resilience-package-price {
+  color: #0a7684; /* Χρώμα για την τιμή του Устойчивость */
+}
+
+.package-dropdown-content .thriving-package-price {
+  color: #173E56; /* Χρώμα για την τιμή του Процветание */
+}
+
+.package-item h5 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.marketing-text {
+  font-size: 16px;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  font-family: var(--primary-font);
+}
+
+.features-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 0;
+  font-family: var(--primary-font);
+}
+
+.feature-item {
+  margin-bottom: 10px;
+}
+
+.feature-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-title:hover {
+  color: white;
+  background-color: rgba(33, 170, 188, 0.7);
+}
+
+.feature-title i {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #21aabc;
+  line-height: 1.6;
+}
+
+.feature-description {
+  padding: 10px 0 10px 28px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--accent-color);
+  font-family: var(--primary-font);
+  transition: color 0.3s ease; /* Ομαλή μετάβαση */
+}
+
+/* Responsive προσαρμογές */
+@media (max-width: 768px) {
+  .feature-description {
+    font-size: 13px;
+    padding: 10px 0 10px 26px;
+    color: #21aabc;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-description {
+    font-size: 12px;
+    padding: 10px 0 10px 24px;
+    color: #21aabc;
+  }
+}
+
+@media (max-width: 375px) {
+  .feature-description {
+    font-size: 11px;
+    padding: 10px 0 10px 22px;
+    color: #21aabc;
+  }
+}
+
+.package-price {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: var(--primary-font);
+  padding-left: 40px; /* Μετακίνηση πιο δεξιά για να ευθυγραμμιστεί με το feature-description */
+}
+
+.dropdown-container {
+  max-width: 1020px;
+  margin: 0 auto 20px;
+}
+
+.package-dropdown {
+  background: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.package-dropdown-content {
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive προσαρμογές */
+@media (max-width: 768px) {
+  .header-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .header-item {
+    height: 100px !important;
+    padding: 15px;
+  }
+
+  .header-item .package-title {
+    font-size: 20px;
+  }
+
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .package-item {
+    max-width: 100%;
+  }
+
+  .package-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .package-item h5 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .marketing-text {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .features-text {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .feature-title i {
+    font-size: 16px;
+  }
+
+  .feature-description {
+    font-size: 13px;
+    padding: 10px 0 10px 26px;
+  }
+
+  .package-price {
+    font-size: 32px;
+    margin-bottom: 15px;
+    padding-left: 26px; /* Προσαρμογή για μικρότερες οθόνες */
+  }
+}
+
+@media (max-width: 576px) {
+  .header-grid {
+    gap: 10px;
+  }
+
+  .header-item {
+    padding: 12px;
+  }
+
+  .header-item .package-title {
+    font-size: 18px;
+  }
+
+  .packages-grid {
+    gap: 10px;
+  }
+
+  .package-title {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .package-item h5 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .marketing-text {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .features-text {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .feature-title i {
+    font-size: 14px;
+  }
+
+  .feature-description {
+    font-size: 12px;
+    padding: 10px 0 10px 24px;
+  }
+
+  .package-price {
+    font-size: 28px;
+    margin-bottom: 10px;
+    padding-left: 24px; /* Προσαρμογή για μικρότερες οθόνες */
+  }
+}
+
+@media (max-width: 375px) {
+  .header-grid {
+    gap: 8px;
+  }
+
+  .header-item {
+    padding: 10px;
+  }
+
+  .header-item .package-title {
+    font-size: 16px;
+  }
+
+  .packages-grid {
+    gap: 8px;
+  }
+
+  .package-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .package-item h5 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .marketing-text {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .features-text {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .feature-title i {
+    font-size: 12px;
+  }
+
+  .feature-description {
+    font-size: 11px;
+    padding: 10px 0 10px 22px;
+  }
+
+  .package-price {
+    font-size: 24px;
+    margin-bottom: 8px;
+    padding-left: 22px; /* Προσαρμογή για πολύ μικρές οθόνες */
+  }
+}

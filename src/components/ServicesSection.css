@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
+/* Υπάρχοντα στυλ για τις άλλες ενότητες */
 .services-section {
   padding: 60px 0;
-  background-color: #EDEBE8;
+  background-color: #f2f1f0;
 }
 
 .container {
@@ -18,7 +19,7 @@
 
 .services-header .sub-title {
   display: block;
-  color: #ff6f61;
+  color: #21AABC;
   font-size: 14px;
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
@@ -38,109 +39,96 @@
   font-family: 'Playfair Display', serif;
 }
 
-.services-grid {
-  display: flex;
-  flex-direction: row;
+/* Στυλ για το grid κάτω από το HeroSlider */
+.new-services-grid-section {
+  padding: 60px 0;
+  background-color: #f2f1f0;
+}
+
+.new-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 στήλες */
+  grid-template-rows: repeat(2, auto); /* 2 σειρές */
   gap: 20px;
-  flex-wrap: nowrap;
+  max-width: 920px; /* Μέγιστο πλάτος 920px */
+  margin: 0 auto; /* Κεντράρισμα */
 }
 
-.service-item {
-  background: white;
-  border-radius: 10px;
+.new-services-grid .service-item {
+  background: #E5E4E3; /* Διαφανές background */
+  border-radius: 30px; /* Στρογγύλεμα γωνιών */
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex: 0 0 275px;
+  min-height: 420px; /* Ύψος πλαισίων */
+  box-shadow: none; /* Χωρίς σκιά */
+  width: 100%; /* Εξασφαλίζει ότι το πλαίσιο έχει πλήρες πλάτος */
+  display: flex;
+  flex-direction: column;
+  text-decoration: none; /* Αφαίρεση υπογράμμισης από το Link */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+  cursor: pointer; /* Εμφάνιση χεριού στον κέρσορα */
 }
 
-/* Στυλ για την εικόνα στην ενότητα "Our Packages" */
-.packages-section .package-image {
+/* Hover effect για το πλαίσιο */
+.new-services-grid .service-item:hover {
+  transform: scale(1.02); /* Ελαφριά μεγέθυνση */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ελαφριά σκιά */
+}
+
+/* Wrapper για την εικόνα και το overlay */
+.new-services-grid .service-item .image-wrapper {
+  position: relative;
   width: 100%;
-  height: 200px;
+  height: 270px; /* Ύψος για την εικόνα */
+}
+
+.new-services-grid .service-item .image-wrapper img {
+  width: 100%;
+  height: 100%; /* Εξασφαλίζει ότι η εικόνα γεμίζει το wrapper */
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
+  border-radius: 30px 30px 30px 30px; /* Στρογγύλεμα γωνιών για την εικόνα */
 }
 
-/* Αλλαγή του background color για τα πλαίσια στην ενότητα "Our Packages" */
-.packages-section .service-item {
-  background: #E1DCD4;
-  flex: 0 0 373px;
+/* Overlay για την εικόνα */
+.new-services-grid .service-item .image-wrapper .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 62, 86, 0.2); /* Overlay με διαφάνεια */
+  transition: background 0.3s ease; /* Animation για το overlay */
+  border-radius: 30px 30px 30px 30px; /* Στρογγύλεμα γωνιών για το overlay */
 }
 
-/* Στυλ για τον τίτλο του πακέτου */
-.packages-section .package-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #333;
+/* Animation στο overlay όταν ο κέρσορας είναι πάνω */
+.new-services-grid .service-item:hover .image-wrapper .image-overlay {
+  background: rgba(23, 62, 86, 0.7); /* Σκουρότερο overlay κατά το hover */
+}
+
+/* Τίτλος πάνω στην εικόνα στο πρώτο grid */
+.new-services-grid-section .new-services-grid .service-item .image-wrapper h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 42px; /* Μέγεθος τίτλου */
   font-family: 'Playfair Display', serif;
-  text-transform: uppercase;
-  margin: 20px;
-  text-align: left;
+  color: white; /* Χρώμα τίτλου */
+  text-align: center;
+  line-height: 1.1; /* Μειωμένο διάστημα μεταξύ των γραμμών */
 }
 
-/* Στυλ για την τιμή του πακέτου */
-.packages-section .package-price {
-  font-size: 36px;
-  font-weight: 700;
-  color: #ff6f61;
-  font-family: 'Playfair Display', serif;
-  margin: 0 20px 20px;
-  text-align: left;
-}
-
-/* Στυλ για το marketing κείμενο */
-.packages-section .marketing-text {
+/* Περιγραφή κάτω από την εικόνα στο πρώτο grid */
+.new-services-grid-section .new-services-grid .service-item p {
   font-size: 16px;
   line-height: 1.6;
+  margin: 70px 20px 20px; /* Αυξημένο margin-top */
   font-family: 'Playfair Display', serif;
-  font-style: italic;
-  color: #333;
-  margin: 0 20px 10px;
-}
-
-/* Στυλ για τη λίστα χαρακτηριστικών */
-.packages-section .features-text {
-  font-size: 14px;
-  line-height: 1.6;
-  font-family: 'Playfair Display', serif;
-  color: #555;
-  margin: 0 20px 20px;
-}
-
-/* Στυλ για κάθε χαρακτηριστικό στη λίστα */
-.packages-section .feature-item {
-  margin-bottom: 10px;
-}
-
-.packages-section .feature-title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0;
-  cursor: pointer;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-/* Hover effect για το feature-title */
-.packages-section .feature-title:hover {
-  color: #ff6f61;
-  background-color: rgba(255, 111, 97, 0.1);
-}
-
-/* Στυλ για τα εικονίδια */
-.packages-section .feature-title i {
-  font-size: 18px;
-  margin-right: 10px;
-  color: #ff6f61;
-  line-height: 1.6;
-}
-
-/* Στυλ για την επεξήγηση του χαρακτηριστικού (dropdown) */
-.packages-section .feature-description {
-  padding: 10px 0 10px 28px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  font-family: 'Playfair Display', serif;
+  max-width: 400px !important; /* Αυξημένο πλάτος */
+  margin-left: auto !important; /* Κεντράρισμα του κειμένου */
+  margin-right: auto !important;
+  color: #2F4C66; /* Χρώμα κειμένου */
 }
 
 /* Στυλ για το grid με κύκλους στην ενότητα "Our Method" */
@@ -155,6 +143,8 @@
   padding: 20px 0;
   text-align: center;
   overflow-x: auto;
+  max-width: 920px; /* Μέγιστο πλάτος 1020px */
+  margin: 0 auto; /* Κεντράρισμα */
 }
 
 .method-section .progress-step {
@@ -165,39 +155,63 @@
 }
 
 .method-section .progress-circle {
-  width: 201.96px;
-  height: 201.96px;
-  background: transparent;
-  border: 2px solid #ff6f61;
+  width: 145.4112px; /* Μειωμένο μέγεθος */
+  height: 145.4112px; /* Μειωμένο μέγεθος */
+  background: #EAE9E8;
+  border: 2px solid #21AABC;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 11.22px;
-  color: #ff6f61;
-  font-size: 53.856px;
+  margin-bottom: 8.0784px; /* Μειωμένο margin-bottom */
+  color: #21AABC;
+  font-size: 38.77632px; /* Μειωμένο μέγεθος γραμματοσειράς */
   font-weight: bold;
   font-family: 'Playfair Display', serif;
+  transition: transform 0.3s ease; /* Animation για τον κύκλο */
 }
 
+/* Animation όταν ο κέρσορας ακουμπάει τον κύκλο */
+.method-section .progress-circle:hover {
+  transform: scale(1.1); /* Ελαφριά μεγέθυνση του κύκλου κατά το hover */
+}
+
+/* Αρχική κατάσταση των κειμένων κάτω από τον κύκλο (αχνά) */
 .method-section .progress-step h6 {
-  font-size: 16px; /* Increased from 11.968px by 20% */
+  font-size: 16px;
   font-weight: 700;
-  color: #333;
+  color: #2F4C66;
   font-family: 'Playfair Display', serif;
   margin-bottom: 10px;
+  opacity: 0.3; /* Αχνό κείμενο */
+  transition: opacity 0.3s ease, color 0.3s ease; /* Ομαλή μετάβαση */
 }
 
 .method-section .progress-step p {
-  font-size: 13px; /* Increased from 9.724px by 20% */
+  font-size: 13px;
   line-height: 1.6;
-  color: #555;
+  color: #143B64;
   font-family: 'Playfair Display', serif;
   margin-bottom: 0;
+  opacity: 0.3; /* Αχνό κείμενο */
+  transition: opacity 0.3s ease, color 0.3s ease; /* Ομαλή μετάβαση */
+}
+
+/* Animation για τα κείμενα όταν ο κέρσορας ακουμπάει τον κύκλο */
+.method-section .progress-step:hover h6,
+.method-section .progress-circle:hover ~ h6 {
+  opacity: 1; /* Πλήρης ορατότητα */
+  color: #2F4C66; /* Επαναφορά στο κανονικό χρώμα */
+}
+
+.method-section .progress-step:hover p,
+.method-section .progress-circle:hover ~ p {
+  opacity: 1; /* Πλήρης ορατότητα */
+  color: #143B64; /* Επαναφορά στο κανονικό χρώμα */
 }
 
 .method-section .progress-step p i {
-  color: #ff6f61;
+  color: #21AABC;
   margin-right: 5px;
 }
 
@@ -205,7 +219,7 @@
 .method-section .method-description {
   font-size: 16px;
   line-height: 1.6;
-  color: #333;
+  color: #2F4C66;
   font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
 }
@@ -224,7 +238,7 @@
 
 .faq-section .section-header .sub-title {
   display: block;
-  color: #ff6f61;
+  color: #21AABC;
   font-size: 14px;
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
@@ -281,52 +295,6 @@
   flex: 0 0 865px;
 }
 
-.service-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.service-item h5 {
-  font-size: 20px;
-  margin: 20px;
-  font-family: 'Playfair Display', serif;
-}
-
-.service-item h5 a {
-  text-decoration: none;
-  color: #333;
-}
-
-.service-item h5 a:hover {
-  color: #ff6f61;
-}
-
-.service-item p {
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0 20px 20px;
-  font-family: 'Playfair Display', serif;
-}
-
-/* Ensure the read-more button is clickable */
-.service-item .read-more {
-  display: inline-block;
-  margin: 0 20px 20px;
-  color: #ff6f61;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-  position: relative;
-  z-index: 1;
-  padding: 10px;
-  touch-action: manipulation;
-}
-
-.service-item .read-more:hover {
-  text-decoration: underline;
-}
-
 /* Media Queries για Κινητά */
 @media (max-width: 768px) {
   .services-section {
@@ -356,20 +324,41 @@
     margin-bottom: 15px;
   }
 
-  .services-grid {
-    flex-direction: column;
-    gap: 15px;
-    flex-wrap: wrap;
+  /* Responsive στυλ για το grid */
+  .new-services-grid-section {
+    padding: 40px 0;
   }
 
-  .service-item {
-    flex: 1 1 100%;
-    max-width: 100%;
+  .new-services-grid {
+    grid-template-columns: 1fr; /* Μία στήλη σε μικρές οθόνες */
+    grid-template-rows: auto; /* Αυτόματες σειρές */
+    gap: 15px;
+    max-width: 100%; /* Πλήρες πλάτος σε μικρές οθόνες */
+  }
+
+  .new-services-grid .service-item {
+    min-height: 430px; /* Ύψος πλαισίων */
+  }
+
+  .new-services-grid .service-item .image-wrapper {
+    height: 250px; /* Προσαρμογή ύψους εικόνας για μικρές οθόνες */
+  }
+
+  .new-services-grid .service-item .image-wrapper h5 {
+    font-size: 24px; /* Μικρότερο μέγεθος τίτλου για μικρές οθόνες */
+    line-height: 1.2; /* Διατήρηση μειωμένου διαστήματος */
+  }
+
+  .new-services-grid .service-item p {
+    font-size: 13px;
+    margin: 50px 15px 15px; /* Προσαρμογή margin για μικρές οθόνες */
+    max-width: 350px !important; /* Προσαρμογή πλάτους κειμένου για μικρές οθόνες */
   }
 
   .method-section .progress-grid {
     grid-template-columns: repeat(auto-fit, minmax(127.5px, 1fr));
     gap: 11.22px;
+    max-width: 100%; /* Προσαρμογή για μικρές οθόνες */
   }
 
   .method-section .progress-step {
@@ -377,10 +366,10 @@
   }
 
   .method-section .progress-circle {
-    width: 112.2px;
-    height: 112.2px;
-    font-size: 35.904px;
-    margin-bottom: 7.48px;
+    width: 80.784px; /* Μειωμένο μέγεθος για μικρές οθόνες */
+    height: 80.784px;
+    font-size: 32.3136px; /* Μειωμένο μέγεθος γραμματοσειράς */
+    margin-bottom: 6.732px; /* Μειωμένο margin-bottom */
   }
 
   .method-section .progress-step h6 {
@@ -393,44 +382,6 @@
 
   .method-section .method-description {
     font-size: 14px;
-  }
-
-  .packages-section .service-item {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .packages-section .package-image {
-    height: 180px;
-  }
-
-  .packages-section .package-title {
-    font-size: 32px;
-    margin: 15px;
-  }
-
-  .packages-section .package-price {
-    font-size: 32px;
-    margin: 0 15px 15px;
-  }
-
-  .packages-section .marketing-text {
-    font-size: 14px;
-    margin: 0 15px 10px;
-  }
-
-  .packages-section .features-text {
-    font-size: 13px;
-    margin: 0 15px 15px;
-  }
-
-  .packages-section .feature-title i {
-    font-size: 16px;
-  }
-
-  .packages-section .feature-description {
-    font-size: 13px;
-    padding: 10px 0 10px 26px;
   }
 
   .faq-section {
@@ -455,26 +406,6 @@
 
   .faq-section .faq-answer p {
     font-size: 13px;
-  }
-
-  .service-item img {
-    height: 180px;
-  }
-
-  .service-item h5 {
-    font-size: 18px;
-    margin: 15px;
-  }
-
-  .service-item p {
-    font-size: 13px;
-    margin: 0 15px 15px;
-  }
-
-  .service-item .read-more {
-    margin: 0 15px 15px;
-    font-size: 13px;
-    padding: 8px;
   }
 }
 
@@ -506,19 +437,38 @@
     margin-bottom: 10px;
   }
 
-  .services-grid {
-    flex-direction: column;
+  /* Responsive στυλ για το grid */
+  .new-services-grid-section {
+    padding: 30px 0;
+  }
+
+  .new-services-grid {
     gap: 10px;
   }
 
-  .service-item {
-    flex: 1 1 100%;
-    max-width: 100%;
+  .new-services-grid .service-item {
+    min-height: 400px; /* Ύψος πλαισίων */
+  }
+
+  .new-services-grid .service-item .image-wrapper {
+    height: 220px; /* Προσαρμογή ύψους εικόνας για μικρότερες οθόνες */
+  }
+
+  .new-services-grid .service-item .image-wrapper h5 {
+    font-size: 20px; /* Μικρότερο μέγεθος τίτλου για μικρότερες οθόνες */
+    line-height: 1.2; /* Διατήρηση μειωμένου διαστήματος */
+  }
+
+  .new-services-grid .service-item p {
+    font-size: 12px;
+    margin: 40px 10px 10px; /* Προσαρμογή margin για μικρότερες οθόνες */
+    max-width: 300px !important; /* Προσαρμογή πλάτους κειμένου για μικρότερες οθόνες */
   }
 
   .method-section .progress-grid {
     grid-template-columns: repeat(auto-fit, minmax(102px, 1fr));
     gap: 7.48px;
+    max-width: 100%; /* Προσαρμογή για μικρότερες οθόνες */
   }
 
   .method-section .progress-step {
@@ -526,10 +476,10 @@
   }
 
   .method-section .progress-circle {
-    width: 89.76px;
-    height: 89.76px;
-    font-size: 26.928px;
-    margin-bottom: 5.984px;
+    width: 64.6272px; /* Μειωμένο μέγεθος για μικρότερες οθόνες */
+    height: 64.6272px;
+    font-size: 25.85088px; /* Μειωμένο μέγεθος γραμματοσειράς */
+    margin-bottom: 5.3856px; /* Μειωμένο margin-bottom */
   }
 
   .method-section .progress-step h6 {
@@ -542,44 +492,6 @@
 
   .method-section .method-description {
     font-size: 13px;
-  }
-
-  .packages-section .service-item {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .packages-section .package-image {
-    height: 160px;
-  }
-
-  .packages-section .package-title {
-    font-size: 28px;
-    margin: 10px;
-  }
-
-  .packages-section .package-price {
-    font-size: 28px;
-    margin: 0 10px 10px;
-  }
-
-  .packages-section .marketing-text {
-    font-size: 13px;
-    margin: 0 10px 10px;
-  }
-
-  .packages-section .features-text {
-    font-size: 12px;
-    margin: 0 10px 10px;
-  }
-
-  .packages-section .feature-title i {
-    font-size: 14px;
-  }
-
-  .packages-section .feature-description {
-    font-size: 12px;
-    padding: 10px 0 10px 24px;
   }
 
   .faq-section {
@@ -605,26 +517,6 @@
   .faq-section .faq-answer p {
     font-size: 12px;
   }
-
-  .service-item img {
-    height: 160px;
-  }
-
-  .service-item h5 {
-    font-size: 16px;
-    margin: 10px;
-  }
-
-  .service-item p {
-    font-size: 12px;
-    margin: 0 10px 10px;
-  }
-
-  .service-item .read-more {
-    margin: 0 10px 10px;
-    font-size: 12px;
-    padding: 6px;
-  }
 }
 
 @media (max-width: 375px) {
@@ -647,19 +539,38 @@
     margin-bottom: 8px;
   }
 
-  .services-grid {
-    flex-direction: column;
+  /* Responsive στυλ για το grid */
+  .new-services-grid-section {
+    padding: 20px 0;
+  }
+
+  .new-services-grid {
     gap: 8px;
   }
 
-  .service-item {
-    flex: 1 1 100%;
-    max-width: 100%;
+  .new-services-grid .service-item {
+    min-height: 380px; /* Ύψος πλαισίων */
+  }
+
+  .new-services-grid .service-item .image-wrapper {
+    height: 200px; /* Προσαρμογή ύψους εικόνας για πολύ μικρές οθόνες */
+  }
+
+  .new-services-grid .service-item .image-wrapper h5 {
+    font-size: 18px; /* Μικρότερο μέγεθος τίτλου για πολύ μικρές οθόνες */
+    line-height: 1.2; /* Διατήρηση μειωμένου διαστήματος */
+  }
+
+  .new-services-grid .service-item p {
+    font-size: 11px;
+    margin: 30px 8px 8px; /* Προσαρμογή margin για πολύ μικρές οθόνες */
+    max-width: 260px !important; /* Προσαρμογή πλάτους κειμένου για πολύ μικρές οθόνες */
   }
 
   .method-section .progress-grid {
     grid-template-columns: 1fr;
     gap: 5.984px;
+    max-width: 100%; /* Προσαρμογή για πολύ μικρές οθόνες */
   }
 
   .method-section .progress-step {
@@ -667,10 +578,10 @@
   }
 
   .method-section .progress-circle {
-    width: 74.8px;
-    height: 74.8px;
-    font-size: 22.44px;
-    margin-bottom: 3.74px;
+    width: 53.856px; /* Μειωμένο μέγεθος για πολύ μικρές οθόνες */
+    height: 53.856px;
+    font-size: 21.5424px; /* Μειωμένο μέγεθος γραμματοσειράς */
+    margin-bottom: 4.4928px; /* Μειωμένο margin-bottom */
   }
 
   .method-section .progress-step h6 {
@@ -683,44 +594,6 @@
 
   .method-section .method-description {
     font-size: 12px;
-  }
-
-  .packages-section .service-item {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .packages-section .package-image {
-    height: 140px;
-  }
-
-  .packages-section .package-title {
-    font-size: 24px;
-    margin: 8px;
-  }
-
-  .packages-section .package-price {
-    font-size: 24px;
-    margin: 0 8px 8px;
-  }
-
-  .packages-section .marketing-text {
-    font-size: 12px;
-    margin: 0 8px 8px;
-  }
-
-  .packages-section .features-text {
-    font-size: 11px;
-    margin: 0 8px 8px;
-  }
-
-  .packages-section .feature-title i {
-    font-size: 12px;
-  }
-
-  .packages-section .feature-description {
-    font-size: 11px;
-    padding: 10px 0 10px 22px;
   }
 
   .faq-section {
@@ -745,25 +618,5 @@
 
   .faq-section .faq-answer p {
     font-size: 11px;
-  }
-
-  .service-item img {
-    height: 140px;
-  }
-
-  .service-item h5 {
-    font-size: 14px;
-    margin: 8px;
-  }
-
-  .service-item p {
-    font-size: 11px;
-    margin: 0 8px 8px;
-  }
-
-  .service-item .read-more {
-    margin: 0 8px 8px;
-    font-size: 11px;
-    padding: 5px;
   }
 }
