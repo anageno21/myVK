@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroSlider from '../components/HeroSlider';
 import ProfileHeader from '../components/ProfileHeader';
-import OurPackages from './OurPackages'; // Εισαγωγή του νέου component
-import FAQSection from './FAQSection';
+import OurPackages from './OurPackages';
+import FAQ from '../components/FAQ';
 import '../components/HeroSlider.css';
 import '../components/ServicesSection.css';
 
@@ -19,7 +19,7 @@ const ServicesPage = () => {
       {/* Πρώτο Grid με 4 πλαίσια (2x2) - Με κείμενα και υπάρχουσες εικόνες */}
       <section className="new-services-grid-section">
         <div className="new-services-grid">
-          <Link to="/service-details" className="service-item" title="Читать больше">
+          <Link to="/services/relationships" className="service-item" title="Читать больше">
             <div className="image-wrapper">
               <img src="/images/section/relationship.jpg" alt="Межличностные отношения" />
               <div className="image-overlay"></div>
@@ -27,7 +27,7 @@ const ServicesPage = () => {
             </div>
             <p>Научитесь слышать и не предавать себя в любых отношениях. Мы разбираемся, почему повторяются болезненные сценарии, учимся говорить о своих чувствах и строить контакт — честно, спокойно и с уважением к себе.</p>
           </Link>
-          <Link to="/service-details" className="service-item" title="Читать больше">
+          <Link to="/services/stress-anxiety" className="service-item" title="Читать больше">
             <div className="image-wrapper">
               <img src="/images/section/stress-anxiety.jpg" alt="Стресс и тревожность" />
               <div className="image-overlay"></div>
@@ -35,7 +35,7 @@ const ServicesPage = () => {
             </div>
             <p>Когда всё внутри слишком долго было в напряжении. Разберётесь, как стресс и тревожность накапливаются, влияют на тело и поведение. Вы научитесь восстанавливаться и регулировать напряжение.</p>
           </Link>
-          <Link to="/service-details" className="service-item" title="Читать больше">
+          <Link to="/services/self-esteem" className="service-item" title="Читать больше">
             <div className="image-wrapper">
               <img src="/images/section/Self-esteem.jpg" alt="Самооценка и уверенность в себе" />
               <div className="image-overlay"></div>
@@ -43,7 +43,7 @@ const ServicesPage = () => {
             </div>
             <p>Строим уверенность, повыхаем самооценку — шаг за шагом. Узнайте, как замечать свои сильные стороны и поддерживать себя в трудные моменты.</p>
           </Link>
-          <Link to="/service-details" className="service-item" title="Читать больше">
+          <Link to="/services/adaptation" className="service-item" title="Читать больше">
             <div className="image-wrapper">
               <img src="/images/section/Adaptation.jpg" alt="Адаптация" />
               <div className="image-overlay"></div>
@@ -53,7 +53,7 @@ const ServicesPage = () => {
           </Link>
         </div>
       </section>
-      {/* Δεύτερη Εнότητα "Our Method" */}
+      {/* Δεύτερη Ενότητα "Our Method" */}
       <section className="services-section method-section">
         <div className="container">
           <div className="services-header">
@@ -92,9 +92,8 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-      {/* Κλήση του νέου component OurPackages */}
       <OurPackages />
-      <FAQSection />
+      <FAQ />
     </div>
   );
 };
