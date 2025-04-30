@@ -1,7 +1,7 @@
-/* src/pages/tests/RosenbergSelfEsteemScale.css */
+/* src/pages/tests/RobsonSelfConceptQuestionnaire.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-.self-esteem-test {
+.self-concept-test {
   margin-bottom: 30px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .section-title:hover .dropdown-icon {
-  color: #21aabc;
+  color: #d3cdcb;
   animation: pulse 0.5s ease infinite;
 }
 

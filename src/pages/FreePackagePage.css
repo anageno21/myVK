@@ -1,30 +1,31 @@
 /* src/pages/FreePackagePage.css */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
 .free-package-page {
+  font-family: 'Playfair Display', serif;
+  color: #2F4C66;
   width: 100%;
-  background-color: #f2f1f0;
+  box-sizing: border-box;
 }
 
 .free-package-content {
-  padding: 60px 0;
-  background-color: #f2f1f0;
+  padding: 40px 0;
+  width: 100%;
 }
 
-.free-package-page .container {
-  max-width: 1020px; /* Αλλαγή από 1200px σε 1020px */
-  margin: 0 auto;
-  padding: 0 40px;
+.container {
+  max-width: 1020px; /* Μέγιστο πλάτος 1020px */
+  width: 100%;
+  margin: 0 auto; /* Κεντράρισμα της σελίδας */
+  padding: 0; /* Αφαίρεση padding από το container */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   box-sizing: border-box;
 }
 
 .free-package-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 60px;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 40px;
+  padding: 0 20px; /* Padding μόνο στο header */
 }
 
 .free-package-header h1 {
@@ -32,119 +33,127 @@
   font-weight: 700;
   color: #143B64;
   margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
 }
 
 .free-package-header h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
-  color: #143B64;
-  margin-bottom: 15px;
-  font-family: 'Playfair Display', serif;
+  color: #2F4C66;
 }
 
 .free-package-body {
-  max-width: 1020px; /* Αλλαγή από 1200px σε 1020px για συνέπεια */
-  margin: 0 auto;
+  display: flex;
+  gap: 20px; /* Κενό ανάμεσα στις δύο στήλες: 20px */
+  padding: 0 20px;
+  box-sizing: border-box;
+  align-items: stretch; /* Εξασφαλίζει ότι οι στήλες έχουν το ίδιο ύψος */
+  width: 100%;
+  max-width: 1020px; /* Εξασφαλίζουμε ότι το πλάτος δεν υπερβαίνει τα 1020px */
+  margin: 0 auto; /* Κεντράρισμα */
 }
 
 .free-package-content {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+  flex: 2;
+  margin: 0; /* Αφαίρεση περιθωρίων */
 }
 
 .free-package-sections {
-  flex: 3;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-}
-
-.free-package-section {
-  background: #f9f9f9;
-  border-radius: 20px;
-  padding: 20px;
-  transition: transform 0.3s ease;
-}
-
-.free-package-section:hover {
-  transform: translateY(-5px);
-}
-
-.section-content {
-  padding: 20px;
-}
-
-.section-title {
-  font-size: 24px;
-  font-weight: 700;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
-  color: #143B64;
-}
-
-.section-title-link {
-  color: #143B64;
-  text-decoration: none;
-}
-
-.section-title-link:hover {
-  color: #21aabc;
-  text-decoration: underline;
-}
-
-.section-description {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #2F4C66;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 15px;
+  gap: 20px; /* Κενό ανάμεσα στα πλαίσια των τεστ: 20px */
+  margin: 0; /* Αφαίρεση περιθωρίων */
 }
 
 .free-package-sidebar {
   flex: 1;
-  min-width: 250px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0; /* Αφαίρεση περιθωρίων */
 }
 
 .sidebar-widget {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .sidebar-widget h3 {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
-  color: #173A37;
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
+  color: #143B64;
+  margin-bottom: 10px;
 }
 
-.sidebar-search .search-form {
+/* Αναζήτηση για τα τεστ */
+.sidebar-search-tests .search-form {
   display: flex;
-  align-items: center;
   gap: 10px;
 }
 
-.sidebar-search .search-form input {
+.sidebar-search-tests .search-form input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
   border-radius: 5px;
   font-family: 'Playfair Display', serif;
-  font-size: 14px;
 }
 
-.sidebar-search .search-form button {
+.sidebar-search-tests .search-form button {
+  padding: 8px;
   background: #21aabc;
   border: none;
-  padding: 10px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
 }
 
-.sidebar-search .search-form button i {
-  font-size: 16px;
+.sidebar-search-tests .search-form button:hover {
+  background: #143B64;
+}
+
+/* Κατηγορίες για τα τεστ */
+.sidebar-test-categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-test-categories li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #173A37;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar-test-categories li:hover {
+  color: #21aabc;
+}
+
+.sidebar-test-categories li.active-category {
+  color: #21aabc;
+  font-weight: 700;
+}
+
+/* Υπάρχουσα αναζήτηση για blogs */
+.sidebar-search .search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.sidebar-search .search-form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sidebar-search .search-form button {
+  padding: 8px;
+  background: #21aabc;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
 }
 
 .sidebar-search .search-form button:hover {
@@ -152,197 +161,112 @@
 }
 
 .sidebar-categories ul,
+.sidebar-authors ul,
 .sidebar-recent-posts ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 30px 0;
 }
 
-.sidebar-categories ul li,
-.sidebar-recent-posts ul li {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #143B64;
-  font-family: 'Playfair Display', serif;
+.sidebar-categories li,
+.sidebar-authors li {
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
-.sidebar-recent-posts ul li p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #173A37;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 0;
+.sidebar-recent-posts li {
+  margin-bottom: 15px;
 }
 
-/* Media Queries για Κινητά */
+.sidebar-recent-posts li p:first-child {
+  font-size: 14px;
+  font-weight: 700;
+  color: #143B64;
+  margin-bottom: 5px;
+}
+
+.sidebar-recent-posts li p:last-child {
+  font-size: 12px;
+  color: #2F4C66;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.pagination-link {
+  padding: 8px 16px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #143B64;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-link:hover {
+  background: #e6f0fa;
+  color: #21aabc;
+}
+
+.pagination-link.active {
+  background: #21aabc;
+  color: white;
+}
+
+/* Responsive Προσαρμογές */
+@media (max-width: 1020px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .free-package-body {
+    padding: 0 10px;
+  }
+}
+
 @media (max-width: 768px) {
-  .free-package-content {
-    padding: 40px 0;
-  }
-
-  .free-package-page .container {
-    padding: 0 20px;
-  }
-
-  .free-package-header {
-    gap: 8px;
-    margin-bottom: 40px;
+  .free-package-body {
+    flex-direction: column;
+    gap: 20px;
   }
 
   .free-package-header h1 {
     font-size: 28px;
-    margin-bottom: 8px;
   }
 
   .free-package-header h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 16px;
   }
 
   .free-package-content {
-    flex-direction: column;
-  }
-
-  .free-package-section {
-    max-width: 100%;
-  }
-
-  .section-content {
-    padding: 15px;
-  }
-
-  .section-title {
-    font-size: 20px;
-  }
-
-  .section-description {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .sidebar-widget {
     margin-bottom: 20px;
   }
 
-  .sidebar-widget h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-
-  .sidebar-search .search-form input {
-    padding: 8px;
-  }
-
-  .sidebar-search .search-form button {
-    padding: 8px;
-  }
-
-  .sidebar-categories ul li,
-  .sidebar-recent-posts ul li {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  .sidebar-recent-posts ul li p {
+  .pagination-link {
+    padding: 6px 12px;
     font-size: 14px;
   }
 }
 
 @media (max-width: 576px) {
-  .free-package-content {
-    padding: 30px 0;
-  }
-
-  .free-package-page .container {
-    padding: 0 10px;
-  }
-
-  .free-package-header {
-    gap: 6px;
-    margin-bottom: 30px;
-  }
-
   .free-package-header h1 {
     font-size: 24px;
-    margin-bottom: 6px;
   }
 
   .free-package-header h2 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .section-title {
-    font-size: 18px;
-  }
-
-  .section-description {
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-
-  .sidebar-widget h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .sidebar-categories ul li,
-  .sidebar-recent-posts ul li {
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-
-  .sidebar-recent-posts ul li p {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 375px) {
-  .free-package-content {
-    padding: 20px 0;
-  }
-
-  .free-package-page .container {
-    padding: 0 5px;
-  }
-
-  .free-package-header {
-    gap: 5px;
-    margin-bottom: 20px;
-  }
-
-  .free-package-header h1 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .free-package-header h2 {
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
-
-  .section-title {
-    font-size: 16px;
-  }
-
-  .section-description {
-    font-size: 12px;
-    margin-bottom: 5px;
+    font-size: 14px;
   }
 
   .sidebar-widget h3 {
     font-size: 18px;
-    margin-bottom: 8px;
   }
 
-  .sidebar-categories ul li,
-  .sidebar-recent-posts ul li {
-    font-size: 12px;
-    margin-bottom: 5px;
-  }
-
-  .sidebar-recent-posts ul li p {
+  .pagination-link {
+    padding: 5px 10px;
     font-size: 12px;
   }
 }

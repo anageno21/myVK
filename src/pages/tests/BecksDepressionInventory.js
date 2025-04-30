@@ -6,6 +6,7 @@ function BecksDepressionInventory() {
   const [isTestOpen, setIsTestOpen] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
+  const [showShareOptions, setShowShareOptions] = useState(false); // Κατάσταση για το μενού κοινής χρήσης
   const [answers, setAnswers] = useState({
     sadness: null,
     pessimism: null,
@@ -316,6 +317,53 @@ function BecksDepressionInventory() {
       physicalSymptoms: null,
     });
     setResult(null);
+    setShowShareOptions(false); // Κλείνουμε το μενού κοινής χρήσης όταν κλείνει το τεστ
+  };
+
+  const toggleShareOptions = () => {
+    setShowShareOptions(!showShareOptions);
+  };
+
+  const shareViaEmail = () => {
+    if (!result) return;
+    const subject = 'Мои результаты теста: Инвентарь депрессии Бека, BDI';
+    const body = `Твой балл: ${result.score} из 63\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
+    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const shareViaWhatsApp = () => {
+    if (!result) return;
+    const text = `Мои результаты теста: Инвентарь депрессии Бека, BDI\nТвой балл: ${result.score} из 63\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+  };
+
+  const printResult = () => {
+    if (!result) return;
+    const printContent = `
+      <h3>Результаты теста: Инвентарь депрессии Бека, BDI</h3>
+      <p><strong>Твой балл:</strong> ${result.score} из 63</p>
+      <p><strong>Уровень:</strong> ${result.recommendation.level}</p>
+      <p><strong>Рекомендация:</strong> ${result.recommendation.description}</p>
+      <p><strong>Предлагаемый пакет:</strong> ${result.recommendation.package}</p>
+    `;
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>Результаты теста</title>
+          <style>
+            body { font-family: 'Playfair Display', serif; text-align: center; }
+            h3 { font-size: 20px; color: #143B64; }
+            p { font-size: 16px; color: #2F4C66; }
+          </style>
+        </head>
+        <body>
+          ${printContent}
+          <script>window.print(); window.close();</script>
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
   };
 
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
@@ -331,7 +379,7 @@ function BecksDepressionInventory() {
           <p className="section-description">
             Пройди наш тест, чтобы оценить своё эмоциональное состояние. На основе результатов мы предложим тебе наиболее подходящий пакет поддержки, который поможет справиться с твоими текущими потребностями.
             <span className="test-info">
-              онлайн-тест | 21 пункт | около 4 минут {/* Αλλαγή του κειμένου */}
+              онлайн-тест | 21 пункт | около 4 минут
             </span>
           </p>
           {isTestOpen && (
@@ -349,9 +397,25 @@ function BecksDepressionInventory() {
                         {result.recommendation.package}
                       </Link>
                     </p>
-                    <button onClick={closeTest} className="close-test-button">
-                      Закрыть тест
-                    </button>
+                    <div className="share-section">
+                      <button onClick={closeTest} className="close-test-button">
+                        Закрыть тест
+                      </button>
+                      <div className="share-container">
+                        <i
+                          className="las la-share share-icon"
+                          onClick={toggleShareOptions}
+                          title="Поделиться результатами"
+                        ></i>
+                        {showShareOptions && (
+                          <div className="share-options">
+                            <button onClick={shareViaEmail}>Email</button>
+                            <button onClick={printResult}>Печать</button>
+                            <button onClick={shareViaWhatsApp}>WhatsApp</button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <>
