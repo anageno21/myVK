@@ -1,0 +1,317 @@
+/* src/pages/tests/GeneralSelfEfficacyScale.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.self-efficacy-test {
+  margin-bottom: 30px;
+}
+
+.free-package-section {
+  background: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.free-package-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgba(229, 225, 223, 0.4); /* Ελαφριά αλλαγή χρώματος φόντου */
+}
+
+.section-content {
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+  color: #143B64;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.section-title:hover {
+  color: #21aabc;
+}
+
+.section-title:hover .dropdown-icon {
+  color: #21aabc;
+  animation: pulse 0.5s ease infinite; /* Επαναφορά του pulse animation */
+}
+
+.section-title-link {
+  color: #143B64;
+  text-decoration: none;
+}
+
+.section-title-link:hover {
+  color: #21aabc;
+  text-decoration: underline;
+}
+
+.section-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2F4C66;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.dropdown-icon {
+  font-size: 20px;
+  color: #143B64;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Animation για το pulse εφέ */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.test-container {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #21aabc;
+  transition: width 0.3s ease;
+}
+
+.test-question {
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.test-question.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.test-question h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #143B64;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #2F4C66;
+  font-family: 'Playfair Display', serif;
+}
+
+.option-label input {
+  margin: 0;
+}
+
+.submit-test-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #21aabc;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-test-button:hover {
+  background-color: #143B64;
+}
+
+.submit-test-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.test-result {
+  text-align: center;
+}
+
+.test-result h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #143B64;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.test-result p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2F4C66;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.recommended-package-link {
+  color: #21aabc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.recommended-package-link:hover {
+  text-decoration: underline;
+}
+
+.close-test-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FF6F61;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.close-test-button:hover {
+  background-color: #d95f53;
+}
+
+/* Responsive Προσαρμογές */
+@media (max-width: 768px) {
+  .free-package-section {
+    padding: 15px;
+  }
+
+  .section-content {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .test-container {
+    padding: 15px;
+  }
+
+  .test-question h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .option-label {
+    font-size: 14px;
+  }
+
+  .submit-test-button,
+  .close-test-button {
+    padding: 8px 16px;
+    margin-top: 15px;
+  }
+
+  .test-result h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .test-result p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .dropdown-icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 18px;
+  }
+
+  .section-description {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .test-question h3 {
+    font-size: 16px;
+  }
+
+  .option-label {
+    font-size: 13px;
+  }
+
+  .submit-test-button,
+  .close-test-button {
+    padding: 6px 12px;
+    margin-top: 10px;
+  }
+
+  .test-result h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .test-result p {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .dropdown-icon {
+    font-size: 16px;
+  }
+}

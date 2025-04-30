@@ -13,11 +13,12 @@ import ProductDetailsPage from './pages/ProductDetailsPage';
 import ServicesPage from './pages/ServicesPage';
 import NewFooter from './components/NewFooter';
 import RelationshipServicePage from './pages/RelationshipServicePage';
-import RelationshipsPage from './pages/RelationshipsPage'; // Νέα σελίδα για Διαπροσωπικές Σχέσεις
-import StressAnxietyPage from './pages/StressAnxietyPage'; // Νέα σελίδα για Στρες και Άγχος
-import SelfEsteemPage from './pages/SelfEsteemPage'; // Νέα σελίδα για Αυτοεκτίμηση
-import AdaptationPage from './pages/AdaptationPage'; // Νέα σελίδα για Προσαρμογή
-import FreePackagePage from './pages/FreePackagePage'; // Νέα σελίδα για το Δωρεάν Πακέτο
+import RelationshipsPage from './pages/RelationshipsPage';
+import StressAnxietyPage from './pages/StressAnxietyPage';
+import SelfConfidencePage from './pages/SelfConfidencePage';
+import AdaptationPage from './pages/AdaptationPage';
+import FreePackagePage from './pages/FreePackagePage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
@@ -26,11 +27,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/our-service" element={<ServicesPage />} />
-        <Route path="/services/relationships" element={<RelationshipsPage />} /> {/* Νέα διαδρομή */}
-        <Route path="/services/stress-anxiety" element={<StressAnxietyPage />} /> {/* Νέα διαδρομή */}
-        <Route path="/services/self-esteem" element={<SelfEsteemPage />} /> {/* Νέα διαδρομή */}
-        <Route path="/services/adaptation" element={<AdaptationPage />} /> {/* Νέα διαδρομή */}
-        <Route path="/free-package" element={<FreePackagePage />} /> {/* Νέα διαδρομή */}
+        <Route path="/services/relationships" element={<RelationshipsPage />} />
+        <Route path="/services/stress-anxiety" element={<StressAnxietyPage />} />
+        <Route path="/services/self-confidence" element={<SelfConfidencePage />} />
+        <Route path="/services/adaptation" element={<AdaptationPage />} />
+        <Route path="/free-package" element={<FreePackagePage />} />
         <Route path="/relationship-service" element={<RelationshipServicePage />} />
         <Route path="/our-product" element={<ProductPage />} />
         <Route path="/product-details" element={<ProductDetailsPage />} />
@@ -40,6 +41,7 @@ function App() {
         <Route path="/blog-details/:slug" element={<BlogDetailsSection />} />
         <Route path="/our-therapists" element={<TherapistLibrary />} />
         <Route path="/therapist-details" element={<TherapistsDetailsPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
       <NewFooter />
     </>

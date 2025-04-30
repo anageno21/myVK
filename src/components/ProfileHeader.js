@@ -91,7 +91,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
                 onMouseEnter={() => handleMouseEnterDropdown('services')}
                 onMouseLeave={handleMouseLeaveDropdown}
               >
-                <li><Link to="/relationship-service" className={isDarkBackground ? 'light-text' : 'dark-text'}>Relationship</Link></li>
+                <li><Link to="/services/relationships" className={isDarkBackground ? 'light-text' : 'dark-text'}>Relationship</Link></li>
                 <li><Link to="/stress-anxiety" className={isDarkBackground ? 'light-text' : 'dark-text'}>Stress / Anxiety</Link></li>
                 <li><Link to="/self-confidence" className={isDarkBackground ? 'light-text' : 'dark-text'}>Self-Confidence / Self-Esteem</Link></li>
                 <li><Link to="/adaptation" className={isDarkBackground ? 'light-text' : 'dark-text'}>Adaptation</Link></li>

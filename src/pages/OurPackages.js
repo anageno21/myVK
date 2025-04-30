@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './OurPackages.css';
 
-const OurPackages = () => {
+const OurPackages = ({ hideHeader = false, excludePackages = [] }) => {
   const [activeFeatures, setActiveFeatures] = useState({});
   const [activePackage, setActivePackage] = useState(null);
 
@@ -181,7 +181,7 @@ const OurPackages = () => {
             )}
           </div>
         </div>
-        <div className="package-price resilience-package-price">€70</div>
+        <div className="package-price resilience-package-price">€30</div>
       </div>
     ),
     'thriving': (
@@ -268,53 +268,49 @@ const OurPackages = () => {
     )
   };
 
+  const packages = [
+    { id: 'free', className: 'header-item-1', title: 'Бесплатный Вводный Пакет' },
+    { id: 'fundament', className: 'header-item-2', title: 'Фундамент' },
+    { id: 'resilience', className: 'header-item-3', title: 'Устойчивость' },
+    { id: 'thriving', className: 'header-item-4', title: 'Процветание' },
+  ];
+
+  // Φιλτράρισμα πακέτων με βάση το excludePackages
+  const filteredPackages = packages.filter(pkg => !excludePackages.includes(pkg.id));
+
   console.log('Rendering OurPackages - activePackage:', activePackage, 'activeFeatures:', activeFeatures);
 
   return (
     <section className="our-packages-section">
       <div className="container">
-        <div className="section-header">
-          <span className="sub-title">Our Packages</span>
-          <h3>Наши Пакеты</h3>
-          <p>Исследуйте наши специализированные услуги, разработанные для поддержки вашего эмоционального благополучия и личностного роста.</p>
-        </div>
+        {!hideHeader && (
+          <div className="section-header">
+            <span className="sub-title">Our Packages</span>
+            <h3>Наши Пакеты</h3>
+            <p>Исследуйте наши специализированные услуги, разработанные для поддержки вашего эмоционального благополучия и личностного роста.</p>
+          </div>
+        )}
         
         <div className="header-grid">
-          <div className="header-item header-item-1" onClick={() => togglePackage('free')}>
-            <h4 className="package-title">Бесплатный Вводный Пакет</h4>
-          </div>
-          <div className="header-item header-item-2" onClick={() => togglePackage('fundament')}>
-            <h4 className="package-title">Фундамент</h4>
-          </div>
-          <div className="header-item header-item-3" onClick={() => togglePackage('resilience')}>
-            <h4 className="package-title">Устойчивость</h4>
-          </div>
-          <div className="header-item header-item-4" onClick={() => togglePackage('thriving')}>
-            <h4 className="package-title">Процветание</h4>
-          </div>
+          {filteredPackages.map(pkg => (
+            <div
+              key={pkg.id}
+              className={`header-item ${pkg.className}`}
+              onClick={() => togglePackage(pkg.id)}
+            >
+              <h4 className="package-title">{pkg.title}</h4>
+            </div>
+          ))}
         </div>
         
         <div className="dropdown-container">
-          {activePackage === 'free' && (
-            <div className="package-dropdown">
-              {packageContents['free']}
-            </div>
-          )}
-          {activePackage === 'fundament' && (
-            <div className="package-dropdown">
-              {packageContents['fundament']}
-            </div>
-          )}
-          {activePackage === 'resilience' && (
-            <div className="package-dropdown">
-              {packageContents['resilience']}
-            </div>
-          )}
-          {activePackage === 'thriving' && (
-            <div className="package-dropdown">
-              {packageContents['thriving']}
-            </div>
-          )}
+          {filteredPackages.map(pkg => (
+            activePackage === pkg.id && (
+              <div key={pkg.id} className="package-dropdown">
+                {packageContents[pkg.id]}
+              </div>
+            )
+          ))}
         </div>
         
         <div className="packages-grid" style={{display: 'none'}}>

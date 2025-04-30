@@ -1,4 +1,4 @@
-/* src/pages/RelationshipsPage.css */
+/* src/pages/AdaptationPage.css */
 
 /* Wrapper για τη διάταξη */
 .layout-wrapper {
@@ -126,7 +126,7 @@
     position: relative; /* Για το pulse effect */
 }
 
-/* Keyframes για παλμικό εφέ */
+/* Keyframes για παλмικό εφέ */
 @keyframes pulse {
     0% {
         transform: scale(1);
