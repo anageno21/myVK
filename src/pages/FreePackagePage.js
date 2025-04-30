@@ -65,29 +65,31 @@ function FreePackagePage() {
             <h2>Начни заботиться о своём эмоциональном благополучии с нашими бесплатными материалами.</h2>
           </div>
           <div className="free-package-body">
-            <div className="free-package-content">
-              <div className="free-package-sections">
-                {selectedTests.length > 0 ? (
-                  selectedTests.map(test => test.component)
-                ) : (
-                  <p>Нет тестов, соответствующих критериям.</p>
-                )}
-              </div>
-              {/* Pagination */}
-              {filteredTests.length > testsPerPage && (
-                <div className="pagination">
-                  {Array.from({ length: totalPages }, (_, index) => (
-                    <Link
-                      key={index + 1}
-                      to={`/free-package/page/${index + 1}`}
-                      className={`pagination-link ${currentPage === index + 1 ? 'active' : ''}`}
-                    >
-                      {index + 1}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+          <div className="free-package-content">
+  <div className="free-package-sections">
+    {selectedTests.length > 0 ? (
+      selectedTests.map(test => test.component)
+    ) : (
+      <p>Нет тестов, соответствующих критериям.</p>
+    )}
+  </div>
+  {/* Προσθήκη wrapper για το pagination */}
+  {filteredTests.length > testsPerPage && (
+    <div className="pagination-wrapper">
+      <div className="pagination">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <Link
+            key={index + 1}
+            to={`/free-package/page/${index + 1}`}
+            className={`pagination-link ${currentPage === index + 1 ? 'active' : ''}`}
+          >
+            {index + 1}
+          </Link>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
             <div className="free-package-sidebar">
               {/* Αναζήτηση για τα τεστ */}
               <div className="sidebar-widget sidebar-search-tests">

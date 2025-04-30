@@ -1,4 +1,3 @@
-/* src/pages/FreePackagePage.css */
 .free-package-page {
   font-family: 'Playfair Display', serif;
   color: #2F4C66;
@@ -12,10 +11,10 @@
 }
 
 .container {
-  max-width: 1020px; /* Μέγιστο πλάτος 1020px */
+  max-width: 1020px;
   width: 100%;
-  margin: 0 auto; /* Κεντράρισμα της σελίδας */
-  padding: 0; /* Αφαίρεση padding από το container */
+  margin: 0 auto;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -25,7 +24,7 @@
 .free-package-header {
   text-align: left;
   margin-bottom: 40px;
-  padding: 0 20px; /* Padding μόνο στο header */
+  padding: 0 20px;
 }
 
 .free-package-header h1 {
@@ -43,33 +42,46 @@
 
 .free-package-body {
   display: flex;
-  gap: 20px; /* Κενό ανάμεσα στις δύο στήλες: 20px */
+  gap: 20px;
   padding: 0 20px;
   box-sizing: border-box;
-  align-items: stretch; /* Εξασφαλίζει ότι οι στήλες έχουν το ίδιο ύψος */
+  align-items: flex-start;
   width: 100%;
-  max-width: 1020px; /* Εξασφαλίζουμε ότι το πλάτος δεν υπερβαίνει τα 1020px */
-  margin: 0 auto; /* Κεντράρισμα */
+  max-width: 1020px;
+  margin: 0 auto;
 }
 
-.free-package-content {
+.free-package-content,
+.free-package-sidebar {
   flex: 2;
-  margin: 0; /* Αφαίρεση περιθωρίων */
-}
-
-.free-package-sections {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Κενό ανάμεσα στα πλαίσια των τεστ: 20px */
-  margin: 0; /* Αφαίρεση περιθωρίων */
+  margin: 0;
+  padding-top: 0;
 }
 
 .free-package-sidebar {
   flex: 1;
   background: #f9f9f9;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 20px;
-  margin: 0; /* Αφαίρεση περιθωρίων */
+  margin: 0;
+  padding-top: 80px;
+}
+
+.free-package-sections > *:first-child,
+.free-package-sidebar > *:first-child {
+  margin-top: 0;
+}
+
+.free-package-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  margin-bottom: 40px; /* Προσθέτει κενό 40px κάτω από τα πλαίσια των τεστ */
+}
+
+.free-package-sections > *:last-child {
+  margin-bottom: 0;
 }
 
 .sidebar-widget {
@@ -83,7 +95,6 @@
   margin-bottom: 10px;
 }
 
-/* Αναζήτηση για τα τεστ */
 .sidebar-search-tests .search-form {
   display: flex;
   gap: 10px;
@@ -110,7 +121,6 @@
   background: #143B64;
 }
 
-/* Κατηγορίες για τα τεστ */
 .sidebar-test-categories ul {
   list-style: none;
   padding: 0;
@@ -133,7 +143,6 @@
   font-weight: 700;
 }
 
-/* Υπάρχουσα αναζήτηση για blogs */
 .sidebar-search .search-form {
   display: flex;
   gap: 10px;
@@ -189,11 +198,14 @@
   color: #2F4C66;
 }
 
+.pagination-wrapper {
+  margin-top: 100px !important; /* Αυξάνουμε το margin-top σε 100px */
+}
+
 .pagination {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
   padding: 0 20px;
 }
 

@@ -1,13 +1,13 @@
-/* src/pages/tests/GeneralSelfEfficacyScale.css */
+/* src/pages/tests/BecksDepressionInventory.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-.self-efficacy-test {
-  margin-bottom: 30px;
+.depression-test {
+  margin-bottom: 15px;
 }
 
 .free-package-section {
   background: #f9f9f9;
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -37,7 +37,7 @@
 }
 
 .section-title:hover {
-  color: #21aabc;
+  color: #bc2164;
 }
 
 .section-title:hover .dropdown-icon {
@@ -249,7 +249,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 20px; /* Απόσταση μεταξύ του κουμπιού "Закрыть тест" και του εικονιδίου share */
   margin-top: 20px;
 }
 
@@ -270,7 +270,7 @@
 
 .share-options {
   position: absolute;
-  top: 30px;
+  top: 30px; /* Τοποθετεί το μενού κάτω από το εικονίδιο */
   right: 0;
   background: #ffffff;
   border: 1px solid #e0e0e0;

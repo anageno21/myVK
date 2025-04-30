@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 .self-esteem-test {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .free-package-section {
   background: #f9f9f9;
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
