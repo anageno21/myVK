@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import ProfileHeader from '../components/ProfileHeader';
-import Pagination from '../components/Pagination'; // Εισαγωγή του Pagination component
 import BecksDepressionInventory from '../pages/tests/BecksDepressionInventory';
 import RosenbergSelfEsteemScale from '../pages/tests/RosenbergSelfEsteemScale';
 import RobsonSelfConceptQuestionnaire from '../pages/tests/RobsonSelfConceptQuestionnaire';
 import SelfCompassionScale from '../pages/tests/SelfCompassionScale';
 import ZungSelfRatingAnxietyScale from '../pages/tests/ZungSelfRatingAnxietyScale';
-import './FreePackagePage.css';
+import RelationshipScalesQuestionnaire from '../pages/tests/RelationshipScalesQuestionnaire'; // Προσθήκη του RSQ
+import './TestPage.css';
 
-function FreePackagePage() {
-  console.log("FreePackagePage component rendered");
+function TestPage() {
+  console.log("TestPage component rendered");
 
   // State για την τρέχουσα σελίδα
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 2; // Υποθέτουμε ότι έχουμε 2 σελίδες
+  const totalPages = 2; // Υποθέτουμε ότι έχουμε 2 σελίδες για την ώρα
 
   // Λίστα τεστ
   const tests = [
@@ -22,6 +22,7 @@ function FreePackagePage() {
     { component: <RobsonSelfConceptQuestionnaire key="RobsonSelfConceptQuestionnaire" />, title: 'Шкала самооценки Робсона, RSCQ' },
     { component: <SelfCompassionScale key="SelfCompassionScale" />, title: 'Шкала Самосострадания, SCS' },
     { component: <ZungSelfRatingAnxietyScale key="ZungSelfRatingAnxietyScale" />, title: 'Шкала Самооценки Тревожности Занга, SAS' },
+    { component: <RelationshipScalesQuestionnaire key="RelationshipScalesQuestionnaire" />, title: 'Relationship Scales Questionnaire, RSQ' }, // Προσθήκη του RSQ
   ];
 
   // Υπολογισμός σελίδων και εμφάνιση τεστ για την τρέχουσα σελίδα
@@ -36,17 +37,18 @@ function FreePackagePage() {
   };
 
   return (
-    <div className="free-package-page">
+    <div className="test-page">
       <ProfileHeader />
-      <main className="free-package-content">
+      <main className="test-content">
         <div className="container">
-          <div className="free-package-header">
+          <div className="test-header">
             <h1>Бесплатный Вводный Пакет</h1>
             <h2>Начни заботиться о своём эмоциональном благополучии с нашими бесплатными материалами.</h2>
           </div>
-          <div className="free-package-body">
-            <div className="free-package-content">
-              <div className="free-package-sections">
+          <div className="test-body">
+            <div className="test-content">
+              <div className="test-sections">
+                {/* Εμφάνιση διαφορετικού περιεχομένου με βάση την τρέχουσα σελίδα */}
                 {selectedTests.length > 0 ? (
                   selectedTests.map((test, index) => (
                     <div key={index}>
@@ -58,14 +60,22 @@ function FreePackagePage() {
                 )}
               </div>
               {tests.length > testsPerPage && (
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={handlePageChange}
-                />
+                <div className="pagination-wrapper">
+                  <div className="pagination">
+                    {Array.from({ length: totalPages }, (_, index) => (
+                      <button
+                        key={index + 1}
+                        onClick={() => handlePageChange(index + 1)}
+                        className={`pagination-link ${currentPage === index + 1 ? 'active' : ''}`}
+                      >
+                        {index + 1}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               )}
             </div>
-            <div className="free-package-sidebar">
+            <div className="test-sidebar">
               <div className="sidebar-widget sidebar-search-tests">
                 <h3>Поиск тестов</h3>
                 <div className="search-form">
@@ -131,4 +141,4 @@ function FreePackagePage() {
   );
 }
 
-export default FreePackagePage;
+export default TestPage;

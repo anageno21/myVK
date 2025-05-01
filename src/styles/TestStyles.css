@@ -1,15 +1,15 @@
-/* src/pages/tests/RobsonSelfConceptQuestionnaire.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-.self-concept-test {
-  margin-bottom: 15px;
+.test-wrapper {
+  margin-bottom: 25px;
 }
 
 .free-package-section {
   background: #f9f9f9;
   border-radius: 30px;
-  padding: 20px;
+  padding: 10px; /* Μειώνω το padding από 20px σε 10px */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 5px !important; /* Μειώνω την απόσταση από 140px σε 5px */
 }
 
 .free-package-section:hover {
@@ -19,8 +19,8 @@
 }
 
 .section-content {
-  padding: 20px;
-  text-align: left; /* Στοιχισμός όλων των κειμένων αριστερά */
+  padding: 10px; /* Μειώνω το padding από 20px σε 10px */
+  text-align: left;
 }
 
 .section-title {
@@ -37,11 +37,11 @@
 }
 
 .section-title:hover {
-  color: #21aabc;
+  color: #bc2164;
 }
 
 .section-title:hover .dropdown-icon {
-  color: #d3cdcb;
+  color: #21aabc;
   animation: pulse 0.5s ease infinite;
 }
 
@@ -327,11 +327,11 @@
 /* Responsive Προσαρμογές */
 @media (max-width: 768px) {
   .free-package-section {
-    padding: 15px;
+    padding: 10px;
   }
 
   .section-content {
-    padding: 15px;
+    padding: 10px;
   }
 
   .section-title {

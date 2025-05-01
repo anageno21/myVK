@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './SelfCompassionScale.css';
+import '../../styles/TestStyles.css'; // Εισαγωγή του κοινού CSS
 
 function SelfCompassionScale() {
   const [isTestOpen, setIsTestOpen] = useState(false);
@@ -441,8 +441,8 @@ function SelfCompassionScale() {
                   <div className="test-result">
                     <h3>Результаты теста</h3>
                     <p className="score-info"><strong>Твой балл:</strong> {result.score} из 130</p>
-                    <p className="level-info"><strong>Уровень:</strong> {result.recommendation.level}</p>
-                    <p><strong>Рекомендация:</strong> {result.recommendation.description}</p>
+                    <p className="level-info"><strong>Уровень:</strong> ${result.recommendation.level}</p>
+                    <p><strong>Рекомендация:</strong> ${result.recommendation.description}</p>
                     <p>
                       <strong>Предлагаемый пакет:</strong>{' '}
                       <Link to={result.recommendation.packageLink} className="recommended-package-link">

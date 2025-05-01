@@ -8,6 +8,7 @@
 .free-package-content {
   padding: 40px 0;
   width: 100%;
+  padding-bottom: 160px; /* Προσθέτω padding-bottom για να εξασφαλίσω απόσταση από τον footer */
 }
 
 .container {
@@ -75,9 +76,10 @@
 .free-package-sections {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 15px; /* Διατηρώ το gap μηδενικό */
   margin: 0;
-  margin-bottom: 40px; /* Προσθέτει κενό 40px κάτω από τα πλαίσια των τεστ */
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .free-package-sections > *:last-child {
@@ -198,37 +200,6 @@
   color: #2F4C66;
 }
 
-.pagination-wrapper {
-  margin-top: 100px !important; /* Αυξάνουμε το margin-top σε 100px */
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 20px;
-}
-
-.pagination-link {
-  padding: 8px 16px;
-  background: #f9f9f9;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #143B64;
-  font-size: 16px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.pagination-link:hover {
-  background: #e6f0fa;
-  color: #21aabc;
-}
-
-.pagination-link.active {
-  background: #21aabc;
-  color: white;
-}
-
 /* Responsive Προσαρμογές */
 @media (max-width: 1020px) {
   .container {
@@ -257,11 +228,6 @@
   .free-package-content {
     margin-bottom: 20px;
   }
-
-  .pagination-link {
-    padding: 6px 12px;
-    font-size: 14px;
-  }
 }
 
 @media (max-width: 576px) {
@@ -275,10 +241,5 @@
 
   .sidebar-widget h3 {
     font-size: 18px;
-  }
-
-  .pagination-link {
-    padding: 5px 10px;
-    font-size: 12px;
   }
 }

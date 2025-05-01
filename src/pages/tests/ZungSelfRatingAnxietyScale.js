@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './ZungSelfRatingAnxietyScale.css';
+import '../../styles/TestStyles.css'; // Εισαγωγή του κοινού CSS
 
 function ZungSelfRatingAnxietyScale() {
   const [isTestOpen, setIsTestOpen] = useState(false);

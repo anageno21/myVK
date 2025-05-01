@@ -1,0 +1,294 @@
+.test-page {
+    font-family: 'Playfair Display', serif;
+    color: #2F4C66;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .test-content {
+    padding: 40px 0;
+    width: 100%;
+    min-height: calc(100vh - 200px); /* Εξασφαλίζει ότι το περιεχόμενο δεν καλύπτεται από τον footer */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px !important; /* Διατηρώ την απόσταση από τον footer */
+  }
+  
+  .container {
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+  
+  .test-header {
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    width: 100%; /* Εξασφαλίζει ότι ο τίτλος παραμένει μέσα στο πλαίσιο */
+    box-sizing: border-box;
+  }
+  
+  .test-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #143B64;
+    margin-bottom: 10px;
+  }
+  
+  .test-header h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #2F4C66;
+  }
+  
+  .test-body {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    align-items: flex-start; /* Διατηρώ το flex-start για τη σωστή θέση του sidebar */
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+  
+  .test-content,
+  .test-sidebar {
+    flex: 2;
+    margin: 0;
+    padding-top: 0;
+  }
+  
+  .test-sidebar {
+    flex: 1;
+    background: #f9f9f9;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 0;
+    padding-top: 20px; /* Διατηρώ το padding-top */
+    margin-top: 60px !important; /* Διατηρώ το margin-top για να κατεβαίνει χαμηλότερα */
+  }
+  
+  .test-sections > *:first-child,
+  .test-sidebar > *:first-child {
+    margin-top: 0;
+  }
+  
+  .test-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    margin-bottom: 40px !important; /* Αυξάνω το margin-bottom από 20px σε 40px για να σπρώξω το pagination πιο κάτω */
+  }
+  
+  .sidebar-widget {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-widget h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #143B64;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-search-tests .search-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sidebar-search-tests .search-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .sidebar-search-tests .search-form button {
+    padding: 8px;
+    background: #21aabc;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .sidebar-search-tests .search-form button:hover {
+    background: #143B64;
+  }
+  
+  .sidebar-test-categories ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-test-categories li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #173A37;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar-test-categories li:hover {
+    color: #21aabc;
+  }
+  
+  .sidebar-test-categories li.active-category {
+    color: #21aabc;
+    font-weight: 700;
+  }
+  
+  .sidebar-search .search-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sidebar-search .search-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .sidebar-search .search-form button {
+    padding: 8px;
+    background: #21aabc;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .sidebar-search .search-form button:hover {
+    background: #143B64;
+  }
+  
+  .sidebar-categories ul,
+  .sidebar-authors ul,
+  .sidebar-recent-posts ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-categories li,
+  .sidebar-authors li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-recent-posts li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar-recent-posts li p:first-child {
+    font-size: 14px;
+    font-weight: 700;
+    color: #143B64;
+    margin-bottom: 5px;
+  }
+  
+  .sidebar-recent-posts li p:last-child {
+    font-size: 12px;
+    color: #2F4C66;
+  }
+  
+  .pagination-wrapper {
+    margin-top: 0px !important; /* Διατηρώ το margin-top */
+    margin-bottom: 5px !important; /* Διατηρώ την απόσταση από τον footer */
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+  }
+  
+  .pagination-link {
+    padding: 8px 16px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #143B64;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pagination-link:hover {
+    background: #e6f0fa;
+    color: #21aabc;
+  }
+  
+  .pagination-link.active {
+    background: #21aabc;
+    color: white;
+  }
+  
+  /* Responsive Προσαρμογές */
+  @media (max-width: 1020px) {
+    .container {
+      max-width: 100%;
+    }
+  
+    .test-body {
+      padding: 0 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .test-body {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .test-header h1 {
+      font-size: 28px;
+    }
+  
+    .test-header h2 {
+      font-size: 16px;
+    }
+  
+    .test-content {
+      margin-bottom: 20px;
+    }
+  
+    .pagination-link {
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+  
+    .test-sidebar {
+      margin-top: 20px; /* Μειώνω το margin-top σε μικρότερες οθόνες */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .test-header h1 {
+      font-size: 24px;
+    }
+  
+    .test-header h2 {
+      font-size: 14px;
+    }
+  
+    .sidebar-widget h3 {
+      font-size: 18px;
+    }
+  
+    .pagination-link {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }

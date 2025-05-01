@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './RobsonSelfConceptQuestionnaire.css';
+import '../../styles/TestStyles.css'; // Εισαγωγή του κοινού CSS
 
 function RobsonSelfConceptQuestionnaire() {
   const [isTestOpen, setIsTestOpen] = useState(false);
