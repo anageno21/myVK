@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/TestStyles.css'; // Εισαγωγή του κοινού CSS
+import '../../styles/TestStyles.css';
 
 function ZungSelfRatingAnxietyScale() {
   const [isTestOpen, setIsTestOpen] = useState(false);
@@ -20,200 +20,200 @@ function ZungSelfRatingAnxietyScale() {
       id: 'q1',
       text: 'Я чувствую себя более нервным и беспокойным, чем обычно.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q2',
       text: 'Я чувствую страх без видимой причины.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q3',
       text: 'Я легко расстраиваюсь или паникую.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q4',
       text: 'Мне кажется, что я могу развалиться на части.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q5',
       text: 'Я чувствую, что все в порядке, и ничего страшного не случится.',
       options: [
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Постоянно' },
+        { value: '4', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '2', text: 'Часто' },
+        { value: '1', text: 'Постоянно' },
       ],
     },
     {
       id: 'q6',
       text: 'Мои руки и ноги дрожат.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q7',
       text: 'Меня беспокоят головные боли, боли в шее и спине.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q8',
       text: 'Я чувствую слабость и легко устаю.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q9',
       text: 'Я чувствую себя спокойным и могу сидеть спокойно.',
       options: [
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Постоянно' },
+        { value: '4', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '2', text: 'Часто' },
+        { value: '1', text: 'Постоянно' },
       ],
     },
     {
       id: 'q10',
       text: 'Я чувствую, что мое сердце бьется быстрее, чем обычно.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q11',
       text: 'У меня бывают приступы головокружения.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q12',
       text: 'Я испытываю приступы дурноты или обмороки.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q13',
       text: 'Я могу дышать легко и свободно.',
       options: [
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Постоянно' },
+        { value: '4', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '2', text: 'Часто' },
+        { value: '1', text: 'Постоянно' },
       ],
     },
     {
       id: 'q14',
       text: 'Я чувствую онемение или покалывание в пальцах рук и ног.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q15',
       text: 'Меня беспокоят боли в желудке или проблемы с пищеварением.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q16',
       text: 'Мне приходится часто мочиться.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q17',
       text: 'Мои руки обычно сухие и теплые.',
       options: [
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Постоянно' },
+        { value: '4', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '2', text: 'Часто' },
+        { value: '1', text: 'Постоянно' },
       ],
     },
     {
       id: 'q18',
       text: 'Мое лицо становится горячим и красным.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
     {
       id: 'q19',
       text: 'Я легко засыпаю и хорошо высыпаюсь ночью.',
       options: [
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Постоянно' },
+        { value: '4', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '2', text: 'Часто' },
+        { value: '1', text: 'Постоянно' },
       ],
     },
     {
       id: 'q20',
       text: 'У меня бывают кошмары.',
       options: [
-        { value: 1, text: 'Редко' },
-        { value: 2, text: 'Иногда' },
-        { value: 3, text: 'Часто' },
-        { value: 4, text: 'Постоянно' },
+        { value: '1', text: 'Редко' },
+        { value: '2', text: 'Иногда' },
+        { value: '3', text: 'Часто' },
+        { value: '4', text: 'Постоянно' },
       ],
     },
   ];
@@ -224,17 +224,22 @@ function ZungSelfRatingAnxietyScale() {
   }, [currentQuestionIndex]);
 
   const handleAnswerChange = (questionId, value) => {
-    setAnswers(prev => ({
-      ...prev,
-      [questionId]: parseInt(value),
-    }));
-    if (currentQuestionIndex < questions.length - 1) {
+    if (answers[questionId] !== value) {
+      setAnswers(prev => ({
+        ...prev,
+        [questionId]: value,
+      }));
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (answers[questions[currentQuestionIndex].id] !== null && currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
   const calculateResult = () => {
-    const totalScore = Object.values(answers).reduce((sum, value) => sum + (value || 0), 0);
+    const totalScore = Object.values(answers).reduce((sum, value) => sum + (parseInt(value) || 0), 0);
     let recommendation = '';
 
     if (totalScore <= 35) { // < 35: Ελάχιστη ή καθόλου ανησυχία
@@ -282,21 +287,21 @@ function ZungSelfRatingAnxietyScale() {
 
   const shareViaEmail = () => {
     if (!result) return;
-    const subject = 'Мои результаты теста: Шкала Самооценки Тревожности Занга, SAS';
+    const subject = 'Мои результаты теста: Шкала самооценки тревожности Занга, SAS';
     const body = `Твой балл: ${result.score} из 80\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const shareViaWhatsApp = () => {
     if (!result) return;
-    const text = `Мои результаты теста: Шкала Самооценки Тревожности Занга, SAS\nТвой балл: ${result.score} из 80\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
+    const text = `Мои результаты теста: Шкала самооценки тревожности Занга, SAS\nТвой балл: ${result.score} из 80\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   const printResult = () => {
     if (!result) return;
     const printContent = `
-      <h3>Результаты теста: Шкала Самооценки Тревожности Занга, SAS</h3>
+      <h3>Результаты теста: Шкала самооценки тревожности Занга, SAS</h3>
       <p><strong>Твой балл:</strong> ${result.score} из 80</p>
       <p><strong>Уровень:</strong> ${result.recommendation.level}</p>
       <p><strong>Рекомендация:</strong> ${result.recommendation.description}</p>
@@ -323,17 +328,18 @@ function ZungSelfRatingAnxietyScale() {
   };
 
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+  const allQuestionsAnswered = Object.values(answers).every(answer => answer !== null);
 
   return (
     <div className="zung-anxiety-test">
       <div className="free-package-section">
         <div className="section-content">
           <h3 className="section-title" onClick={() => setIsTestOpen(!isTestOpen)}>
-            Шкала Самооценки Тревожности Занга, SAS
+            Шкала самооценки тревожности Занга, SAS
             <i className={`las la-angle-down dropdown-icon ${isTestOpen ? 'open' : ''}`}></i>
           </h3>
           <p className="section-description">
-            Online version of the Zung Self-Rating Anxiety Scale (SAS), developed by Dr. William W. K. Zung for measuring the patient's level of anxiety.
+            Этот тест помогает определить уровень тревожности — состояния, которое влияет на сон, концентрацию, поведение и общее качество жизни. Он основан на шкале Занга, научно обоснованной методике, разработанной для самооценки выраженности тревожных симптомов. Тест учитывает как эмоциональные, так и физические проявления тревоги, позволяя получить целостную картину внутреннего напряжения. Пройди тест — и получи персональные рекомендации, которые помогут справляться с тревожностью и восстановить внутреннее спокойствие.
             <span className="test-info">
               онлайн-тест | 20 пунктов | около 4 минут
             </span>
@@ -343,8 +349,23 @@ function ZungSelfRatingAnxietyScale() {
               <div className="test-container">
                 {result ? (
                   <div className="test-result">
-                    <h3>Результаты теста</h3>
-                    <p className="score-info"><strong>Твой балл:</strong> {result.score} из 80</p>
+                    <p className="score-info"><strong>Твой балл:</strong></p>
+                    <div className="score-bar">
+                      <div
+                        className="score-progress"
+                        style={{
+                          width: `${((result.score - 20) / 60) * 100}%`,
+                          backgroundColor: result.score <= 35 ? '#32cd32' : result.score <= 50 ? '#ffd700' : '#ff4d4d',
+                        }}
+                      ></div>
+                      <span className="score-label" style={{ position: 'absolute', left: `${((result.score - 20) / 60) * 100}%`, transform: 'translateX(-50%)' }}>
+                        {result.score}
+                      </span>
+                    </div>
+                    <div className="score-range">
+                      <span>20</span>
+                      <span>80</span>
+                    </div>
                     <p className="level-info"><strong>Уровень:</strong> {result.recommendation.level}</p>
                     <p><strong>Рекомендация:</strong> {result.recommendation.description}</p>
                     <p>
@@ -382,24 +403,34 @@ function ZungSelfRatingAnxietyScale() {
                       <h3>{currentQuestionIndex + 1}. {questions[currentQuestionIndex].text}</h3>
                       <div className="options">
                         {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-                          <label key={optionIndex} className="option-label">
+                          <label key={optionIndex} className="option-label" style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                             <input
                               type="radio"
                               name={questions[currentQuestionIndex].id}
                               value={option.value}
                               checked={answers[questions[currentQuestionIndex].id] === option.value}
                               onChange={() => handleAnswerChange(questions[currentQuestionIndex].id, option.value)}
+                              className="custom-radio"
                             />
-                            {option.text}
+                            <span style={{ marginLeft: '10px' }}>{option.text}</span>
                           </label>
                         ))}
                       </div>
-                      {currentQuestionIndex === questions.length - 1 && (
+                      {currentQuestionIndex < questions.length - 1 ? (
+                        <button
+                          type="button"
+                          onClick={handleNextQuestion}
+                          className="submit-test-button"
+                          disabled={answers[questions[currentQuestionIndex].id] === null}
+                        >
+                          Следующий вопрос
+                        </button>
+                      ) : (
                         <button
                           type="button"
                           onClick={calculateResult}
                           className="submit-test-button"
-                          disabled={answers[questions[currentQuestionIndex].id] === null}
+                          disabled={!allQuestionsAnswered}
                         >
                           Узнать результаты
                         </button>

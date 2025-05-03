@@ -19,7 +19,7 @@ import SelfConfidencePage from './pages/SelfConfidencePage';
 import AdaptationPage from './pages/AdaptationPage';
 import FreePackagePage from './pages/FreePackagePage';
 import RegisterPage from './pages/RegisterPage';
-import TestPage from './pages/TestPage';
+import TestAttachmentStyleQuestionnaire from './pages/tests/TestAttachmentStyleQuestionnaire'; // Διορθωμένη διαδρομή
 
 function App() {
   return (
@@ -43,7 +43,7 @@ function App() {
         <Route path="/our-therapists" element={<TherapistLibrary />} />
         <Route path="/therapist-details" element={<TherapistsDetailsPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/test" element={<TestPage />} />
+        <Route path="/test-attachment-style" element={<TestAttachmentStyleQuestionnaire />} />
       </Routes>
       <NewFooter />
     </>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/TestStyles.css'; // Εισαγωγή του κοινού CSS
+import '../../styles/TestStyles.css';
 
 function RobsonSelfConceptQuestionnaire() {
   const [isTestOpen, setIsTestOpen] = useState(false);
@@ -26,140 +26,140 @@ function RobsonSelfConceptQuestionnaire() {
       id: 'q1',
       text: 'Я доволен своей внешностью.',
       options: [
-        { value: 0, text: 'Совсем не верно' },
-        { value: 1, text: '1' },
-        { value: 2, text: '2' },
-        { value: 3, text: '3' },
-        { value: 4, text: '4' },
-        { value: 5, text: '5' },
-        { value: 6, text: '6' },
-        { value: 7, text: 'Совершенно верно' },
+        { value: '0', text: 'Совсем не верно' },
+        { value: '1', text: '1' },
+        { value: '2', text: '2' },
+        { value: '3', text: '3' },
+        { value: '4', text: '4' },
+        { value: '5', text: '5' },
+        { value: '6', text: '6' },
+        { value: '7', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q2',
       text: 'Я чувствую себя уверенно в социальных ситуациях.',
       options: [
-        { value: 0, text: 'Совсем не верно' },
-        { value: 1, text: '1' },
-        { value: 2, text: '2' },
-        { value: 3, text: '3' },
-        { value: 4, text: '4' },
-        { value: 5, text: '5' },
-        { value: 6, text: '6' },
-        { value: 7, text: 'Совершенно верно' },
+        { value: '0', text: 'Совсем не верно' },
+        { value: '1', text: '1' },
+        { value: '2', text: '2' },
+        { value: '3', text: '3' },
+        { value: '4', text: '4' },
+        { value: '5', text: '5' },
+        { value: '6', text: '6' },
+        { value: '7', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q3',
       text: 'Я часто чувствую себя бесполезным.',
       options: [
-        { value: 7, text: 'Совсем не верно' },
-        { value: 6, text: '1' },
-        { value: 5, text: '2' },
-        { value: 4, text: '3' },
-        { value: 3, text: '4' },
-        { value: 2, text: '5' },
-        { value: 1, text: '6' },
-        { value: 0, text: 'Совершенно верно' },
+        { value: '7', text: 'Совсем не верно' },
+        { value: '6', text: '1' },
+        { value: '5', text: '2' },
+        { value: '4', text: '3' },
+        { value: '3', text: '4' },
+        { value: '2', text: '5' },
+        { value: '1', text: '6' },
+        { value: '0', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q4',
       text: 'Я принимаю себя таким, какой я есть.',
       options: [
-        { value: 0, text: 'Совсем не верно' },
-        { value: 1, text: '1' },
-        { value: 2, text: '2' },
-        { value: 3, text: '3' },
-        { value: 4, text: '4' },
-        { value: 5, text: '5' },
-        { value: 6, text: '6' },
-        { value: 7, text: 'Совершенно верно' },
+        { value: '0', text: 'Совсем не верно' },
+        { value: '1', text: '1' },
+        { value: '2', text: '2' },
+        { value: '3', text: '3' },
+        { value: '4', text: '4' },
+        { value: '5', text: '5' },
+        { value: '6', text: '6' },
+        { value: '7', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q5',
       text: 'Я чувствую, что не могу справляться с жизненными трудностями.',
       options: [
-        { value: 7, text: 'Совсем не верно' },
-        { value: 6, text: '1' },
-        { value: 5, text: '2' },
-        { value: 4, text: '3' },
-        { value: 3, text: '4' },
-        { value: 2, text: '5' },
-        { value: 1, text: '6' },
-        { value: 0, text: 'Совершенно верно' },
+        { value: '7', text: 'Совсем не верно' },
+        { value: '6', text: '1' },
+        { value: '5', text: '2' },
+        { value: '4', text: '3' },
+        { value: '3', text: '4' },
+        { value: '2', text: '5' },
+        { value: '1', text: '6' },
+        { value: '0', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q6',
       text: 'У меня есть чувство собственного достоинства.',
       options: [
-        { value: 0, text: 'Совсем не верно' },
-        { value: 1, text: '1' },
-        { value: 2, text: '2' },
-        { value: 3, text: '3' },
-        { value: 4, text: '4' },
-        { value: 5, text: '5' },
-        { value: 6, text: '6' },
-        { value: 7, text: 'Совершенно верно' },
+        { value: '0', text: 'Совсем не верно' },
+        { value: '1', text: '1' },
+        { value: '2', text: '2' },
+        { value: '3', text: '3' },
+        { value: '4', text: '4' },
+        { value: '5', text: '5' },
+        { value: '6', text: '6' },
+        { value: '7', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q7',
       text: 'Я чувствую себя комфортно, когда нахожусь один.',
       options: [
-        { value: 0, text: 'Совсем не верно' },
-        { value: 1, text: '1' },
-        { value: 2, text: '2' },
-        { value: 3, text: '3' },
-        { value: 4, text: '4' },
-        { value: 5, text: '5' },
-        { value: 6, text: '6' },
-        { value: 7, text: 'Совершенно верно' },
+        { value: '0', text: 'Совсем не верно' },
+        { value: '1', text: '1' },
+        { value: '2', text: '2' },
+        { value: '3', text: '3' },
+        { value: '4', text: '4' },
+        { value: '5', text: '5' },
+        { value: '6', text: '6' },
+        { value: '7', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q8',
       text: 'Я часто чувствую себя подавленным.',
       options: [
-        { value: 7, text: 'Совсем не верно' },
-        { value: 6, text: '1' },
-        { value: 5, text: '2' },
-        { value: 4, text: '3' },
-        { value: 3, text: '4' },
-        { value: 2, text: '5' },
-        { value: 1, text: '6' },
-        { value: 0, text: 'Совершенно верно' },
+        { value: '7', text: 'Совсем не верно' },
+        { value: '6', text: '1' },
+        { value: '5', text: '2' },
+        { value: '4', text: '3' },
+        { value: '3', text: '4' },
+        { value: '2', text: '5' },
+        { value: '1', text: '6' },
+        { value: '0', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q9',
       text: 'Я доволен своими достижениями.',
       options: [
-        { value: 0, text: 'Совсем не верно' },
-        { value: 1, text: '1' },
-        { value: 2, text: '2' },
-        { value: 3, text: '3' },
-        { value: 4, text: '4' },
-        { value: 5, text: '5' },
-        { value: 6, text: '6' },
-        { value: 7, text: 'Совершенно верно' },
+        { value: '0', text: 'Совсем не верно' },
+        { value: '1', text: '1' },
+        { value: '2', text: '2' },
+        { value: '3', text: '3' },
+        { value: '4', text: '4' },
+        { value: '5', text: '5' },
+        { value: '6', text: '6' },
+        { value: '7', text: 'Совершенно верно' },
       ],
     },
     {
       id: 'q10',
       text: 'Я чувствую себя неуверенно в своих способностях.',
       options: [
-        { value: 7, text: 'Совсем не верно' },
-        { value: 6, text: '1' },
-        { value: 5, text: '2' },
-        { value: 4, text: '3' },
-        { value: 3, text: '4' },
-        { value: 2, text: '5' },
-        { value: 1, text: '6' },
-        { value: 0, text: 'Совершенно верно' },
+        { value: '7', text: 'Совсем не верно' },
+        { value: '6', text: '1' },
+        { value: '5', text: '2' },
+        { value: '4', text: '3' },
+        { value: '3', text: '4' },
+        { value: '2', text: '5' },
+        { value: '1', text: '6' },
+        { value: '0', text: 'Совершенно верно' },
       ],
     },
   ];
@@ -170,17 +170,22 @@ function RobsonSelfConceptQuestionnaire() {
   }, [currentQuestionIndex]);
 
   const handleAnswerChange = (questionId, value) => {
-    setAnswers(prev => ({
-      ...prev,
-      [questionId]: parseInt(value),
-    }));
-    if (currentQuestionIndex < questions.length - 1) {
+    if (answers[questionId] !== value) {
+      setAnswers(prev => ({
+        ...prev,
+        [questionId]: value,
+      }));
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (answers[questions[currentQuestionIndex].id] !== null && currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
   const calculateResult = () => {
-    const totalScore = Object.values(answers).reduce((sum, value) => sum + (value || 0), 0);
+    const totalScore = Object.values(answers).reduce((sum, value) => sum + (parseInt(value) || 0), 0);
     let recommendation = '';
 
     if (totalScore <= 20) {
@@ -260,7 +265,7 @@ function RobsonSelfConceptQuestionnaire() {
         <head>
           <title>Результаты теста</title>
           <style>
-            body { font-family: 'Playfair Display', serif; text-align: center; }
+            body { font-family: 'Playfair Display', serif; text-align: left; }
             h3 { font-size: 20px; color: #143B64; }
             p { font-size: 16px; color: #2F4C66; }
           </style>
@@ -275,6 +280,7 @@ function RobsonSelfConceptQuestionnaire() {
   };
 
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+  const allQuestionsAnswered = Object.values(answers).every(answer => answer !== null);
 
   return (
     <div className="self-concept-test">
@@ -285,7 +291,7 @@ function RobsonSelfConceptQuestionnaire() {
             <i className={`las la-angle-down dropdown-icon ${isTestOpen ? 'open' : ''}`}></i>
           </h3>
           <p className="section-description">
-            Online version of the Robson Self-Concept Questionnaire (RSCQ), a self-report instrument for measuring self-esteem.
+            Как ты воспринимаешь себя — и как это влияет на твою жизнь? Шкала самооценки Робсона поможет выявить уровень уверенности в себе и степень удовлетворённости собой в разных сферах. Это валидный психологический инструмент, который отражает, насколько твой внутренний образ себя поддерживает тебя — или наоборот, ограничивает. Пройди тест — и начни путь к устойчивой, здоровой самооценке и внутренней опоре.
             <span className="test-info">
               онлайн-тест | 10 пунктов | около 3 минут
             </span>
@@ -295,8 +301,23 @@ function RobsonSelfConceptQuestionnaire() {
               <div className="test-container">
                 {result ? (
                   <div className="test-result">
-                    <h3>Результаты теста</h3>
-                    <p className="score-info"><strong>Твой балл:</strong> {result.score} из 70</p>
+                    <p className="score-info"><strong>Твой балл:</strong></p>
+                    <div className="score-bar">
+                      <div
+                        className="score-progress"
+                        style={{
+                          width: `${(result.score / 70) * 100}%`,
+                          backgroundColor: result.score <= 20 ? '#ff4d4d' : result.score <= 40 ? '#ffd700' : '#32cd32',
+                        }}
+                      ></div>
+                      <span className="score-label" style={{ position: 'absolute', left: `${(result.score / 70) * 100}%`, transform: 'translateX(-50%)' }}>
+                        {result.score}
+                      </span>
+                    </div>
+                    <div className="score-range">
+                      <span>0</span>
+                      <span>70</span>
+                    </div>
                     <p className="level-info"><strong>Уровень:</strong> {result.recommendation.level}</p>
                     <p><strong>Рекомендация:</strong> {result.recommendation.description}</p>
                     <p>
@@ -334,24 +355,34 @@ function RobsonSelfConceptQuestionnaire() {
                       <h3>{currentQuestionIndex + 1}. {questions[currentQuestionIndex].text}</h3>
                       <div className="options">
                         {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-                          <label key={optionIndex} className="option-label">
+                          <label key={optionIndex} className="option-label" style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                             <input
                               type="radio"
                               name={questions[currentQuestionIndex].id}
                               value={option.value}
                               checked={answers[questions[currentQuestionIndex].id] === option.value}
                               onChange={() => handleAnswerChange(questions[currentQuestionIndex].id, option.value)}
+                              className="custom-radio"
                             />
-                            {option.text}
+                            <span style={{ marginLeft: '10px' }}>{option.text}</span>
                           </label>
                         ))}
                       </div>
-                      {currentQuestionIndex === questions.length - 1 && (
+                      {currentQuestionIndex < questions.length - 1 ? (
+                        <button
+                          type="button"
+                          onClick={handleNextQuestion}
+                          className="submit-test-button"
+                          disabled={answers[questions[currentQuestionIndex].id] === null}
+                        >
+                          Следующий вопрос
+                        </button>
+                      ) : (
                         <button
                           type="button"
                           onClick={calculateResult}
                           className="submit-test-button"
-                          disabled={answers[questions[currentQuestionIndex].id] === null}
+                          disabled={!allQuestionsAnswered}
                         >
                           Узнать результаты
                         </button>

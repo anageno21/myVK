@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/TestStyles.css'; // Εισαγωγή του κοινού CSS
+import '../../styles/TestStyles.css';
 
 function SelfCompassionScale() {
   const [isTestOpen, setIsTestOpen] = useState(false);
@@ -18,296 +18,290 @@ function SelfCompassionScale() {
   const [result, setResult] = useState(null);
 
   const questions = [
-    // Self-Kindness (5 items)
     {
       id: 'q1',
       text: 'Я стараюсь быть понимающим и терпеливым к тем аспектам моей личности, которые мне не нравятся.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q2',
-      text: 'Я добр к себе, когда переживаю страдания.',
+      text: 'Когда со мной случается что-то болезненное, я пытаюсь взглянуть на ситуацию сбалансированно.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q3',
-      text: 'Когда я переживаю трудное время, я даю себе заботу и нежность, в которых нуждаюсь.',
+      text: 'Когда я терплю неудачу, я склонен переоценивать ее масштаб (делаю из мухи слона).',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q4',
-      text: 'Я терпим к своим недостаткам и слабостям.',
+      text: 'Я стараюсь относиться к себе с добротой, когда переживаю эмоциональную боль.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q5',
-      text: 'Я стараюсь быть любящим к себе, когда чувствую эмоциональную боль.',
+      text: 'Когда я переживаю трудный период, я даю себе заботу и поддержку, в которой нуждаюсь.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
-    // Self-Judgment (5 items, reverse scored)
     {
       id: 'q6',
-      text: 'Когда я вижу аспекты себя, которые мне не нравятся, я становлюсь строг к себе.',
+      text: 'Когда я чувствую себя неадекватно, я напоминаю себе, что большинство людей иногда чувствуют то же самое.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q7',
-      text: 'Когда времена действительно трудные, я склонен быть жестким к себе.',
+      text: 'Я очень нетерпим к своим недостаткам.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q8',
-      text: 'Я могу быть немного холодным к себе, когда переживаю страдания.',
+      text: 'Когда я чувствую себя подавленным, я склонен зацикливаться на всем, что идет не так.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q9',
-      text: 'Я осуждаю себя за свои недостатки и слабости.',
+      text: 'Когда я терплю неудачу, я чувствую, что я единственный, кто сталкивается с такими проблемами.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q10',
-      text: 'Когда я чувствую эмоциональную боль, я склонен критиковать себя.',
+      text: 'Я стараюсь осознавать свои эмоции, не позволяя им захлестнуть меня.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
-    // Common Humanity (4 items)
     {
       id: 'q11',
-      text: 'Я стараюсь видеть свои неудачи как часть человеческого опыта.',
+      text: 'Когда я чувствую себя грустно, я часто изолируюсь от других.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q12',
-      text: 'Когда дела идут плохо, я вижу трудности как часть жизни, которую переживают все.',
+      text: 'Я считаю, что трудности – это часть жизни, с которой сталкиваются все.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q13',
-      text: 'Когда я чувствую себя неадекватно, я напоминаю себе, что это чувство разделяют многие люди.',
+      text: 'Когда я расстроен, я часто виню себя за свои ошибки.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q14',
-      text: 'Когда я переживаю трудности, я напоминаю себе, что многие люди чувствуют то же самое.',
+      text: 'Я стараюсь относиться к своим трудностям с пониманием, как если бы это были трудности друга.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
-    // Isolation (4 items, reverse scored)
     {
       id: 'q15',
-      text: 'Когда я думаю о своих недостатках, я чувствую себя оторванным от остального мира.',
+      text: 'Когда я переживаю трудный период, я склонен преувеличивать его влияние на мою жизнь.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q16',
-      text: 'Когда я переживаю неудачу, я чувствую себя изолированным от других.',
+      text: 'Я стараюсь сохранять баланс между своими эмоциями, даже когда мне тяжело.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q17',
-      text: 'Когда я чувствую боль, я ощущаю себя отделенным от других людей.',
+      text: 'Когда я чувствую себя подавленным, я склонен думать, что это никогда не пройдет.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q18',
-      text: 'Когда я переживаю трудности, мне кажется, что я единственный, кто страдает.',
+      text: 'Я часто чувствую себя оторванным от других, когда переживаю трудности.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
-    // Mindfulness (4 items)
     {
       id: 'q19',
-      text: 'Когда что-то болезненное происходит, я стараюсь смотреть на ситуацию уравновешенно.',
+      text: 'Я стараюсь относиться к своим проблемам с добротой и пониманием.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q20',
-      text: 'Когда я расстроен, я стараюсь сохранять свои эмоции в балансе.',
+      text: 'Когда я расстроен, я часто сравниваю себя с другими.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q21',
-      text: 'Я принимаю свои чувства, даже если они болезненные.',
+      text: 'Я принимаю свои недостатки как часть человеческого опыта.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q22',
-      text: 'Я стараюсь осознавать свои эмоции, не позволяя им захлестнуть меня.',
+      text: 'Когда я чувствую себя плохо, я часто думаю, что другие справляются лучше меня.',
       options: [
-        { value: 1, text: 'Почти никогда' },
-        { value: 2, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 4, text: 'Часто' },
-        { value: 5, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
-    // Over-Identification (4 items, reverse scored)
     {
       id: 'q23',
-      text: 'Когда что-то меня расстраивает, я позволяю своим чувствам захлестнуть меня.',
+      text: 'Я стараюсь замечать свои эмоции, не вовлекаясь в них чрезмерно.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q24',
-      text: 'Когда я чувствую себя подавленным, я склонен зацикливаться на всем, что идет не так.',
+      text: 'Когда я переживаю трудный период, я чувствую, что это моя вина.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q25',
-      text: 'Когда случается что-то болезненное, я склонен преувеличивать ситуацию.',
+      text: 'Я часто думаю, что мои проблемы уникальны и никто не может меня понять.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
     {
       id: 'q26',
-      text: 'Когда я терплю неудачу в чем-то важном, я погружаюсь в чувства неадекватности.',
+      text: 'Я стараюсь относиться к себе с той же добротой, с которой отношусь к другим.',
       options: [
-        { value: 5, text: 'Почти никогда' },
-        { value: 4, text: 'Редко' },
-        { value: 3, text: 'Иногда' },
-        { value: 2, text: 'Часто' },
-        { value: 1, text: 'Почти всегда' },
+        { value: '1', text: 'Почти никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Почти всегда' },
       ],
     },
   ];
@@ -318,34 +312,39 @@ function SelfCompassionScale() {
   }, [currentQuestionIndex]);
 
   const handleAnswerChange = (questionId, value) => {
-    setAnswers(prev => ({
-      ...prev,
-      [questionId]: parseInt(value),
-    }));
-    if (currentQuestionIndex < questions.length - 1) {
+    if (answers[questionId] !== value) {
+      setAnswers(prev => ({
+        ...prev,
+        [questionId]: value,
+      }));
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (answers[questions[currentQuestionIndex].id] !== null && currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
   const calculateResult = () => {
-    const totalScore = Object.values(answers).reduce((sum, value) => sum + (value || 0), 0);
+    const totalScore = Object.values(answers).reduce((sum, value) => sum + (parseInt(value) || 0), 0);
     let recommendation = '';
 
-    if (totalScore <= 65) { // 1-2.5 μέσος όρος (26 ερωτήσεις x 2.5)
+    if (totalScore <= 65) {
       recommendation = {
         level: 'Низкий уровень самосострадания',
         package: 'Расширенный Пакет',
         packageLink: '/our-service',
         description: 'Твой уровень самосострадания может быть низким. Наш расширенный пакет предложит тебе более глубокую поддержку для развития доброты к себе.',
       };
-    } else if (totalScore <= 91) { // 2.5-3.5 μέσος όρος (26 ερωτήσεις x 3.5)
+    } else if (totalScore <= 91) {
       recommendation = {
         level: 'Средний уровень самосострадания',
         package: 'Базовый Пакет',
         packageLink: '/our-service',
         description: 'Твой уровень самосострадания находится на среднем уровне. Наш базовый пакет поможет тебе укрепить заботу о себе.',
       };
-    } else { // 3.5-5 μέσος όρος (26 ερωτήσεις x 5 = 130)
+    } else {
       recommendation = {
         level: 'Высокий уровень самосострадания',
         package: 'Бесплатный Вводный Пакет',
@@ -419,6 +418,7 @@ function SelfCompassionScale() {
   };
 
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+  const allQuestionsAnswered = Object.values(answers).every(answer => answer !== null);
 
   return (
     <div className="self-compassion-test">
@@ -429,7 +429,8 @@ function SelfCompassionScale() {
             <i className={`las la-angle-down dropdown-icon ${isTestOpen ? 'open' : ''}`}></i>
           </h3>
           <p className="section-description">
-            Online version of the Self-Compassion Scale (SCS) by Kristin Neff measures the construct of self-compassion, which involves relating to ourselves with self-kindness and less self-judgment, feelings of common humanity and fewer feelings of isolation, mindfulness and decreased overidentification in situations of perceived failure, inadequacy, or personal suffering.
+            Шкала самосострадания — валидированная методика, разработанная психологом Кристин Нефф, которая оценивает, как ты относишься к себе в трудные моменты.
+            Исследования показывают, что высокий уровень самосострадания связан с улучшением психоэмоционального состояния, снижением тревожности и депрессии, а также повышением устойчивости к стрессу. Пройди тест — и получи рекомендации, которые помогут укрепить твою внутреннюю опору и благополучие.
             <span className="test-info">
               онлайн-тест | 26 пунктов | около 5 минут
             </span>
@@ -439,14 +440,29 @@ function SelfCompassionScale() {
               <div className="test-container">
                 {result ? (
                   <div className="test-result">
-                    <h3>Результаты теста</h3>
-                    <p className="score-info"><strong>Твой балл:</strong> {result.score} из 130</p>
+                    <p className="score-info"><strong>Твой балл:</strong></p>
+                    <div className="score-bar">
+                      <div
+                        className="score-progress"
+                        style={{
+                          width: `${((result.score - 26) / 104) * 100}%`,
+                          backgroundColor: result.score <= 65 ? '#ff4d4d' : result.score <= 91 ? '#ffd700' : '#32cd32',
+                        }}
+                      ></div>
+                      <span className="score-label" style={{ position: 'absolute', left: `${((result.score - 26) / 104) * 100}%`, transform: 'translateX(-50%)' }}>
+                        {result.score}
+                      </span>
+                    </div>
+                    <div className="score-range">
+                      <span>26</span>
+                      <span>130</span>
+                    </div>
                     <p className="level-info"><strong>Уровень:</strong> ${result.recommendation.level}</p>
                     <p><strong>Рекомендация:</strong> ${result.recommendation.description}</p>
                     <p>
                       <strong>Предлагаемый пакет:</strong>{' '}
                       <Link to={result.recommendation.packageLink} className="recommended-package-link">
-                        {result.recommendation.package}
+                        ${result.recommendation.package}
                       </Link>
                     </p>
                     <div className="share-section">
@@ -478,24 +494,34 @@ function SelfCompassionScale() {
                       <h3>{currentQuestionIndex + 1}. {questions[currentQuestionIndex].text}</h3>
                       <div className="options">
                         {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-                          <label key={optionIndex} className="option-label">
+                          <label key={optionIndex} className="option-label" style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                             <input
                               type="radio"
                               name={questions[currentQuestionIndex].id}
                               value={option.value}
                               checked={answers[questions[currentQuestionIndex].id] === option.value}
                               onChange={() => handleAnswerChange(questions[currentQuestionIndex].id, option.value)}
+                              className="custom-radio"
                             />
-                            {option.text}
+                            <span style={{ marginLeft: '10px' }}>{option.text}</span>
                           </label>
                         ))}
                       </div>
-                      {currentQuestionIndex === questions.length - 1 && (
+                      {currentQuestionIndex < questions.length - 1 ? (
+                        <button
+                          type="button"
+                          onClick={handleNextQuestion}
+                          className="submit-test-button"
+                          disabled={answers[questions[currentQuestionIndex].id] === null}
+                        >
+                          Следующий вопрос
+                        </button>
+                      ) : (
                         <button
                           type="button"
                           onClick={calculateResult}
                           className="submit-test-button"
-                          disabled={answers[questions[currentQuestionIndex].id] === null}
+                          disabled={!allQuestionsAnswered}
                         >
                           Узнать результаты
                         </button>
@@ -506,20 +532,20 @@ function SelfCompassionScale() {
               </div>
               <div className="test-footer-info">
                 <p className="author-info">
-                  <strong>Author:</strong> Kristin Neff (2003)
+                  <strong>Автор:</strong> Kristin Neff (2003)
                 </p>
                 <p className="disclaimer-info">
-                  Test is provided for educational and entertainment use only. It is not intended to be a psychological advice of any kind, and come without any guarantee of accuracy or validity. Assessment is free and anonymous. You can save the direct link to your results.
+                  Тест предоставляется исключительно в образовательных и развлекательных целях. Он не предназначен для психологических консультаций любого рода и не гарантирует точности или достоверности. Оценка бесплатна и анонимна. Вы можете сохранить прямую ссылку на свои результаты.
                 </p>
                 <p>
-                  <strong>References:</strong><br />
+                  <strong>Ссылки:</strong><br />
                   <a
-                    href="https://www.tandfonline.com/doi/abs/10.1080/15298860309027"
+                    href="https://self-compassion.org/the-self-compassion-scale/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="reference-link"
                   >
-                    K. D. Neff. Development and validation of a scale to measure self-compassion // Self and Identity, 2003. 2
+                    Neff, K. D. (2003). The Development and Validation of a Scale to Measure Self-Compassion. Self and Identity, 2(3), 223-250.
                   </a>
                 </p>
               </div>

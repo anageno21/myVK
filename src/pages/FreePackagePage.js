@@ -1,39 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProfileHeader from '../components/ProfileHeader';
-import Pagination from '../components/Pagination'; // Εισαγωγή του Pagination component
 import BecksDepressionInventory from '../pages/tests/BecksDepressionInventory';
 import RosenbergSelfEsteemScale from '../pages/tests/RosenbergSelfEsteemScale';
 import RobsonSelfConceptQuestionnaire from '../pages/tests/RobsonSelfConceptQuestionnaire';
 import SelfCompassionScale from '../pages/tests/SelfCompassionScale';
 import ZungSelfRatingAnxietyScale from '../pages/tests/ZungSelfRatingAnxietyScale';
+import RelationshipScalesQuestionnaire from '../pages/tests/RelationshipScalesQuestionnaire';
+import MaritalSatisfactionAssessment from '../pages/tests/MaritalSatisfactionAssessment';
+import AttachmentStyleQuestionnaire from '../pages/tests/AttachmentStyleQuestionnaire';
+import LuscherColorTest from '../pages/tests/LuscherColorTest';
+import CompACT from '../pages/tests/CompACT';
+import RRS from '../pages/tests/RRS';
+import TestRadio from '../pages/tests/TestRadio';
 import './FreePackagePage.css';
 
 function FreePackagePage() {
   console.log("FreePackagePage component rendered");
 
-  // State για την τρέχουσα σελίδα
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 2; // Υποθέτουμε ότι έχουμε 2 σελίδες
-
-  // Λίστα τεστ
   const tests = [
     { component: <BecksDepressionInventory key="BecksDepressionInventory" />, title: 'Инвентарь депрессии Бека, BDI' },
     { component: <RosenbergSelfEsteemScale key="RosenbergSelfEsteemScale" />, title: 'Шкала самооценки Розенберга, RSES' },
     { component: <RobsonSelfConceptQuestionnaire key="RobsonSelfConceptQuestionnaire" />, title: 'Шкала самооценки Робсона, RSCQ' },
     { component: <SelfCompassionScale key="SelfCompassionScale" />, title: 'Шкала Самосострадания, SCS' },
     { component: <ZungSelfRatingAnxietyScale key="ZungSelfRatingAnxietyScale" />, title: 'Шкала Самооценки Тревожности Занга, SAS' },
+    { component: <RelationshipScalesQuestionnaire key="RelationshipScalesQuestionnaire" />, title: 'Relationship Scales Questionnaire, RSQ' },
+    { component: <MaritalSatisfactionAssessment key="MaritalSatisfactionAssessment" />, title: 'Оценка Удовлетворенности Браком, MSA' },
+    { component: <AttachmentStyleQuestionnaire key="AttachmentStyleQuestionnaire" />, title: 'Опросник Стиля Привязанности, ASQ' },
+    { component: <LuscherColorTest key="LuscherColorTest" />, title: 'Тест Цветов Люшера' },
+    { component: <CompACT key="CompACT" />, title: 'Comprehensive ACT, CompACT' },
+    { component: <RRS key="RRS" />, title: 'Ruminative Responses Scale, RRS' },
+    { component: <TestRadio key="TestRadio" />, title: 'Test Radio Buttons' },
   ];
 
-  // Υπολογισμός σελίδων και εμφάνιση τεστ για την τρέχουσα σελίδα
-  const testsPerPage = 4;
-  const startIndex = (currentPage - 1) * testsPerPage;
-  const selectedTests = tests.slice(startIndex, startIndex + testsPerPage);
-
-  // Συνάρτηση για την αλλαγή σελίδας
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-    console.log("Changing to page:", page);
-  };
+  // Χωρίζουμε τα τεστ σε δύο ομάδες: 6 στην αριστερή στήλη, 6 στη δεξιά
+  const leftColumnTests = tests.slice(0, 6);
+  const rightColumnTests = tests.slice(6);
 
   return (
     <div className="free-package-page">
@@ -45,83 +46,30 @@ function FreePackagePage() {
             <h2>Начни заботиться о своём эмоциональном благополучии с нашими бесплатными материалами.</h2>
           </div>
           <div className="free-package-body">
-            <div className="free-package-content">
+            <div className="free-package-column">
               <div className="free-package-sections">
-                {selectedTests.length > 0 ? (
-                  selectedTests.map((test, index) => (
-                    <div key={index}>
+                {leftColumnTests.length > 0 ? (
+                  leftColumnTests.map((test, index) => (
+                    <div key={index} className="test-item">
                       {test.component}
                     </div>
                   ))
                 ) : (
-                  <p>Нет тестов на этой странице.</p>
+                  <p>Нет тестов в этой колонке.</p>
                 )}
               </div>
-              {tests.length > testsPerPage && (
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={handlePageChange}
-                />
-              )}
             </div>
-            <div className="free-package-sidebar">
-              <div className="sidebar-widget sidebar-search-tests">
-                <h3>Поиск тестов</h3>
-                <div className="search-form">
-                  <input type="text" placeholder="Поиск тестов..." disabled />
-                  <button type="button" disabled><i className="las la-search"></i></button>
-                </div>
-              </div>
-              <div className="sidebar-widget sidebar-test-categories">
-                <h3>Категории тестов</h3>
-                <ul>
-                  <li className="active-category">Все категории</li>
-                  <li style={{ color: '#173A37' }}>Стресс / Тревога</li>
-                  <li style={{ color: '#173A37' }}>Уверенность в себе / Самооценка</li>
-                  <li style={{ color: '#173A37' }}>Адаптация</li>
-                  <li style={{ color: '#173A37' }}>Отношения</li>
-                </ul>
-              </div>
-              <div className="sidebar-widget sidebar-search">
-                <h3>Поиск</h3>
-                <div className="search-form">
-                  <input type="text" placeholder="Search articles..." />
-                  <button type="button"><i className="las la-search"></i></button>
-                </div>
-              </div>
-              <div className="sidebar-widget sidebar-categories">
-                <h3>Категории</h3>
-                <ul>
-                  <li style={{ color: '#173A37' }}>Отношения</li>
-                  <li style={{ color: '#173A37' }}>Стресс / Тревога</li>
-                  <li style={{ color: '#173A37' }}>Уверенность в себе / Самооценка</li>
-                  <li style={{ color: '#173A37' }}>Адаптация</li>
-                </ul>
-              </div>
-              <div className="sidebar-widget sidebar-authors">
-                <h3>Авторы</h3>
-                <ul>
-                  <li style={{ color: '#173A37' }}>Viktoriia Kotenko</li>
-                  <li style={{ color: '#173A37' }}>Anageno</li>
-                </ul>
-              </div>
-              <div className="sidebar-widget sidebar-recent-posts">
-                <h3>Последние записи</h3>
-                <ul>
-                  <li>
-                    <p>Созависимость: как распознать и выйти из нездоровых отношений</p>
-                    <p>5 ноября 2024</p>
-                  </li>
-                  <li>
-                    <p>Эмоциональный интеллект: как понимать свои чувства и управлять ими</p>
-                    <p>7 ноября 2024</p>
-                  </li>
-                  <li>
-                    <p>Майндфулнесс: внимание, которое лечит</p>
-                    <p>15 ноября 2024</p>
-                  </li>
-                </ul>
+            <div className="free-package-column">
+              <div className="free-package-sections">
+                {rightColumnTests.length > 0 ? (
+                  rightColumnTests.map((test, index) => (
+                    <div key={index} className="test-item">
+                      {test.component}
+                    </div>
+                  ))
+                ) : (
+                  <p>Нет тестов в этой колонке.</p>
+                )}
               </div>
             </div>
           </div>

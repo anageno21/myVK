@@ -2,124 +2,182 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/TestStyles.css';
 
-function GeneralSelfEfficacyScale() {
+function MaritalSatisfactionAssessment() {
   const [isTestOpen, setIsTestOpen] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [answers, setAnswers] = useState({
-    q1: null,
-    q2: null,
-    q3: null,
-    q4: null,
-    q5: null,
-    q6: null,
-    q7: null,
-    q8: null,
-    q9: null,
-    q10: null,
+    q1: null, q2: null, q3: null, q4: null, q5: null,
+    q6: null, q7: null, q8: null, q9: null, q10: null,
+    q11: null, q12: null, q13: null, q14: null, q15: null,
   });
   const [result, setResult] = useState(null);
 
   const questions = [
     {
       id: 'q1',
-      text: 'Могу всегда справиться с трудными проблемами, если постараюсь.',
+      text: 'Я чувствую, что мой партнер понимает мои эмоции и чувства.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
     {
       id: 'q2',
-      text: 'Если я приложу достаточно усилий, я смогу решить большинство проблем.',
+      text: 'Мы с партнером открыто обсуждаем наши проблемы и разногласия.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
     {
       id: 'q3',
-      text: 'Мне легко придерживаться своих целей и достигать их.',
+      text: 'Я доволен тем, как мы делим домашние обязанности.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
     {
       id: 'q4',
-      text: 'Я уверен, что могу эффективно справляться с неожиданными событиями.',
+      text: 'Я чувствую эмоциональную близость с моим партнером.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
     {
       id: 'q5',
-      text: 'Благодаря своей находчивости, я могу справляться с непредвиденными ситуациями.',
+      text: 'Мы с партнером проводим достаточно времени вместе.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
     {
       id: 'q6',
-      text: 'Я могу найти выход из любой ситуации, независимо от того, что происходит.',
+      text: 'Я чувствую, что мой партнер поддерживает мои цели и мечты.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
     {
       id: 'q7',
-      text: 'Я могу сохранять спокойствие, сталкиваясь с трудностями, потому что полагаюсь на свои способности.',
+      text: 'Мы с партнером часто ссоримся из-за мелочей.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '5', text: 'Никогда' },
+        { value: '4', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '2', text: 'Часто' },
+        { value: '1', text: 'Всегда' },
       ],
     },
     {
       id: 'q8',
-      text: 'Когда я сталкиваюсь с проблемой, я обычно знаю, как её решить.',
+      text: 'Я чувствую, что мой партнер ценит меня как личность.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
     {
       id: 'q9',
-      text: 'Если что-то идёт не так, я уверен, что найду способ справиться.',
+      text: 'Мы с партнером имеем общие интересы и хобби.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
     {
       id: 'q10',
-      text: 'Я верю, что могу справиться с любой задачей, если захочу.',
+      text: 'Я часто чувствую раздражение по отношению к партнеру.',
       options: [
-        { value: '1', text: 'Совсем не верно' },
-        { value: '2', text: 'Едва верно' },
-        { value: '3', text: 'Умеренно верно' },
-        { value: '4', text: 'Совершенно верно' },
+        { value: '5', text: 'Никогда' },
+        { value: '4', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '2', text: 'Часто' },
+        { value: '1', text: 'Всегда' },
+      ],
+    },
+    {
+      id: 'q11',
+      text: 'Я доволен нашей сексуальной жизнью.',
+      options: [
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
+      ],
+    },
+    {
+      id: 'q12',
+      text: 'Я чувствую, что мы с партнером доверяем друг другу.',
+      options: [
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
+      ],
+    },
+    {
+      id: 'q13',
+      text: 'Я чувствую себя одиноким в нашем браке.',
+      options: [
+        { value: '5', text: 'Никогда' },
+        { value: '4', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '2', text: 'Часто' },
+        { value: '1', text: 'Всегда' },
+      ],
+    },
+    {
+      id: 'q14',
+      text: 'Мы с партнером уважаем личное пространство друг друга.',
+      options: [
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
+      ],
+    },
+    {
+      id: 'q15',
+      text: 'Я верю, что наш брак может преодолеть любые трудности.',
+      options: [
+        { value: '1', text: 'Никогда' },
+        { value: '2', text: 'Редко' },
+        { value: '3', text: 'Иногда' },
+        { value: '4', text: 'Часто' },
+        { value: '5', text: 'Всегда' },
       ],
     },
   ];
@@ -148,26 +206,26 @@ function GeneralSelfEfficacyScale() {
     const totalScore = Object.values(answers).reduce((sum, value) => sum + (parseInt(value) || 0), 0);
     let recommendation = '';
 
-    if (totalScore <= 20) {
+    if (totalScore <= 30) {
       recommendation = {
-        level: 'Низкая уверенность в своих силах',
+        level: 'Низкий уровень удовлетворенности браком',
         package: 'Расширенный Пакет',
         packageLink: '/our-service',
-        description: 'Твоя уверенность в своих силах может быть низкой. Наш расширенный пакет предложит тебе более глубокую поддержку для повышения уверенности в своих возможностях.',
+        description: 'Твой уровень удовлетворенности браком может быть низким. Наш расширенный пакет поможет вам с партнером укрепить отношения.',
       };
-    } else if (totalScore <= 30) {
+    } else if (totalScore <= 45) {
       recommendation = {
-        level: 'Средняя уверенность в своих силах',
+        level: 'Средний уровень удовлетворенности браком',
         package: 'Базовый Пакет',
         packageLink: '/our-service',
-        description: 'Твоя уверенность в своих силах находится на среднем уровне. Наш базовый пакет поможет тебе укрепить веру в свои возможности.',
+        description: 'Твой уровень удовлетворенности браком находится на среднем уровне. Наш базовый пакет поможет вам улучшить взаимопонимание.',
       };
     } else {
       recommendation = {
-        level: 'Высокая уверенность в своих силах',
+        level: 'Высокий уровень удовлетворенности браком',
         package: 'Бесплатный Вводный Пакет',
         packageLink: '/free-package',
-        description: 'У тебя высокая уверенность в своих силах! Наш бесплатный вводный пакет поможет тебе поддерживать эту уверенность и достигать новых целей.',
+        description: 'У тебя высокий уровень удовлетворенности браком! Наш бесплатный вводный пакет поможет вам поддерживать гармонию в отношениях.',
       };
     }
 
@@ -178,16 +236,9 @@ function GeneralSelfEfficacyScale() {
     setIsTestOpen(false);
     setCurrentQuestionIndex(0);
     setAnswers({
-      q1: null,
-      q2: null,
-      q3: null,
-      q4: null,
-      q5: null,
-      q6: null,
-      q7: null,
-      q8: null,
-      q9: null,
-      q10: null,
+      q1: null, q2: null, q3: null, q4: null, q5: null,
+      q6: null, q7: null, q8: null, q9: null, q10: null,
+      q11: null, q12: null, q13: null, q14: null, q15: null,
     });
     setResult(null);
     setShowShareOptions(false);
@@ -199,22 +250,22 @@ function GeneralSelfEfficacyScale() {
 
   const shareViaEmail = () => {
     if (!result) return;
-    const subject = 'Мои результаты теста: Шкала общей самоэффективности, GSE';
-    const body = `Твой балл: ${result.score} из 40\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
+    const subject = 'Мои результаты теста: Оценка удовлетворенности браком, MSA';
+    const body = `Твой балл: ${result.score} из 75\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const shareViaWhatsApp = () => {
     if (!result) return;
-    const text = `Мои результаты теста: Шкала общей самоэффективности, GSE\nТвой балл: ${result.score} из 40\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
+    const text = `Мои результаты теста: Оценка удовлетворенности браком, MSA\nТвой балл: ${result.score} из 75\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   const printResult = () => {
     if (!result) return;
     const printContent = `
-      <h3>Результаты теста: Шкала общей самоэффективности, GSE</h3>
-      <p><strong>Твой балл:</strong> ${result.score} из 40</p>
+      <h3>Результаты теста: Оценка удовлетворенности браком, MSA</h3>
+      <p><strong>Твой балл:</strong> ${result.score} из 75</p>
       <p><strong>Уровень:</strong> ${result.recommendation.level}</p>
       <p><strong>Рекомендация:</strong> ${result.recommendation.description}</p>
       <p><strong>Предлагаемый пакет:</strong> ${result.recommendation.package}</p>
@@ -243,17 +294,17 @@ function GeneralSelfEfficacyScale() {
   const allQuestionsAnswered = Object.values(answers).every(answer => answer !== null);
 
   return (
-    <div className="self-efficacy-test">
+    <div className="marital-satisfaction-test">
       <div className="free-package-section">
         <div className="section-content">
           <h3 className="section-title" onClick={() => setIsTestOpen(!isTestOpen)}>
-            Шкала общей самоэффективности, GSE
+            Оценка удовлетворенности браком, MSA
             <i className={`las la-angle-down dropdown-icon ${isTestOpen ? 'open' : ''}`}></i>
           </h3>
           <p className="section-description">
-            Пройди наш тест, чтобы оценить свою уверенность в способности справляться с различными жизненными ситуациями. На основе результатов мы предложим тебе подходящий пакет поддержки, который поможет укрепить твою веру в себя.
+            Онлайн-версия теста на удовлетворенность браком (MSA) помогает оценить уровень гармонии и взаимопонимания в отношениях.
             <span className="test-info">
-              онлайн-тест | 10 пунктов | около 3 минут
+              онлайн-тест | 15 пунктов | около 3 минут
             </span>
           </p>
           {isTestOpen && (
@@ -266,17 +317,17 @@ function GeneralSelfEfficacyScale() {
                       <div
                         className="score-progress"
                         style={{
-                          width: `${((result.score - 10) / 30) * 100}%`,
-                          backgroundColor: result.score <= 20 ? '#ff4d4d' : result.score <= 30 ? '#ffd700' : '#32cd32',
+                          width: `${((result.score - 15) / 60) * 100}%`,
+                          backgroundColor: result.score <= 30 ? '#ff4d4d' : result.score <= 45 ? '#ffd700' : '#32cd32',
                         }}
                       ></div>
-                      <span className="score-label" style={{ position: 'absolute', left: `${((result.score - 10) / 30) * 100}%`, transform: 'translateX(-50%)' }}>
+                      <span className="score-label" style={{ position: 'absolute', left: `${((result.score - 15) / 60) * 100}%`, transform: 'translateX(-50%)' }}>
                         {result.score}
                       </span>
                     </div>
                     <div className="score-range">
-                      <span>10</span>
-                      <span>40</span>
+                      <span>15</span>
+                      <span>75</span>
                     </div>
                     <p className="level-info"><strong>Уровень:</strong> {result.recommendation.level}</p>
                     <p><strong>Рекомендация:</strong> {result.recommendation.description}</p>
@@ -353,20 +404,20 @@ function GeneralSelfEfficacyScale() {
               </div>
               <div className="test-footer-info">
                 <p className="author-info">
-                  <strong>Автор:</strong> Ральф Шварцер и Маттиас Иерусалем (1995)
+                  <strong>Author:</strong> V. V. Stalin, T. L. Romanova, G. P. Butenko
                 </p>
                 <p className="disclaimer-info">
-                  Тест предоставляется исключительно в образовательных и развлекательных целях. Он не предназначен для предоставления психологических советов любого рода и не гарантирует точности или достоверности. Оценка бесплатна и анонимна. Вы можете сохранить прямую ссылку на ваши результаты.
+                  Test is provided for educational and entertainment use only. It is not intended to be a psychological advice of any kind, and come without any guarantee of accuracy or validity. Assessment is free and anonymous. You can save the direct link to your results.
                 </p>
                 <p>
-                  <strong>Ссылки:</strong><br />
+                  <strong>References:</strong><br />
                   <a
-                    href="https://en.wikipedia.org/wiki/Self-efficacy#Measurement"
+                    href="https://stud.com.ua/46080/psihologiya/testopituvannik_zadovolenosti_shlyubom"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="reference-link"
                   >
-                    Schwarzer, R., & Jerusalem, M. (1995). Generalized Self-Efficacy scale. In J. Weinman, S. Wright, & M. Johnston, Measures in health psychology: A user’s portfolio. Causal and control beliefs (pp. 35-37). Windsor, UK: NFER-NELSON.
+                    Stalin, V. V., Romanova, T. L., & Butenko, G. P. Test-Questionnaire of Marital Satisfaction.
                   </a>
                 </p>
               </div>
@@ -378,4 +429,4 @@ function GeneralSelfEfficacyScale() {
   );
 }
 
-export default GeneralSelfEfficacyScale;
+export default MaritalSatisfactionAssessment;

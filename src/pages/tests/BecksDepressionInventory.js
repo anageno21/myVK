@@ -6,7 +6,7 @@ function BecksDepressionInventory() {
   const [isTestOpen, setIsTestOpen] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
-  const [showShareOptions, setShowShareOptions] = useState(false); // Κατάσταση για το μενού κοινής χρήσης
+  const [showShareOptions, setShowShareOptions] = useState(false);
   const [answers, setAnswers] = useState({
     sadness: null,
     pessimism: null,
@@ -37,210 +37,210 @@ function BecksDepressionInventory() {
       id: 'sadness',
       text: 'Как ты себя чувствуешь в последнее время (грусть)?',
       options: [
-        { value: 0, text: 'Не чувствую себя грустным.' },
-        { value: 1, text: 'Иногда чувствую себя грустным.' },
-        { value: 2, text: 'Часто чувствую себя грустным.' },
-        { value: 3, text: 'Постоянно чувствую себя грустным и не могу это преодолеть.' },
+        { value: '0', text: 'Не чувствую себя грустным.' },
+        { value: '1', text: 'Иногда чувствую себя грустным.' },
+        { value: '2', text: 'Часто чувствую себя грустным.' },
+        { value: '3', text: 'Постоянно чувствую себя грустным и не могу это преодолеть.' },
       ],
     },
     {
       id: 'pessimism',
       text: 'Как ты оцениваешь своё будущее (пессимизм)?',
       options: [
-        { value: 0, text: 'Не чувствую себя безнадёжным.' },
-        { value: 1, text: 'Иногда чувствую себя безнадёжным.' },
-        { value: 2, text: 'Часто чувствую себя безнадёжным.' },
-        { value: 3, text: 'Чувствую себя совершенно безнадёжным.' },
+        { value: '0', text: 'Не чувствую себя безнадёжным.' },
+        { value: '1', text: 'Иногда чувствую себя безнадёжным.' },
+        { value: '2', text: 'Часто чувствую себя безнадёжным.' },
+        { value: '3', text: 'Чувствую себя совершенно безнадёжным.' },
       ],
     },
     {
       id: 'pastFailure',
       text: 'Как ты оцениваешь свои прошлые достижения (чувство неудачи)?',
       options: [
-        { value: 0, text: 'Не чувствую себя неудачником.' },
-        { value: 1, text: 'Иногда чувствую себя неудачником.' },
-        { value: 2, text: 'Часто чувствую себя неудачником.' },
-        { value: 3, text: 'Чувствую, что я полный неудачник.' },
+        { value: '0', text: 'Не чувствую себя неудачником.' },
+        { value: '1', text: 'Иногда чувствую себя неудачником.' },
+        { value: '2', text: 'Часто чувствую себя неудачником.' },
+        { value: '3', text: 'Чувствую, что я полный неудачник.' },
       ],
     },
     {
       id: 'lossOfPleasure',
       text: 'Получаешь ли ты удовольствие от вещей, которые раньше любил (потеря удовольствия)?',
       options: [
-        { value: 0, text: 'Получаю столько же удовольствия от вещей, как раньше.' },
-        { value: 1, text: 'Получаю меньше удовольствия, чем раньше.' },
-        { value: 2, text: 'Почти не получаю удовольствия от вещей.' },
-        { value: 3, text: 'Совсем не получаю удовольствия от вещей.' },
+        { value: '0', text: 'Получаю столько же удовольствия от вещей, как раньше.' },
+        { value: '1', text: 'Получаю меньше удовольствия, чем раньше.' },
+        { value: '2', text: 'Почти не получаю удовольствия от вещей.' },
+        { value: '3', text: 'Совсем не получаю удовольствия от вещей.' },
       ],
     },
     {
       id: 'guiltyFeelings',
       text: 'Чувствуешь ли ты вину (чувство вины)?',
       options: [
-        { value: 0, text: 'Не чувствую себя виноватым.' },
-        { value: 1, text: 'Иногда чувствую себя виноватым.' },
-        { value: 2, text: 'Часто чувствую себя виноватым.' },
-        { value: 3, text: 'Постоянно чувствую себя виноватым.' },
+        { value: '0', text: 'Не чувствую себя виноватым.' },
+        { value: '1', text: 'Иногда чувствую себя виноватым.' },
+        { value: '2', text: 'Часто чувствую себя виноватым.' },
+        { value: '3', text: 'Постоянно чувствую себя виноватым.' },
       ],
     },
     {
       id: 'punishmentFeelings',
       text: 'Чувствуешь ли, что тебя наказывают (чувство наказания)?',
       options: [
-        { value: 0, text: 'Не чувствую, что меня наказывают.' },
-        { value: 1, text: 'Иногда чувствую, что меня наказывают.' },
-        { value: 2, text: 'Ожидаю, что меня накажут.' },
-        { value: 3, text: 'Чувствую, что меня наказывают.' },
+        { value: '0', text: 'Не чувствую, что меня наказывают.' },
+        { value: '1', text: 'Иногда чувствую, что меня наказывают.' },
+        { value: '2', text: 'Ожидаю, что меня накажут.' },
+        { value: '3', text: 'Чувствую, что меня наказывают.' },
       ],
     },
     {
       id: 'selfDislike',
       text: 'Как ты относишься к себе (неприязнь к себе)?',
       options: [
-        { value: 0, text: 'Не испытываю неприязни к себе.' },
-        { value: 1, text: 'Испытываю небольшую неприязнь к себе.' },
-        { value: 2, text: 'Испытываю сильную неприязнь к себе.' },
-        { value: 3, text: 'Ненавижу себя.' },
+        { value: '0', text: 'Не испытываю неприязни к себе.' },
+        { value: '1', text: 'Испытываю небольшую неприязнь к себе.' },
+        { value: '2', text: 'Испытываю сильную неприязнь к себе.' },
+        { value: '3', text: 'Ненавижу себя.' },
       ],
     },
     {
       id: 'selfCriticalness',
       text: 'Как часто ты критикуешь себя (самокритика)?',
       options: [
-        { value: 0, text: 'Не критикую себя больше, чем обычно.' },
-        { value: 1, text: 'Критикую себя больше, чем обычно.' },
-        { value: 2, text: 'Постоянно критикую себя за свои ошибки.' },
-        { value: 3, text: 'Вижу себя во всём виноватым.' },
+        { value: '0', text: 'Не критикую себя больше, чем обычно.' },
+        { value: '1', text: 'Критикую себя больше, чем обычно.' },
+        { value: '2', text: 'Постоянно критикую себя за свои ошибки.' },
+        { value: '3', text: 'Вижу себя во всём виноватым.' },
       ],
     },
     {
       id: 'suicidalThoughts',
       text: 'Есть ли у тебя мысли о самоубийстве (суицидальные мысли)?',
       options: [
-        { value: 0, text: 'У меня нет мыслей о самоубийстве.' },
-        { value: 1, text: 'Иногда думаю о самоубийстве, но не собираюсь это делать.' },
-        { value: 2, text: 'Часто думаю о самоубийстве.' },
-        { value: 3, text: 'Хочу покончить с собой.' },
+        { value: '0', text: 'У меня нет мыслей о самоубийстве.' },
+        { value: '1', text: 'Иногда думаю о самоубийстве, но не собираюсь это делать.' },
+        { value: '2', text: 'Часто думаю о самоубийстве.' },
+        { value: '3', text: 'Хочу покончить с собой.' },
       ],
     },
     {
       id: 'crying',
       text: 'Как часто ты плачешь (плач)?',
       options: [
-        { value: 0, text: 'Не плачу больше, чем обычно.' },
-        { value: 1, text: 'Плачу чаще, чем обычно.' },
-        { value: 2, text: 'Плачу почти каждый день.' },
-        { value: 3, text: 'Хочу плакать, но не могу.' },
+        { value: '0', text: 'Не плачу больше, чем обычно.' },
+        { value: '1', text: 'Плачу чаще, чем обычно.' },
+        { value: '2', text: 'Плачу почти каждый день.' },
+        { value: '3', text: 'Хочу плакать, но не могу.' },
       ],
     },
     {
       id: 'agitation',
       text: 'Чувствуешь ли ты раздражительность (раздражительность)?',
       options: [
-        { value: 0, text: 'Не чувствую себя раздражённым.' },
-        { value: 1, text: 'Иногда чувствую себя раздражённым.' },
-        { value: 2, text: 'Часто чувствую себя раздражённым.' },
-        { value: 3, text: 'Постоянно чувствую себя раздражённым.' },
+        { value: '0', text: 'Не чувствую себя раздражённым.' },
+        { value: '1', text: 'Иногда чувствую себя раздражённым.' },
+        { value: '2', text: 'Часто чувствую себя раздражённым.' },
+        { value: '3', text: 'Постоянно чувствую себя раздражённым.' },
       ],
     },
     {
       id: 'lossOfInterest',
       text: 'Как обстоят дела с твоей социальной активностью (потеря интереса к общению)?',
       options: [
-        { value: 0, text: 'Не потерял интерес к общению с людьми.' },
-        { value: 1, text: 'Потерял небольшой интерес к общению.' },
-        { value: 2, text: 'Потерял значительный интерес к общению.' },
-        { value: 3, text: 'Совсем не хочу общаться с людьми.' },
+        { value: '0', text: 'Не потерял интерес к общению с людьми.' },
+        { value: '1', text: 'Потерял небольшой интерес к общению.' },
+        { value: '2', text: 'Потерял значительный интерес к общению.' },
+        { value: '3', text: 'Совсем не хочу общаться с людьми.' },
       ],
     },
     {
       id: 'indecisiveness',
       text: 'Как ты принимаешь решения (нерешительность)?',
       options: [
-        { value: 0, text: 'Принимаю решения так же, как раньше.' },
-        { value: 1, text: 'Принимаю решения с большим трудом.' },
-        { value: 2, text: 'Мне очень трудно принимать решения.' },
-        { value: 3, text: 'Не могу принимать никакие решения.' },
+        { value: '0', text: 'Принимаю решения так же, как раньше.' },
+        { value: '1', text: 'Принимаю решения с большим трудом.' },
+        { value: '2', text: 'Мне очень трудно принимать решения.' },
+        { value: '3', text: 'Не могу принимать никакие решения.' },
       ],
     },
     {
       id: 'worthlessness',
       text: 'Чувствуешь ли ты себя бесполезным (чувство бесполезности)?',
       options: [
-        { value: 0, text: 'Не чувствую себя бесполезным.' },
-        { value: 1, text: 'Иногда чувствую себя бесполезным.' },
-        { value: 2, text: 'Часто чувствую себя бесполезным.' },
-        { value: 3, text: 'Чувствую себя совершенно бесполезным.' },
+        { value: '0', text: 'Не чувствую себя бесполезным.' },
+        { value: '1', text: 'Иногда чувствую себя бесполезным.' },
+        { value: '2', text: 'Часто чувствую себя бесполезным.' },
+        { value: '3', text: 'Чувствую себя совершенно бесполезным.' },
       ],
     },
     {
       id: 'lossOfEnergy',
       text: 'Каков твой уровень энергии (энергия)?',
       options: [
-        { value: 0, text: 'У меня столько же энергии, как обычно.' },
-        { value: 1, text: 'Чувствую себя более уставшим, чем обычно.' },
-        { value: 2, text: 'Чувствую усталость почти весь день.' },
-        { value: 3, text: 'Настолько устал, что ничего не могу делать.' },
+        { value: '0', text: 'У меня столько же энергии, как обычно.' },
+        { value: '1', text: 'Чувствую себя более уставшим, чем обычно.' },
+        { value: '2', text: 'Чувствую усталость почти весь день.' },
+        { value: '3', text: 'Настолько устал, что ничего не могу делать.' },
       ],
     },
     {
       id: 'changesInSleeping',
       text: 'Как обстоят дела с твоим сном (изменения в сне)?',
       options: [
-        { value: 0, text: 'Сплю нормально, как всегда.' },
-        { value: 1, text: 'У меня небольшие проблемы со сном (трудно засыпать или просыпаюсь рано).' },
-        { value: 2, text: 'У меня значительные проблемы со сном (сплю намного меньше или больше, чем обычно).' },
-        { value: 3, text: 'Совсем не могу спать или сплю чрезмерно, не чувствуя отдыха.' },
+        { value: '0', text: 'Сплю нормально, как всегда.' },
+        { value: '1', text: 'У меня небольшие проблемы со сном (трудно засыпать или просыпаюсь рано).' },
+        { value: '2', text: 'У меня значительные проблемы со сном (сплю намного меньше или больше, чем обычно).' },
+        { value: '3', text: 'Совсем не могу спать или сплю чрезмерно, не чувствуя отдыха.' },
       ],
     },
     {
       id: 'changesInAppetite',
       text: 'Как изменился твой аппетит (изменения в аппетите)?',
       options: [
-        { value: 0, text: 'Мой аппетит не изменился.' },
-        { value: 1, text: 'Мой аппетит немного изменился (ем больше или меньше, чем обычно).' },
-        { value: 2, text: 'Мой аппетит значительно изменился.' },
-        { value: 3, text: 'Совсем не хочу есть или ем намного больше, чем обычно.' },
+        { value: '0', text: 'Мой аппетит не изменился.' },
+        { value: '1', text: 'Мой аппетит немного изменился (ем больше или меньше, чем обычно).' },
+        { value: '2', text: 'Мой аппетит значительно изменился.' },
+        { value: '3', text: 'Совсем не хочу есть или ем намного больше, чем обычно.' },
       ],
     },
     {
       id: 'concentrationDifficulty',
       text: 'Как обстоят дела с твоей концентрацией (трудности с концентрацией)?',
       options: [
-        { value: 0, text: 'Могу сосредотачиваться так же, как раньше.' },
-        { value: 1, text: 'Мне немного труднее сосредотачиваться.' },
-        { value: 2, text: 'Мне очень трудно сосредотачиваться.' },
-        { value: 3, text: 'Не могу сосредотачиваться вообще.' },
+        { value: '0', text: 'Могу сосредотачиваться так же, как раньше.' },
+        { value: '1', text: 'Мне немного труднее сосредотачиваться.' },
+        { value: '2', text: 'Мне очень трудно сосредотачиваться.' },
+        { value: '3', text: 'Не могу сосредотачиваться вообще.' },
       ],
     },
     {
       id: 'tiredness',
       text: 'Чувствуешь ли ты усталость (усталость)?',
       options: [
-        { value: 0, text: 'Не чувствую себя более уставшим, чем обычно.' },
-        { value: 1, text: 'Чувствую себя более уставшим, чем обычно.' },
-        { value: 2, text: 'Чувствую усталость большую часть времени.' },
-        { value: 3, text: 'Постоянно чувствую усталость.' },
+        { value: '0', text: 'Не чувствую себя более уставшим, чем обычно.' },
+        { value: '1', text: 'Чувствую себя более уставшим, чем обычно.' },
+        { value: '2', text: 'Чувствую усталость большую часть времени.' },
+        { value: '3', text: 'Постоянно чувствую усталость.' },
       ],
     },
     {
       id: 'lossOfInterestInSex',
       text: 'Как обстоят дела с твоим интересом к сексу (потеря интереса к сексу)?',
       options: [
-        { value: 0, text: 'Не потерял интерес к сексу.' },
-        { value: 1, text: 'Потерял небольшой интерес к сексу.' },
-        { value: 2, text: 'Потерял значительный интерес к сексу.' },
-        { value: 3, text: 'Совсем не интересуюсь сексом.' },
+        { value: '0', text: 'Не потерял интерес к сексу.' },
+        { value: '1', text: 'Потерял небольшой интерес к сексу.' },
+        { value: '2', text: 'Потерял значительный интерес к сексу.' },
+        { value: '3', text: 'Совсем не интересуюсь сексом.' },
       ],
     },
     {
       id: 'physicalSymptoms',
       text: 'Испытываешь ли ты физические симптомы (физические симптомы)?',
       options: [
-        { value: 0, text: 'Не испытываю новых физических симптомов.' },
-        { value: 1, text: 'Испытываю лёгкие физические симптомы (например, боли, дискомфорт).' },
-        { value: 2, text: 'Испытываю умеренные физические симптомы, которые мешают.' },
-        { value: 3, text: 'Испытываю серьёзные физические симптомы, которые сильно мешают.' },
+        { value: '0', text: 'Не испытываю новых физических симптомов.' },
+        { value: '1', text: 'Испытываю лёгкие физические симптомы (например, боли, дискомфорт).' },
+        { value: '2', text: 'Испытываю умеренные физические симптомы, которые мешают.' },
+        { value: '3', text: 'Испытываю серьёзные физические симптомы, которые сильно мешают.' },
       ],
     },
   ];
@@ -251,17 +251,22 @@ function BecksDepressionInventory() {
   }, [currentQuestionIndex]);
 
   const handleAnswerChange = (questionId, value) => {
-    setAnswers(prev => ({
-      ...prev,
-      [questionId]: parseInt(value),
-    }));
-    if (currentQuestionIndex < questions.length - 1) {
+    if (answers[questionId] !== value) {
+      setAnswers(prev => ({
+        ...prev,
+        [questionId]: value,
+      }));
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (answers[questions[currentQuestionIndex].id] !== null && currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
   const calculateResult = () => {
-    const totalScore = Object.values(answers).reduce((sum, value) => sum + (value || 0), 0);
+    const totalScore = Object.values(answers).reduce((sum, value) => sum + (parseInt(value) || 0), 0);
     let recommendation = '';
 
     if (totalScore <= 13) {
@@ -317,7 +322,7 @@ function BecksDepressionInventory() {
       physicalSymptoms: null,
     });
     setResult(null);
-    setShowShareOptions(false); // Κλείνουμε το μενού κοινής χρήσης όταν κλείνει το τεστ
+    setShowShareOptions(false);
   };
 
   const toggleShareOptions = () => {
@@ -326,21 +331,21 @@ function BecksDepressionInventory() {
 
   const shareViaEmail = () => {
     if (!result) return;
-    const subject = 'Мои результаты теста: Инвентарь депрессии Бека, BDI';
+    const subject = 'Мои результаты теста: Шкала депрессии Бека, BDI';
     const body = `Твой балл: ${result.score} из 63\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const shareViaWhatsApp = () => {
     if (!result) return;
-    const text = `Мои результаты теста: Инвентарь депрессии Бека, BDI\nТвой балл: ${result.score} из 63\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
+    const text = `Мои результаты теста: Шкала депрессии Бека, BDI\nТвой балл: ${result.score} из 63\nУровень: ${result.recommendation.level}\nРекомендация: ${result.recommendation.description}\nПредлагаемый пакет: ${result.recommendation.package}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   const printResult = () => {
     if (!result) return;
     const printContent = `
-      <h3>Результаты теста: Инвентарь депрессии Бека, BDI</h3>
+      <h3>Результаты теста: Шкала депрессии Бека, BDI</h3>
       <p><strong>Твой балл:</strong> ${result.score} из 63</p>
       <p><strong>Уровень:</strong> ${result.recommendation.level}</p>
       <p><strong>Рекомендация:</strong> ${result.recommendation.description}</p>
@@ -352,7 +357,7 @@ function BecksDepressionInventory() {
         <head>
           <title>Результаты теста</title>
           <style>
-            body { font-family: 'Playfair Display', serif; text-align: center; }
+            body { font-family: 'Playfair Display', serif; text-align: left; }
             h3 { font-size: 20px; color: #143B64; }
             p { font-size: 16px; color: #2F4C66; }
           </style>
@@ -367,17 +372,19 @@ function BecksDepressionInventory() {
   };
 
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+  const allQuestionsAnswered = Object.values(answers).every(answer => answer !== null);
 
   return (
     <div className="depression-test">
       <div className="free-package-section">
         <div className="section-content">
           <h3 className="section-title" onClick={() => setIsTestOpen(!isTestOpen)}>
-            Инвентарь депрессии Бека, BDI
+            Шкала депрессии Бека, BDI
             <i className={`las la-angle-down dropdown-icon ${isTestOpen ? 'open' : ''}`}></i>
           </h3>
           <p className="section-description">
-            Пройди наш тест, чтобы оценить своё эмоциональное состояние. На основе результатов мы предложим тебе наиболее подходящий пакет поддержки, который поможет справиться с твоими текущими потребностями.
+            Чувствуешь усталость, апатию или потерю интереса к жизни? Иногда нам просто нужно понять, что происходит внутри. Пройди короткий тест и узнай, нуждаешься ли ты в профессиональной поддержке или можешь самостоятельно начать мягкую работу над собой.
+            Это первый шаг к ясности. Ты не один(а) — мы рядом, чтобы помочь.
             <span className="test-info">
               онлайн-тест | 21 пункт | около 4 минут
             </span>
@@ -387,8 +394,23 @@ function BecksDepressionInventory() {
               <div className="test-container">
                 {result ? (
                   <div className="test-result">
-                    <h3>Результаты теста</h3>
-                    <p className="score-info"><strong>Твой балл:</strong> {result.score} из 63</p>
+                    <p className="score-info"><strong>Твой балл:</strong></p>
+                    <div className="score-bar">
+                      <div
+                        className="score-progress"
+                        style={{
+                          width: `${(result.score / 63) * 100}%`,
+                          backgroundColor: result.score <= 13 ? '#32cd32' : result.score <= 28 ? '#ffd700' : '#ff4d4d',
+                        }}
+                      ></div>
+                      <span className="score-label" style={{ position: 'absolute', left: `${(result.score / 63) * 100}%`, transform: 'translateX(-50%)' }}>
+                        {result.score}
+                      </span>
+                    </div>
+                    <div className="score-range">
+                      <span>0</span>
+                      <span>63</span>
+                    </div>
                     <p className="level-info"><strong>Уровень:</strong> {result.recommendation.level}</p>
                     <p><strong>Рекомендация:</strong> {result.recommendation.description}</p>
                     <p>
@@ -426,24 +448,34 @@ function BecksDepressionInventory() {
                       <h3>{currentQuestionIndex + 1}. {questions[currentQuestionIndex].text}</h3>
                       <div className="options">
                         {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-                          <label key={optionIndex} className="option-label">
+                          <label key={optionIndex} className="option-label" style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                             <input
                               type="radio"
                               name={questions[currentQuestionIndex].id}
                               value={option.value}
                               checked={answers[questions[currentQuestionIndex].id] === option.value}
                               onChange={() => handleAnswerChange(questions[currentQuestionIndex].id, option.value)}
+                              className="custom-radio"
                             />
-                            {option.text}
+                            <span style={{ marginLeft: '10px' }}>{option.text}</span>
                           </label>
                         ))}
                       </div>
-                      {currentQuestionIndex === questions.length - 1 && (
+                      {currentQuestionIndex < questions.length - 1 ? (
+                        <button
+                          type="button"
+                          onClick={handleNextQuestion}
+                          className="submit-test-button"
+                          disabled={answers[questions[currentQuestionIndex].id] === null}
+                        >
+                          Следующий вопрос
+                        </button>
+                      ) : (
                         <button
                           type="button"
                           onClick={calculateResult}
                           className="submit-test-button"
-                          disabled={answers[questions[currentQuestionIndex].id] === null}
+                          disabled={!allQuestionsAnswered}
                         >
                           Узнать результаты
                         </button>

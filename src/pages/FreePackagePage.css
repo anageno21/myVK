@@ -243,3 +243,13 @@
     font-size: 18px;
   }
 }
+
+/* Styles for test items to ensure each test is in a frame with white background */
+.test-item {
+  background-color: #fff; /* Λευκό background */
+  border: 1px solid #e0e0e0; /* Border για το πλαίσιο */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Σκίαση για βάθος */
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 20px; /* Χώρος μεταξύ των πλαισίων */
+}

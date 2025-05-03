@@ -1,214 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
-.test-wrapper {
-  margin-bottom: 25px;
-}
-
-.free-package-section {
-  background: #f9f9f9;
-  border-radius: 30px;
-  padding: 10px; /* Μειώνω το padding από 20px σε 10px */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  margin-bottom: 5px !important; /* Μειώνω την απόσταση από 140px σε 5px */
-}
-
-.free-package-section:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  background-color: #e8e9ea;
-}
-
-.section-content {
-  padding: 10px; /* Μειώνω το padding από 20px σε 10px */
-  text-align: left;
-}
-
-.section-title {
-  font-size: 24px;
-  font-weight: 700;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
-  color: #143B64;
+/* Styles for custom radio buttons */
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #143B64;
+  border-radius: 50%;
+  position: relative;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: color 0.3s ease;
 }
 
-.section-title:hover {
-  color: #bc2164;
+.custom-radio:checked {
+  background-color: #21aabc;
+  border: 2px solid #143B64;
 }
 
-.section-title:hover .dropdown-icon {
-  color: #21aabc;
-  animation: pulse 0.5s ease infinite;
-}
-
-.section-title-link {
-  color: #143B64;
-  text-decoration: none;
-}
-
-.section-title-link:hover {
-  color: #21aabc;
-  text-decoration: underline;
-}
-
-.section-description {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #2F4C66;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 15px;
-}
-
-.test-info {
-  display: block;
-  font-size: 14px;
-  color: #f26f63 !important;
-  margin-top: 10px;
-  font-family: 'Playfair Display', serif;
-}
-
-.test-footer-info {
-  font-size: 12px;
-  color: #21aabc !important;
-  margin-top: 15px;
-  font-family: 'Playfair Display', serif;
-  line-height: 1.5;
-}
-
-.test-footer-info p {
-  margin: 5px 0;
-  color: #21aabc !important;
-}
-
-.author-info {
-  color: #21aabc !important;
-}
-
-.disclaimer-info {
-  color: #21aabc !important;
-}
-
-.reference-link {
-  color: #21aabc !important;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-
-.reference-link:hover {
-  color: #143B64 !important;
-}
-
-.dropdown-icon {
-  font-size: 20px;
-  color: #143B64;
-  transition: transform 0.3s ease, color 0.3s ease;
-  display: inline-block;
-}
-
-.dropdown-icon.open {
-  transform: rotate(180deg);
-}
-
-/* Animation για το pulse εφέ */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.test-container {
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  background: #e0e0e0;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-
-.progress {
-  height: 100%;
-  background: #21aabc;
-  transition: width 0.3s ease;
-}
-
-.test-question {
-  margin-bottom: 20px;
-  opacity: 0;
-}
-
-.test-question.fade-in {
-  animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.test-question h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #143B64;
-  margin-bottom: 15px;
-  font-family: 'Playfair Display', serif;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.custom-radio:checked::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .option-label {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  color: #2F4C66;
-  font-family: 'Playfair Display', serif;
-}
-
-.option-label input {
-  margin: 0;
-}
-
-.submit-test-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #21aabc;
-  color: white;
-  border-radius: 15px;
-  text-decoration: none;
-  font-weight: 600;
-  font-family: 'Playfair Display', serif;
-  border: none;
+  margin-bottom: 10px;
   cursor: pointer;
+}
+
+/* Styles for score bar */
+.score-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.score-progress {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+.score-range {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #2F4C66;
+  text-align: left;
+}
+
+.score-label {
+  position: absolute;
+  top: -20px;
+  font-size: 16px;
+  color: #143B64;
+}
+
+/* Styles for test container */
+.test-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
   margin-top: 20px;
 }
 
-.submit-test-button:hover {
-  background-color: #143B64;
+/* Styles for progress bar */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #21aabc;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Styles for test question */
+.test-question h3 {
+  font-size: 18px;
+  color: #143B64;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles for submit button */
+.submit-test-button {
+  background-color: #21aabc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .submit-test-button:disabled {
@@ -216,41 +119,54 @@
   cursor: not-allowed;
 }
 
-.test-result {
-  text-align: center;
-}
-
+/* Styles for test result */
 .test-result h3 {
   font-size: 20px;
-  font-weight: 700;
   color: #143B64;
   margin-bottom: 15px;
-  font-family: 'Playfair Display', serif;
+  text-align: left;
 }
 
-.test-result .score-info,
-.test-result .level-info {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #2F4C66;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
-}
-
-.test-result p {
+.test-result h4 {
   font-size: 16px;
-  line-height: 1.6;
-  color: #2F4C66;
-  font-family: 'Playfair Display', serif;
+  color: #143B64;
+  margin-top: 20px;
   margin-bottom: 10px;
+  text-align: left;
 }
 
+.score-info, .level-info {
+  font-size: 16px;
+  color: #2F4C66;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Styles for recommended package link */
+.recommended-package-link {
+  color: #21aabc;
+  text-decoration: none;
+}
+
+.recommended-package-link:hover {
+  text-decoration: underline;
+}
+
+/* Styles for share section */
 .share-section {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
   margin-top: 20px;
+}
+
+.close-test-button {
+  background-color: #143B64;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .share-container {
@@ -259,213 +175,270 @@
 
 .share-icon {
   font-size: 24px;
-  color: #143B64;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.share-icon:hover {
   color: #21aabc;
+  cursor: pointer;
 }
 
 .share-options {
   position: absolute;
   top: 30px;
   right: 0;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  z-index: 10;
+  padding: 10px;
 }
 
 .share-options button {
-  padding: 8px 16px;
   background: none;
   border: none;
+  padding: 5px 10px;
   color: #143B64;
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+  text-align: left;
 }
 
 .share-options button:hover {
-  background: #f26f63;
-  color: white;
+  background-color: #f0f0f0;
 }
 
-.recommended-package-link {
+/* Styles for test footer */
+.test-footer-info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #2F4C66;
+  text-align: left;
+}
+
+.author-info, .disclaimer-info {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.reference-link {
   color: #21aabc;
   text-decoration: none;
-  font-weight: 600;
 }
 
-.recommended-package-link:hover {
+.reference-link:hover {
   text-decoration: underline;
 }
 
-.close-test-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #FF6F61;
-  color: white;
-  border-radius: 15px;
+/* Animation for fade-in */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styles for the subscale bar chart */
+.subscale-chart {
+  margin: 20px 0;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bar-label {
+  width: 250px;
+  font-size: 14px;
+  color: #2F4C66;
+  text-align: left;
+}
+
+.bar {
+  flex-grow: 1;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+.bar-value {
+  position: absolute;
+  right: -40px;
+  top: 0;
+  font-size: 14px;
+  color: #143B64;
+  text-align: left;
+}
+
+/* Styles for FreeTherapyTools page */
+.free-therapy-tools {
+  padding: 20px;
+}
+
+.tool-links {
+  margin-top: 20px;
+}
+
+.tool-links p {
+  font-size: 16px;
+  color: #2F4C66;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Styles adapted from ServicesSection.css for FreeTherapyTools */
+.new-services-grid-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.new-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-item {
+  position: relative;
   text-decoration: none;
-  font-weight: 600;
-  font-family: 'Playfair Display', serif;
-  border: none;
-  cursor: pointer;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.close-test-button:hover {
-  background-color: #d95f53;
+.service-item:hover {
+  transform: translateY(-5px);
 }
 
-/* Responsive Προσαρμογές */
-@media (max-width: 768px) {
-  .free-package-section {
-    padding: 10px;
-  }
-
-  .section-content {
-    padding: 10px;
-  }
-
-  .section-title {
-    font-size: 20px;
-  }
-
-  .section-description {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .test-info {
-    font-size: 10px;
-  }
-
-  .test-footer-info {
-    font-size: 10px;
-  }
-
-  .test-container {
-    padding: 15px;
-  }
-
-  .test-question h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .option-label {
-    font-size: 14px;
-  }
-
-  .submit-test-button,
-  .close-test-button {
-    padding: 8px 16px;
-    margin-top: 15px;
-  }
-
-  .test-result h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .test-result .score-info,
-  .test-result .level-info {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-
-  .test-result p {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  .share-icon {
-    font-size: 20px;
-  }
-
-  .share-options {
-    top: 25px;
-  }
-
-  .share-options button {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .dropdown-icon {
-    font-size: 18px;
-  }
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-@media (max-width: 576px) {
-  .section-title {
-    font-size: 18px;
-  }
+.image-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
 
-  .section-description {
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
 
-  .test-info {
-    font-size: 9px;
-  }
+.service-item:hover .image-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
 
-  .test-footer-info {
-    font-size: 9px;
-  }
+.image-wrapper h5 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  text-align: left;
+}
 
-  .test-question h3 {
-    font-size: 16px;
-  }
+.service-item p {
+  font-size: 14px;
+  color: #2F4C66;
+  margin-top: 10px;
+  text-align: left;
+}
 
-  .option-label {
-    font-size: 13px;
-  }
+.services-section {
+  padding: 40px 20px;
+}
 
-  .submit-test-button,
-  .close-test-button {
-    padding: 6px 12px;
-    margin-top: 10px;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .test-result h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
+.services-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
 
-  .test-result .score-info,
-  .test-result .level-info {
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
+.sub-title {
+  display: block;
+  font-size: 14px;
+  color: #21aabc;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: left;
+}
 
-  .test-result p {
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
+.services-header h3 {
+  font-size: 24px;
+  color: #143B64;
+  margin-bottom: 15px;
+  text-align: left;
+}
 
-  .share-icon {
-    font-size: 18px;
-  }
+.services-header p {
+  font-size: 16px;
+  color: #2F4C66;
+  text-align: left;
+}
 
-  .share-options {
-    top: 20px;
-  }
+.services-grid {
+  display: flex;
+  justify-content: center;
+}
 
-  .share-options button {
-    padding: 5px 10px;
-    font-size: 11px;
-  }
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
 
-  .dropdown-icon {
-    font-size: 16px;
-  }
+.progress-step {
+  text-align: left;
+}
+
+.progress-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #21aabc;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.progress-step h6 {
+  font-size: 16px;
+  color: #143B64;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.progress-step p {
+  font-size: 14px;
+  color: #2F4C66;
+  text-align: left;
 }
