@@ -12,7 +12,7 @@
 
 .section-header .sub-title {
   display: block;
-  color: #21aabc;
+  color: #8EB5BA;
   font-size: 14px;
   margin-bottom: 10px;
   font-family: var(--primary-font);
@@ -87,7 +87,7 @@
 }
 
 .header-item-2 {
-  background-color: #1eaabc;
+  background-color: #8EB5BA;
   height: 220px;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .package-dropdown-content .fundament-package-title {
-  color: #1eaabc; /* Χρώμα για το Фундамент, ίδιο με το background του header-item-2 */
+  color: #8EB5BA; /* Χρώμα για το Фундамент, ίδιο με το background του header-item-2 */
 }
 
 .package-dropdown-content .resilience-package-title {
@@ -157,7 +157,7 @@
 }
 
 .package-dropdown-content .fundament-package-price {
-  color: #1eaabc; /* Χρώμα για την τιμή του Фундамент */
+  color: #8EB5BA; /* Χρώμα για την τιμή του Фундамент */
 }
 
 .package-dropdown-content .resilience-package-price {

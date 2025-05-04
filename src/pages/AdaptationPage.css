@@ -6,23 +6,28 @@
     max-width: 1020px;
     margin: 0 auto;
     gap: 30px; /* Κενό μεταξύ των δύο ενοτήτων */
+    align-items: flex-start; /* Ευθυγράμμιση στην κορυφή */
 }
 
 /* Αριστερή Ενότητα (65%) */
 .content-section {
     flex: 0 0 65%; /* 65% του πλάτους */
     max-width: 65%;
+    margin-top: 0; /* Εξασφαλίζουμε ότι δεν υπάρχει επιπλέον margin */
+    padding-top: 0; /* Εξασφαλίζουμε ότι δεν υπάρχει επιπλέον padding */
 }
 
 /* Δεξιά Ενότητα (35%) */
 .sidebar-section {
     flex: 0 0 35%; /* 35% του πλάτους */
     max-width: 35%;
+    margin-top: 0; /* Εξασφαλίζουμε ότι δεν υπάρχει επιπλέον margin */
+    padding-top: 0; /* Εξασφαλίζουμε ότι δεν υπάρχει επιπλέον padding */
 }
 
 /* Στυλ για την εικόνα */
 .content-section .service-image {
-    margin-top: 20px;
+    margin-top: 0; /* Αφαίρεση του margin-top για ευθυγράμμιση στην κορυφή */
 }
 
 .content-section .service-image img {
@@ -126,7 +131,7 @@
     position: relative; /* Για το pulse effect */
 }
 
-/* Keyframes για παλмικό εφέ */
+/* Keyframes για παλμικό εφέ */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -169,11 +174,11 @@
 
 /* Προσθήκη margin-top στο πρώτο CTA block για να κατέβει χαμηλότερα */
 .sidebar-section .cta-block:first-child {
-    margin-top: 125px; /* Προσθήκη κενού για να κατέβει χαμηλότερα */
+    margin-top: 78px; /* Προσαρμοσμένη τιμή για να κατέβει χαμηλότερα */
 }
 
 .cta-block {
-    background-color: #d3d2d1;
+    background-color: #d6c9cd;
     padding: 20px;
     border-radius: 30px;
     text-align: left; /* Αριστερή στοίχιση αντί για κεντρική */
@@ -214,16 +219,16 @@
 
 /* Ειδικό στυλ για το CTA του δωρεάν πακέτου */
 .sidebar-section .cta-block:nth-child(1) .cta-button {
-    background-color: #1b8a9b; /* Ειδικό χρώμα για το δωρεάν πακέτο */
+    background-color: #ad7488; /* Ειδικό χρώμα για το δωρεάν πακέτο */
 }
 
 .cta-button:hover {
-    background-color: #1b8a9b;
+    background-color: #d6b2bf;
 }
 
 /* Hover για το δωρεάν πακέτο */
 .sidebar-section .cta-block:nth-child(1) .cta-button:hover {
-    background-color: #d95f53; /* Σκουρότερο #f26f63 για hover */
+    background-color: #e0bfcb; /* Σκουρότερο #f26f63 για hover */
 }
 
 .info-block {
@@ -312,6 +317,11 @@
     .content-section .our-packages-section .header-grid .header-item:hover {
         transform: translateY(-5px) rotate(1deg) scale(1.03);
         animation: pulse 1.5s infinite;
+    }
+
+    /* Αφαίρεση του margin-top σε μικρότερες οθόνες για να μην επηρεάζει τη διάταξη */
+    .sidebar-section .cta-block:first-child {
+        margin-top: 0;
     }
 }
 

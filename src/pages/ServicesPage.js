@@ -4,6 +4,7 @@ import HeroSlider from '../components/HeroSlider';
 import ProfileHeader from '../components/ProfileHeader';
 import OurPackages from './OurPackages';
 import FAQ from '../components/FAQ';
+import NewFooter from '../components/NewFooter';
 import '../components/HeroSlider.css';
 import '../components/ServicesSection.css';
 
@@ -11,13 +12,95 @@ const ServicesPage = () => {
   return (
     <div className="services-page">
       <ProfileHeader />
-      <HeroSlider
-        contentType="video"
-        src="/videos/services.mp4"
-        images={[]}
-      />
-      {/* Πρώτο Grid με 4 πλαίσια (2x2) - Με κείμενα και υπάρχουσες εικόνες */}
-      <section className="new-services-grid-section">
+      <div className="hero-section" style={{ position: 'relative' }}>
+        <HeroSlider
+          contentType="video"
+          src="/videos/services.mp4"
+          images={[]}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            maxWidth: '1020px',
+            margin: '0 auto',
+            left: '0',
+            right: '0',
+            transform: 'translateY(-50%)',
+            color: '#fff',
+            textAlign: 'left',
+            zIndex: 6,
+            fontFamily: 'Playfair Display, serif',
+          }}
+        >
+          <h2
+            style={{
+              fontSize: '62px',
+              lineHeight: '1.0',
+              maxWidth: '500px',
+              marginBottom: '20px',
+              color: '#fff',
+            }}
+          >
+            Добро пожаловать в пространство, созданное именно для тебя.
+          </h2>
+        </div>
+      </div>
+      <section
+        style={{
+          maxWidth: '1020px',
+          margin: '0 auto',
+          padding: '40px 0',
+          fontFamily: 'Playfair Display, serif',
+          textAlign: 'left',
+        }}
+      >
+        <h3
+          style={{
+            fontSize: '26px',
+            lineHeight: '1.0',
+            marginBottom: '20px',
+            color: '#8EB5BA',
+            fontFamily: 'Playfair Display, serif',
+          }}
+        >
+          В Anageno мы верим, что каждое изменение начинается с правильного сопровождения.
+        </h3>
+        <p
+          style={{
+            fontSize: '20px',
+            lineHeight: '1.5',
+            color: '#2F4C66',
+            fontFamily: 'Playfair Display, serif',
+            textAlign: 'left',
+          }}
+        >
+          Наши партнёры — не просто специалисты, а настоящие спутники на каждом этапе личностного роста. Обладая знаниями, эмпатией и опытом, они предлагают целенаправленные услуги, охватывающие четыре ключевых направления личного и профессионального развития.
+        </p>
+        <p
+          style={{
+            fontSize: '20px',
+            lineHeight: '1.5',
+            color: '#2F4C66',
+            fontFamily: 'Playfair Display, serif',
+            textAlign: 'left',
+          }}
+        >
+          Нужна ли тебе ясность, поддержка или пространство, чтобы вновь найти себя — мы рядом.
+        </p>
+        <p
+          style={{
+            fontSize: '20px',
+            lineHeight: '1.5',
+            color: '#2F4C66',
+            fontFamily: 'Playfair Display, serif',
+            textAlign: 'left',
+          }}
+        >
+          Изучи наши направления и открой для себя, куда может привести твой следующий шаг.
+        </p>
+      </section>
+      <section className="new-services-grid-section" style={{ backgroundColor: '#f2f1f0' }}>
         <div className="new-services-grid">
           <Link to="/services/relationships" className="service-item" title="Читать больше">
             <div className="image-wrapper">
@@ -35,7 +118,7 @@ const ServicesPage = () => {
             </div>
             <p>Когда всё внутри слишком долго было в напряжении. Разберётесь, как стресс и тревожность накапливаются, влияют на тело и поведение. Вы научитесь восстанавливаться и регулировать напряжение.</p>
           </Link>
-          <Link to="/services/self-esteem" className="service-item" title="Читать больше">
+          <Link to="/services/self-confidence" className="service-item" title="Читать больше">
             <div className="image-wrapper">
               <img src="/images/section/Self-esteem.jpg" alt="Самооценка и уверенность в себе" />
               <div className="image-overlay"></div>
@@ -53,11 +136,9 @@ const ServicesPage = () => {
           </Link>
         </div>
       </section>
-      {/* Δεύτερη Ενότητα "Our Method" */}
       <section className="services-section method-section">
         <div className="container">
           <div className="services-header">
-            <span className="sub-title">Our Method</span>
             <h3>Наш Подход: Пошаговый План Прогресса</h3>
             <p>Мы разработали структурированный подход, который помогает вам двигаться к личностному росту и эмоциональному благополучию через последовательные этапы. Вот как это работает:</p>
           </div>
@@ -92,8 +173,16 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-      <OurPackages />
-      <FAQ />
+      <OurPackages hideHeader={true} />
+      <FAQ hideHeader={true} />
+      <NewFooter
+        style={{
+          position: 'relative',
+          clear: 'both',
+          width: '100%',
+          marginTop: '50px',
+        }}
+      />
     </div>
   );
 };

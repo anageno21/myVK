@@ -226,16 +226,29 @@ const FreeTherapyToolbox = () => {
                 </Link>
               ))}
             </div>
-            {/* Δεύτερο αριστερό πλαίσιο: Άδειο */}
+            {/* Δεύτερο αριστερό πλαίσιο: Аудиоподдержка */}
             <div
               className="service-item"
               style={{
                 backgroundColor: '#f5f5f5',
                 borderRadius: '30px',
                 boxSizing: 'border-box',
+                padding: '20px', // Προσθήκη padding για συνέπεια
               }}
             >
-              {/* Κενό πλαίσιο */}
+              <h3
+                style={{
+                  fontSize: '28px',
+                  lineHeight: '1.0',
+                  marginBottom: '20px',
+                  color: '#8EB5BA',
+                  fontFamily: 'Playfair Display, serif',
+                  textAlign: 'left',
+                }}
+              >
+                Аудиоподдержка
+              </h3>
+              <div style={{ height: '40px' }}></div>
             </div>
           </div>
           {/* Δεξιά στήλη */}
@@ -392,16 +405,29 @@ const FreeTherapyToolbox = () => {
                 </Link>
               </div>
             </div>
-            {/* Δεύτερο δεξί πλαίσιο: Άδειο */}
+            {/* Δεύτερο δεξί πλαίσιο: Библиотека */}
             <div
               className="service-item"
               style={{
                 backgroundColor: '#f5f5f5',
                 borderRadius: '30px',
                 boxSizing: 'border-box',
+                padding: '20px', // Προσθήκη padding για συνέπεια
               }}
             >
-              {/* Κενό πλαίσιο */}
+              <h3
+                style={{
+                  fontSize: '28px',
+                  lineHeight: '1.0',
+                  marginBottom: '20px',
+                  color: '#8EB5BA',
+                  fontFamily: 'Playfair Display, serif',
+                  textAlign: 'left',
+                }}
+              >
+                Библиотека
+              </h3>
+              <div style={{ height: '40px' }}></div>
             </div>
           </div>
         </div>

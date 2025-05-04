@@ -102,7 +102,7 @@
 
 /* Animation στο overlay όταν ο κέρσορας είναι πάνω */
 .new-services-grid .service-item:hover .image-wrapper .image-overlay {
-  background: rgba(23, 62, 86, 0.7); /* Σκουρότερο overlay κατά το hover */
+  background: rgba(142, 181, 186, 0.9); /* Σκουρότερο overlay κατά το hover */
 }
 
 /* Τίτλος πάνω στην εικόνα στο πρώτο grid */
@@ -158,13 +158,13 @@
   width: 145.4112px; /* Μειωμένο μέγεθος */
   height: 145.4112px; /* Μειωμένο μέγεθος */
   background: #EAE9E8;
-  border: 2px solid #21AABC;
+  border: 2px solid #8EB5BA;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 8.0784px; /* Μειωμένο margin-bottom */
-  color: #21AABC;
+  color: #8EB5BA;
   font-size: 38.77632px; /* Μειωμένο μέγεθος γραμματοσειράς */
   font-weight: bold;
   font-family: 'Playfair Display', serif;
@@ -211,7 +211,7 @@
 }
 
 .method-section .progress-step p i {
-  color: #21AABC;
+  color: #8eb5ba;
   margin-right: 5px;
 }
 
@@ -238,7 +238,7 @@
 
 .faq-section .section-header .sub-title {
   display: block;
-  color: #21AABC;
+  color: #8eb5ba;
   font-size: 14px;
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;

@@ -169,7 +169,7 @@
 
 /* Προσθήκη margin-top στο πρώτο CTA block για να κατέβει χαμηλότερα */
 .sidebar-section .cta-block:first-child {
-    margin-top: 125px; /* Προσθήκη κενού για να κατέβει χαμηλότερα */
+    margin-top: 155px; /* Προσθήκη κενού για να κατέβει χαμηλότερα */
 }
 
 .cta-block {

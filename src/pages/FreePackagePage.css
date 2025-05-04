@@ -1,3 +1,6 @@
+/* FreePackagePage.css */
+
+/* General styling for the entire page */
 .free-package-page {
   font-family: 'Playfair Display', serif;
   color: #2F4C66;
@@ -5,12 +8,14 @@
   box-sizing: border-box;
 }
 
+/* Main content area */
 .free-package-content {
   padding: 40px 0;
   width: 100%;
-  padding-bottom: 160px; /* Προσθέτω padding-bottom για να εξασφαλίσω απόσταση από τον footer */
+  padding-bottom: 160px; /* Ensures spacing from the footer */
 }
 
+/* Container for the free package content */
 .container {
   max-width: 1020px;
   width: 100%;
@@ -22,6 +27,7 @@
   box-sizing: border-box;
 }
 
+/* Header section */
 .free-package-header {
   text-align: left;
   margin-bottom: 40px;
@@ -41,6 +47,7 @@
   color: #2F4C66;
 }
 
+/* Body section with two columns */
 .free-package-body {
   display: flex;
   gap: 20px;
@@ -52,31 +59,18 @@
   margin: 0 auto;
 }
 
-.free-package-content,
-.free-package-sidebar {
-  flex: 2;
+/* Columns for test items */
+.free-package-column {
+  flex: 1; /* Equal width for both columns */
   margin: 0;
   padding-top: 0;
 }
 
-.free-package-sidebar {
-  flex: 1;
-  background: #f9f9f9;
-  border-radius: 30px;
-  padding: 20px;
-  margin: 0;
-  padding-top: 80px;
-}
-
-.free-package-sections > *:first-child,
-.free-package-sidebar > *:first-child {
-  margin-top: 0;
-}
-
+/* Container for test sections */
 .free-package-sections {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Διατηρώ το gap μηδενικό */
+  gap: 15px;
   margin: 0;
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
@@ -86,121 +80,66 @@
   margin-bottom: 0;
 }
 
-.sidebar-widget {
-  margin-bottom: 20px;
+/* Styling for individual test items */
+.test-item {
+  background-color: #fff; /* White background */
+  border: 1px solid #e0e0e0; /* Border for the frame */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 20px; /* Space between test items */
 }
 
-.sidebar-widget h3 {
-  font-size: 20px;
-  font-weight: 700;
+.test-item h3 {
+  font-size: 18px;
   color: #143B64;
   margin-bottom: 10px;
 }
 
-.sidebar-search-tests .search-form {
-  display: flex;
-  gap: 10px;
+/* Test container styling */
+.test-container {
+  position: relative;
 }
 
-.sidebar-search-tests .search-form input {
-  flex: 1;
-  padding: 8px;
+/* Button to toggle the dropdown */
+.dropdown-button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  font-family: 'Playfair Display', serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 5px;
 }
 
-.sidebar-search-tests .search-form button {
-  padding: 8px;
-  background: #21aabc;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}
-
-.sidebar-search-tests .search-form button:hover {
-  background: #143B64;
-}
-
-.sidebar-test-categories ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar-test-categories li {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #173A37;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.sidebar-test-categories li:hover {
+.dropdown-content .run-test-button {
+  background-color: transparent;
   color: #21aabc;
-}
-
-.sidebar-test-categories li.active-category {
-  color: #21aabc;
-  font-weight: 700;
-}
-
-.sidebar-search .search-form {
-  display: flex;
-  gap: 10px;
-}
-
-.sidebar-search .search-form input {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  font-family: 'Playfair Display', serif;
-}
-
-.sidebar-search .search-form button {
-  padding: 8px;
-  background: #21aabc;
   border: none;
-  border-radius: 5px;
-  color: white;
+  padding: 5px 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
 }
 
-.sidebar-search .search-form button:hover {
-  background: #143B64;
+.dropdown-content .run-test-button:hover {
+  background-color: #f0f0f0;
 }
 
-.sidebar-categories ul,
-.sidebar-authors ul,
-.sidebar-recent-posts ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar-categories li,
-.sidebar-authors li {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.sidebar-recent-posts li {
-  margin-bottom: 15px;
-}
-
-.sidebar-recent-posts li p:first-child {
-  font-size: 14px;
-  font-weight: 700;
-  color: #143B64;
-  margin-bottom: 5px;
-}
-
-.sidebar-recent-posts li p:last-child {
-  font-size: 12px;
-  color: #2F4C66;
-}
-
-/* Responsive Προσαρμογές */
+/* Responsive adjustments */
 @media (max-width: 1020px) {
   .container {
     max-width: 100%;
@@ -238,18 +177,4 @@
   .free-package-header h2 {
     font-size: 14px;
   }
-
-  .sidebar-widget h3 {
-    font-size: 18px;
-  }
-}
-
-/* Styles for test items to ensure each test is in a frame with white background */
-.test-item {
-  background-color: #fff; /* Λευκό background */
-  border: 1px solid #e0e0e0; /* Border για το πλαίσιο */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Σκίαση για βάθος */
-  border-radius: 30px;
-  padding: 20px;
-  margin-bottom: 20px; /* Χώρος μεταξύ των πλαισίων */
 }

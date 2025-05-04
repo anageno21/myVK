@@ -239,7 +239,7 @@ function TestAttachmentStyleQuestionnaire() {
               онлайн-тест | 9 пунктов | около 3 минут
             </span>
           </p>
-          <div className="test-container">
+          <div className="test-container" style={{ borderRadius: '20px', backgroundColor: '#fff', border: '1px solid #e0e0e0' }}>
             {result ? (
               <div className="test-result">
                 <p className="score-info"><strong>Твой балл:</strong></p>

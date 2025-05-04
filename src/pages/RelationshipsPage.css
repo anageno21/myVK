@@ -6,23 +6,28 @@
     max-width: 1020px;
     margin: 0 auto;
     gap: 30px; /* Κενό μεταξύ των δύο ενοτήτων */
+    align-items: flex-start; /* Ευθυγράμμιση στην κορυφή */
 }
 
 /* Αριστερή Ενότητα (65%) */
 .content-section {
     flex: 0 0 65%; /* 65% του πλάτους */
     max-width: 65%;
+    margin-top: 0; /* Εξασφαλίζουμε ότι δεν υπάρχει επιπλέον margin */
+    padding-top: 0; /* Εξασφαλίζουμε ότι δεν υπάρχει επιπλέον padding */
 }
 
 /* Δεξιά Ενότητα (35%) */
 .sidebar-section {
     flex: 0 0 35%; /* 35% του πλάτους */
     max-width: 35%;
+    margin-top: 0; /* Εξασφαλίζουμε ότι δεν υπάρχει επιπλέον margin */
+    padding-top: 0; /* Εξασφαλίζουμε ότι δεν υπάρχει επιπλέον padding */
 }
 
 /* Στυλ για την εικόνα */
 .content-section .service-image {
-    margin-top: 20px;
+    margin-top: 0; /* Αφαίρεση του margin-top για ευθυγράμμιση στην κορυφή */
 }
 
 .content-section .service-image img {
@@ -126,7 +131,7 @@
     position: relative; /* Για το pulse effect */
 }
 
-/* Keyframes για παλμικό εφέ */
+/* Keyframes για παλмικό εφέ */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -147,7 +152,7 @@
     transform: translateY(-8px) rotate(2deg) scale(1.1); /* Ανύψωση, περιστροφή και κλίμακα */
     background-color: #f26f63; /* Έντονο χρώμα φόντου */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Πιο έντονη σκίαση */
-    animation: pulse 1.5s infinite; /* Παλμικό εφέ */
+    animation: pulse 1.5s infinite; /* Παλмικό εφέ */
 }
 
 /* Αλλαγή χρώματος κειμένου κατά το hover */
@@ -168,8 +173,13 @@
 }
 
 /* Προσθήκη margin-top στο πρώτο CTA block για να κατέβει χαμηλότερα */
-.sidebar-section .cta-block:first-child {
-    margin-top: 125px; /* Προσθήκη κενού για να κατέβει χαμηλότερα */
+.relationships-page .sidebar-section .cta-block:first-child,
+.self-confidence-page .sidebar-section .cta-block:first-child {
+    margin-top: 120px !important; /* Για σελίδες με τίτλο σε δύο σειρές */
+}
+
+.adaptation-page .sidebar-section .cta-block:first-child {
+    margin-top: 78px !important; /* Για σελίδες με τίτλο σε μία σειρά */
 }
 
 .cta-block {
@@ -312,6 +322,11 @@
     .content-section .our-packages-section .header-grid .header-item:hover {
         transform: translateY(-5px) rotate(1deg) scale(1.03);
         animation: pulse 1.5s infinite;
+    }
+
+    /* Αφαίρεση του margin-top σε μικρότερες οθόνες για να μην επηρεάζει τη διάταξη */
+    .sidebar-section .cta-block:first-child {
+        margin-top: 0 !important;
     }
 }
 

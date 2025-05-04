@@ -19,7 +19,19 @@ import SelfConfidencePage from './pages/SelfConfidencePage';
 import AdaptationPage from './pages/AdaptationPage';
 import FreePackagePage from './pages/FreePackagePage';
 import RegisterPage from './pages/RegisterPage';
-import TestAttachmentStyleQuestionnaire from './pages/tests/TestAttachmentStyleQuestionnaire'; // Διορθωμένη διαδρομή
+import TestAttachmentStyleQuestionnaire from './pages/tests/TestAttachmentStyleQuestionnaire';
+import TestBecksDepressionInventory from './pages/tests/TestBecksDepressionInventory';
+import TestCompACT from './pages/tests/TestCompACT';
+import TestGeneralSelfEfficacyScale from './pages/tests/TestGeneralSelfEfficacyScale';
+import TestLuscherColorTest from './pages/tests/TestLuscherColorTest';
+import TestMaritalSatisfactionAssessment from './pages/tests/TestMaritalSatisfactionAssessment';
+import TestRelationshipScalesQuestionnaire from './pages/tests/TestRelationshipScalesQuestionnaire';
+import TestRobsonSelfConceptQuestionnaire from './pages/tests/TestRobsonSelfConceptQuestionnaire';
+import TestRosenbergSelfEsteemScale from './pages/tests/TestRosenbergSelfEsteemScale';
+import TestRRS from './pages/tests/TestRRS';
+import TestSelfCompassionScale from './pages/tests/TestSelfCompassionScale';
+import TestZungSelfRatingAnxietyScale from './pages/tests/TestZungSelfRatingAnxietyScale';
+import FreeTherapyToolbox from './pages/FreeTherapyToolbox'; // Προσθήκη της νέας σελίδας
 
 function App() {
   return (
@@ -44,6 +56,18 @@ function App() {
         <Route path="/therapist-details" element={<TherapistsDetailsPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/test-attachment-style" element={<TestAttachmentStyleQuestionnaire />} />
+        <Route path="/test-becks-depression-inventory" element={<TestBecksDepressionInventory />} />
+        <Route path="/test-compact" element={<TestCompACT />} />
+        <Route path="/test-general-self-efficacy-scale" element={<TestGeneralSelfEfficacyScale />} />
+        <Route path="/test-luscher-color-test" element={<TestLuscherColorTest />} />
+        <Route path="/test-marital-satisfaction-assessment" element={<TestMaritalSatisfactionAssessment />} />
+        <Route path="/test-relationship-scales-questionnaire" element={<TestRelationshipScalesQuestionnaire />} />
+        <Route path="/test-robson-self-concept-questionnaire" element={<TestRobsonSelfConceptQuestionnaire />} />
+        <Route path="/test-rosenberg-self-esteem-scale" element={<TestRosenbergSelfEsteemScale />} />
+        <Route path="/test-rrs" element={<TestRRS />} />
+        <Route path="/test-self-compassion-scale" element={<TestSelfCompassionScale />} />
+        <Route path="/test-zung-self-rating-anxiety-scale" element={<TestZungSelfRatingAnxietyScale />} />
+        <Route path="/free-therapy-toolbox" element={<FreeTherapyToolbox />} /> {/* Προσθήκη της νέας διαδρομής */}
       </Routes>
       <NewFooter />
     </>
