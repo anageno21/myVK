@@ -1,9 +1,10 @@
+// src/App.js
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProductPage from './pages/ProductPage';
-import ContactUsPage from './pages/ContactUsPage'; // Αντικατάσταση του ContactPage με το ContactUsPage
+import ContactUsPage from './pages/ContactUsPage';
 import VictoriaKotenkoProfilePage from './components/VictoriaKotenkoProfilePage';
 import BlogLibrary from './pages/BlogLibrary';
 import BlogDetailsSection from './components/BlogDetailsSection';
@@ -54,7 +55,7 @@ function App() {
         <Route path="/relationship-service" element={<RelationshipServicePage />} />
         <Route path="/our-product" element={<ProductPage />} />
         <Route path="/product-details" element={<ProductDetailsPage />} />
-        <Route path="/contact-us" element={<ContactUsPage />} /> {/* Αντικατάσταση του ContactPage */}
+        <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/victoria-kotenko" element={<VictoriaKotenkoProfilePage />} />
         <Route path="/blog-library" element={<BlogLibrary />} />
         <Route path="/blog-details/:slug" element={<BlogDetailsSection />} />

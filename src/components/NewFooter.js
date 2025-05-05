@@ -17,7 +17,6 @@ const NewFooter = () => {
                       id="new-logo-footer"
                       src="/images/logo/footer-logo.png"
                       alt="Anageno"
-                      data-retina="/images/logo/footer-logo@2x.png"
                     />
                   </Link>
                 </div>
@@ -212,19 +211,15 @@ const NewFooter = () => {
                   <h6 className="title title-mobile">Subscribe Newsletter</h6>
                   <div className="new-tf-collapse-content">
                     <form className="new-form-send-email">
-                      <fieldset>
-                        <input
-                          type="email"
-                          placeholder="Your email address"
-                          name="email"
-                          aria-required="true"
-                          required
-                        />
-                      </fieldset>
+                      <input
+                        type="email"
+                        placeholder="Your email address"
+                        name="email"
+                        aria-required="true"
+                        required
+                      />
                       <div className="new-button-submit">
-                        <button type="submit">
-                          <i className="icon-PaperPlaneTilt"></i>
-                        </button>
+                        <button type="submit">Submit</button>
                       </div>
                     </form>
                     <p>

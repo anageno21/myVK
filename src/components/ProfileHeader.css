@@ -61,7 +61,7 @@ body::before {
 
 .profile-header-wrapper .header-logo {
   position: absolute;
-  top: 20px;
+  top: 28px;
   left: 307px; /* Προσθήκη απόστασης από το αριστερό άκρο */
 }
 
@@ -78,7 +78,7 @@ body::before {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 27px;
+  top: 37px;
 }
 
 .profile-header-wrapper .burger-menu {
@@ -205,7 +205,7 @@ body::before {
 .profile-header-wrapper .header-language {
   position: absolute;
   top: -10px;
-  left: calc(50% + 290px); /* Επαναφορά στην αρχική θέση πριν την αλλαγή */
+  left: calc(50% + 310px); /* Επαναφορά στην αρχική θέση πριν την αλλαγή */
   z-index: 3;
 }
 
