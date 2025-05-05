@@ -5,37 +5,80 @@
   z-index: 1000;
 }
 
+/* Προσθήκη οδηγών για το κέντρο, 920px και 1020px */
+body::before,
+body::after,
+body {
+  position: relative;
+}
+
+/* Κεντρική γραμμή (κέντρο της σελίδας) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: blue; /* Μπλε γραμμή για το κέντρο */
+  z-index: 9999;
+}
+
+/* Οδηγοί για 920px (αριστερά και δεξιά άκρη) */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 460px); /* 920px / 2 = 460px από το κέντρο */
+  width: 1px;
+  background-color: red; /* Κόκκινες γραμμές για 920px */
+  box-shadow: 920px 0 0 red; /* Δεύτερη γραμμή στα 920px (460px + 920px = δεξιά πλευρά) */
+  z-index: 9999;
+}
+
+/* Οδηγοί για 1020px (αριστερά και δεξιά άκρη) */
+body {
+  position: relative;
+}
+body::before {
+  box-shadow: -510px 0 0 green, 510px 0 0 green; /* 1020px / 2 = 510px από το κέντρο, πράσινες γραμμές */
+}
+
 .profile-header-wrapper .header-container {
   position: relative;
-  top: 20px;
+  top: 0; /* Αφαίρεση του top: 20px για να μην επηρεάζονται τα παιδιά */
   left: 0;
-  max-width: 920px;
   width: 100%;
   margin: 0 auto;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 40px;
+  padding: 0 40px; /* Επαναφορά padding για συνεπή απόσταση */
   box-sizing: border-box;
 }
 
 .profile-header-wrapper .header-logo {
   position: absolute;
   top: 20px;
-  left: 120px; /* Μετακίνηση 20px δεξιά */
+  left: 307px; /* Προσθήκη απόστασης από το αριστερό άκρο */
 }
 
 .profile-header-wrapper .header-logo img {
-  transform: scale(0.85);
-  transform-origin: center;
   height: 40px;
+  transform: scale(0.765);
+  transform-origin: center;
 }
 
 .profile-header-wrapper .header-menu {
   flex-grow: 0;
   display: flex;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 27px;
 }
 
 .profile-header-wrapper .burger-menu {
@@ -50,10 +93,14 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .profile-header-wrapper .navigation li {
   margin: 0 15px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .profile-header-wrapper .navigation li a {
@@ -62,18 +109,15 @@
   font-size: 14.4px;
   font-weight: normal;
   font-family: 'Playfair Display', serif;
-}
-
-.profile-header-wrapper .navigation li a:hover {
-  color: white !important;
-  background-color: #FF6F61;
-  padding: 3px 8px;
-  border-radius: 15px;
+  line-height: 1;
+  display: inline-block;
 }
 
 /* Στυλ για το dropdown menu (υπηρεσίες και councillors) */
 .profile-header-wrapper .navigation .dropdown {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .profile-header-wrapper .navigation .dropdown-header {
@@ -88,6 +132,7 @@
   font-weight: normal;
   font-family: 'Playfair Display', serif;
   text-decoration: none;
+  line-height: 1;
 }
 
 .profile-header-wrapper .navigation .dropdown > .dropdown-header > a:hover {
@@ -101,9 +146,10 @@
   color: #143B64 !important;
   font-size: 14.4px;
   cursor: pointer;
+  line-height: 1;
 }
 
-.profile-header-wrapper .navigation .dropdown > .dropdown-header > span:hover {
+.profile-header-wrapper .navigation ..dropdown > .dropdown-header > span:hover {
   color: #FF6F61 !important;
 }
 
@@ -112,7 +158,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 1);
   border: none;
   border-radius: 15px;
   list-style: none;
@@ -121,12 +167,12 @@
   z-index: 1001;
 }
 
-.profile-header-wrapper .navigation .dropdown:hover .dropdown-menu,
+.profile-header-wrapper .navigation .dropdown:hover ..dropdown-menu,
 .profile-header-wrapper .navigation .dropdown-menu:hover {
   display: block;
 }
 
-.profile-header-wrapper .navigation .dropdown.open .dropdown-menu {
+.profile-header-wrapper .navigation .dropdown.open ..dropdown-menu {
   display: block;
 }
 
@@ -157,9 +203,10 @@
 }
 
 .profile-header-wrapper .header-language {
-  flex-shrink: 0;
-  margin-right: 20px;
-  position: relative;
+  position: absolute;
+  top: -10px;
+  left: calc(50% + 290px); /* Επαναφορά στην αρχική θέση πριν την αλλαγή */
+  z-index: 3;
 }
 
 .profile-header-wrapper .custom-select {
@@ -171,9 +218,10 @@
   font-size: 14.4px;
   font-weight: normal;
   font-family: 'Playfair Display', serif;
-  padding: 10px 20px; /* Ίδιο padding με το login-link */
-  border-radius: 20px; /* Ίδιο border-radius με το login-link */
+  padding: 10px 20px;
+  border-radius: 20px;
   cursor: pointer;
+  line-height: 1; /* Εξασφαλίζει σταθερό ύψος */
 }
 
 .profile-header-wrapper .custom-select:hover {
@@ -195,7 +243,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(255, 255, 255, 0.5); /* Ίδιο background με το dropdown-menu */
+  background: rgba(255, 255, 255, 1);
   border: none;
   border-radius: 15px;
   list-style: none;
@@ -220,11 +268,14 @@
 }
 
 .profile-header-wrapper .header-login {
-  flex-shrink: 0;
+  position: absolute;
+  top: -3px;
+  left: calc(50% + 425px);
+  z-index: 3;
 }
 
 .profile-header-wrapper .login-link {
-  color: #0B2B33 !important;
+  color: #143B64 !important;
   text-decoration: none;
   font-size: 14.4px;
   font-weight: normal;
@@ -232,6 +283,7 @@
   padding: 10px 20px;
   border: 1px solid #143B64 !important;
   border-radius: 20px;
+  line-height: 1; /* Εξασφαλίζει σταθερό ύψος */
 }
 
 .profile-header-wrapper .login-link:hover {
@@ -276,11 +328,15 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    position: static;
+    transform: none;
+    align-items: flex-start;
   }
 
   .profile-header-wrapper .navigation li {
     margin: 10px 0;
     text-align: center;
+    display: block;
   }
 
   .profile-header-wrapper .navigation li a {
@@ -288,6 +344,7 @@
     display: block;
     padding: 10px 0;
     color: #FFFFFF !important;
+    line-height: 1;
   }
 
   .profile-header-wrapper .navigation li a:hover {
@@ -301,6 +358,7 @@
     position: static;
     width: 100%;
     text-align: center;
+    display: block;
   }
 
   .profile-header-wrapper .navigation .dropdown-header {
@@ -317,6 +375,7 @@
     color: #FFFFFF !important;
     z-index: 1001;
     touch-action: manipulation;
+    line-height: 1;
   }
 
   .profile-header-wrapper .navigation .dropdown > .dropdown-header > a:hover {
@@ -331,6 +390,7 @@
     cursor: pointer;
     z-index: 1001;
     touch-action: manipulation;
+    line-height: 1;
   }
 
   .profile-header-wrapper .navigation .dropdown > .dropdown-header > span:hover {
@@ -345,7 +405,7 @@
     margin: 5px 0;
   }
 
-  .profile-header-wrapper .navigation .dropdown.open .dropdown-menu {
+  .profile-header-wrapper .navigation .dropdown.open ..dropdown-menu {
     display: block;
   }
 
@@ -370,6 +430,7 @@
   }
 
   .profile-header-wrapper .header-language {
+    position: static; /* Επιστροφή σε static για να ακολουθεί τη ροή */
     margin: 10px 0;
     width: 100%;
     text-align: center;
@@ -412,6 +473,7 @@
   }
 
   .profile-header-wrapper .header-login {
+    position: static;
     margin: 10px 0;
     width: 100%;
     text-align: center;
@@ -529,6 +591,6 @@
 
   .profile-header-wrapper .login-link {
     font-size: 12px;
-    padding: 6px 12px;
+    padding: 8px 16px;
   }
 }

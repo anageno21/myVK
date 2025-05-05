@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ProfileHeader from '../components/ProfileHeader';
 import NewFooter from '../components/NewFooter';
@@ -63,6 +63,41 @@ const FreeTherapyToolbox = () => {
       url: '/test-rrs',
     },
   ];
+
+  // Λίστα με τα δεδομένα των βίντεο
+  const videosData = Array(9).fill({
+    src: '/videos/VK/vkIntro.mp4',
+  }).map((video, index) => ({
+    ...video,
+    id: index + 1, // Δίνουμε μοναδικό id σε κάθε βίντεο
+  }));
+
+  // State για να παρακολουθούμε ποιο βίντεο παίζει αυτή τη στιγμή
+  const [playingVideoId, setPlayingVideoId] = useState(null);
+
+  // Ref για να αποθηκεύσουμε τις αναφορές σε όλα τα video elements
+  const videoRefs = useRef({});
+
+  // Συνάρτηση που καλείται όταν ένα βίντεο αρχίζει να παίζει
+  const handlePlay = (videoId) => {
+    setPlayingVideoId(videoId);
+
+    // Κάνουμε mute όλα τα άλλα βίντεο
+    Object.keys(videoRefs.current).forEach((id) => {
+      if (parseInt(id) !== videoId && videoRefs.current[id]) {
+        videoRefs.current[id].muted = true;
+      } else if (videoRefs.current[id]) {
+        videoRefs.current[id].muted = false;
+      }
+    });
+  };
+
+  // Συνάρτηση που καλείται όταν ένα βίντεο σταματάει
+  const handlePause = (videoId) => {
+    if (playingVideoId === videoId) {
+      setPlayingVideoId(null);
+    }
+  };
 
   return (
     <div
@@ -292,10 +327,11 @@ const FreeTherapyToolbox = () => {
                   justifyContent: 'space-between',
                 }}
               >
-                {/* Πρώτη σειρά: 3 βίντεο */}
-                <Link to="/test-zung-self-rating-anxiety-scale">
+                {videosData.map((video) => (
                   <video
-                    src="/videos/VK/vkIntro.mp4"
+                    key={video.id}
+                    ref={(el) => (videoRefs.current[video.id] = el)} // Αποθηκεύουμε την αναφορά στο video
+                    src={video.src}
                     controls
                     style={{
                       width: '140px',
@@ -303,106 +339,10 @@ const FreeTherapyToolbox = () => {
                       borderRadius: '10px',
                       objectFit: 'cover',
                     }}
+                    onPlay={() => handlePlay(video.id)}
+                    onPause={() => handlePause(video.id)}
                   />
-                </Link>
-                <Link to="/test-zung-self-rating-anxiety-scale">
-                  <video
-                    src="/videos/VK/vkIntro.mp4"
-                    controls
-                    style={{
-                      width: '140px',
-                      height: '249px',
-                      borderRadius: '10px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Link>
-                <Link to="/test-zung-self-rating-anxiety-scale">
-                  <video
-                    src="/videos/VK/vkIntro.mp4"
-                    controls
-                    style={{
-                      width: '140px',
-                      height: '249px',
-                      borderRadius: '10px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Link>
-                {/* Δεύτερη σειρά: 3 βίντεο */}
-                <Link to="/test-zung-self-rating-anxiety-scale">
-                  <video
-                    src="/videos/VK/vkIntro.mp4"
-                    controls
-                    style={{
-                      width: '140px',
-                      height: '249px',
-                      borderRadius: '10px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Link>
-                <Link to="/test-zung-self-rating-anxiety-scale">
-                  <video
-                    src="/videos/VK/vkIntro.mp4"
-                    controls
-                    style={{
-                      width: '140px',
-                      height: '249px',
-                      borderRadius: '10px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Link>
-                <Link to="/test-zung-self-rating-anxiety-scale">
-                  <video
-                    src="/videos/VK/vkIntro.mp4"
-                    controls
-                    style={{
-                      width: '140px',
-                      height: '249px',
-                      borderRadius: '10px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Link>
-                {/* Τρίτη σειρά: 3 βίντεο */}
-                <Link to="/test-zung-self-rating-anxiety-scale">
-                  <video
-                    src="/videos/VK/vkIntro.mp4"
-                    controls
-                    style={{
-                      width: '140px',
-                      height: '249px',
-                      borderRadius: '10px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Link>
-                <Link to="/test-zung-self-rating-anxiety-scale">
-                  <video
-                    src="/videos/VK/vkIntro.mp4"
-                    controls
-                    style={{
-                      width: '140px',
-                      height: '249px',
-                      borderRadius: '10px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Link>
-                <Link to="/test-zung-self-rating-anxiety-scale">
-                  <video
-                    src="/videos/VK/vkIntro.mp4"
-                    controls
-                    style={{
-                      width: '140px',
-                      height: '249px',
-                      borderRadius: '10px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Link>
+                ))}
               </div>
             </div>
             {/* Δεύτερο δεξί πλαίσιο: Библиотека */}

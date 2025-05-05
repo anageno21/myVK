@@ -103,6 +103,9 @@ function BlogLibrary() {
   // State για το φιλτράρισμα ανά κατηγορία και author
   const [selectedCategory, setSelectedCategory] = useState('Все категории');
   const [selectedAuthor, setSelectedAuthor] = useState('Все авторы');
+  // State για την τρέχουσα σελίδα
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 8; // 8 blog posts ανά σελίδα
 
   // Κατηγορίες για το φιλτράρισμα
   const categories = [
@@ -130,19 +133,47 @@ function BlogLibrary() {
     filteredPosts = filteredPosts.filter(post => post.author === selectedAuthor);
   }
 
+  // Υπολογισμός του συνολικού αριθμού σελίδων
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+  // Υπολογισμός των posts που θα εμφανίζονται στην τρέχουσα σελίδα
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Λειτουργίες για την πλοήγηση
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo(0, 0); // Επαναφορά του scroll στην κορυφή
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      window.scrollTo(0, 0);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <div className="blog-library-page">
       <ProfileHeader />
       <main className="blog-library-content">
         <div className="container">
           <div className="blog-header">
-            <h1>Anageno Blog</h1>
+            <h1>Психология на каждый день</h1>
             <h2>Откройте для себя идеи, советы и стратегии, которые помогут поддерживать ваше психическое здоровье и личностный рост.</h2>
           </div>
           <div className="blog-body">
             <div className="blog-content">
               <div className="blog-posts">
-                {filteredPosts.map((post, index) => (
+                {currentPosts.map((post, index) => (
                   <div className="blog-post" key={index}>
                     <div className="post-image">
                       <img src={post.image} alt={post.alt} />
@@ -169,7 +200,7 @@ function BlogLibrary() {
                 <div className="sidebar-widget sidebar-search">
                   <h3>Поиск</h3>
                   <div className="search-form">
-                    <input type="text" placeholder="Search articles..." />
+                    <input type="text" placeholder="Искать среди статей..." />
                     <button type="button"><i className="las la-search"></i></button>
                   </div>
                 </div>
@@ -179,7 +210,7 @@ function BlogLibrary() {
                     {categories.map((category, index) => (
                       <li
                         key={index}
-                        onClick={() => setSelectedCategory(category)}
+                        onClick={() => { setSelectedCategory(category); setCurrentPage(1); }}
                         style={{
                           cursor: 'pointer',
                           fontWeight: selectedCategory === category ? 'bold' : 'normal',
@@ -197,7 +228,7 @@ function BlogLibrary() {
                     {authors.map((author, index) => (
                       <li
                         key={index}
-                        onClick={() => setSelectedAuthor(author)}
+                        onClick={() => { setSelectedAuthor(author); setCurrentPage(1); }}
                         style={{
                           cursor: 'pointer',
                           fontWeight: selectedAuthor === author ? 'bold' : 'normal',
@@ -228,11 +259,36 @@ function BlogLibrary() {
                 </div>
               </div>
             </div>
+            {/* Δυναμική Pagination */}
             <div className="blog-pagination">
-              <button className="page-btn active">1</button>
-              <button className="page-btn">2</button>
-              <button className="page-btn">3</button>
-              <button className="page-btn next"><i className="las la-arrow-right"></i></button>
+              {/* Κουμπί "Προηγούμενο" - Εμφανίζεται από τη δεύτερη σελίδα και μετά */}
+              {currentPage > 1 && (
+                <button
+                  className="page-btn prev"
+                  onClick={handlePrevPage}
+                >
+                  <i className="las la-arrow-left"></i>
+                </button>
+              )}
+              {/* Κουμπιά για κάθε σελίδα */}
+              {Array.from({ length: totalPages }, (_, index) => (
+                <button
+                  key={index + 1}
+                  className={`page-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                  onClick={() => handlePageChange(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              ))}
+              {/* Κουμπί "Επόμενο" - Εμφανίζεται αν υπάρχει επόμενη σελίδα */}
+              {currentPage < totalPages && (
+                <button
+                  className="page-btn next"
+                  onClick={handleNextPage}
+                >
+                  <i className="las la-arrow-right"></i>
+                </button>
+              )}
             </div>
           </div>
         </div>

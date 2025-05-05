@@ -1,9 +1,9 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProductPage from './pages/ProductPage';
-import ContactPage from './pages/ContactPage';
+import ContactUsPage from './pages/ContactUsPage'; // Αντικατάσταση του ContactPage με το ContactUsPage
 import VictoriaKotenkoProfilePage from './components/VictoriaKotenkoProfilePage';
 import BlogLibrary from './pages/BlogLibrary';
 import BlogDetailsSection from './components/BlogDetailsSection';
@@ -31,9 +31,15 @@ import TestRosenbergSelfEsteemScale from './pages/tests/TestRosenbergSelfEsteemS
 import TestRRS from './pages/tests/TestRRS';
 import TestSelfCompassionScale from './pages/tests/TestSelfCompassionScale';
 import TestZungSelfRatingAnxietyScale from './pages/tests/TestZungSelfRatingAnxietyScale';
-import FreeTherapyToolbox from './pages/FreeTherapyToolbox'; // Προσθήκη της νέας σελίδας
+import FreeTherapyToolbox from './pages/FreeTherapyToolbox';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
       <Routes>
@@ -48,7 +54,7 @@ function App() {
         <Route path="/relationship-service" element={<RelationshipServicePage />} />
         <Route path="/our-product" element={<ProductPage />} />
         <Route path="/product-details" element={<ProductDetailsPage />} />
-        <Route path="/contact-us" element={<ContactPage />} />
+        <Route path="/contact-us" element={<ContactUsPage />} /> {/* Αντικατάσταση του ContactPage */}
         <Route path="/victoria-kotenko" element={<VictoriaKotenkoProfilePage />} />
         <Route path="/blog-library" element={<BlogLibrary />} />
         <Route path="/blog-details/:slug" element={<BlogDetailsSection />} />
@@ -67,7 +73,7 @@ function App() {
         <Route path="/test-rrs" element={<TestRRS />} />
         <Route path="/test-self-compassion-scale" element={<TestSelfCompassionScale />} />
         <Route path="/test-zung-self-rating-anxiety-scale" element={<TestZungSelfRatingAnxietyScale />} />
-        <Route path="/free-therapy-toolbox" element={<FreeTherapyToolbox />} /> {/* Προσθήκη της νέας διαδρομής */}
+        <Route path="/free-therapy-toolbox" element={<FreeTherapyToolbox />} />
       </Routes>
       <NewFooter />
     </>

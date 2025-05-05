@@ -1,10 +1,9 @@
-/* src/components/ConnectWithUs.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 .connect-with-us-section {
   width: 100%;
   min-height: 500px;
-  background-color: #EDEBE8;
+  background-color: #f2f1f0;
   display: block;
   padding: 40px 0;
   position: static;
@@ -14,7 +13,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1020px;
   margin: 0 auto;
   padding: 0 40px;
   position: static;
@@ -43,7 +42,7 @@
 .section-header h2 {
   font-size: 48px;
   font-weight: 700;
-  color: #173A37;
+  color: #143B64;
   line-height: 1.2;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
@@ -56,36 +55,13 @@
 .section-header p {
   font-size: 16px;
   line-height: 1.6;
-  color: #666;
+  color: #2F4C66;
   font-family: 'Playfair Display', serif;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contact-item .icon {
-  font-size: 20px;
-}
-
-.contact-item p {
-  font-size: 16px;
-  color: #173A37;
-  font-family: 'Playfair Display', serif;
-  margin: 0;
 }
 
 .right-section {
   width: 50%;
-  background-color: #7FC7D0;
+  background-color: #f5f5f5;
   padding: 40px;
   border-radius: 20px;
 }
@@ -99,7 +75,7 @@
 .consultation-form h3 {
   font-size: 24px;
   font-weight: 700;
-  color: #173A37;
+  color: #143B64;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
 }
@@ -122,7 +98,7 @@
 }
 
 .consultation-form button {
-  background-color: #FF6F61;
+  background-color: #8EB5BA; /* Αλλαγή από #21aabc σε #8EB5BA */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -133,13 +109,20 @@
 }
 
 .consultation-form button:hover {
-  background-color: #E65A50;
+  background-color: #143B64;
+}
+
+.status-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #173A37;
+  font-family: 'Playfair Display', serif;
 }
 
 /* Media Queries για Κινητά */
 @media (max-width: 768px) {
   .connect-with-us-section {
-    min-height: auto; /* Αφήνουμε το ύψος να προσαρμοστεί */
+    min-height: auto;
     padding: 20px 0;
   }
 
@@ -148,13 +131,13 @@
   }
 
   .split-container {
-    flex-direction: column; /* Στήλη αντί για σειρά */
+    flex-direction: column;
     gap: 20px;
   }
 
   .left-section,
   .right-section {
-    width: 100%; /* Καταλαμβάνουν όλο το πλάτος */
+    width: 100%;
     box-sizing: border-box;
   }
 
@@ -170,18 +153,6 @@
   .section-header p {
     font-size: 14px;
     margin-bottom: 15px;
-  }
-
-  .contact-info {
-    gap: 10px;
-  }
-
-  .contact-item .icon {
-    font-size: 18px;
-  }
-
-  .contact-item p {
-    font-size: 14px;
   }
 
   .right-section {
@@ -207,6 +178,10 @@
   .consultation-form button {
     padding: 8px 16px;
     font-size: 14px;
+  }
+
+  .status-message {
+    font-size: 12px;
   }
 }
 
@@ -237,18 +212,6 @@
     margin-bottom: 10px;
   }
 
-  .contact-info {
-    gap: 8px;
-  }
-
-  .contact-item .icon {
-    font-size: 16px;
-  }
-
-  .contact-item p {
-    font-size: 12px;
-  }
-
   .right-section {
     padding: 15px;
   }
@@ -272,6 +235,10 @@
   .consultation-form button {
     padding: 6px 12px;
     font-size: 12px;
+  }
+
+  .status-message {
+    font-size: 11px;
   }
 }
 
@@ -302,18 +269,6 @@
     margin-bottom: 8px;
   }
 
-  .contact-info {
-    gap: 6px;
-  }
-
-  .contact-item .icon {
-    font-size: 14px;
-  }
-
-  .contact-item p {
-    font-size: 11px;
-  }
-
   .right-section {
     padding: 10px;
   }
@@ -337,5 +292,9 @@
   .consultation-form button {
     padding: 5px 10px;
     font-size: 11px;
+  }
+
+  .status-message {
+    font-size: 10px;
   }
 }

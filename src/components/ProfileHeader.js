@@ -65,7 +65,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
         </div>
         <nav className={`header-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul className="navigation">
-            <li><Link to="/about" className={isDarkBackground ? 'light-text' : 'dark-text'}>About</Link></li>
+            <li><Link to="/about" className={isDarkBackground ? 'light-text' : 'dark-text'}>О нас</Link></li>
             <li
               className="dropdown"
               onMouseEnter={() => handleMouseEnterDropdown('services')}
@@ -80,7 +80,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
                   }}
                   className={isDarkBackground ? 'light-text' : 'dark-text'}
                 >
-                  Services
+                  Услуги
                 </Link>
                 <span onClick={toggleDropdown} className={`dropdown-toggle ${isDarkBackground ? 'light-text' : 'dark-text'}`}>
                   <i className={`las ${isDropdownOpen ? 'la-angle-up' : 'la-angle-down'}`}></i>
@@ -91,10 +91,10 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
                 onMouseEnter={() => handleMouseEnterDropdown('services')}
                 onMouseLeave={handleMouseLeaveDropdown}
               >
-                <li><Link to="/services/relationships" className={isDarkBackground ? 'light-text' : 'dark-text'}>Relationship</Link></li>
-                <li><Link to="/stress-anxiety" className={isDarkBackground ? 'light-text' : 'dark-text'}>Stress / Anxiety</Link></li>
-                <li><Link to="/self-confidence" className={isDarkBackground ? 'light-text' : 'dark-text'}>Self-Confidence / Self-Esteem</Link></li>
-                <li><Link to="/adaptation" className={isDarkBackground ? 'light-text' : 'dark-text'}>Adaptation</Link></li>
+                <li><Link to="/services/relationships" className={isDarkBackground ? 'light-text' : 'dark-text'}>Отношения</Link></li>
+                <li><Link to="/services/stress-anxiety" className={isDarkBackground ? 'light-text' : 'dark-text'}>Стресс / Тревога</Link></li>
+                <li><Link to="/services/self-confidence" className={isDarkBackground ? 'light-text' : 'dark-text'}>Уверенность в себе</Link></li>
+                <li><Link to="/services/adaptation" className={isDarkBackground ? 'light-text' : 'dark-text'}>Адаптация</Link></li>
               </ul>
             </li>
             <li
@@ -111,7 +111,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
                   }}
                   className={isDarkBackground ? 'light-text' : 'dark-text'}
                 >
-                  Councillors
+                  Терапевты
                 </Link>
                 <span onClick={toggleCouncillorsDropdown} className={`dropdown-toggle ${isDarkBackground ? 'light-text' : 'dark-text'}`}>
                   <i className={`las ${isCouncillorsDropdownOpen ? 'la-angle-up' : 'la-angle-down'}`}></i>
@@ -122,10 +122,10 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
                 onMouseEnter={() => handleMouseEnterDropdown('councillors')}
                 onMouseLeave={handleMouseLeaveDropdown}
               >
-                <li><Link to="/victoria-kotenko" className={isDarkBackground ? 'light-text' : 'dark-text'}>Victoria Kotenko</Link></li>
+                <li><Link to="/victoria-kotenko" className={isDarkBackground ? 'light-text' : 'dark-text'}>Виктория Котенко</Link></li>
               </ul>
             </li>
-            <li><Link to="/our-product" className={isDarkBackground ? 'light-text' : 'dark-text'}>Shop</Link></li>
+            <li><Link to="/our-product" className={isDarkBackground ? 'light-text' : 'dark-text'}>Магазин</Link></li>
             <li>
               <Link
                 to="/blog-library"
@@ -135,10 +135,10 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
                 }}
                 className={isDarkBackground ? 'light-text' : 'dark-text'}
               >
-                Blog
+                Блог
               </Link>
             </li>
-            <li><Link to="/contact-us" className={isDarkBackground ? 'light-text' : 'dark-text'}>Contact</Link></li>
+            <li><Link to="/contact-us" className={isDarkBackground ? 'light-text' : 'dark-text'}>Контакты</Link></li>
           </ul>
           <div className="header-language">
             <div className={`custom-select ${isDarkBackground ? 'light-text' : 'dark-text'}`}>
@@ -157,7 +157,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
             </ul>
           </div>
           <div className="header-login">
-            <Link to="/login" className={`login-link ${isDarkBackground ? 'light-text' : 'dark-text'}`}>Log In</Link>
+            <Link to="/login" className={`login-link ${isDarkBackground ? 'light-text' : 'dark-text'}`}>Войти</Link>
           </div>
         </nav>
       </div>
