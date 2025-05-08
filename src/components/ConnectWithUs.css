@@ -1,9 +1,10 @@
+/* src/components/ConnectWithUs.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 .connect-with-us-section {
   width: 100%;
   min-height: 500px;
-  background-color: #f2f1f0; /* Ήδη #f2f1f0, δεν χρειάζεται αλλαγή */
+  background-color: #f2f1f0;
   display: block;
   padding: 40px 0;
   position: static;
@@ -36,6 +37,7 @@
 }
 
 .section-header {
+  margin-top: 50px; /* Μετακίνηση του κειμένου πιο χαμηλά κατά 50px */
   margin-bottom: 40px;
 }
 
@@ -98,7 +100,7 @@
 }
 
 .consultation-form button {
-  background-color: #8EB5BA; /* Αλλαγή από #21aabc σε #8EB5BA */
+  background-color: #8EB5BA;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -142,6 +144,7 @@
   }
 
   .section-header {
+    margin-top: 30px; /* Λιγότερη μετακίνηση σε μικρότερες οθόνες */
     margin-bottom: 20px;
   }
 
@@ -199,6 +202,7 @@
   }
 
   .section-header {
+    margin-top: 20px; /* Ακόμα λιγότερη μετακίνηση σε πολύ μικρές οθόνες */
     margin-bottom: 15px;
   }
 
@@ -256,6 +260,7 @@
   }
 
   .section-header {
+    margin-top: 15px; /* Ελάχιστη μετακίνηση σε πολύ μικρές οθόνες */
     margin-bottom: 10px;
   }
 
