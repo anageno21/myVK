@@ -1,17 +1,18 @@
+/* src/components/AboutAnageno.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 .about-anageno {
   width: 100%;
-  height: auto; /* Αφαίρεση σταθερού ύψους για να προσαρμοστεί στο περιεχόμενο */
-  background-color: #EDEBE8;
+  height: auto;
+  background-color: #f2f1f0 !important;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   margin: 0;
-  padding: 50px 0; /* Προσθήκη padding για καλύτερη εμφάνιση */
-  margin-bottom: 50px; /* Απόσταση από την επόμενη ενότητα */
-  z-index: 1; /* Χαμηλότερο z-index από τον HeroSlider */
+  padding: 50px 0;
+  margin-bottom: 50px;
+  z-index: 1;
 }
 
 .container {
@@ -22,12 +23,12 @@
 
 .about-content {
   display: flex;
-  align-items: stretch;
+  align-items: flex-end;
   gap: 40px;
 }
 
 .about-text {
-  flex: 1;
+  flex: 0 0 45%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -36,8 +37,8 @@
 
 .image-frame {
   width: 100%;
-  min-height: 400px; /* Διατήρηση min-height, αλλά με προσαρμογή σε μικρότερες οθόνες */
-  background-color: #F9E2DC;
+  min-height: 400px;
+  background-color: #edbfab;
   border-radius: 20px;
   padding: 40px;
   position: relative;
@@ -58,7 +59,7 @@
   position: absolute;
   bottom: 40px;
   left: 40px;
-  color: #173A37;
+  color: #143B64;
   text-align: left;
   z-index: 1;
 }
@@ -66,7 +67,7 @@
 .image-content h3 {
   font-size: 28px;
   font-weight: 700;
-  color: #173A37;
+  color: #143B64;
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
 }
@@ -74,19 +75,19 @@
 .image-content p {
   font-size: 16px;
   line-height: 1.6;
-  color: #173A37;
+  color: #143B64;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
 }
 
 .image-content .read-more {
   display: inline-block;
-  color: #173A37;
+  color: #143B64;
   text-decoration: none;
   font-size: 14px;
   font-family: 'Playfair Display', serif;
   padding: 5px 15px;
-  border: 1px solid #173A37;
+  border: 1px solid #143B64;
   border-radius: 15px;
 }
 
@@ -100,51 +101,45 @@
   flex: 1;
   display: flex;
   align-items: center;
-  background-color: #F0CFBC;
+  background-color: #edbfab;
   border-radius: 20px;
   padding: 40px;
   position: relative;
   overflow: hidden;
-  min-height: 480px; /* Διατήρηση min-height, αλλά με προσαρμογή σε μικρότερες οθόνες */
+  min-height: 480px;
 }
 
 .frame-content {
   flex: 1;
   z-index: 2;
-}
-
-.frame-content .sub-title {
-  display: block;
-  color: #FF6F61;
-  font-size: 14px;
-  margin-bottom: 10px;
-  font-family: 'Playfair Display', serif;
-  text-transform: uppercase;
+  padding-left: 20px; /* Μείωση του padding-left για να φέρουμε το κείμενο πιο κοντά στην αριστερή πλευρά */
 }
 
 .frame-content h2 {
   font-size: 48px;
   font-weight: 700;
-  color: #173A37;
+  color: #143B64;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
   line-height: 1.0;
+  text-align: start; /* Στοίχιση αριστερά */
 }
 
 .frame-content p {
   font-size: 16px;
   line-height: 1.6;
-  color: #173A37;
+  color: #143B64;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
+  text-align: start; /* Στοίχιση αριστερά */
 }
 
 /* Media Queries για Κινητά */
 @media (max-width: 768px) {
   .about-anageno {
-    height: auto; /* Διατήρηση της δυναμικής προσαρμογής ύψους */
+    height: auto;
     padding: 40px 0;
-    margin-bottom: 40px; /* Απόσταση από την επόμενη ενότητα */
+    margin-bottom: 40px;
   }
 
   .container {
@@ -154,6 +149,7 @@
   .about-content {
     flex-direction: column;
     gap: 20px;
+    align-items: stretch;
   }
 
   .about-text {
@@ -163,16 +159,15 @@
   }
 
   .therapy-frame {
-    min-height: 350px; /* Μείωση ύψους */
+    min-height: 350px;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
   }
 
-  .frame-content .sub-title {
-    font-size: 12px;
-    margin-bottom: 8px;
+  .frame-content {
+    padding-left: 15px; /* Μείωση του padding-left για μικρότερες οθόνες */
   }
 
   .frame-content h2 {
@@ -187,7 +182,7 @@
   }
 
   .image-frame {
-    min-height: 300px; /* Μείωση ύψους της εικόνας */
+    min-height: 300px;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
@@ -238,9 +233,8 @@
     padding: 15px;
   }
 
-  .frame-content .sub-title {
-    font-size: 10px;
-    margin-bottom: 6px;
+  .frame-content {
+    padding-left: 10px; /* Μείωση του padding-left για μικρότερες οθόνες */
   }
 
   .frame-content h2 {
@@ -291,9 +285,8 @@
     padding: 10px;
   }
 
-  .frame-content .sub-title {
-    font-size: 9px;
-    margin-bottom: 5px;
+  .frame-content {
+    padding-left: 5px; /* Μείωση του padding-left για πολύ μικρές οθόνες */
   }
 
   .frame-content h2 {

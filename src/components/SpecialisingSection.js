@@ -8,7 +8,6 @@ const SpecialisingSection = () => {
     <section className="specialising-section">
       <div className="container">
         <div className="section-header">
-          <span className="sub-title">Specialising Services</span>
           <h2>Основные направления поддержки</h2>
           <p>
             Our all-female team provides specialized psychology services to support women in overcoming challenges and achieving emotional well-being.

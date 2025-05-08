@@ -1,8 +1,14 @@
+// src/components/TwoColumnSection.js
 import React from 'react';
 import { Instagram, Facebook, Twitter } from 'react-feather';
 import './TwoColumnSection.css';
 
-const TwoColumnSection = () => {
+const TwoColumnSection = ({ therapist }) => {
+  // Εάν το therapist δεν υπάρχει, εμφανίζουμε κενό περιεχόμενο ή μήνυμα σφάλματος
+  if (!therapist) {
+    return <section className="two-column-section"><p>Ошибка: Психолог не найден.</p></section>;
+  }
+
   return (
     <section className="two-column-section">
       <div className="two-column-content">
@@ -10,7 +16,7 @@ const TwoColumnSection = () => {
           <div className="media-frame">
             <img
               src="/images/councillors/VK/vkIntro.jpg"
-              alt="Victoriia Kotenko Intro"
+              alt={`${therapist.name} Intro`}
               className="media-image"
             />
           </div>
@@ -45,10 +51,10 @@ const TwoColumnSection = () => {
         </div>
         <div className="right-column">
           <div className="therapist-info">
-            <h1>Victoria Kotenko</h1>
-            <h2>Certified Psychotherapist</h2>
+            <h1>{therapist.name}</h1>
+            <h2>{therapist.title}</h2>
             <p className="therapist-specialization">
-              Expert in Stress Management and Emotional Resilience
+              {therapist.category}
             </p>
             <h3 className="welcome-title">Добро пожаловать</h3>
             <p className="highlight-text">
@@ -56,7 +62,7 @@ const TwoColumnSection = () => {
               теперь готова сопровождать других.
             </p>
             <p>
-              Меня зовут Виктория. Я практикующий психолог, работающий в
+              Меня зовут {therapist.name}. Я практикующий психолог, работающий в
               интегративном подходе — это значит, что в работе я опираюсь на
               разные современные школы психологии (гештальт,
               когнитивно-поведенческая терапия, психоанализ и другие), выбирая
@@ -138,7 +144,7 @@ const TwoColumnSection = () => {
             alt="Cat Image"
             className="cta-image"
           />
-          <p className="cta-title">Свяжитесь с Викторией</p>
+          <p className="cta-title">Свяжитесь с {therapist.name}</p>
           <p className="cta-email">
             Отправить письмо: <a href="mailto:[Insert Email]">[Insert Email]</a>
           </p>

@@ -6,7 +6,7 @@ import './FavouriteTopics.css';
 const FavouriteTopics = () => {
   const blogPosts = [
     {
-      date: "15 OCT", // Ημερομηνία για το πρώτο blog post
+      date: "15 OCT",
       image: "/images/blog/blog1.jpg",
       alt: "Созависимость: как распознать нездоровые отношения и вернуть себя",
       category: "Отношения",
@@ -15,7 +15,7 @@ const FavouriteTopics = () => {
       link: "/blog/mindfulness",
     },
     {
-      date: "16 OCT", // Ημερομηνία για το δεύτερο blog post
+      date: "16 OCT",
       image: "/images/blog/blog2.jpg",
       alt: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
       category: "Самооценка / Отношения",
@@ -24,7 +24,7 @@ const FavouriteTopics = () => {
       link: "/blog/self-care",
     },
     {
-      date: "17 OCT", // Ημερομηνία για το τρίτο blog post
+      date: "17 OCT",
       image: "/images/blog/blog3.jpg",
       alt: "Майндфулнесс: внимание, которое лечит",
       category: "Самооценка / Отношения",
@@ -38,9 +38,7 @@ const FavouriteTopics = () => {
     <section className="favourite-topics-section">
       <div className="container">
         <div className="section-header">
-          <span className="sub-title">Избранные материалы</span>
-          <h2>Anageno Blog</h2>
-          <p>Твой психологический гид</p>
+          <h2>Психология на каждый день</h2>
         </div>
         <div className="topics-grid">
           {blogPosts.map((post, index) => (

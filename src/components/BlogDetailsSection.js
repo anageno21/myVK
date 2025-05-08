@@ -1,8 +1,11 @@
+// src/pages/BlogDetailsSection.js
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import HeroSlider from './HeroSlider';
 import ProfileHeader from './ProfileHeader';
 import { FiInstagram, FiMail, FiMusic, FiMessageCircle, FiTwitter, FiFacebook } from 'react-icons/fi';
+import therapists from '../data/therapistsData'; // Εισαγωγή των δεδομένων των ψυχολόγων
+import blogPosts from '../data/blogPostsData'; // Εισαγωγή των δεδομένων των blog posts
 import './BlogDetailsSection.css';
 import './HeroSlider.css';
 
@@ -55,90 +58,6 @@ const BlogDetailsSection = () => {
       });
     }
   }, [slug]);
-
-  const featuredPosts = [
-    {
-      date: "05 НОЯ",
-      image: "/images/blog/blg001a.jpg",
-      alt: "Созависимость: как распознать и выйти из нездоровых отношений",
-      category: "Отношения",
-      title: "Созависимость: как распознать и выйти из нездоровых отношений",
-      description: "Когда забота становится жертвой, а любовь — контролем, это не близость, а созависимость. Мы разбираем её признаки, причины и последствия, а главное — путь к исцелению через возвращение к себе.",
-      link: "/blog-details/codependency",
-    },
-    {
-      date: "07 НОЯ",
-      image: "/images/blog/blg002a.jpg",
-      alt: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
-      category: "Уверенность в себе / Самооценка",
-      title: "Эмоциональный интеллект: как понимать свои чувства и управлять ими",
-      description: "Узнайте, что такое эмоциональный интеллект и почему он важен для личного и профессионального роста.",
-      link: "/blog-details/emotional-intelligence",
-    },
-    {
-      date: "15 НОЯ",
-      image: "/images/blog/blg003a.jpg",
-      alt: "Майндфулнесс: внимание, которое лечит",
-      category: "Стресс / Тревога",
-      title: "Майндфулнесс: внимание, которое лечит",
-      description: "Осознанность помогает снизить стресс и улучшить качество жизни. Узнайте, как практиковать mindfulness в повседневной жизни, чтобы оставаться в настоящем моменте и находить внутренний покой.",
-      link: "/blog-details/mindfulness",
-    },
-    {
-      date: "18 НОЯ",
-      image: "/images/blog/blg004a.jpg",
-      alt: "Руминация: почему мы застреваем в мыслях и как это остановить",
-      category: "Стресс / Тревога",
-      title: "Руминация: почему мы застреваем в мыслях и как это остановить",
-      description: "Руминация — это бесконечный цикл негативных мыслей, который может усиливать тревогу и депрессию. Узнайте, почему мы застреваем в таких мыслях и какие техники помогут разорвать этот цикл.",
-      link: "/blog-details/rumination",
-    },
-    {
-      date: "20 НОЯ",
-      image: "/images/blog/blg005a.jpg",
-      alt: "Психосоматика: как тело говорит о том, что не осознаёт разум",
-      category: "Стресс / Тревога",
-      title: "Психосоматика: как тело говорит о том, что не осознаёт разум",
-      description: "Психосоматика изучает связь между эмоциями и физическим здоровьем. Узнайте, как подавленные чувства могут проявляться через телесные симптомы, и что можно сделать, чтобы восстановить баланс.",
-      link: "/blog-details/psychosomatics",
-    },
-    {
-      date: "22 НОЯ",
-      image: "/images/blog/blg006a.jpg",
-      alt: "Сочувствие и эмпатия: в чём разница и почему это важно понимать",
-      category: "Отношения",
-      title: "Сочувствие и эмпатия: в чём разница и почему это важно понимать",
-      description: "Сочувствие и эмпатия часто путают, но между ними есть ключевая разница. Узнайте, как эти качества влияют на ваши отношения и почему их понимание помогает строить более глубокие связи.",
-      link: "/blog-details/sympathy-empathy",
-    },
-    {
-      date: "25 НОЯ",
-      image: "/images/blog/blg007a.jpg",
-      alt: "Стресс: когда он помогает, а когда разрушает",
-      category: "Стресс / Тревога",
-      title: "Стресс: когда он помогает, а когда разрушает",
-      description: "Стресс может быть как мотиватором, так и разрушителем. Узнайте, как отличить полезный стресс от вредного, и какие стратегии помогут справляться с ним, чтобы сохранить здоровье и продуктивность.",
-      link: "/blog-details/stress",
-    },
-    {
-      date: "28 НОЯ",
-      image: "/images/blog/blg008a.jpg",
-      alt: "Эффективное общение: как говорить, чтобы быть услышанным",
-      category: "Отношения",
-      title: "Эффективное общение: как говорить, чтобы быть услышанным",
-      description: "Эффективное общение — ключ к успешным отношениям. Узнайте, как быть услышанным.",
-      link: "/blog-details/effective-communication",
-    },
-    {
-      date: "30 НОЯ",
-      image: "/images/blog/blg009a.jpg",
-      alt: "Как нарушение сна влияет на психическое здоровье: научный взгляд",
-      category: "Стресс / Тревога",
-      title: "Как нарушение сна влияет на психическое здоровье: научный взгляд",
-      description: "Нарушение сна усиливает тревогу и депрессию. Узнайте, как улучшить сон.",
-      link: "/blog-details/sleep-mental-health",
-    },
-  ];
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({
@@ -222,6 +141,9 @@ const BlogDetailsSection = () => {
   console.log('HeroSlider Props:', { contentType: heroContentType, src: heroContentSrc, images: heroImages });
   console.log('Rendering BlogDetailsSection for slug:', slug);
 
+  // Τραβάμε τον συγγραφέα από το therapistsData.js με βάση το authorId του post
+  const author = therapists.find(therapist => therapist.id === post.authorId) || { name: 'Unknown', profileLink: '#' };
+
   return (
     <div className="blog-details-page">
       <ProfileHeader />
@@ -259,7 +181,7 @@ const BlogDetailsSection = () => {
                       </li>
                       <li className="meta-item">
                         <i className="icon-User"></i>
-                        <p>by <Link to="/victoria-kotenko">Viktoriia Kotenko</Link></p>
+                        <p>by <Link to={author.profileLink}>{author.name}</Link></p>
                       </li>
                     </ul>
                   </div>
@@ -295,22 +217,25 @@ const BlogDetailsSection = () => {
               <span className="sub-title">Похожие статьи</span>
             </div>
             <div className="related-topics-grid">
-              {featuredPosts.map((post, index) => (
-                <div className="related-topic-card" key={index}>
-                  <div className="related-card-image">
-                    <span className="date">{post.date}</span>
-                    <img src={post.image} alt={post.alt} />
-                  </div>
-                  <div className="related-card-content">
-                    <span className="category">{post.category}</span>
-                    <h3>{post.title}</h3>
-                    <p>{post.description}</p>
-                    <div className="read-more-wrapper">
-                      <Link to={post.link} className="read-more">Читать больше <span className="arrow">→</span></Link>
+              {blogPosts.map((post, index) => {
+                const postAuthor = therapists.find(therapist => therapist.id === post.authorId) || { name: 'Unknown', profileLink: '#' };
+                return (
+                  <div className="related-topic-card" key={index}>
+                    <div className="related-card-image">
+                      <span className="date">{post.date}</span>
+                      <img src={post.image} alt={post.alt} />
+                    </div>
+                    <div className="related-card-content">
+                      <span className="category">{post.category}</span>
+                      <h3>{post.title}</h3>
+                      <p>{post.description}</p>
+                      <div className="read-more-wrapper">
+                        <Link to={post.link} className="read-more">Читать больше <span className="arrow">→</span></Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

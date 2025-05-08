@@ -1,3 +1,4 @@
+// src/pages/blogs/BLG-RE-001_CodependencyBlog.js
 import React from 'react';
 
 const CodependencyBlog = () => {
@@ -10,6 +11,7 @@ const CodependencyBlog = () => {
       type: 'image',
       src: '/images/blog/blg001a.jpg',
     },
+    authorId: 1, // Viktoria Kotenko
     content: (
       <>
         {/* Введение */}
@@ -86,7 +88,7 @@ const CodependencyBlog = () => {
           «Созависимость — это эмоциональное рабство, где ты больше не принадлежишь себе» — Ross Rosenberg, The Human Magnet Syndrome [3]
         </blockquote>
 
-        {/* Εικόνα blg001b.jpg ανάмеσα στο απόσпασма и την ενότητα "Как выйти из созависимости?" */}
+        {/* Εικόνα blg001b.jpg ανάμεσα στο απόσпασма и την ενότητα "Как выйти из созависимости?" */}
         <figure className={`section-image-wrapper ${false ? 'section-image-wrapper--square' : ''}`}>
           <img src="/images/blog/blg001b.jpg" alt="Codependency Illustration 2" className="section-image" />
         </figure>

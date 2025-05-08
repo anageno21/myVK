@@ -3,7 +3,7 @@
 .connect-with-us-section {
   width: 100%;
   min-height: 500px;
-  background-color: #f2f1f0;
+  background-color: #f2f1f0; /* Ήδη #f2f1f0, δεν χρειάζεται αλλαγή */
   display: block;
   padding: 40px 0;
   position: static;
