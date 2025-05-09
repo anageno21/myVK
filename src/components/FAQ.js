@@ -2,21 +2,23 @@
 import React, { useState } from 'react';
 import './FAQ.css';
 
-const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(null); // Αλλαγή από 1 σε null
+const FAQ = ({ hideHeader = false }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <section className="faq-section">
+    <section className="faq-section" style={{ backgroundColor: '#f2f1f0 !important' }}>
       <div className="container">
-        <div className="section-header">
-          <span className="sub-title">Help Center</span>
-          <h2>Часто Задаваемые Вопросы</h2>
-          <p>Find answers to the most commonly asked questions about our services.</p>
-        </div>
+        {!hideHeader && (
+          <div className="section-header">
+            <span className="sub-title">Help Center</span>
+            <h2>Часто Задаваемые Вопросы</h2>
+            <p>Find answers to the most commonly asked questions about our services.</p>
+          </div>
+        )}
         <div className="faq-list">
           <div className="faq-item">
             <div className="faq-question" onClick={() => toggleFAQ(0)}>

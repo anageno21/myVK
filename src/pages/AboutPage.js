@@ -1,3 +1,4 @@
+// src/pages/AboutPage.js
 import React from 'react';
 import PageTitleAbout from '../components/PageTitleAbout';
 import AboutSection from '../components/AboutSection';

@@ -1,0 +1,483 @@
+/* src/pages/TherapistLibrary.css */
+
+/* Γενικά στυλ για τη σελίδα */
+.blog-library-page {
+  width: 100%;
+  background-color: var(--background-color);
+  position: relative; /* Εξασφαλίζει ότι η σελίδα δεν επηρεάζεται από το modal */
+  overflow-x: hidden; /* Αποτρέπει οριζόντιο overflow */
+}
+
+/* Κύριο περιεχόμενο */
+.blog-library-content {
+  padding: 60px 0;
+  background-color: var(--background-color);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Header της σελίδας */
+.blog-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.blog-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-family: var(--primary-font);
+}
+
+.blog-header h2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-family: var(--primary-font);
+}
+
+/* Σώμα της σελίδας */
+.blog-body {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* Περιεχόμενο */
+.blog-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Πλαίσια θεραπευτών */
+.blog-posts {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.blog-post {
+  background: var(--light-color);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.post-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: transparent !important;
+}
+
+.post-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--text-color);
+  font-family: var(--primary-font);
+}
+
+.post-meta .therapist-date {
+  color: var(--accent-color);
+}
+
+.post-meta .therapist-category {
+  color: var(--primary-color);
+}
+
+.post-title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--primary-font);
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.post-title-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.post-title-link:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.post-excerpt {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  font-family: var(--primary-font);
+  margin-bottom: 15px;
+}
+
+.book-session-button {
+  background-color: #edbfab;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.book-session-button:hover {
+  background-color: #143B64;
+}
+
+/* Sidebar */
+.blog-sidebar {
+  flex: 1;
+  min-width: 250px;
+}
+
+.sidebar-widget {
+  margin-bottom: 30px;
+}
+
+.sidebar-widget h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-family: var(--primary-font);
+}
+
+.sidebar-search .search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-search .search-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: var(--primary-font);
+  font-size: 14px;
+}
+
+.sidebar-search .search-form button {
+  background: var(--accent-color);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+.sidebar-search .search-form button i {
+  font-size: 16px;
+}
+
+.sidebar-search .search-form button:hover {
+  background: var(--primary-color);
+}
+
+.sidebar-categories ul,
+.sidebar-authors ul,
+.sidebar-recent-posts ul {
+  margin: 0 0 30px 0;
+}
+
+.sidebar-categories ul li,
+.sidebar-authors ul li,
+.sidebar-recent-posts ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--primary-color);
+  font-family: var(--primary-font);
+  margin-bottom: 10px;
+}
+
+.sidebar-recent-posts ul li p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--primary-color);
+  font-family: var(--primary-font);
+  margin-bottom: 0;
+}
+
+/* Παγίναση */
+.blog-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.blog-pagination .page-btn {
+  background: var(--light-color);
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  border-radius: 20px;
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.blog-pagination .page-btn.active {
+  background: var(--accent-color);
+  color: var(--light-color);
+  border-color: var(--accent-color);
+}
+
+.blog-pagination .page-btn:hover {
+  background: var(--primary-color);
+  color: var(--light-color);
+  border-color: var(--primary-color);
+}
+
+/* Media Queries για Κινητά */
+@media (max-width: 768px) {
+  .blog-library-content {
+    padding: 40px 0;
+  }
+
+  .blog-header {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .blog-header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .blog-header h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .blog-content {
+    flex-direction: column;
+  }
+
+  .blog-posts {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-post {
+    max-width: 100%;
+  }
+
+  .post-image img {
+    height: 180px;
+  }
+
+  .post-content {
+    padding: 15px;
+  }
+
+  .post-meta {
+    font-size: 13px;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+
+  .post-excerpt {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .book-session-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .sidebar-widget {
+    margin-bottom: 20px;
+  }
+
+  .sidebar-widget h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .sidebar-search .search-form input {
+    padding: 8px;
+  }
+
+  .sidebar-search .search-form button {
+    padding: 8px;
+  }
+
+  .sidebar-categories ul li,
+  .sidebar-authors ul li,
+  .sidebar-recent-posts ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .sidebar-recent-posts ul li p {
+    font-size: 14px;
+  }
+
+  .blog-pagination .page-btn {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-library-content {
+    padding: 30px 0;
+  }
+
+  .blog-header {
+    gap: 6px;
+    margin-bottom: 30px;
+  }
+
+  .blog-header h1 {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .blog-header h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .post-image img {
+    height: 160px;
+  }
+
+  .post-meta {
+    font-size: 12px;
+  }
+
+  .post-title {
+    font-size: 18px;
+  }
+
+  .post-excerpt {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .book-session-button {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .sidebar-widget h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .sidebar-categories ul li,
+  .sidebar-authors ul li,
+  .sidebar-recent-posts ul li {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-recent-posts ul li p {
+    font-size: 13px;
+  }
+
+  .blog-pagination .page-btn {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .blog-library-content {
+    padding: 20px 0;
+  }
+
+  .blog-header {
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .blog-header h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .blog-header h2 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .post-image img {
+    height: 140px;
+  }
+
+  .post-meta {
+    font-size: 11px;
+  }
+
+  .post-title {
+    font-size: 16px;
+  }
+
+  .post-excerpt {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .book-session-button {
+    padding: 5px 10px;
+    font-size: 9px;
+  }
+
+  .sidebar-widget h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .sidebar-categories ul li,
+  .sidebar-authors ul li,
+  .sidebar-recent-posts ul li {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .sidebar-recent-posts ul li p {
+    font-size: 12px;
+  }
+
+  .blog-pagination .page-btn {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+}

@@ -1,6 +1,8 @@
+// src/components/ProfileHeader.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiInstagram, FiMail, FiMusic, FiMessageCircle, FiTwitter, FiFacebook } from 'react-icons/fi';
+import RegistrationModal from './RegistrationModal';
 import './ProfileHeader.css';
 
 const ProfileHeader = ({ isDarkBackground = true }) => {
@@ -8,6 +10,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCouncillorsDropdownOpen, setIsCouncillorsDropdownOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const languages = [
     { value: 'English', label: 'English' },
@@ -23,27 +26,40 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
     setIsMenuOpen(!isMenuOpen);
     if (isDropdownOpen) setIsDropdownOpen(false);
     if (isCouncillorsDropdownOpen) setIsCouncillorsDropdownOpen(false);
+    if (isLoginModalOpen) setIsLoginModalOpen(false);
   };
 
   const toggleDropdown = (e) => {
     e.stopPropagation();
     setIsDropdownOpen(!isDropdownOpen);
     setIsCouncillorsDropdownOpen(false);
+    setIsLoginModalOpen(false);
   };
 
   const toggleCouncillorsDropdown = (e) => {
     e.stopPropagation();
     setIsCouncillorsDropdownOpen(!isCouncillorsDropdownOpen);
     setIsDropdownOpen(false);
+    setIsLoginModalOpen(false);
+  };
+
+  const toggleLoginModal = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsLoginModalOpen(!isLoginModalOpen);
+    setIsDropdownOpen(false);
+    setIsCouncillorsDropdownOpen(false);
   };
 
   const handleMouseEnterDropdown = (dropdownType) => {
     if (dropdownType === 'services') {
       setIsDropdownOpen(true);
       setIsCouncillorsDropdownOpen(false);
+      setIsLoginModalOpen(false);
     } else if (dropdownType === 'councillors') {
       setIsCouncillorsDropdownOpen(true);
       setIsDropdownOpen(false);
+      setIsLoginModalOpen(false);
     }
   };
 
@@ -65,7 +81,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
         </div>
         <nav className={`header-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul className="navigation">
-            <li><Link to="/about" className={isDarkBackground ? 'light-text' : 'dark-text'}>О нас</Link></li>
+            {/* Αφαίρεση του "О нас" */}
             <li
               className="dropdown"
               onMouseEnter={() => handleMouseEnterDropdown('services')}
@@ -157,10 +173,17 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
             </ul>
           </div>
           <div className="header-login">
-            <Link to="/login" className={`login-link ${isDarkBackground ? 'light-text' : 'dark-text'}`}>Войти</Link>
+            <a
+              href="#"
+              onClick={toggleLoginModal}
+              className={`login-link ${isDarkBackground ? 'light-text' : 'dark-text'}`}
+            >
+              Войти
+            </a>
           </div>
         </nav>
       </div>
+      <RegistrationModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
     </div>
   );
 };

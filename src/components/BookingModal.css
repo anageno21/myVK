@@ -1,0 +1,255 @@
+/* src/components/BookingModal.css */
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.booking-modal {
+  background: #f2f1f0;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 20px 0;
+}
+
+.booking-form-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  color: #2F4C66;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #2F4C66;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close-button:hover {
+  color: #143B64;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 18px;
+  color: #2F4C66;
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Playfair Display', serif;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Playfair Display', serif;
+  color: #143B64;
+}
+
+/* Δομή του ημερολογίου */
+.calendar-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.form-group .react-calendar {
+  width: 100%;
+  max-width: 350px;
+  border: none; /* Αφαίρεση περιγράμματος από το ημερολόγιο */
+  font-family: 'Playfair Display', serif;
+  box-shadow: none; /* Αφαίρεση σκιάς */
+}
+
+/* Αφαίρεση περιγραμμάτων από όλα τα στοιχεία του ημερολογίου */
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  border: none !important; /* Αφαίρεση όλων των περιγραμμάτων */
+  color: #143B64 !important; /* Μπλε χρώμα για τα γράμματα */
+}
+
+/* Αφαίρεση περιγραμμάτων από τα κουμπιά πλοήγησης */
+.react-calendar__navigation button {
+  border: none !important;
+  background: none !important;
+}
+
+/* Αφαίρεση περιγραμμάτων από τις ημέρες */
+.react-calendar__month-view__days__day {
+  border: none !important;
+}
+
+/* Hover effect στις επιλογές του ημερολογίου */
+.react-calendar__tile:hover,
+.react-calendar__tile--active {
+  background: #edbfab !important;
+  color: #fff !important;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #edbfab !important;
+  color: #fff !important;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.time-slots button {
+  padding: 10px 15px;
+  border: 1px solid #143B64;
+  border-radius: 20px;
+  background: transparent;
+  color: #143B64;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+}
+
+.time-slots button.selected,
+.time-slots button:hover {
+  background: #edbfab;
+  color: white;
+  border-color: #edbfab;
+}
+
+.booking-button {
+  background: #edbfab;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
+
+.booking-button:hover {
+  background: #143B64;
+}
+
+.success-message {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #2F4C66;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #9e2146;
+  text-align: center;
+}
+
+/* Responsive προσαρμογές */
+@media (max-width: 768px) {
+  .booking-modal {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modal-close-button {
+    font-size: 20px;
+  }
+
+  .form-group label {
+    font-size: 16px;
+  }
+
+  .form-group select {
+    font-size: 14px;
+  }
+
+  .form-group .react-calendar {
+    max-width: 300px;
+  }
+
+  .time-slots button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .booking-button {
+    font-size: 12px;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .booking-modal {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .modal-close-button {
+    font-size: 18px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group .react-calendar {
+    max-width: 250px;
+  }
+
+  .time-slots button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .booking-button {
+    font-size: 10px;
+    padding: 8px 20px;
+  }
+}

@@ -1,0 +1,81 @@
+/* src/components/RegisterForm.css */
+.register-form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Χρησιμοποιούμε 100% για να ταιριάζει στο πλάτος του dropdown */
+  max-width: 400px; /* Επαναφορά του πλάτους σε 400px */
+  position: relative;
+  z-index: 1000;
+}
+
+.register-form-header {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.register-form-header h1 {
+  font-size: 24px;
+  color: #8EB5BA;
+  margin-bottom: 10px;
+}
+
+.register-form-header p {
+  font-size: 16px;
+  color: #8EB5BA;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #8EB5BA;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #8EB5BA;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button.active {
+  background-color: #edbfab;
+  color: #8EB5BA;
+}
+
+.register-button:hover {
+  background-color: #edbfab;
+  color: #8EB5BA;
+}
+
+/* Προσαρμογές για μικρότερες οθόνες */
+@media (max-width: 768px) {
+  .register-form-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .register-form-header h1 {
+    font-size: 20px;
+  }
+
+  .register-form-header p {
+    font-size: 14px;
+  }
+
+  .register-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
