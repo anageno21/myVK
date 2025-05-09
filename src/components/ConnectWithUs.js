@@ -1,49 +1,8 @@
-import React, { useState } from 'react';
+// src/components/ConnectWithUs.js
+import React from 'react';
 import './ConnectWithUs.css';
 
 const ConnectWithUs = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('Submitting...');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('Сообщение отправлено успешно!');
-        setFormData({ name: '', phone: '', service: '', message: '' });
-      } else {
-        setStatus('Не удалось отправить сообщение. Попробуйте снова.');
-      }
-    } catch (error) {
-      setStatus('Произошла ошибка. Попробуйте позже.');
-      console.error('Error submitting form:', error);
-    }
-  };
-
   return (
     <section className="connect-with-us-section">
       <div className="container">
@@ -51,47 +10,25 @@ const ConnectWithUs = () => {
           <div className="left-section">
             <div className="section-header">
               <h2>
-                <span className="highlight">ЗАПИШИТЕСЬ НА</span> Бесплатную Консультацию - Начните <span className="highlight">ВАШ ПУТЬ К ИСЦЕЛЕНИЮ</span>
+                <span className="highlight">BOOK A</span> Free Consultation - Begin <span className="highlight">YOUR HEALING JOURNEY</span>
               </h2>
-              <p>Свяжитесь с нашими специалистами сегодня и сделайте первый шаг к более здоровой и счастливой жизни.</p>
+              <p>Connect with a dedicated specialist today and take the first step towards a healthier, more fulfilling life.</p>
             </div>
+            {/* Αφαίρεσα το contact-info μαζί με το email, το τηλέφωνο, και τη διεύθυνση */}
           </div>
           <div className="right-section">
-            <form className="consultation-form" onSubmit={handleSubmit}>
-              <h3>Получите Бесплатную Консультацию</h3>
-              <input
-                type="text"
-                name="name"
-                placeholder="Ваше Имя*"
-                required
-                value={formData.name}
-                onChange={handleChange}
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Номер Телефона"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-              <select
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-              >
-                <option value="" disabled>Выберите Услугу</option>
-                <option value="therapy">Терапия</option>
-                <option value="self-care">Саморазвитие</option>
-                <option value="trauma">Травматология</option>
+            <form className="consultation-form">
+              <h3>Get A Free Consultation</h3>
+              <input type="text" placeholder="Your Name*" required />
+              <input type="tel" placeholder="Phone Number" />
+              <select>
+                <option value="" disabled selected>Choose Services</option>
+                <option value="therapy">Therapy</option>
+                <option value="self-care">Self-Care</option>
+                <option value="trauma">Trauma</option>
               </select>
-              <textarea
-                name="message"
-                placeholder="Ваше Сообщение"
-                value={formData.message}
-                onChange={handleChange}
-              ></textarea>
-              <button type="submit">Отправить</button>
-              {status && <p className="status-message">{status}</p>}
+              <textarea placeholder="Your Message"></textarea>
+              <button type="submit">Submit</button>
             </form>
           </div>
         </div>

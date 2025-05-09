@@ -1,4 +1,3 @@
-// src/components/ProfileHeader.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiInstagram, FiMail, FiMusic, FiMessageCircle, FiTwitter, FiFacebook } from 'react-icons/fi';
@@ -66,8 +65,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
         </div>
         <nav className={`header-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul className="navigation">
-            {/* Αφαίρεση του "О нас" */}
-            {/* <li><Link to="/about" className={isDarkBackground ? 'light-text' : 'dark-text'}>О нас</Link></li> */}
+            <li><Link to="/about" className={isDarkBackground ? 'light-text' : 'dark-text'}>О нас</Link></li>
             <li
               className="dropdown"
               onMouseEnter={() => handleMouseEnterDropdown('services')}
@@ -127,8 +125,7 @@ const ProfileHeader = ({ isDarkBackground = true }) => {
                 <li><Link to="/victoria-kotenko" className={isDarkBackground ? 'light-text' : 'dark-text'}>Виктория Котенко</Link></li>
               </ul>
             </li>
-            {/* Αφαίρεση του "Магазин" */}
-            {/* <li><Link to="/our-product" className={isDarkBackground ? 'light-text' : 'dark-text'}>Магазин</Link></li> */}
+            <li><Link to="/our-product" className={isDarkBackground ? 'light-text' : 'dark-text'}>Магазин</Link></li>
             <li>
               <Link
                 to="/blog-library"

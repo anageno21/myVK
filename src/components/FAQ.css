@@ -1,9 +1,10 @@
+/* src/components/FAQ.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 .faq-section {
   width: 100%;
   min-height: 400px;
-  background-color: #f2f1f0;
+  background-color: #EDEBE8;
   display: block;
   padding: 40px 0;
   position: static;
@@ -13,9 +14,9 @@
 }
 
 .container {
-  max-width: var(--container-max-width) !important;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--container-padding) !important;
+  padding: 0 40px;
   position: static;
   display: block;
   box-sizing: border-box;
@@ -28,42 +29,35 @@
 
 .section-header .sub-title {
   display: block;
-  color: var(--accent-color) !important; /* #21AABC */
+  color: #FF6F61;
   font-size: 14px;
   margin-bottom: 10px;
-  font-family: var(--primary-font);
+  font-family: 'Playfair Display', serif;
   text-transform: uppercase;
 }
 
 .section-header h2 {
-  max-width: var(--content-max-width) !important;
-  margin: 0 auto !important;
-  color: var(--primary-color) !important; /* #143B64 */
   font-size: 48px;
   font-weight: 700;
+  color: #173A37;
   line-height: 1.0;
   margin-bottom: 20px;
-  font-family: var(--primary-font);
+  font-family: 'Playfair Display', serif;
 }
 
 .section-header p {
-  max-width: var(--content-max-width) !important;
-  margin: 0 auto !important;
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 15px;
-  color: var(--text-color) !important; /* #2F4C66 */
-  font-family: var(--primary-font);
+  color: #666;
+  font-family: 'Playfair Display', serif;
 }
 
 .faq-list {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 30px;
-  row-gap: 20px;
+  row-gap: 40px;
   align-items: stretch;
-  max-width: 1020px;
-  margin: 0 auto;
 }
 
 .faq-item {
@@ -82,14 +76,12 @@
 }
 
 .faq-question h3 {
-  max-width: var(--content-max-width) !important;
-  margin: 0 auto !important;
-  color: var(--primary-color) !important; /* #143B64 */
   font-size: 18px;
   font-weight: 700;
-  line-height: 0.8;
-  margin-bottom: 15px;
-  font-family: var(--primary-font);
+  line-height: 0.9; /* Μείωση από 1.0 σε 0.9 για να φέρουμε τις γραμμές πιο κοντά */
+  color: #173A37;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
   text-align: center;
 }
 
@@ -99,13 +91,10 @@
 }
 
 .faq-answer p {
-  max-width: var(--content-max-width) !important;
-  margin: 0 auto !important;
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 15px;
-  color: var(--text-color) !important; /* #2F4C66 */
-  font-family: var(--primary-font);
+  color: #666;
+  font-family: 'Playfair Display', serif;
 }
 
 /* Media Queries για Κινητά */
@@ -141,8 +130,7 @@
   .faq-list {
     grid-template-columns: 1fr !important;
     column-gap: 0;
-    row-gap: 10px;
-    max-width: 100%;
+    row-gap: 15px;
   }
 
   .faq-item {
@@ -152,7 +140,7 @@
 
   .faq-question h3 {
     font-size: 16px;
-    line-height: 0.8;
+    line-height: 0.9; /* Διατήρηση του μειωμένου διαστήματος */
   }
 
   .faq-answer {
@@ -193,7 +181,7 @@
   }
 
   .faq-list {
-    row-gap: 8px;
+    row-gap: 10px;
   }
 
   .faq-item {
@@ -202,7 +190,7 @@
 
   .faq-question h3 {
     font-size: 14px;
-    line-height: 0.8;
+    line-height: 0.9;
   }
 
   .faq-answer {
@@ -243,7 +231,7 @@
   }
 
   .faq-list {
-    row-gap: 6px;
+    row-gap: 8px;
   }
 
   .faq-item {
@@ -252,7 +240,7 @@
 
   .faq-question h3 {
     font-size: 12px;
-    line-height: 0.8;
+    line-height: 0.9;
   }
 
   .faq-answer {

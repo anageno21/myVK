@@ -1,7 +1,6 @@
 // src/components/NewFooter.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import therapists from '../data/therapistsData'; // Εισαγωγή των δεδομένων
 import './NewFooter.css';
 
 const NewFooter = () => {
@@ -18,16 +17,17 @@ const NewFooter = () => {
                       id="new-logo-footer"
                       src="/images/logo/footer-logo.png"
                       alt="Anageno"
+                      data-retina="/images/logo/footer-logo@2x.png"
                     />
                   </Link>
                 </div>
                 <p className="new-description">
-                  Мы предоставляем безопасное пространство, где вы можете найти покой внутри себя. Наши опытные терапевты помогут вам преодолеть душевные трудности с индивидуальным подходом.
+                  We provide a safe space where you can find peace within yourself. Our expert therapists guide you through overcoming mental challenges with personalized care.
                 </p>
                 <ul className="new-footer-info">
-                  <li>Офис: 1234 Fashion Street, Suite 567, New York, United States</li>
-                  <li>Поддержка 24/7: <a href="mailto:support@anageno.com">support@anageno.com</a></li>
-                  <li>Звоните сейчас: 1-555-678-8888</li>
+                  <li>Office: 1234 Fashion Street, Suite 567, New York, United States</li>
+                  <li>Support 24/7: <a href="mailto:support@anageno.com">support@anageno.com</a></li>
+                  <li>Call Us Now: 1-555-678-8888</li>
                 </ul>
                 <ul className="new-tf-social">
                   <li>
@@ -188,45 +188,47 @@ const NewFooter = () => {
               <div className="new-footer-right">
                 <div className="new-wrap-footer-menu-list">
                   <div className="new-footer-menu-list new-footer-col-block">
-                    <h6 className="title title-desktop">Наши терапевты</h6>
-                    <h6 className="title title-mobile">Наши терапевты</h6>
+                    <h6 className="title title-desktop">Our Therapists</h6>
+                    <h6 className="title title-mobile">Our Therapists</h6>
                     <ul className="new-tf-collapse-content">
-                      {therapists.map(therapist => ( // Εμφανίζουμε όλους τους ψυχολόγους
-                        <li key={therapist.id}>
-                          <Link to={therapist.profileLink}>{therapist.name}</Link>
-                        </li>
-                      ))}
+                      <li><Link to="/therapists-details">Annette Black</Link></li>
+                      <li><Link to="/therapists-details">Jane Cooper</Link></li>
+                      <li><Link to="/therapists-details">Brooklyn Simmons</Link></li>
                     </ul>
                   </div>
                   <div className="new-footer-menu-list new-footer-col-block">
-                    <h6 className="title title-desktop">Наши услуги</h6>
-                    <h6 className="title title-mobile">Наши услуги</h6>
+                    <h6 className="title title-desktop">Our Services</h6>
+                    <h6 className="title title-mobile">Our Services</h6>
                     <ul className="new-tf-collapse-content">
-                      <li><Link to="/service-details">Индивидуальные консультации</Link></li>
-                      <li><Link to="/service-details">Семейная терапия</Link></li>
-                      <li><Link to="/service-details">Терапия для пар</Link></li>
-                      <li><Link to="/service-details">Групповая терапия</Link></li>
+                      <li><Link to="/service-details">Individual Counseling</Link></li>
+                      <li><Link to="/service-details">Family Therapy</Link></li>
+                      <li><Link to="/service-details">Couples Therapy</Link></li>
+                      <li><Link to="/service-details">Group Therapy</Link></li>
                     </ul>
                   </div>
                 </div>
                 <div className="new-wrap-form new-footer-col-block">
-                  <h6 className="title title-desktop">Подписаться на рассылку</h6>
-                  <h6 className="title title-mobile">Подписаться на рассылку</h6>
+                  <h6 className="title title-desktop">Subscribe Newsletter</h6>
+                  <h6 className="title title-mobile">Subscribe Newsletter</h6>
                   <div className="new-tf-collapse-content">
                     <form className="new-form-send-email">
-                      <input
-                        type="email"
-                        placeholder="Ваш адрес электронной почты"
-                        name="email"
-                        aria-required="true"
-                        required
-                      />
+                      <fieldset>
+                        <input
+                          type="email"
+                          placeholder="Your email address"
+                          name="email"
+                          aria-required="true"
+                          required
+                        />
+                      </fieldset>
                       <div className="new-button-submit">
-                        <button type="submit">Отправить</button>
+                        <button type="submit">
+                          <i className="icon-PaperPlaneTilt"></i>
+                        </button>
                       </div>
                     </form>
                     <p>
-                      Пожалуйста, подпишитесь, чтобы следить за последними новостями и событиями от нас, мы обещаем не спамить ваш почтовый ящик.
+                      Please sign up to follow the latest news and events from us, we promise not to spam your inbox.
                     </p>
                   </div>
                 </div>
@@ -238,11 +240,11 @@ const NewFooter = () => {
                 <a href="https://themeforest.net/user/themesflat" target="_blank" rel="noopener noreferrer">
                   ThemesFlat.com
                 </a>{' '}
-                Все права защищены
+                All rights reserved
               </p>
               <ul className="new-content-right">
-                <li><Link to="/shop">Условия обслуживания</Link></li>
-                <li><Link to="/contact-us">Политика конфиденциальности</Link></li>
+                <li><Link to="/shop">Terms Of Services</Link></li>
+                <li><Link to="/contact-us">Privacy Policy</Link></li>
               </ul>
             </div>
           </div>

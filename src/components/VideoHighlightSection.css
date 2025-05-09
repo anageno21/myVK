@@ -4,7 +4,7 @@
 .video-highlight-section {
   width: 100%;
   padding: 80px 0 40px 0;
-  background-color: #F2F1F0;
+  background-color: #EDEBE8;
 }
 
 .video-container {
@@ -37,13 +37,13 @@
 
 .video-frame {
   position: relative;
-  width: 605px; /* Ίδιο πλάτος με την εικόνα στην αριστερή στήλη του TwoColumnSection */
+  width: 424px; /* Ίδιο πλάτος με την εικόνα στην αριστερή στήλη του TwoColumnSection */
   aspect-ratio: 9 / 16; /* Διατήρηση της αναλογίας του βίντεο */
   border-radius: 8px;
   overflow: hidden;
   margin: 0; /* Αφαίρεση περιθωρίων */
-  margin-left: 410px; /* Μετακίνηση επιπλέον 150px προς τα δεξιά (150px + 150px) */
-  margin-top: -955px; /* Μετακίνηση 50px πιο πάνω */
+  margin-left: 345px; /* Μετακίνηση επιπλέον 150px προς τα δεξιά (150px + 150px) */
+  margin-top: -50px; /* Μετακίνηση 50px πιο πάνω */
 }
 
 .highlight-video {
@@ -67,8 +67,8 @@
 .control-button {
   padding: 6px 10px;
   background-color: transparent;
-  color: #21aabc;
-  border: 1px solid #21aabc;
+  color: #FF6F61;
+  border: 1px solid #FF6F61;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -78,7 +78,7 @@
 }
 
 .control-button:hover {
-  background-color: #21aabc;
+  background-color: #FF6F61;
   color: white;
 }
 
